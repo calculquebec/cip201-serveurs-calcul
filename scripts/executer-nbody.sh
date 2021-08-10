@@ -13,4 +13,4 @@ duree=$(2>&1 time -p ./nbody_omp parameters.txt | grep -E '^real')
 duree=$(echo $duree | cut -d' ' -f2)
 
 md5sum -c $SCRATCH/cq-formation-nbody/solutions/md5/rkutta_parameters_txt.md5
-echo "Temps écoulé: $duree secondes"
+echo "Temps écoulé: $duree sec. avec $OMP_NUM_THREADS processeur(s)"
