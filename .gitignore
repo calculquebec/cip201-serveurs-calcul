@@ -1,2 +1,3 @@
 .ipynb_checkpoints
 scripts/*.out
+temps_inv.csv
