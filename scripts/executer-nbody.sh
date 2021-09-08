@@ -6,11 +6,11 @@
 module load gcc
 
 cd $SLURM_TMPDIR
-cp $SCRATCH/cq-formation-nbody/solutions/openmp/{nbody_omp,parameters.txt} ./
+cp $HOME/cq-formation-nbody/solutions/openmp/{nbody_omp,parameters.txt} ./
 
 export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 duree=$(2>&1 time -p ./nbody_omp parameters.txt | grep -E '^real')
 duree=$(echo $duree | cut -d' ' -f2)
 
-md5sum -c $SCRATCH/cq-formation-nbody/solutions/md5/rkutta_parameters_txt.md5
+md5sum -c $HOME/cq-formation-nbody/solutions/md5/rkutta_parameters_txt.md5
 echo "Temps écoulé: $duree sec. avec $OMP_NUM_THREADS processeur(s)"

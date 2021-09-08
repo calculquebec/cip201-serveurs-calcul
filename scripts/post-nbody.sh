@@ -1,6 +1,6 @@
 #!/bin/bash
 
-RESULTATS=/scratch/$USER/resultats
+RESULTATS=/$SCRATCH/resultats
 MON_PROJET=$(ls -d $HOME/projects/def-*/$USER)
 FINAL_TSV=$MON_PROJET/nbody.tsv
 

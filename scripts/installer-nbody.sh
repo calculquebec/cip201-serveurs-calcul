@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd $SCRATCH
+cd $HOME
 
 if [ ! -d cq-formation-nbody ]; then
   git clone https://github.com/calculquebec/cq-formation-nbody.git

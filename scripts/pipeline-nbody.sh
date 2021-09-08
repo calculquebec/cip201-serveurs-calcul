@@ -8,7 +8,7 @@ if [ ! -z "$ACCOUNT" ]; then
   ACCOUNT="--account=$ACCOUNT"
 fi
 
-RESULTATS=/scratch/$USER/resultats
+RESULTATS=/$SCRATCH/resultats
 mkdir -p $RESULTATS
 
 for cpus in 1 2 4 8; do
