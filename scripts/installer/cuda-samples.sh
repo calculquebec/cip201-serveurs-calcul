@@ -22,5 +22,5 @@ fi
 cd ${DOSSIER}
 
 module load gcc cuda
-export PROJECTS=Samples/UnifiedMemoryPerf/Makefile
+export PROJECTS=Samples/matrixMul/Makefile
 make
