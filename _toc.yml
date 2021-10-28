@@ -1,0 +1,10 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: a_propos
+chapters:
+- file: ressources
+- file: analyse-taches
+- file: lots-taches
+- file: stockage

@@ -1,0 +1,35 @@
+name: Build Jupyter Book with GitHub pages
+
+on:
+  push:
+    branches:
+    - main
+
+jobs:
+  generate-book:
+    runs-on: ubuntu-latest
+    steps:
+    # https://github.com/actions/checkout
+    - name: Git checkout latest revision
+      uses: actions/checkout@v2
+
+    # https://github.com/actions/setup-python
+    - name: Set up Python 3.7
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.7
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt
+
+    # https://jupyterbook.org/start/build.html
+    - name: Build the Jupyter book
+      run: |
+        jupyter-book build .
+
+    # Push the book's HTML to github-pages
+    - name: GitHub Pages action
+      uses: peaceiris/actions-gh-pages@v3.6.1
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./docs
