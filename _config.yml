@@ -13,7 +13,7 @@ repository:
 
 # https://jupyterbook.org/structure/configure.html#exclude-pages-from-your-build
 exclude_patterns:
-  README*
+  - README.md
 
 # https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
 html:
