@@ -1,0 +1,595 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lots de tâches &#8212; CIP201 - Maîtriser l’utilisation des serveurs de calcul</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="_static/logo.png"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Les espaces de stockage" href="stockage.html" />
+    <link rel="prev" title="Analyse des tâches" href="analyse-taches.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">CIP201 - Maîtriser l’utilisation des serveurs de calcul</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="a_propos.html">
+   À propos
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="ressources.html">
+   Bien choisir les ressources
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="analyse-taches.html">
+   Analyse des tâches
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Lots de tâches
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="stockage.html">
+   Les espaces de stockage
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/lots-taches.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/calculquebec/utilisation-serveurs-calcul"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gnu-parallel">
+   GNU Parallel
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pourquoi-pas-slurm">
+     Pourquoi pas Slurm?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#syntaxe-de-la-commande-gnu-parallel">
+     Syntaxe de la commande GNU Parallel
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cas-d-utilisation">
+     Cas d’utilisation
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#sequence-de-parametre">
+       Séquence de paramètre
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#combinaisons-de-parametres">
+       Combinaisons de paramètres
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#limiter-le-nombre-de-taches-paralleles">
+       Limiter le nombre de tâches parallèles
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercice-parametres-de-benchmark5d">
+     Exercice - Paramètres de Benchmark5D
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#vecteurs-de-taches">
+   Vecteurs de tâches
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercice-vecteur-de-taches">
+     Exercice - Vecteur de tâches
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#le-greedy-launcher-of-small-tasks-ou-glost">
+   Le
+   <em>
+    Greedy Launcher Of Small Tasks
+   </em>
+   , ou GLOST
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercice-liste-de-taches-benchmark5d-avec-glost">
+     Exercice - Liste de tâches Benchmark5D avec GLOST
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="lots-de-taches">
+<h1>Lots de tâches<a class="headerlink" href="#lots-de-taches" title="Permalink to this headline">¶</a></h1>
+<p>Le calcul haute-performance consiste non seulement au calcul parallèle par tâche (<em><strong>parallélisme des tâches</strong></em>),
+mais aussi au calcul de données en parallèle dans plusieurs tâches et/ou processus en simultané (<em><strong>parallélisme de données</strong></em>).
+Ce chapitre vous donnera les outils nécessaires pour gérer un grand nombre de tâches
+lorsque le projet de recherche requiert plusieurs centaines de résultats.</p>
+<div class="section" id="gnu-parallel">
+<h2>GNU Parallel<a class="headerlink" href="#gnu-parallel" title="Permalink to this headline">¶</a></h2>
+<p>La commande <code class="docutils literal notranslate"><span class="pre">parallel</span></code> de <a class="reference external" href="https://docs.computecanada.ca/wiki/GNU_Parallel/fr">GNU Parallel</a> permet d’utiliser pleinement les ressources locales d’un noeud de calcul, et ce, en gérant l’exécution d’une <strong>longue liste de tâches de <em>petite</em> taille</strong>.
+C’est un peu comme l’ordonnanceur Slurm, mais à plus petite échelle et en gérant des processus au lieu de scripts de tâche.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.gnu.org/software/parallel/parallel.html">Documentation officielle</a></p></li>
+<li><p><a class="reference external" href="https://www.gnu.org/software/parallel/parallel_tutorial.html">Tutoriel</a></p></li>
+</ul>
+<div class="section" id="pourquoi-pas-slurm">
+<h3>Pourquoi pas Slurm?<a class="headerlink" href="#pourquoi-pas-slurm" title="Permalink to this headline">¶</a></h3>
+<p>OK, mais pourquoi ne pas tout simplement soumettre <strong>des centaines de tâches à Slurm</strong>?</p>
+<ul class="simple">
+<li><p>À tout moment, Slurm <strong>limite chaque usager à 1000 tâches</strong> en tout dans <code class="docutils literal notranslate"><span class="pre">squeue</span></code> (<em>pending</em> + <em>running</em>)</p></li>
+<li><p>Certains calculs sont tellement <strong>courts (&lt; 5 minutes)</strong> que le démarrage et la fin de la tâche Slurm compteraient pour un pourcentage significatif du temps réel utilisé</p>
+<ul>
+<li><p>On veut donc réduire les pertes de temps</p></li>
+</ul>
+</li>
+<li><p>GNU Parallel nous <strong>évite d’utiliser un pipeline</strong> soumettant des centaines de scripts similaires, ce qui, dans bien des cas, facilite l’exécution de centaines de tâches de calcul semblables</p></li>
+<li><p>Enfin, si toutes vos tâches envoient des <strong>notifications par courriel</strong>, imaginez recevoir ces centaines de courriels!</p></li>
+</ul>
+<p>Les autres avantages à considérer :</p>
+<ul class="simple">
+<li><p>Par défaut, le nombre de <strong>processeurs disponibles limite</strong> le nombre de tâches de calcul exécutées en simultané</p>
+<ul>
+<li><p>Dans le cas de calculs parallèles, c’est possible de limiter davantage le nombre de processus</p></li>
+</ul>
+</li>
+<li><p>GNU Parallel peut <a class="reference external" href="https://docs.computecanada.ca/wiki/GNU_Parallel/fr#Suivi_des_commandes_ex.C3.A9cut.C3.A9es_ou_des_commandes_ayant_.C3.A9chou.C3.A9.3B_fonctionnalit.C3.A9s_de_red.C3.A9marrage">reprendre la séquence des tâches de calcul</a> en cas de fin hâtive de la tâche Slurm</p></li>
+</ul>
+</div>
+<div class="section" id="syntaxe-de-la-commande-gnu-parallel">
+<h3>Syntaxe de la commande GNU Parallel<a class="headerlink" href="#syntaxe-de-la-commande-gnu-parallel" title="Permalink to this headline">¶</a></h3>
+<p>Les éléments de base de la commande <code class="docutils literal notranslate"><span class="pre">parallel</span></code> : options, gabarit de commande, liste de valeurs. Voir :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">man</span> <span class="n">parallel</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="cas-d-utilisation">
+<h3>Cas d’utilisation<a class="headerlink" href="#cas-d-utilisation" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="sequence-de-parametre">
+<h4>Séquence de paramètre<a class="headerlink" href="#sequence-de-parametre" title="Permalink to this headline">¶</a></h4>
+<p>Le paramètre changeant est donné via une paire d’<code class="docutils literal notranslate"><span class="pre">{}</span></code> :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">parallel</span> <span class="n">echo</span> <span class="n">fichier</span><span class="p">{}</span><span class="o">.</span><span class="n">txt</span> <span class="p">:::</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span>
+<span class="n">parallel</span> <span class="o">--</span><span class="n">citation</span>  <span class="c1"># Il faut citer les développeurs</span>
+</pre></div>
+</div>
+<p>Utilisation d’une séquence générée par la commande <code class="docutils literal notranslate"><span class="pre">seq</span></code> :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>seq 1 20
+seq -w 1 20
+echo $(seq -w 1 20)
+parallel echo fichier{}.txt ::: $(seq -w 1 20)
+</pre></div>
+</div>
+</div>
+<div class="section" id="combinaisons-de-parametres">
+<h4>Combinaisons de paramètres<a class="headerlink" href="#combinaisons-de-parametres" title="Permalink to this headline">¶</a></h4>
+<p>Les paramètres changeants peuvent être donnés via une paire d’<code class="docutils literal notranslate"><span class="pre">{}</span></code>, ou plus précisément par des paire d’<code class="docutils literal notranslate"><span class="pre">{}</span></code> numérotées telles que <code class="docutils literal notranslate"><span class="pre">{1}</span></code>, <code class="docutils literal notranslate"><span class="pre">{2}</span></code>, etc. :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>parallel echo fichier{}.txt ::: $(seq -w 1 10) ::: a b
+parallel echo fichier{1}{2}.txt ::: $(seq -w 1 10) ::: a b
+</pre></div>
+</div>
+<p>Si jamais les différentes combinaisons de paramètres proviennent d’un fichier texte :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">parallel</span> <span class="n">echo</span> <span class="p">{}</span> <span class="p">:::</span> <span class="mi">3</span> <span class="mi">5</span> <span class="mi">7</span> <span class="p">:::</span> <span class="mi">4</span> <span class="mi">6</span> <span class="mi">8</span> <span class="o">&gt;</span> <span class="n">param</span><span class="o">.</span><span class="n">txt</span>
+<span class="n">cat</span> <span class="n">param</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<p>Par la suite, dans le script de tâche Slurm :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">parallel</span> <span class="o">-</span><span class="n">C</span> <span class="s1">&#39; &#39;</span> <span class="n">echo</span> <span class="s1">&#39;</span><span class="si">{1}</span><span class="s1">*</span><span class="si">{2}</span><span class="s1"> | bc &gt; prod_</span><span class="si">{1}</span><span class="s1">x</span><span class="si">{2}</span><span class="s1">&#39;</span> <span class="p">::::</span> <span class="n">param</span><span class="o">.</span><span class="n">txt</span>
+<span class="n">ls</span> <span class="n">prod_</span><span class="o">*</span>
+<span class="n">grep</span> <span class="o">-</span><span class="n">E</span> <span class="s1">&#39;[0-9]+&#39;</span> <span class="n">prod</span><span class="o">*</span>
+</pre></div>
+</div>
+<p>Si on préfère valider la liste des commandes générées avant de soumettre une tâche Slurm, on peut utiliser <code class="docutils literal notranslate"><span class="pre">parallel</span></code> pour la générer dans un fichier. Par exemple :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">parallel</span> <span class="o">-</span><span class="n">C</span> <span class="s1">&#39; &#39;</span> <span class="n">echo</span> <span class="s1">&#39;echo </span><span class="si">{1}</span><span class="s1">&quot;*&quot;</span><span class="si">{2}</span><span class="s1"> &quot;|&quot; bc &quot;&gt;&quot; prod_</span><span class="si">{1}</span><span class="s1">x</span><span class="si">{2}</span><span class="s1">&#39;</span> <span class="p">::::</span> <span class="n">param</span><span class="o">.</span><span class="n">txt</span> <span class="o">&gt;</span> <span class="n">commandes</span><span class="o">.</span><span class="n">txt</span>
+<span class="n">cat</span> <span class="n">commandes</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<p>Et dans la tâche Slurm :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">parallel</span> <span class="o">&lt;</span> <span class="n">commandes</span><span class="o">.</span><span class="n">txt</span>
+<span class="n">grep</span> <span class="o">-</span><span class="n">E</span> <span class="s1">&#39;[0-9]+&#39;</span> <span class="n">prod_</span><span class="o">*</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="limiter-le-nombre-de-taches-paralleles">
+<h4>Limiter le nombre de tâches parallèles<a class="headerlink" href="#limiter-le-nombre-de-taches-paralleles" title="Permalink to this headline">¶</a></h4>
+<p>Par exemple, sur 8 processeurs, c’est possible de limiter le nombre de tâches à deux (2) tâches parallèles de quatre (4) processeurs chacune :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>parallel --jobs 2 &#39;echo {} &amp;&amp; sleep 3&#39; ::: $(seq -w 1 8)
+</pre></div>
+</div>
+<p>Si jamais un noeud n’est pas suffisant pour répondre au besoin de centaines de tâches parallèles, GNU Parallel peut distribuer des tâches sur plusieurs noeuds</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>salloc --nodes=2 --ntasks-per-node=1 --mem-per-cpu=2000M
+  scontrol show hostname &gt; noeuds.txt
+  cat noeuds.txt
+  parallel --jobs $SLURM_NTASKS_PER_NODE --sshloginfile noeuds.txt \
+    &#39;echo -n {}: &amp;&amp; hostname&#39; ::: $(seq 1 $SLURM_NTASKS)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="exercice-parametres-de-benchmark5d">
+<h3>Exercice - Paramètres de Benchmark5D<a class="headerlink" href="#exercice-parametres-de-benchmark5d" title="Permalink to this headline">¶</a></h3>
+<p>Dans cet exercice, il est question d’une recherche de paramètres optimaux pour un code “quelconque”.
+Ce code utilise <span class="math notranslate nohighlight">\(O(n^3)\)</span> valeurs numériques pour <span class="math notranslate nohighlight">\(O(n^5)\)</span> opérations à double précision.
+En vous épargnant les détails du programme, les différents paramètres à tester permettent d’analyser son comportement à l’exécution.
+En bref, de petites valeurs de <code class="docutils literal notranslate"><span class="pre">p*</span></code> et/ou <code class="docutils literal notranslate"><span class="pre">b*</span></code> forcent le programme à calculer le plus localement possible dans la mémoire-vive, ce qui devrait donner une meilleure performance.</p>
+<p>Pour installer le programme Benchmark5D :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bash</span> <span class="n">scripts</span><span class="o">/</span><span class="n">installer</span><span class="o">/</span><span class="n">b5D</span><span class="o">.</span><span class="n">sh</span>
+</pre></div>
+</div>
+<p>Pour lancer une tâche de 4 processeurs utilisant GNU Parallel pour tester 3*4 combinaisons de paramètres :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="n">scripts</span><span class="o">/</span><span class="n">b5D</span><span class="o">-</span><span class="n">parallel</span><span class="o">.</span><span class="n">sh</span>
+<span class="n">sbatch</span> <span class="n">scripts</span><span class="o">/</span><span class="n">b5D</span><span class="o">-</span><span class="n">parallel</span><span class="o">.</span><span class="n">sh</span>
+</pre></div>
+</div>
+<p>Pour le suivi de la tâche :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>squeue -u $USER
+</pre></div>
+</div>
+<p>Les résultats seront dans un fichier <code class="docutils literal notranslate"><span class="pre">slurm-&lt;jobid&gt;.out</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="n">slurm</span><span class="o">-&lt;</span><span class="n">jobid</span><span class="o">&gt;.</span><span class="n">out</span>
+</pre></div>
+</div>
+<p>À la fin de la tâche, on peut analyser les ressources utilisées :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">seff</span> <span class="o">&lt;</span><span class="n">jobid</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="vecteurs-de-taches">
+<h2>Vecteurs de tâches<a class="headerlink" href="#vecteurs-de-taches" title="Permalink to this headline">¶</a></h2>
+<p>Alors que GNU Parallel s’utilise bien avec des calculs séquentiels et parallèles de petite taille (&lt;=16 processeurs),
+GNU Parallel <strong>n’est pas vraiment l’outil approprié</strong> pour un lot de longs <strong>calculs parallèles de plus grande taille</strong> (&gt;16 processeurs par calcul).
+Dans le cas où un même programme parallèle doit être exécuté avec différentes combinaisons de paramètres,
+il y a moyen de soumettre un seul <a class="reference external" href="https://docs.computecanada.ca/wiki/Job_arrays/fr">vecteur de tâches</a> et de coder le script de tâche de telle sorte que les paramètres seront déterminés en <strong>fonction d’un indice unique</strong> du vecteur de tâches.</p>
+<p>Pour soumettre un vecteur de tâches à l’ordonnanceur Slurm, à la ligne de commande <code class="docutils literal notranslate"><span class="pre">sbatch</span></code> ou dans l’entête <code class="docutils literal notranslate"><span class="pre">#SBATCH</span></code> du script de tâche, on <strong>doit ajouter l’option</strong> <code class="docutils literal notranslate"><span class="pre">--array=&lt;indices&gt;</span></code>.
+Voir <a class="reference external" href="https://docs.computecanada.ca/wiki/Job_arrays/fr">ici quelques exemples</a>.</p>
+<p>L’identifiant d’une tâche Slurm dans un vecteur de tâches contient :</p>
+<ul class="simple">
+<li><p>L’identifiant du vecteur de tâches</p></li>
+<li><p>Caractère de soulignement (<code class="docutils literal notranslate"><span class="pre">_</span></code>)</p></li>
+<li><p>L’indice unique associé à la tâche</p></li>
+</ul>
+<p><strong>Par exemple :</strong> <code class="docutils literal notranslate"><span class="pre">25249551_15</span></code></p>
+<p>Dans le script de tâche, la <strong>variable d’environnement</strong> <code class="docutils literal notranslate"><span class="pre">$SLURM_ARRAY_TASK_ID</span></code> peut être utilisée pour retrouver la valeur actuelle de l’indice unique associé à la tâche en cours d’exécution, soit <strong>un entier parmis</strong> les <code class="docutils literal notranslate"><span class="pre">&lt;indices&gt;</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">SLURM_ARRAY_TASK_ID</span><span class="o">=</span><span class="mi">42</span>  <span class="c1"># Émule la variable créée par Slurm</span>
+</pre></div>
+</div>
+<p>La variable <code class="docutils literal notranslate"><span class="pre">$SLURM_ARRAY_TASK_ID</span></code> peut être utilisée de différentes façons :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>echo nom_fichier.$SLURM_ARRAY_TASK_ID
+echo nom_dossier-$SLURM_ARRAY_TASK_ID
+
+PARAM=$SLURM_ARRAY_TASK_ID
+echo $PARAM
+
+PARAM_R=$((PARAM / 12))  # Division entière
+PARAM_C=$((PARAM % 12))  # Modulo (reste de division)
+echo $PARAM_R $PARAM_C
+
+echo $(sed -n &quot;${PARAM_C}p&quot; param.txt)
+</pre></div>
+</div>
+<div class="section" id="exercice-vecteur-de-taches">
+<h3>Exercice - Vecteur de tâches<a class="headerlink" href="#exercice-vecteur-de-taches" title="Permalink to this headline">¶</a></h3>
+<p>Pour lancer le vecteur de tâches :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cat scripts/sleep-array.sh
+sbatch scripts/sleep-array.sh
+
+squeue -u $USER
+</pre></div>
+</div>
+<p>Après l’exécution des trois tâches, on peut inspecter les résultats :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="n">slurm</span><span class="o">-*</span><span class="n">_</span><span class="o">*.</span><span class="n">out</span>
+<span class="n">cat</span> <span class="n">slurm</span><span class="o">-*</span><span class="n">_</span><span class="o">*.</span><span class="n">out</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="le-greedy-launcher-of-small-tasks-ou-glost">
+<h2>Le <em>Greedy Launcher Of Small Tasks</em>, ou GLOST<a class="headerlink" href="#le-greedy-launcher-of-small-tasks-ou-glost" title="Permalink to this headline">¶</a></h2>
+<p>Le <em>Greedy Launcher Of Small Tasks</em>, ou <a class="reference external" href="https://docs.computecanada.ca/wiki/GLOST/fr">GLOST</a>, fonctionne un peu <strong>comme GNU Parallel, mais avec quelques différences</strong> :</p>
+<ul class="simple">
+<li><p>Fonctionne qu’avec des <strong>tâches séquentielles (un processeur par tâche)</strong></p></li>
+<li><p>L’ordonnancement des processus se fait via <strong><a class="reference external" href="https://docs.computecanada.ca/wiki/MPI/fr">MPI</a></strong> avec une architecture de type <strong>gestionnaire-travailleur</strong></p>
+<ul>
+<li><p>Le gestionnaire envoie à chaque travailleur une tâche séquentielle à exécuter</p></li>
+<li><p>Le travailleur signale au gestionnaire quand le travail est complété</p></li>
+<li><p>Le gestionnaire informe les travailleurs lorsqu’il n’y a plus de tâche (pour quitter)</p></li>
+</ul>
+</li>
+<li><p>On doit définir <strong>une ligne de commande par tâche</strong> :</p>
+<ul>
+<li><p>Toutes les lignes de commande sont <strong><a class="reference external" href="https://docs.computecanada.ca/wiki/GLOST/fr#Liste_de_t.C3.A2ches_situ.C3.A9es_dans_le_m.C3.AAme_r.C3.A9pertoire">listées dans un même fichier</a></strong></p></li>
+<li><p>Les sous-commandes peuvent être séparées par l’opérateur <code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code>. Par exemple :</p></li>
+</ul>
+</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="o">-</span><span class="n">n</span> <span class="s1">&#39;Bonjour &#39;</span> <span class="o">&amp;&amp;</span> <span class="n">echo</span> <span class="n">le</span> <span class="n">monde</span>
+</pre></div>
+</div>
+<div class="section" id="exercice-liste-de-taches-benchmark5d-avec-glost">
+<h3>Exercice - Liste de tâches Benchmark5D avec GLOST<a class="headerlink" href="#exercice-liste-de-taches-benchmark5d-avec-glost" title="Permalink to this headline">¶</a></h3>
+<p>Pour générer la liste de tâches dans le fichier <code class="docutils literal notranslate"><span class="pre">$SCRATCH/cas-b5D.txt</span></code> :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cat scripts/b5D-gen-cas.sh
+bash scripts/b5D-gen-cas.sh
+cat $SCRATCH/cas-b5D.txt
+</pre></div>
+</div>
+<p>Pour lancer une tâche de 4 processeurs utilisant GLOST pour tester 3*4 combinaisons de paramètres :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cat scripts/b5D-glost.sh
+sbatch scripts/b5D-glost.sh
+squeue -u $USER
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Les résultats seront dans un fichier <code class="docutils literal notranslate"><span class="pre">slurm-&lt;jobid&gt;.out</span></code></p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="n">slurm</span><span class="o">-&lt;</span><span class="n">jobid</span><span class="o">&gt;.</span><span class="n">out</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>À la fin de la tâche, on peut analyser les ressources utilisées :</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">seff</span> <span class="o">&lt;</span><span class="n">jobid</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="analyse-taches.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Analyse des tâches</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="stockage.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Les espaces de stockage</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Équipe Calcul Québec<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

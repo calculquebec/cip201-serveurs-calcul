@@ -1,0 +1,1171 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bien choisir les ressources &#8212; CIP201 - Maîtriser l’utilisation des serveurs de calcul</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="_static/logo.png"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Analyse des tâches" href="analyse-taches.html" />
+    <link rel="prev" title="À propos" href="a_propos.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">CIP201 - Maîtriser l’utilisation des serveurs de calcul</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="a_propos.html">
+   À propos
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Bien choisir les ressources
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="analyse-taches.html">
+   Analyse des tâches
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lots-taches.html">
+   Lots de tâches
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="stockage.html">
+   Les espaces de stockage
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/ressources.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/calculquebec/utilisation-serveurs-calcul"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ressources-humaines-rappel">
+   Ressources humaines (rappel)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#soutien-technique">
+     Soutien technique
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ressources-infonuagiques-court-survol">
+   Ressources infonuagiques (court survol)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#calcul-haute-performance">
+   Calcul haute performance
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#objectif-construction-d-un-script-de-tache-slurm-rappel">
+     Objectif : construction d’un script de tâche Slurm (rappel)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#gestionnaire-des-taches-locales">
+     Gestionnaire des tâches locales
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#sous-windows">
+       Sous Windows
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#sous-mac-os">
+       Sous Mac OS
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#sous-linux">
+       Sous Linux
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#verifier-l-utilisation-du-gpu-local">
+     Vérifier l’utilisation du GPU local
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#comparer-la-vitesse-cpu-vs-gpu">
+       Comparer la vitesse CPU vs GPU
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exercice-calcul-d-acceleration-et-d-efficacite">
+       Exercice - Calcul d’accélération et d’efficacité
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#prevoir-les-ressources-de-calcul">
+     Prévoir les ressources de calcul
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#efficacite-cible-du-calcul-parallele">
+       Efficacité cible du calcul parallèle
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#taille-des-donnees-et-nombre-de-fichiers-a-traiter">
+       Taille des données et nombre de fichiers à traiter
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#stockage-en-memoire-selon-les-types-de-base">
+       Stockage en mémoire selon les types de base
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#la-complexite-des-algorithmes">
+       La complexité des algorithmes
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exercice-complexite-de-l-algorithme">
+       Exercice - Complexité de l’algorithme
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#principales-differences-entre-les-grappes-de-calcul">
+   Principales différences entre les grappes de calcul
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="bien-choisir-les-ressources">
+<h1>Bien choisir les ressources<a class="headerlink" href="#bien-choisir-les-ressources" title="Permalink to this headline">¶</a></h1>
+<p>Il y a plusieurs ressources disponibles à la NOIRN :</p>
+<ul class="simple">
+<li><p>Humaines</p>
+<ul>
+<li><p>L’Alliance de Recherche numérique du Canada, Calcul Canada, Calcul Québec, analyste local</p></li>
+</ul>
+</li>
+<li><p>Infonuagique</p>
+<ul>
+<li><p>Arbutus, Béluga, Cedar, Graham</p></li>
+</ul>
+</li>
+<li><p>Calcul haute performance</p>
+<ul>
+<li><p>Béluga, Cedar, Graham, Niagara</p></li>
+</ul>
+</li>
+<li><p>Stockage</p>
+<ul>
+<li><p>Temporaire, projet, <em>nearline</em>, dépôt de données de recherche</p></li>
+</ul>
+</li>
+</ul>
+<p>Le principal but de ce chapitre est de vous permettre d’analyser vos besoins en <strong>ressources de calcul haut-performance</strong>, et ce, dans le but de choisir les ressources nécessaires pour votre projet. Les différents espaces de stockage seront vus au <a class="reference internal" href="stockage.html"><span class="doc std std-doc">chapitre suivant</span></a>.</p>
+<div class="section" id="ressources-humaines-rappel">
+<h2>Ressources humaines (rappel)<a class="headerlink" href="#ressources-humaines-rappel" title="Permalink to this headline">¶</a></h2>
+<p>Voici un rappel de qui fait quoi et des ressources humaines auxquelles vous avez access :</p>
+<ul class="simple">
+<li><p><strong><a class="reference external" href="https://twitter.com/Alliance_Can">L’Alliance de Recherche numérique du Canada</a></strong> :
+un organisme national à but non lucratif qui a pour vision d’harmoniser et d’améliorer l’accès aux outils et aux services numériques à destination des chercheurs canadiens.
+En somme, c’est le regroupement de <a class="reference external" href="https://www.canarie.ca/fr/">Canarie</a> (réseau),
+<a class="reference external" href="https://www.computecanada.ca/about/?lang=fr">Calcul Canada</a> (calcul) et
+<a class="reference external" href="https://portagenetwork.ca/fr/">Portage</a> (gestion des données).</p></li>
+<li><p><strong><a class="reference external" href="https://www.computecanada.ca/about/?lang=fr">Calcul Canada</a></strong> : de concert avec les organisations régionales que sont <a class="reference external" href="https://www.ace-net.ca/who-we-are/acenet/">ACENET</a>, <a class="reference external" href="https://www.calculquebec.ca/a-propos/qui-sommes-nous/">Calcul Québec</a>, <a class="reference external" href="https://www.computeontario.ca/">Compute Ontario</a> et <a class="reference external" href="https://www.westgrid.ca/about_westgrid/what_we_do">WestGrid</a>, Calcul Canada favorise une accélération de l’innovation scientifique en déployant des systèmes de calcul informatique de pointe (CIP), des installations de stockage et des solutions logicielles.</p></li>
+<li><p><strong><a class="reference external" href="https://www.calculquebec.ca/a-propos/qui-sommes-nous/">Calcul Québec</a></strong> : la mission de Calcul Québec est de procurer au milieu universitaire ainsi qu’à la communauté de la recherche des environnements informatiques de pointe ainsi que des expertises, afin de contribuer à l’avancement des connaissances dans toutes les branches du savoir et à la formation de personnel hautement qualifié capable d’exploiter efficacement les systèmes informatiques modernes.</p></li>
+<li><p><strong><a class="reference external" href="https://www.calculquebec.ca/a-propos/personnel/">Employés locaux</a></strong> : analystes (soutien technique, documentation, formation), administrateurs (soutien technique avec accès privilégié).</p></li>
+</ul>
+<div class="section" id="soutien-technique">
+<h3>Soutien technique<a class="headerlink" href="#soutien-technique" title="Permalink to this headline">¶</a></h3>
+<p>Pour l’instant, <a class="reference external" href="https://docs.computecanada.ca/wiki/Technical_support/fr">le soutien technique</a> est offert à l’échelle nationale via Calcul Canada, mais un employé local ou un expert est responsable de répondre à la demande :</p>
+<ul class="simple">
+<li><p><a class="reference external" href="mailto:globus&#37;&#52;&#48;calculcanada&#46;ca">globus<span>&#64;</span>calculcanada<span>&#46;</span>ca</a> – pour des questions sur les services de transfert de fichiers Globus</p></li>
+<li><p><a class="reference external" href="mailto:cloud&#37;&#52;&#48;calculcanada&#46;ca">cloud<span>&#64;</span>calculcanada<span>&#46;</span>ca</a> – pour des questions sur comment utiliser nos ressources infonuagiques</p></li>
+<li><p><a class="reference external" href="mailto:accounts&#37;&#52;&#48;calculcanada&#46;ca">accounts<span>&#64;</span>calculcanada<span>&#46;</span>ca</a> – pour des questions sur les comptes de Calcul Canada</p></li>
+<li><p><a class="reference external" href="mailto:renewals&#37;&#52;&#48;calculcanada&#46;ca">renewals<span>&#64;</span>calculcanada<span>&#46;</span>ca</a> – pour des questions sur le renouvellement des comptes de Calcul Canada</p></li>
+<li><p><strong><a class="reference external" href="mailto:support&#37;&#52;&#48;calculcanada&#46;ca">support<span>&#64;</span>calculcanada<span>&#46;</span>ca</a></strong> – pour toute autre question</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="ressources-infonuagiques-court-survol">
+<h2>Ressources infonuagiques (court survol)<a class="headerlink" href="#ressources-infonuagiques-court-survol" title="Permalink to this headline">¶</a></h2>
+<p>Ces ressources sont idéales pour des <strong>portails Web</strong> et pour des applications qui ne peuvent techniquement pas fonctionner dans le cadre des ressources de calculs haute performance.</p>
+<p>Alors que l’infonuagique consiste à créer des <strong>serveurs virtuels</strong>, il est donc question de :</p>
+<ul class="simple">
+<li><p>Processeurs virtuels (processeurs physiques potentiellement partagés)</p></li>
+<li><p>Mémoire allouée</p></li>
+<li><p>Volumes de stockage</p></li>
+<li><p>Adresses IP publiques</p></li>
+<li><p>Administration par l’équipe du groupe de recherche</p></li>
+</ul>
+<p>Ces différentes ressources informatiques sont offertes à <a class="reference external" href="https://docs.computecanada.ca/wiki/Cloud_resources/fr">différents sites à Calcul Canada</a> :</p>
+<ul class="simple">
+<li><p>Arbutus (Colombie-Britannique)</p></li>
+<li><p>Béluga (Québec)</p></li>
+<li><p>Cedar (Colombie-Britannique)</p></li>
+<li><p>Graham (Ontario)</p></li>
+</ul>
+<p>La documentation concernant les services infonuagiques débute à la page : <a class="reference external" href="https://docs.computecanada.ca/wiki/Cloud/fr">https://docs.computecanada.ca/wiki/Cloud/fr</a></p>
+</div>
+<div class="section" id="calcul-haute-performance">
+<h2>Calcul haute performance<a class="headerlink" href="#calcul-haute-performance" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Lorsqu’il est question de lancer une <strong>grande quantité de calculs</strong> (séquentiels ou parallèles) ou de <strong>traitements de données</strong>, l’utilisation d’une grappe de calcul haute performance devient nécessaire.</p></li>
+<li><p>Puisque les <strong>ressources sont partagées</strong> et en grande demande, chaque tâche doit être soumise à un ordonnanceur de tâches.</p></li>
+<li><p>Il devient donc nécessaire <strong>d’estimer à l’avance les ressources</strong> qui seront réservées lors de l’exécution d’un calcul.</p></li>
+</ul>
+<p>Dans cette section, on cherche à évaluer localement le comportement d’une tâche de calcul afin d’estimer les ressources à réserver sur la grappe de calcul.</p>
+<div class="section" id="objectif-construction-d-un-script-de-tache-slurm-rappel">
+<h3>Objectif : construction d’un script de tâche Slurm (rappel)<a class="headerlink" href="#objectif-construction-d-un-script-de-tache-slurm-rappel" title="Permalink to this headline">¶</a></h3>
+<p>Un script de tâche pour <a class="reference external" href="https://slurm.schedmd.com/documentation.html">l’ordonnanceur Slurm</a> est typiquement un script Bash dans lequel on retrouve :</p>
+<ul class="simple">
+<li><p>Le <a class="reference external" href="https://fr.wikipedia.org/wiki/Shebang">shebang</a> en toute première ligne. Par exemple : <code class="docutils literal notranslate"><span class="pre">#!/bin/bash</span></code></p></li>
+<li><p>Les options <code class="docutils literal notranslate"><span class="pre">#SBATCH</span></code> en entête pour les besoins de la tâche. Les options en entête seront lues par la commande de soumission de tâche <a class="reference external" href="https://slurm.schedmd.com/sbatch.html"><code class="docutils literal notranslate"><span class="pre">sbatch</span></code></a></p></li>
+<li><p><a class="reference external" href="https://docs.computecanada.ca/wiki/Utiliser_des_modules">Chargement des modules</a> requis</p></li>
+<li><p>Les commandes Bash qui seront exécutées automatiquement sur des processeurs réservés pour la tâche</p></li>
+</ul>
+<p>Par exemple : <span class="xref myst"><code class="docutils literal notranslate"><span class="pre">scripts/mpi_allo.sh</span></code></span></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1">#SBATCH --ntasks=10</span>
+<span class="c1">#SBATCH --mem-per-cpu=1000M</span>
+<span class="c1">#SBATCH --time=0-00:10</span>
+
+<span class="n">mpirun</span> <span class="n">printenv</span> <span class="n">HOSTNAME</span> <span class="n">OMPI_COMM_WORLD_RANK</span> <span class="n">OMPI_COMM_WORLD_SIZE</span>
+</pre></div>
+</div>
+<p>Notre documentation à cet effet débute à la page : <a class="reference external" href="https://docs.computecanada.ca/wiki/Running_jobs/fr">Exécuter des tâches</a></p>
+</div>
+<div class="section" id="gestionnaire-des-taches-locales">
+<h3>Gestionnaire des tâches locales<a class="headerlink" href="#gestionnaire-des-taches-locales" title="Permalink to this headline">¶</a></h3>
+<p>Lorsqu’une tâche de calcul est en cours sur votre ordinateur, vous pouvez surveiller différentes métriques :</p>
+<ul class="simple">
+<li><p>Utilisation CPU</p></li>
+<li><p>Mémoire résidente (réellement utilisée)</p></li>
+<li><p>Mémoire virtuelle (allouée)</p></li>
+<li><p>Les accès au stockage</p></li>
+</ul>
+<div class="section" id="sous-windows">
+<h4>Sous Windows<a class="headerlink" href="#sous-windows" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p><a class="reference external" href="https://fr.wikipedia.org/wiki/Gestionnaire_des_t%C3%A2ches_Windows">Gestionnaire des tâches Windows</a></p></li>
+<li><p>Pour le faire afficher :</p>
+<ul>
+<li><p>Raccourcis clavier Ctrl+Alt+Suppr ou cliquer sur la barre des tâches avec le bouton droit</p></li>
+<li><p>Cliquer sur l’option <em>Gestionnaire des tâches</em></p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="Aperçu du gestionnaire des tâches Windows" src="_images/win-task-manager.png" /></p>
+</div>
+<div class="section" id="sous-mac-os">
+<h4>Sous Mac OS<a class="headerlink" href="#sous-mac-os" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p><a class="reference external" href="https://support.apple.com/fr-ca/guide/activity-monitor/actmntr1001/mac">Moniteur d’activité</a></p></li>
+<li><p>Pour le faire afficher :</p>
+<ul>
+<li><p>Démarrer l’application à partir des <em>Applications et Utilitaires</em> de Mac OS</p></li>
+<li><p>Sinon, utiliser le raccourcis clavier Commande+Espace et taper les premières lettres de “Moniteur d’activité” pour pouvoir sélectionner cette application</p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="Aperçu du moniteur d'activité Mac OS" src="https://help.apple.com/assets/5FDCF1894EB74318147EC0CF/5FDCF18A4EB74318147EC0D6/fr_CA/ad6337d66061aa27122e75521960fc5a.png" /></p>
+</div>
+<div class="section" id="sous-linux">
+<h4>Sous Linux<a class="headerlink" href="#sous-linux" title="Permalink to this headline">¶</a></h4>
+<p>Dans un terminal Unix, on peut utiliser :</p>
+<ul class="simple">
+<li><p>La <a class="reference external" href="https://man7.org/linux/man-pages/man1/top.1.html">commande <code class="docutils literal notranslate"><span class="pre">top</span></code></a> (<code class="docutils literal notranslate"><span class="pre">q</span></code> pour quitter)</p></li>
+</ul>
+<p><img alt="Capture de top" src="_images/linux-top.png" /></p>
+<ul class="simple">
+<li><p>La <a class="reference external" href="https://man7.org/linux/man-pages/man1/htop.1.html">commande <code class="docutils literal notranslate"><span class="pre">htop</span></code></a> (<code class="docutils literal notranslate"><span class="pre">q</span></code> pour quitter)</p></li>
+</ul>
+<p><img alt="Capture de htop" src="_images/linux-htop.png" /></p>
+</div>
+</div>
+<div class="section" id="verifier-l-utilisation-du-gpu-local">
+<h3>Vérifier l’utilisation du GPU local<a class="headerlink" href="#verifier-l-utilisation-du-gpu-local" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bash</span> <span class="n">scripts</span><span class="o">/</span><span class="n">installer</span><span class="o">/</span><span class="n">cuda</span><span class="o">-</span><span class="n">samples</span><span class="o">.</span><span class="n">sh</span>
+<span class="n">salloc</span> <span class="o">--</span><span class="n">gres</span><span class="o">=</span><span class="n">gpu</span><span class="p">:</span><span class="mi">1</span> <span class="o">--</span><span class="n">mem</span><span class="o">=</span><span class="mi">2000</span><span class="n">M</span> <span class="o">--</span><span class="n">time</span><span class="o">=</span><span class="mi">0</span><span class="o">-</span><span class="mi">00</span><span class="p">:</span><span class="mi">05</span>
+<span class="n">bash</span> <span class="n">scripts</span><span class="o">/</span><span class="n">cuda</span><span class="o">-</span><span class="n">matmul</span><span class="o">.</span><span class="n">sh</span> <span class="o">&amp;&gt;</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">null</span> <span class="o">&amp;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Pour Windows et Mac OS, il existe des outils propriétaires permettant de visualiser en temps réel l’utilisation du GPU. Veuillez vous référer aux sites Web du manufacturier de votre GPU pour les détails</p></li>
+<li><p>Sous Linux, il y a d’abord la <a class="reference external" href="https://developer.nvidia.com/nvidia-system-management-interface">commande <code class="docutils literal notranslate"><span class="pre">nvidia-smi</span></code></a></p></li>
+</ul>
+<p><img alt="Capture nvidia-smi" src="_images/nvidia-smi.png" /></p>
+<ul class="simple">
+<li><p>Il existe aussi un projet <a class="reference external" href="https://github.com/Syllo/nvtop"><code class="docutils literal notranslate"><span class="pre">nvtop</span></code></a> permettant de visualiser l’utilisation d’un ou plusieurs GPUs dans un terminal</p></li>
+</ul>
+<p><img alt="Capture nvtop" src="https://raw.githubusercontent.com/Syllo/nvtop/master/screenshot/NVTOP_ex1.png" /></p>
+<div class="section" id="comparer-la-vitesse-cpu-vs-gpu">
+<h4>Comparer la vitesse CPU vs GPU<a class="headerlink" href="#comparer-la-vitesse-cpu-vs-gpu" title="Permalink to this headline">¶</a></h4>
+<p>Si votre application ne fait pas bon usage d’un GPU ou n’est pas du tout conçue pour fonctionner avec un accélérateur, il n’y a aucun avantage à soumettre une tâche en demandant un ou plusieurs GPUs.</p>
+<ul class="simple">
+<li><p>Avant d’utiliser massivement les GPUs d’une grappe de calcul, il faut tout d’abord que l’application puisse démontrer une “bonne performance” en utilisant plusieurs processeurs en parallèle.</p></li>
+<li><p>La métrique à noter et à comparer est le <strong>temps écoulé</strong>, et non le temps CPU.</p></li>
+<li><p><strong>Accélération</strong> = (temps avec un processeur) / (temps avec plusieurs processeurs)</p></li>
+<li><p><strong>Efficacité</strong> = (Accélération) / (nombre de processeurs)</p></li>
+<li><p>Le coût d’un noeud GPU étant de quatre à cinq fois supérieur à celui d’un noeud régulier, l’utilisation d’un seul GPU doit permettre une accélération d’au moins quatre fois (4x) la vitesse de huit (8) à dix (10) processeurs.</p></li>
+<li><p><strong>Accélération</strong> = (temps avec 8 à 10 processeurs) / (temps avec un GPU)</p></li>
+</ul>
+</div>
+<div class="section" id="exercice-calcul-d-acceleration-et-d-efficacite">
+<h4>Exercice - Calcul d’accélération et d’efficacité<a class="headerlink" href="#exercice-calcul-d-acceleration-et-d-efficacite" title="Permalink to this headline">¶</a></h4>
+<p>Soumission d’une tâche séquentielle et d’une tâche parallèle :</p>
+<ul class="simple">
+<li><p><strong>Si ce n’est pas déjà fait</strong>, télécharger et compiler le programme N-Body en exécutant :</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bash</span> <span class="n">scripts</span><span class="o">/</span><span class="n">installer</span><span class="o">/</span><span class="n">nbody</span><span class="o">.</span><span class="n">sh</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Explorer le script de tâche <span class="xref myst"><code class="docutils literal notranslate"><span class="pre">scripts/nbody-openmp.sh</span></code></span></p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="n">scripts</span><span class="o">/</span><span class="n">nbody</span><span class="o">-</span><span class="n">openmp</span><span class="o">.</span><span class="n">sh</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Soumettre ce script à l’ordonnanceur en demandant un (1) processeur par tâche :</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sbatch</span> <span class="o">--</span><span class="n">cpus</span><span class="o">-</span><span class="n">per</span><span class="o">-</span><span class="n">task</span><span class="o">=</span><span class="mi">1</span> <span class="n">scripts</span><span class="o">/</span><span class="n">nbody</span><span class="o">-</span><span class="n">openmp</span><span class="o">.</span><span class="n">sh</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Soumettre à nouveau ce script à l’ordonnanceur en demandant quatre (4) processeurs par tâche :</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sbatch</span> <span class="o">--</span><span class="n">cpus</span><span class="o">-</span><span class="n">per</span><span class="o">-</span><span class="n">task</span><span class="o">=</span><span class="mi">4</span> <span class="n">scripts</span><span class="o">/</span><span class="n">nbody</span><span class="o">-</span><span class="n">openmp</span><span class="o">.</span><span class="n">sh</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Attendre que les deux tâches se terminent (après les états <code class="docutils literal notranslate"><span class="pre">PD</span></code> et <code class="docutils literal notranslate"><span class="pre">R</span></code>) :</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>squeue -u $USER  # Environ aux 30 secondes
+</pre></div>
+</div>
+<p>Analyse des résultats :</p>
+<ul class="simple">
+<li><p>Les résultats seront dans les fichiers <code class="docutils literal notranslate"><span class="pre">slurm-JOBID.out</span></code></p>
+<ul>
+<li><p>Pour une exécution valide, tous les fichiers <code class="docutils literal notranslate"><span class="pre">*.mol</span></code> doivent être “<code class="docutils literal notranslate"><span class="pre">OK</span></code>”</p></li>
+</ul>
+</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">grep</span> <span class="o">.</span><span class="n">mol</span> <span class="n">slurm</span><span class="o">-*.</span><span class="n">out</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Le temps écoulé est donné à la dernière ligne des fichiers <code class="docutils literal notranslate"><span class="pre">slurm-JOBID.out</span></code></p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tail</span> <span class="o">-</span><span class="n">n</span> <span class="mi">1</span> <span class="n">slurm</span><span class="o">-*.</span><span class="n">out</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Selon les résultats obtenus ci-dessus, une analyse d’accélération et d’efficacité peut être faite à l’aide du script <span class="xref myst"><code class="docutils literal notranslate"><span class="pre">scripts/calc-acc-eff.sh</span></code></span></p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="n">scripts</span><span class="o">/</span><span class="n">calc</span><span class="o">-</span><span class="n">acc</span><span class="o">-</span><span class="n">eff</span><span class="o">.</span><span class="n">sh</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Exemple d’utilisation : avec 61.8 secondes pour 1 processeur et 16.8 secondes pour 4 processeurs :</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bash</span> <span class="n">scripts</span><span class="o">/</span><span class="n">calc</span><span class="o">-</span><span class="n">acc</span><span class="o">-</span><span class="n">eff</span><span class="o">.</span><span class="n">sh</span> <span class="mi">1</span><span class="p">:</span><span class="mf">61.8</span> <span class="mi">4</span><span class="p">:</span><span class="mf">16.8</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Une efficacité parfaite serait de 1.0 (ou 100%) :</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Metrique</span><span class="p">,</span><span class="n">Valeur</span>
+<span class="n">acc_lineaire</span><span class="p">,</span><span class="mf">4.00000000000000000000</span>
+<span class="n">acceleration</span><span class="p">,</span><span class="mf">3.67857142857142857142</span>
+<span class="n">efficacite</span><span class="p">,</span><span class="mf">.91964285714285714285</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="prevoir-les-ressources-de-calcul">
+<h3>Prévoir les ressources de calcul<a class="headerlink" href="#prevoir-les-ressources-de-calcul" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="efficacite-cible-du-calcul-parallele">
+<h4>Efficacité cible du calcul parallèle<a class="headerlink" href="#efficacite-cible-du-calcul-parallele" title="Permalink to this headline">¶</a></h4>
+<p>Une efficacité de 80%, voire 90%, devrait être un seuil minimal pour les tâches parallèles. Il reste donc à <strong>déterminer le nombre maximal de processeurs</strong> pour notre application.</p>
+<p>Nous allons utiliser la <a class="reference external" href="https://fr.wikipedia.org/wiki/Loi_d%27Amdahl">loi d’Amdahl</a>. Voici quelques définitions :</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(T_s\)</span>: temps requis pour une exécution avec un seul processeur (donc 100% séquentiel)</p></li>
+<li><p><span class="math notranslate nohighlight">\(P\)</span> : fraction de <span class="math notranslate nohighlight">\(T_s\)</span> correspondant à des opérations <strong>parallèles</strong>, donc <strong>divisible</strong> par <span class="math notranslate nohighlight">\(n\)</span> processeurs.</p></li>
+<li><p><span class="math notranslate nohighlight">\(S\)</span> : fraction de <span class="math notranslate nohighlight">\(T_s\)</span> correspondant à des opérations <strong>séquentielles</strong>, donc <strong>non-divisible</strong> par <span class="math notranslate nohighlight">\(n\)</span> processeurs.</p></li>
+<li><p>Exemples d’opérations séquentielles : lecture-écriture d’un fichier, communications, synchronisation, etc.</p></li>
+<li><p>Dans ce modèle, <span class="math notranslate nohighlight">\(P + S = 1\)</span>, donc <span class="math notranslate nohighlight">\(S = 1 - P\)</span></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[T_p(n) = T_s * \left(S + \frac{P}{n}\right) = T_s * \left(1 - P + \frac{P}{n}\right)\]</div>
+<ul class="simple">
+<li><p>De là, on peut redéfinir l’accélération <span class="math notranslate nohighlight">\(A(n)\)</span> selon <span class="math notranslate nohighlight">\(n\)</span> processeurs et isoler <span class="math notranslate nohighlight">\(P\)</span> pour éventuellement le calculer :</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[A(n) = \frac{T_p(1)}{T_p(n)} = \frac{T_s * \left(1 - P + \frac{P}{1}\right)}{T_s * \left(1 - P + \frac{P}{n}\right)} = \frac{1 - P + P}{1 - P + \frac{P}{n}} = \frac{1}{1 - P + \frac{P}{n}}\]</div>
+<div class="math notranslate nohighlight">
+\[\frac{1}{A(n)} = 1 - P + \frac{P}{n} = 1 - P * \left(1 - \frac{1}{n}\right) \implies P * \left(1 - \frac{1}{n}\right) = 1 - \frac{1}{A(n)}\]</div>
+<div class="math notranslate nohighlight">
+\[P = \frac{1 - \frac{1}{A(n)}}{1 - \frac{1}{n}}\]</div>
+<ul class="simple">
+<li><p>Pour finalement imposer une efficacité <span class="math notranslate nohighlight">\(E(n)\)</span> minimale <span class="math notranslate nohighlight">\(e\)</span> afin de calculer le <span class="math notranslate nohighlight">\(n\)</span> maximal :</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[E(n) = \frac{A(n)}{n} \geq e \implies A(n) \geq e * n \implies \frac{1}{1 - P + \frac{P}{n}} \geq e * n\]</div>
+<div class="math notranslate nohighlight">
+\[1 \geq e * n * \left(1 - P + \frac{P}{n} \right) = e * (1 - P) * n + e * P\]</div>
+<div class="math notranslate nohighlight">
+\[1 - e * P \geq (e - e * P) * n \implies \frac{1 - e * P}{e - e * P} \geq n\]</div>
+<div class="math notranslate nohighlight">
+\[n \leq \frac{\frac{1}{e} - P}{1 - P}\]</div>
+<ul class="simple">
+<li><p>De là, c’est possible de calculer <span class="math notranslate nohighlight">\(n\)</span> lorsque <span class="math notranslate nohighlight">\(e = 0.8\)</span>, par exemple.</p></li>
+</ul>
+<p><strong>Exercice - Taille maximale d’une tâche parallèle</strong></p>
+<ul class="simple">
+<li><p>Explorer le script <span class="xref myst"><code class="docutils literal notranslate"><span class="pre">scripts/calc-n-max.sh</span></code></span></p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="n">scripts</span><span class="o">/</span><span class="n">calc</span><span class="o">-</span><span class="n">n</span><span class="o">-</span><span class="nb">max</span><span class="o">.</span><span class="n">sh</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>Important</strong> - ce script est conçu pour recevoir le résultat redirigé du script <code class="docutils literal notranslate"><span class="pre">scripts/calc-acc-eff.sh</span></code> dans son canal STDIN</p>
+<ul>
+<li><p>En cas de blocage du terminal, faites Ctrl+C</p></li>
+</ul>
+</li>
+<li><p>Réutilisons les résultats du précédent exercice pour calculer <code class="docutils literal notranslate"><span class="pre">n_max</span></code>, soit le nombre maximal suggéré de processeurs pour une efficacité minimale de 80%. Par exemple :</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bash</span> <span class="n">scripts</span><span class="o">/</span><span class="n">calc</span><span class="o">-</span><span class="n">acc</span><span class="o">-</span><span class="n">eff</span><span class="o">.</span><span class="n">sh</span> <span class="mi">1</span><span class="p">:</span><span class="mf">61.8</span> <span class="mi">4</span><span class="p">:</span><span class="mf">16.8</span> <span class="o">|</span> <span class="n">bash</span> <span class="n">scripts</span><span class="o">/</span><span class="n">calc</span><span class="o">-</span><span class="n">n</span><span class="o">-</span><span class="nb">max</span><span class="o">.</span><span class="n">sh</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>On note que le calcul de <code class="docutils literal notranslate"><span class="pre">n_max</span></code> peut donner une valeur qu’il faut arrondir à la baisse, car l’efficacité diminue en fonction du nombre de processeurs :</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Metrique</span><span class="p">,</span><span class="n">Valeur</span>
+<span class="n">P</span><span class="p">,</span><span class="mf">0.970874</span>
+<span class="n">n_max</span><span class="p">,</span><span class="mf">9.58333</span>
+<span class="n">n_max_entier</span><span class="p">,</span><span class="mi">9</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="taille-des-donnees-et-nombre-de-fichiers-a-traiter">
+<h4>Taille des données et nombre de fichiers à traiter<a class="headerlink" href="#taille-des-donnees-et-nombre-de-fichiers-a-traiter" title="Permalink to this headline">¶</a></h4>
+<p>Pour un calcul donné, il y a deux métriques de stockage à considérer :</p>
+<ul class="simple">
+<li><p>La <strong>quantité</strong> totale en octets (ou Go)</p></li>
+<li><p>Le <strong>nombre</strong> total de fichiers</p></li>
+</ul>
+<p>Pour obtenir ces informations :</p>
+<ul class="simple">
+<li><p><strong>Sous Windows</strong> : dans l’explorateur Windows (raccourcis clavier : Windows + E)</p>
+<ul>
+<li><p>Sélectionner un dossier ou plusieurs fichiers</p></li>
+<li><p>Bouton droit de la souris -&gt; <em>Propriétés</em></p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="Windows data properties" src="_images/win-data-size.png" /></p>
+<ul class="simple">
+<li><p><strong>Sous Mac OS</strong> : dans <em>Finder</em></p>
+<ul>
+<li><p>Sélectionner un dossier ou plusieurs fichiers</p></li>
+<li><p>Bouton droit de la souris -&gt; <em>Get Info</em></p></li>
+<li><p>Autrement : avec l’affichage <em>Par liste</em></p>
+<ul>
+<li><p><a class="reference external" href="https://www.solutionenligne.org/comment-afficher-taille-dossiers-fichiers-dans-finder-mac-os/">Activer <em>Calculer toutes les tailles</em></a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p><strong>Sous Linux</strong> :</p>
+<ul>
+<li><p>L’environnement graphique peut offrir le même genre d’outils, mais tout dépend de la distribution et du bureau.</p></li>
+<li><p>La commande <code class="docutils literal notranslate"><span class="pre">du</span> <span class="pre">-bs</span> <span class="pre">DOSSIER</span></code> (<code class="docutils literal notranslate"><span class="pre">b</span></code> : taille apparente en octets, <code class="docutils literal notranslate"><span class="pre">s</span></code> : somme totale) calcule récursivement et affiche la taille totale en octets. La taille apparente est celle qui importe lors d’un transfert ou d’une sauvegarde de données.</p></li>
+<li><p>La commande <code class="docutils literal notranslate"><span class="pre">find</span> <span class="pre">DOSSIER</span> <span class="pre">|</span> <span class="pre">wc</span> <span class="pre">-l</span></code> compte récursivement et affiche le nombre de fichiers et de sous-dossiers.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="stockage-en-memoire-selon-les-types-de-base">
+<h4>Stockage en mémoire selon les types de base<a class="headerlink" href="#stockage-en-memoire-selon-les-types-de-base" title="Permalink to this headline">¶</a></h4>
+<p>En ayant une idée de la taille des données à traiter, il devient aussi possible d’estimer la place que les données peuvent prendre en mémoire-vive.</p>
+<ul class="simple">
+<li><p>Dans un fichier texte, <strong>chaque caractère</strong> prend de un (1) à deux (2) octets, en moyenne.
+Cependant, pour certaines langues, l’encodage
+<a class="reference external" href="https://fr.wikipedia.org/wiki/UTF-8#Description">UTF-8</a>
+peut se rendre jusqu’à quatre (4) octets par caractère.
+Pour les langues latines et germaniques, on peut considérer <strong>deux (2) octets</strong> par caractère.
+Par exemple, dans une session Python :</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">euro</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sys</span><span class="o">.</span><span class="n">getsizeof</span><span class="p">(</span><span class="n">euro</span><span class="p">)</span>
+<span class="go">49</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">euro</span> <span class="o">=</span> <span class="s2">&quot;Euro&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sys</span><span class="o">.</span><span class="n">getsizeof</span><span class="p">(</span><span class="n">euro</span><span class="p">)</span>
+<span class="go">53</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">euro</span> <span class="o">=</span> <span class="s2">&quot;€&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sys</span><span class="o">.</span><span class="n">getsizeof</span><span class="p">(</span><span class="n">euro</span><span class="p">)</span>
+<span class="go">76</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">euro</span> <span class="o">*=</span> <span class="mi">2</span>  <span class="c1"># Donc &quot;€€&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sys</span><span class="o">.</span><span class="n">getsizeof</span><span class="p">(</span><span class="n">euro</span><span class="p">)</span>
+<span class="go">78</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Note : pour sortir de la session Python : Ctrl+D ou <code class="docutils literal notranslate"><span class="pre">quit()</span></code></p></li>
+</ul>
+<ul class="simple">
+<li><p>Les <strong>nombres entiers</strong> prennent typiquement 1 octet (8 bits), 2 octets (16 bits), 4 octets (32 bits) ou 8 octets (64 bits) chacun. Tout dépend de la <a class="reference external" href="https://en.wikipedia.org/wiki/C_data_types#Main_types">plage de valeurs souhaitée</a>:</p>
+<ul>
+<li><p>1 octet : 256 valeurs de 0 à 255, ou de -128 à 127</p></li>
+<li><p>2 octets : ~65 milles valeurs de <span class="math notranslate nohighlight">\(0\)</span> à <span class="math notranslate nohighlight">\((2^{16}-1)\)</span>, ou de <span class="math notranslate nohighlight">\(-2^{15}\)</span> à <span class="math notranslate nohighlight">\((2^{15}-1)\)</span></p></li>
+<li><p>4 octets : ~4 milliards de valeurs de 0 à <span class="math notranslate nohighlight">\((2^{32}-1)\)</span> ou de <span class="math notranslate nohighlight">\(-2^{31}\)</span> à <span class="math notranslate nohighlight">\((2^{31}-1)\)</span></p></li>
+<li><p>8 octets : ~18 trillions de valeurs de 0 à <span class="math notranslate nohighlight">\((2^{64}-1)\)</span> ou de <span class="math notranslate nohighlight">\(-2^{63}\)</span> à <span class="math notranslate nohighlight">\((2^{63}-1)\)</span></p></li>
+</ul>
+</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">module</span> <span class="n">load</span> <span class="n">python</span> <span class="n">scipy</span><span class="o">-</span><span class="n">stack</span>
+<span class="n">python</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cube</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int64</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sys</span><span class="o">.</span><span class="n">getsizeof</span><span class="p">(</span><span class="n">cube</span><span class="p">)</span>
+<span class="go">8000136</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cube</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sys</span><span class="o">.</span><span class="n">getsizeof</span><span class="p">(</span><span class="n">cube</span><span class="p">)</span>
+<span class="go">4000136</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">iinfo</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int16</span><span class="p">)</span>
+<span class="go">iinfo(min=-32768, max=32767, dtype=int16)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Les <strong>nombres à virgule flottante</strong> prennent typiquement 4 octets (32 bits) ou 8 octets (64 bits) chacun, mais on voit de plus en plus <a class="reference external" href="https://en.wikipedia.org/wiki/Bfloat16_floating-point_format">différents types de données à 2 octets (16 bits)</a> dans des applications d’apprentissage-machine. Il se peut néanmoins que les données soient initialement en simple ou double précision:</p>
+<ul>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Single-precision_floating-point_format">simple précision</a> : 4 octets, une résolution de 23 bits (~7 décimales), une échelle de 8 bits (<span class="math notranslate nohighlight">\({10}^{-38}\)</span> à <span class="math notranslate nohighlight">\({10}^{38}\)</span>)</p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Double-precision_floating-point_format">double précision</a> : 8 octets, une résolution de 52 bits (~16 décimales), une échelle de 11 bits (<span class="math notranslate nohighlight">\({10}^{-308}\)</span> à <span class="math notranslate nohighlight">\({10}^{308}\)</span>)</p></li>
+</ul>
+</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cube</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">((</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cube</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">cube</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
+<span class="go">3.1415927</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">cube</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+<span class="go">3.1415927 3.141592653589793</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Certains langages utilisent systématiquement <strong>8 octets</strong> (64 bits) par nombre.</p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Quadruple-precision_floating-point_format">Certains compilateurs et certaines bibliothèques</a> peuvent calculer des valeurs représentées avec 128 bits <a class="reference external" href="https://gmplib.org/">ou plus</a>.</p></li>
+<li><p>Pour les nombres complexes, on multiplie l’espace mémoire par deux (2).</p></li>
+</ul>
+<p>Exemple de calcul de l’espace-mémoire :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">nb_matrices</span> <span class="o">=</span> <span class="mi">3</span>        <span class="c1"># Trois matrices C = prod_mat(A, B)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">taille</span> <span class="o">=</span> <span class="mi">25000</span>         <span class="c1"># Matrices carrées</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">octets_par_nombre</span> <span class="o">=</span> <span class="mi">8</span>  <span class="c1"># Double précision</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">memoire</span> <span class="o">=</span> <span class="n">nb_matrices</span> <span class="o">*</span> <span class="n">taille</span><span class="o">*</span><span class="n">taille</span> <span class="o">*</span> <span class="n">octets_par_nombre</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">memoire</span> <span class="o">/</span> <span class="mi">1000</span><span class="o">**</span><span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="la-complexite-des-algorithmes">
+<h4>La complexité des algorithmes<a class="headerlink" href="#la-complexite-des-algorithmes" title="Permalink to this headline">¶</a></h4>
+<p>La question qui se pose : en augmentant la ou les dimensions du problème, quelles devraient être la durée du calcul et la consommation en mémoire-vive?
+Une <a class="reference external" href="https://fr.wikipedia.org/wiki/Analyse_de_la_complexit%C3%A9_des_algorithmes">analyse de la complexité de l’algorithme principal</a>
+permettrait de connaître l’ordre <span class="math notranslate nohighlight">\(O\)</span> du calcul en fonction de la taille <span class="math notranslate nohighlight">\(n\)</span> des données :</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(O(n)\)</span>: proportionnel à <span class="math notranslate nohighlight">\(n\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(O(n*m)\)</span>: représente un calcul à deux (2) dimensions indépendantes</p></li>
+<li><p><span class="math notranslate nohighlight">\(O(n^3)\)</span>: calcul d’ordre cubique</p></li>
+<li><p><span class="math notranslate nohighlight">\(O(n*m*k^2)\)</span>: par exemple, un filtre de taille <span class="math notranslate nohighlight">\(k*k\)</span> sur une image <span class="math notranslate nohighlight">\(n*m\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(O(n*log(n))\)</span>: typique de certains
+<a class="reference external" href="https://fr.wikipedia.org/wiki/Algorithme_de_tri#Comparaison_des_algorithmes">algorithmes de tri</a>
+où il y a <span class="math notranslate nohighlight">\(n\)</span> éléments à trier en <span class="math notranslate nohighlight">\(log_2(n)\)</span> étapes.</p></li>
+</ul>
+<p>Une analyse détaillée du code (s’il est disponible) n’est pas nécessaire pour déterminer le type de calcul qui est fait.</p>
+<ul class="simple">
+<li><p>Vous pouvez vous inspirer des données en entrées pour deviner l’ordre du calcul principal.</p></li>
+<li><p>Vous pouvez mesurer le temps d’exécution en fonction de la taille du problème. En extrapolant les résultats, il serait possible de prévoir le comportement du programme sur une grappe de calcul.</p></li>
+</ul>
+</div>
+<div class="section" id="exercice-complexite-de-l-algorithme">
+<h4>Exercice - Complexité de l’algorithme<a class="headerlink" href="#exercice-complexite-de-l-algorithme" title="Permalink to this headline">¶</a></h4>
+<p>Dans cet exercice, il est question d’inverser une matrice de valeurs aléatoires de taille <code class="docutils literal notranslate"><span class="pre">n*n</span></code> :</p>
+<ul class="simple">
+<li><p>Soumettre le script <span class="xref myst"><code class="docutils literal notranslate"><span class="pre">scripts/inv-mat.sh</span></code></span> avec la commande <code class="docutils literal notranslate"><span class="pre">sbatch</span></code> :</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sbatch</span> <span class="n">scripts</span><span class="o">/</span><span class="n">inv</span><span class="o">-</span><span class="n">mat</span><span class="o">.</span><span class="n">sh</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Explorer le script Python <span class="xref myst"><code class="docutils literal notranslate"><span class="pre">scripts/inv-mat.py</span></code></span> :</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">less</span> <span class="n">scripts</span><span class="o">/</span><span class="n">inv</span><span class="o">-</span><span class="n">mat</span><span class="o">.</span><span class="n">py</span>  <span class="c1"># q pour quitter</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Suivre l’évolution du calcul avec <code class="docutils literal notranslate"><span class="pre">squeue</span> <span class="pre">-u</span> <span class="pre">$USER</span></code>, environ aux 30 secondes</p></li>
+<li><p>Le résultat sera sauvegardé dans le fichier <code class="docutils literal notranslate"><span class="pre">temps_inv.csv</span></code></p></li>
+<li><p>Analyse avec Python, Pandas et Numpy dans le script <span class="xref myst"><code class="docutils literal notranslate"><span class="pre">scripts/inv-mat-pred.py</span></code></span> :</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">module</span> <span class="n">load</span> <span class="n">gcc</span> <span class="n">python</span> <span class="n">scipy</span><span class="o">-</span><span class="n">stack</span>
+
+<span class="n">cat</span> <span class="n">scripts</span><span class="o">/</span><span class="n">inv</span><span class="o">-</span><span class="n">mat</span><span class="o">-</span><span class="n">pred</span><span class="o">.</span><span class="n">py</span>
+<span class="n">python</span> <span class="n">scripts</span><span class="o">/</span><span class="n">inv</span><span class="o">-</span><span class="n">mat</span><span class="o">-</span><span class="n">pred</span><span class="o">.</span><span class="n">py</span> <span class="n">temps_inv</span><span class="o">.</span><span class="n">csv</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="principales-differences-entre-les-grappes-de-calcul">
+<h2>Principales différences entre les grappes de calcul<a class="headerlink" href="#principales-differences-entre-les-grappes-de-calcul" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>À propos des grappes :</p></li>
+</ul>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:right head"><p></p></th>
+<th class="text-align:center head"><p><a class="reference external" href="https://docs.computecanada.ca/wiki/B%C3%A9luga">Béluga</a></p></th>
+<th class="text-align:center head"><p><a class="reference external" href="https://docs.computecanada.ca/wiki/Cedar/fr">Cedar</a></p></th>
+<th class="text-align:center head"><p><a class="reference external" href="https://docs.computecanada.ca/wiki/Graham/fr">Graham</a></p></th>
+<th class="text-align:center head"><p><a class="reference external" href="https://docs.computecanada.ca/wiki/Narval">Narval</a></p></th>
+<th class="text-align:center head"><p><a class="reference external" href="https://docs.computecanada.ca/wiki/Niagara/fr">Niagara</a></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:right"><p><strong>Mise en production</strong></p></td>
+<td class="text-align:center"><p>Mars 2019</p></td>
+<td class="text-align:center"><p>Juin 2017</p></td>
+<td class="text-align:center"><p>Juin 2017</p></td>
+<td class="text-align:center"><p>Octobre 2021</p></td>
+<td class="text-align:center"><p>Avril 2018</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:right"><p><strong>Ville</strong></p></td>
+<td class="text-align:center"><p>Montréal</p></td>
+<td class="text-align:center"><p>Burnaby</p></td>
+<td class="text-align:center"><p>Waterloo</p></td>
+<td class="text-align:center"><p>Montréal</p></td>
+<td class="text-align:center"><p>Toronto</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:right"><p><strong>Province</strong></p></td>
+<td class="text-align:center"><p>Québec</p></td>
+<td class="text-align:center"><p>C.-B.</p></td>
+<td class="text-align:center"><p>Ontario</p></td>
+<td class="text-align:center"><p>Québec</p></td>
+<td class="text-align:center"><p>Ontario</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p>Nombre de processeurs (coeurs CPU) selon le cas :</p></li>
+</ul>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:right head"><p>Processeur Intel/AMD</p></th>
+<th class="text-align:center head"><p><a class="reference external" href="https://docs.computecanada.ca/wiki/B%C3%A9luga">Béluga</a></p></th>
+<th class="text-align:center head"><p><a class="reference external" href="https://docs.computecanada.ca/wiki/Cedar/fr">Cedar</a></p></th>
+<th class="text-align:center head"><p><a class="reference external" href="https://docs.computecanada.ca/wiki/Graham/fr">Graham</a></p></th>
+<th class="text-align:center head"><p><a class="reference external" href="https://docs.computecanada.ca/wiki/Narval">Narval</a></p></th>
+<th class="text-align:center head"><p><a class="reference external" href="https://docs.computecanada.ca/wiki/Niagara/fr">Niagara</a></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:right"><p>Broadwell (avx2)</p></td>
+<td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p>724 * 32</p></td>
+<td class="text-align:center"><p>983 * 32</p></td>
+<td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:right"><p>Skylake (avx512)</p></td>
+<td class="text-align:center"><p>802 * 40</p></td>
+<td class="text-align:center"><p>640 * 48</p></td>
+<td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p>1548 * 40</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:right"><p>Cascade Lake (avx512)</p></td>
+<td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p>768 * 48</p></td>
+<td class="text-align:center"><p>72 * 44</p></td>
+<td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p>468 * 40</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:right"><p>EPYC Rome (avx2)</p></td>
+<td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p>1142 * 64</p></td>
+<td class="text-align:center"><p></p></td>
+</tr>
+</tbody>
+</table>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:right head"><p>Mémoire par proc.</p></th>
+<th class="text-align:center head"><p><a class="reference external" href="https://docs.computecanada.ca/wiki/B%C3%A9luga">Béluga</a></p></th>
+<th class="text-align:center head"><p><a class="reference external" href="https://docs.computecanada.ca/wiki/Cedar/fr">Cedar</a></p></th>
+<th class="text-align:center head"><p><a class="reference external" href="https://docs.computecanada.ca/wiki/Graham/fr">Graham</a></p></th>
+<th class="text-align:center head"><p><a class="reference external" href="https://docs.computecanada.ca/wiki/Narval">Narval</a></p></th>
+<th class="text-align:center head"><p><a class="reference external" href="https://docs.computecanada.ca/wiki/Niagara/fr">Niagara</a></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:right"><p>2400M</p></td>
+<td class="text-align:center"><p>6400</p></td>
+<td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:right"><p>4000M</p></td>
+<td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p>86016</p></td>
+<td class="text-align:center"><p>28896</p></td>
+<td class="text-align:center"><p>70976</p></td>
+<td class="text-align:center"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:right"><p>4400M</p></td>
+<td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p>3168</p></td>
+<td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:right"><p>4800M</p></td>
+<td class="text-align:center"><p>23560</p></td>
+<td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p>80960</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:right"><p>8000M</p></td>
+<td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p>3072</p></td>
+<td class="text-align:center"><p>1792</p></td>
+<td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:right"><p>16000M</p></td>
+<td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p>768</p></td>
+<td class="text-align:center"><p>768</p></td>
+<td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:right"><p>19200M</p></td>
+<td class="text-align:center"><p>2120</p></td>
+<td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:right"><p>32000M</p></td>
+<td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p>2112</p></td>
+<td class="text-align:center"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:right"><p>48000M</p></td>
+<td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p>768</p></td>
+<td class="text-align:center"><p>192</p></td>
+<td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:right"><p>96000M</p></td>
+<td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p>128</p></td>
+<td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p></p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.computecanada.ca/wiki/Using_GPUs_with_Slurm">Nombre de GPUs</a> selon le cas :</p></li>
+</ul>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:right head"><p>Accélérateurs</p></th>
+<th class="text-align:center head"><p><a class="reference external" href="https://docs.computecanada.ca/wiki/B%C3%A9luga">Béluga</a></p></th>
+<th class="text-align:center head"><p><a class="reference external" href="https://docs.computecanada.ca/wiki/Cedar/fr">Cedar</a></p></th>
+<th class="text-align:center head"><p><a class="reference external" href="https://docs.computecanada.ca/wiki/Graham/fr">Graham</a></p></th>
+<th class="text-align:center head"><p><a class="reference external" href="https://docs.scinet.utoronto.ca/index.php/Mist">Mist (Power9)</a></p></th>
+<th class="text-align:center head"><p><a class="reference external" href="https://docs.computecanada.ca/wiki/Narval">Narval</a></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:right"><p>NVIDIA P100 12G</p></td>
+<td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p>456</p></td>
+<td class="text-align:center"><p>320</p></td>
+<td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:right"><p>NVIDIA P100 16G</p></td>
+<td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p>128</p></td>
+<td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:right"><p>NVIDIA T4 16G</p></td>
+<td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p>144</p></td>
+<td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:right"><p>NVIDIA V100 16G</p></td>
+<td class="text-align:center"><p>688</p></td>
+<td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p>54</p></td>
+<td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:right"><p>NVIDIA V100 32G</p></td>
+<td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p>768</p></td>
+<td class="text-align:center"><p>16</p></td>
+<td class="text-align:center"><p>216</p></td>
+<td class="text-align:center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:right"><p>NVIDIA A100 40G</p></td>
+<td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p>632</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p>Réseau haute-performance et ordonnancement :</p></li>
+</ul>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:right head"><p></p></th>
+<th class="text-align:center head"><p><a class="reference external" href="https://docs.computecanada.ca/wiki/B%C3%A9luga">Béluga</a></p></th>
+<th class="text-align:center head"><p><a class="reference external" href="https://docs.computecanada.ca/wiki/Cedar/fr">Cedar</a></p></th>
+<th class="text-align:center head"><p><a class="reference external" href="https://docs.computecanada.ca/wiki/Graham/fr">Graham</a></p></th>
+<th class="text-align:center head"><p><a class="reference external" href="https://docs.computecanada.ca/wiki/Narval">Narval</a></p></th>
+<th class="text-align:center head"><p><a class="reference external" href="https://docs.computecanada.ca/wiki/Niagara/fr">Niagara</a></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:right"><p>Connexion rapide</p></td>
+<td class="text-align:center"><p>InfiniBand</p></td>
+<td class="text-align:center"><p>OmniPath</p></td>
+<td class="text-align:center"><p>InfiniBand</p></td>
+<td class="text-align:center"><p>InfiniBand</p></td>
+<td class="text-align:center"><p>InfiniBand</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:right"><p>Topologie</p></td>
+<td class="text-align:center"><p>En arbre</p></td>
+<td class="text-align:center"><p>En arbre</p></td>
+<td class="text-align:center"><p>En arbre</p></td>
+<td class="text-align:center"><p>En arbre</p></td>
+<td class="text-align:center"><p>DragonFly+</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:right"><p>Taille îlots (proc)</p></td>
+<td class="text-align:center"><p>640 à 1200</p></td>
+<td class="text-align:center"><p>1024 à 1536</p></td>
+<td class="text-align:center"><p>1024</p></td>
+<td class="text-align:center"><p>3072 à 3584</p></td>
+<td class="text-align:center"><p>17280</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:right"><p>Facteur de blockage</p></td>
+<td class="text-align:center"><p>max 5:1</p></td>
+<td class="text-align:center"><p>max 2:1</p></td>
+<td class="text-align:center"><p>max 8:1</p></td>
+<td class="text-align:center"><p>max 4.7:1</p></td>
+<td class="text-align:center"><p>max 2:1</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:right"><p>Granularité des tâches</p></td>
+<td class="text-align:center"><p>/proc /GPU</p></td>
+<td class="text-align:center"><p>/proc /GPU</p></td>
+<td class="text-align:center"><p>/proc /GPU</p></td>
+<td class="text-align:center"><p>/proc /GPU</p></td>
+<td class="text-align:center"><p>/noeud</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:right"><p>Durée maximale</p></td>
+<td class="text-align:center"><p>7 jours</p></td>
+<td class="text-align:center"><p>28 jours</p></td>
+<td class="text-align:center"><p>28 jours</p></td>
+<td class="text-align:center"><p>7 jours</p></td>
+<td class="text-align:center"><p>1 jour</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p>Stockage : le tout sera décrit au <a class="reference internal" href="stockage.html"><span class="doc std std-doc">chapitre suivant…</span></a></p></li>
+</ul>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="a_propos.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">À propos</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="analyse-taches.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Analyse des tâches</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Équipe Calcul Québec<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

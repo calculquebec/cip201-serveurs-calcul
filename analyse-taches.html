@@ -1,0 +1,476 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Analyse des tâches &#8212; CIP201 - Maîtriser l’utilisation des serveurs de calcul</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="_static/logo.png"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Lots de tâches" href="lots-taches.html" />
+    <link rel="prev" title="Bien choisir les ressources" href="ressources.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">CIP201 - Maîtriser l’utilisation des serveurs de calcul</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="a_propos.html">
+   À propos
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="ressources.html">
+   Bien choisir les ressources
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Analyse des tâches
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lots-taches.html">
+   Lots de tâches
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="stockage.html">
+   Les espaces de stockage
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/analyse-taches.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/calculquebec/utilisation-serveurs-calcul"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taches-en-attente">
+   Tâches en attente
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taches-actives">
+   Tâches actives
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#taches-terminees">
+   Tâches terminées
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercice-analyse-d-execution-d-un-pipeline">
+     Exercice - Analyse d’exécution d’un pipeline
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="analyse-des-taches">
+<h1>Analyse des tâches<a class="headerlink" href="#analyse-des-taches" title="Permalink to this headline">¶</a></h1>
+<p>Le but de ce chapitre est d’approfondir <a class="reference external" href="https://docs.computecanada.ca/wiki/Running_jobs/fr#Suivi_des_t.C3.A2ches">l’analyse des tâches</a> en attente, en cours et les tâches terminées.</p>
+<p>Remplissons la liste de tâches gérées par l’ordonnanceur :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="n">scripts</span><span class="o">/</span><span class="n">sleep</span><span class="o">-</span><span class="mi">300</span><span class="n">s</span><span class="o">.</span><span class="n">sh</span>
+<span class="n">sbatch</span> <span class="n">scripts</span><span class="o">/</span><span class="n">sleep</span><span class="o">-</span><span class="mi">300</span><span class="n">s</span><span class="o">.</span><span class="n">sh</span>
+</pre></div>
+</div>
+<div class="section" id="taches-en-attente">
+<h2>Tâches en attente<a class="headerlink" href="#taches-en-attente" title="Permalink to this headline">¶</a></h2>
+<p>Pour afficher les tâches en attente, on utilise la commande :</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://slurm.schedmd.com/squeue.html"><code class="docutils literal notranslate"><span class="pre">squeue</span> <span class="pre">-t</span> <span class="pre">pending</span></code></a> pour toutes les tâches en attente</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">squeue</span> <span class="pre">-t</span> <span class="pre">pending</span> <span class="pre">-u</span> <span class="pre">$USER</span></code> pour seulement <strong>vos</strong> tâches en attente</p></li>
+<li><p>ou bien la commande suivante pour toutes les tâches triées par priorité descendante :</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">squeue</span> <span class="o">-</span><span class="n">t</span> <span class="n">pending</span> <span class="o">--</span><span class="n">sort</span><span class="o">=-</span><span class="n">p</span> <span class="o">--</span><span class="nb">format</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">%.16i</span><span class="s2"> %.9p </span><span class="si">%.8u</span><span class="s2"> </span><span class="si">%.16a</span><span class="s2"> %.18P %.10l %.4C %.7m&quot;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">%i</span></code> : identifiant numérique de la tâche</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">%p</span></code> : priorité de la tâche (entre 0.0 et 1.0)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">%u</span></code> : nom d’utilisateur</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">%a</span></code> : compte de calcul utilisé</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">%P</span></code> : <a class="reference external" href="https://docs.computecanada.ca/wiki/Job_scheduling_policies/fr#Pourcentages_des_n.C5.93uds_disponibles">partition de la grappe</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">%l</span></code> : temps demandé</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">%C</span></code> : nombre de processeurs demandé</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">%m</span></code> : mémoire demandée</p></li>
+</ul>
+<p>Dans tous les cas, l’utilisation de <code class="docutils literal notranslate"><span class="pre">squeue</span></code> crée une certaine charge sur l’ordonnanceur (à cause du grand nombre de tâches à gérer), alors il vaut mieux <strong>se limiter à un appel par minute</strong> sur les grappes nationales</p>
+<ul class="simple">
+<li><p>Si jamais il vous venait l’idée d’utiliser la commande <code class="docutils literal notranslate"><span class="pre">watch</span></code>, <strong>ne le faites pas!</strong></p></li>
+</ul>
+<p>Une chose à savoir : vos tâches sont généralement en compétition avec des <a class="reference external" href="https://docs.computecanada.ca/wiki/Job_scheduling_policies/fr#Pourcentages_des_n.C5.93uds_disponibles">tâches de la même partition</a>.
+Ainsi, <strong>une tâche CPU n’a aucun impact sur le temps d’attente d’une tâche GPU</strong>.
+Vous pouvez utiliser la commande suivante pour obtenir le détail de votre tâche, incluant la partition à laquelle elle est assignée :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">scontrol</span> <span class="n">show</span> <span class="n">job</span> <span class="o">-</span><span class="n">dd</span> <span class="o">&lt;</span><span class="n">jobid</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>Ce qu’il faut aussi comprendre de la <a class="reference external" href="https://docs.computecanada.ca/wiki/Job_scheduling_policies/fr">politique d’ordonnancement</a> :</p>
+<ul class="simple">
+<li><p><strong>La priorité de votre tâche dépend majoritairement de l’utilisation récente</strong> de votre groupe de recherche</p>
+<ul>
+<li><p>Pour le reste, la priorité dépend aussi du temps d’attente, mais dans une très faible proportion</p></li>
+</ul>
+</li>
+<li><p>L’information concernant <strong>l’utilisation du groupe</strong> est donnée par la commande <a class="reference external" href="https://docs.computecanada.ca/wiki/Job_scheduling_policies/fr#Priorisation_selon_la_juste_part"><code class="docutils literal notranslate"><span class="pre">sshare</span></code></a> :</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sshare</span> <span class="o">-</span><span class="n">l</span> <span class="o">-</span><span class="n">A</span> <span class="n">def</span><span class="o">-</span><span class="n">prof1_cpu</span> <span class="o">-</span><span class="n">u</span> <span class="n">prof1</span><span class="p">,</span><span class="n">grad2</span><span class="p">,</span><span class="n">postdoc3</span>
+<span class="n">sshare</span> <span class="o">-</span><span class="n">l</span>  <span class="c1"># Tous les comptes</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Plus le <code class="docutils literal notranslate"><span class="pre">LevelFS</span></code> du groupe est élevé, plus la priorité est élevée</p></li>
+<li><p>L’utilisation est considérée normale si <code class="docutils literal notranslate"><span class="pre">LevelFS</span></code> est autour de 1.0</p></li>
+<li><p>Si <code class="docutils literal notranslate"><span class="pre">LevelFS</span></code> est proche de 0.0, la priorité du groupe sera basse</p></li>
+<li><p><strong>L’utilisation récente perd de son importance avec le temps qui passe.</strong>
+Ainsi, son importance est progressivement réduite avec un ratio réduisant l’impact de 50% à chaque 7 jours</p>
+<ul>
+<li><p>Par conséquent, le <code class="docutils literal notranslate"><span class="pre">LevelFS</span></code> et la priorité augmentent à nouveau lorsque le groupe reste en attente</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="taches-actives">
+<h2>Tâches actives<a class="headerlink" href="#taches-actives" title="Permalink to this headline">¶</a></h2>
+<p>Pour afficher les tâches actives, on utilise la commande :</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://slurm.schedmd.com/squeue.html"><code class="docutils literal notranslate"><span class="pre">squeue</span> <span class="pre">-t</span> <span class="pre">running</span></code></a> pour toutes les tâches actives</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">squeue</span> <span class="pre">-t</span> <span class="pre">running</span> <span class="pre">-u</span> <span class="pre">$USER</span></code> pour seulement <strong>vos</strong> tâches actives</p></li>
+<li><p>ou bien la commande suivante pour toutes les tâches actives triées selon le temps qui leur reste :</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">squeue</span> <span class="o">-</span><span class="n">t</span> <span class="n">running</span> <span class="o">--</span><span class="n">sort</span><span class="o">=+</span><span class="n">M</span> <span class="o">--</span><span class="nb">format</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">%.14i</span><span class="s2"> %.18P %.10M %.4C %.7m %R&quot;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">%M</span></code> : temps de calcul écoulé</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">%R</span></code> : liste des noeuds alloués</p></li>
+</ul>
+<p>Pendant que vos tâches sont actives, vous pouvez vous connecter par SSH aux noeuds de calcul correspondants afin de valider que l’exécution se passe bien :</p>
+<p>Tâche CPU :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sbatch</span> <span class="o">--</span><span class="n">cpus</span><span class="o">-</span><span class="n">per</span><span class="o">-</span><span class="n">task</span><span class="o">=</span><span class="mi">2</span> <span class="n">scripts</span><span class="o">/</span><span class="n">nbody</span><span class="o">-</span><span class="n">openmp</span><span class="o">.</span><span class="n">sh</span>
+</pre></div>
+</div>
+<p>Tâche GPU :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sbatch</span> <span class="n">scripts</span><span class="o">/</span><span class="n">cuda</span><span class="o">-</span><span class="n">matmul</span><span class="o">.</span><span class="n">sh</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Identifier le ou les noeud(s) avec : <code class="docutils literal notranslate"><span class="pre">squeue</span> <span class="pre">-u</span> <span class="pre">$USER</span></code></p></li>
+<li><p>Connexion avec : <code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">NOEUD</span></code></p></li>
+<li><p>Inspection avec <code class="docutils literal notranslate"><span class="pre">top</span></code>, <code class="docutils literal notranslate"><span class="pre">htop</span></code>, <code class="docutils literal notranslate"><span class="pre">nvtop</span></code> et/ou <code class="docutils literal notranslate"><span class="pre">nvidia-smi</span></code> :</p>
+<ul>
+<li><p>Est-ce que vos processus s’exécutent avec un pourcentage de 100%?</p></li>
+<li><p>Est-ce que vos processus parallèles s’exécutent avec un pourcentage de <code class="docutils literal notranslate"><span class="pre">n</span></code> * 100%, où <code class="docutils literal notranslate"><span class="pre">n</span></code> est le nombre de processeurs par tâche Slurm?</p></li>
+<li><p>Est-ce que les GPUs sont utilisés à leur plein potentiel?</p>
+<ul>
+<li><p>Note : il est préférable de regarder la consommation en Watts plutôt que le pourcentage affiché</p></li>
+</ul>
+</li>
+<li><p>Est-ce que le noeud de calcul semble pleinement utilisé?</p></li>
+</ul>
+</li>
+</ul>
+<p>Toutes ces informations devraient vous permettre d’ajuster votre script de soumission et d’optimiser l’exécution parallèle de votre programme.</p>
+</div>
+<div class="section" id="taches-terminees">
+<h2>Tâches terminées<a class="headerlink" href="#taches-terminees" title="Permalink to this headline">¶</a></h2>
+<p>Lorsqu’une <a class="reference external" href="https://docs.computecanada.ca/wiki/Running_jobs/fr#T.C3.A2ches_termin.C3.A9es">tâche est complétée</a>, la commande la plus simple pour obtenir des informations sur cette tâche est la commande :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">seff</span> <span class="o">&lt;</span><span class="n">jobid</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>Autrement, c’est aussi possible d’utiliser la commande Slurm <code class="docutils literal notranslate"><span class="pre">sacct</span></code> :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sacct</span> <span class="o">-</span><span class="n">j</span> <span class="o">&lt;</span><span class="n">jobid</span><span class="o">&gt;</span> <span class="o">--</span><span class="nb">format</span><span class="o">=</span><span class="n">JobID</span><span class="p">,</span><span class="n">JobName</span><span class="p">,</span><span class="n">MaxRSS</span><span class="p">,</span><span class="n">Elapsed</span>
+</pre></div>
+</div>
+<p>Encore une fois, ces informations permettent d’ajuster vos scripts et de mieux déterminer vos besoins en ressources.</p>
+<p>Ultimement, l’utilisation totale du groupe est disponible sur CCDB :</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://ccdb.computecanada.ca/me/group_usage">https://ccdb.computecanada.ca/me/group_usage</a></p></li>
+</ul>
+<p>En tenant compte de l’utilisation passée, il devient possible d’estimer ses besoins pour le <a class="reference external" href="https://www.computecanada.ca/page-daccueil-du-portail-de-recherche/acces-aux-ressources/concours-dallocation-des-ressources/?lang=fr">Concours d’allocation de ressources</a>.</p>
+<div class="section" id="exercice-analyse-d-execution-d-un-pipeline">
+<h3>Exercice - Analyse d’exécution d’un pipeline<a class="headerlink" href="#exercice-analyse-d-execution-d-un-pipeline" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Lancer à nouveau le pipeline avec la commande :</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bash</span> <span class="n">scripts</span><span class="o">/</span><span class="n">nbody</span><span class="o">-</span><span class="n">pipeline</span><span class="o">.</span><span class="n">sh</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Au besoin, relancer le pipeline si vos tâches se sont exécutées trop rapidement</p></li>
+<li><p>Surveiller vos tâches :</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>squeue -t pending -u $USER
+squeue -t running -u $USER
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Surveiller toutes les tâches :</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">squeue</span> <span class="o">-</span><span class="n">t</span> <span class="n">pending</span>
+<span class="n">squeue</span> <span class="o">-</span><span class="n">t</span> <span class="n">running</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Trier les tâches selon un critère :</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">squeue</span> <span class="o">-</span><span class="n">t</span> <span class="n">pending</span> <span class="o">--</span><span class="n">sort</span><span class="o">=-</span><span class="n">p</span> <span class="o">--</span><span class="nb">format</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">%.16i</span><span class="s2"> %.9p </span><span class="si">%.8u</span><span class="s2"> </span><span class="si">%.16a</span><span class="s2"> %.18P %.10l %.4C %.7m&quot;</span>
+<span class="n">squeue</span> <span class="o">-</span><span class="n">t</span> <span class="n">running</span> <span class="o">--</span><span class="n">sort</span><span class="o">=+</span><span class="n">M</span> <span class="o">--</span><span class="nb">format</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">%.14i</span><span class="s2"> %.18P %.10M %.4C %.7m %R&quot;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Trouver vos tâches récentes avec :</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sacct</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Analyser quelques tâches complétées avec :</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">seff</span> <span class="o">&lt;</span><span class="n">jobid</span><span class="o">&gt;</span>
+<span class="n">sacct</span> <span class="o">-</span><span class="n">j</span> <span class="o">&lt;</span><span class="n">jobid</span><span class="o">&gt;</span> <span class="o">--</span><span class="nb">format</span><span class="o">=</span><span class="n">JobID</span><span class="p">,</span><span class="n">JobName</span><span class="p">,</span><span class="n">MaxRSS</span><span class="p">,</span><span class="n">Elapsed</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="ressources.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Bien choisir les ressources</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="lots-taches.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Lots de tâches</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Équipe Calcul Québec<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
