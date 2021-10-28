@@ -22,3 +22,7 @@ html:
 
 launch_buttons:
   binderhub_url: ""
+
+sphinx:
+  config:
+    language: fr
