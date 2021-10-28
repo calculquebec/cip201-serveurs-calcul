@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="fr">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -40,6 +40,7 @@
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
+    <script src="_static/translations.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -53,7 +54,7 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="shortcut icon" href="_static/logo.png"/>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
+    <link rel="search" title="Recherche" href="search.html" />
     <link rel="next" title="Analyse des tâches" href="analyse-taches.html" />
     <link rel="prev" title="À propos" href="a_propos.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -86,7 +87,7 @@
     </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Rechercher dans ce livre ..." aria-label="Rechercher dans ce livre ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
@@ -142,8 +143,8 @@
             
             <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
                 data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                aria-expanded="true" aria-label="Basculer la navigation" aria-controls="site-navigation"
+                title="Basculer la navigation" data-toggle="tooltip" data-placement="left">
                 <i class="fas fa-bars"></i>
                 <i class="fas fa-arrow-left"></i>
                 <i class="fas fa-arrow-up"></i>
@@ -151,7 +152,7 @@
             
             
 <div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Téléchargez cette page"><i
             class="fas fa-download"></i></button>
 
     <div class="dropdown-buttons">
@@ -159,10 +160,10 @@
         
         <!-- Download raw file -->
         <a class="dropdown-buttons" href="_sources/ressources.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                class="btn btn-secondary topbarbtn" title="Télécharger le fichier source" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Imprimer au format PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
@@ -175,8 +176,8 @@
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
             href="https://github.com/calculquebec/utilisation-serveurs-calcul"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
+                data-toggle="tooltip" data-placement="left" title="Dépôt source"><i
+                    class="fab fa-github"></i>dépôt</button></a>
         
         
     </div>
@@ -185,8 +186,8 @@
             <!-- Full screen (wrap in <a> to have style consistency -->
 
 <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Mode plein écran"
+        title="Mode plein écran"><i
             class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
@@ -197,27 +198,10 @@
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
             <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+                <i class="fas fa-list"></i> Contenu
             </div>
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ressources-humaines-rappel">
-   Ressources humaines (rappel)
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#soutien-technique">
-     Soutien technique
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ressources-infonuagiques-court-survol">
-   Ressources infonuagiques (court survol)
-  </a>
- </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#calcul-haute-performance">
    Calcul haute performance
@@ -318,19 +302,10 @@
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="bien-choisir-les-ressources">
-<h1>Bien choisir les ressources<a class="headerlink" href="#bien-choisir-les-ressources" title="Permalink to this headline">¶</a></h1>
-<p>Il y a plusieurs ressources disponibles à la NOIRN :</p>
+<h1>Bien choisir les ressources<a class="headerlink" href="#bien-choisir-les-ressources" title="Lien permanent vers ce titre">¶</a></h1>
+<p>Il y a plusieurs ressources informatiques qui vous sont disponibles à
+l’Alliance de Recherche numérique du Canada :</p>
 <ul class="simple">
-<li><p>Humaines</p>
-<ul>
-<li><p>L’Alliance de Recherche numérique du Canada, Calcul Canada, Calcul Québec, analyste local</p></li>
-</ul>
-</li>
-<li><p>Infonuagique</p>
-<ul>
-<li><p>Arbutus, Béluga, Cedar, Graham</p></li>
-</ul>
-</li>
 <li><p>Calcul haute performance</p>
 <ul>
 <li><p>Béluga, Cedar, Graham, Niagara</p></li>
@@ -341,63 +316,30 @@
 <li><p>Temporaire, projet, <em>nearline</em>, dépôt de données de recherche</p></li>
 </ul>
 </li>
+<li><p>Infonuagique</p>
+<ul>
+<li><p>Arbutus, Béluga, Cedar, Graham</p></li>
 </ul>
-<p>Le principal but de ce chapitre est de vous permettre d’analyser vos besoins en <strong>ressources de calcul haut-performance</strong>, et ce, dans le but de choisir les ressources nécessaires pour votre projet. Les différents espaces de stockage seront vus au <a class="reference internal" href="stockage.html"><span class="doc std std-doc">chapitre suivant</span></a>.</p>
-<div class="section" id="ressources-humaines-rappel">
-<h2>Ressources humaines (rappel)<a class="headerlink" href="#ressources-humaines-rappel" title="Permalink to this headline">¶</a></h2>
-<p>Voici un rappel de qui fait quoi et des ressources humaines auxquelles vous avez access :</p>
-<ul class="simple">
-<li><p><strong><a class="reference external" href="https://twitter.com/Alliance_Can">L’Alliance de Recherche numérique du Canada</a></strong> :
-un organisme national à but non lucratif qui a pour vision d’harmoniser et d’améliorer l’accès aux outils et aux services numériques à destination des chercheurs canadiens.
-En somme, c’est le regroupement de <a class="reference external" href="https://www.canarie.ca/fr/">Canarie</a> (réseau),
-<a class="reference external" href="https://www.computecanada.ca/about/?lang=fr">Calcul Canada</a> (calcul) et
-<a class="reference external" href="https://portagenetwork.ca/fr/">Portage</a> (gestion des données).</p></li>
-<li><p><strong><a class="reference external" href="https://www.computecanada.ca/about/?lang=fr">Calcul Canada</a></strong> : de concert avec les organisations régionales que sont <a class="reference external" href="https://www.ace-net.ca/who-we-are/acenet/">ACENET</a>, <a class="reference external" href="https://www.calculquebec.ca/a-propos/qui-sommes-nous/">Calcul Québec</a>, <a class="reference external" href="https://www.computeontario.ca/">Compute Ontario</a> et <a class="reference external" href="https://www.westgrid.ca/about_westgrid/what_we_do">WestGrid</a>, Calcul Canada favorise une accélération de l’innovation scientifique en déployant des systèmes de calcul informatique de pointe (CIP), des installations de stockage et des solutions logicielles.</p></li>
-<li><p><strong><a class="reference external" href="https://www.calculquebec.ca/a-propos/qui-sommes-nous/">Calcul Québec</a></strong> : la mission de Calcul Québec est de procurer au milieu universitaire ainsi qu’à la communauté de la recherche des environnements informatiques de pointe ainsi que des expertises, afin de contribuer à l’avancement des connaissances dans toutes les branches du savoir et à la formation de personnel hautement qualifié capable d’exploiter efficacement les systèmes informatiques modernes.</p></li>
-<li><p><strong><a class="reference external" href="https://www.calculquebec.ca/a-propos/personnel/">Employés locaux</a></strong> : analystes (soutien technique, documentation, formation), administrateurs (soutien technique avec accès privilégié).</p></li>
+</li>
 </ul>
-<div class="section" id="soutien-technique">
-<h3>Soutien technique<a class="headerlink" href="#soutien-technique" title="Permalink to this headline">¶</a></h3>
-<p>Pour l’instant, <a class="reference external" href="https://docs.computecanada.ca/wiki/Technical_support/fr">le soutien technique</a> est offert à l’échelle nationale via Calcul Canada, mais un employé local ou un expert est responsable de répondre à la demande :</p>
-<ul class="simple">
-<li><p><a class="reference external" href="mailto:globus&#37;&#52;&#48;calculcanada&#46;ca">globus<span>&#64;</span>calculcanada<span>&#46;</span>ca</a> – pour des questions sur les services de transfert de fichiers Globus</p></li>
-<li><p><a class="reference external" href="mailto:cloud&#37;&#52;&#48;calculcanada&#46;ca">cloud<span>&#64;</span>calculcanada<span>&#46;</span>ca</a> – pour des questions sur comment utiliser nos ressources infonuagiques</p></li>
-<li><p><a class="reference external" href="mailto:accounts&#37;&#52;&#48;calculcanada&#46;ca">accounts<span>&#64;</span>calculcanada<span>&#46;</span>ca</a> – pour des questions sur les comptes de Calcul Canada</p></li>
-<li><p><a class="reference external" href="mailto:renewals&#37;&#52;&#48;calculcanada&#46;ca">renewals<span>&#64;</span>calculcanada<span>&#46;</span>ca</a> – pour des questions sur le renouvellement des comptes de Calcul Canada</p></li>
-<li><p><strong><a class="reference external" href="mailto:support&#37;&#52;&#48;calculcanada&#46;ca">support<span>&#64;</span>calculcanada<span>&#46;</span>ca</a></strong> – pour toute autre question</p></li>
-</ul>
-</div>
-</div>
-<div class="section" id="ressources-infonuagiques-court-survol">
-<h2>Ressources infonuagiques (court survol)<a class="headerlink" href="#ressources-infonuagiques-court-survol" title="Permalink to this headline">¶</a></h2>
-<p>Ces ressources sont idéales pour des <strong>portails Web</strong> et pour des applications qui ne peuvent techniquement pas fonctionner dans le cadre des ressources de calculs haute performance.</p>
-<p>Alors que l’infonuagique consiste à créer des <strong>serveurs virtuels</strong>, il est donc question de :</p>
-<ul class="simple">
-<li><p>Processeurs virtuels (processeurs physiques potentiellement partagés)</p></li>
-<li><p>Mémoire allouée</p></li>
-<li><p>Volumes de stockage</p></li>
-<li><p>Adresses IP publiques</p></li>
-<li><p>Administration par l’équipe du groupe de recherche</p></li>
-</ul>
-<p>Ces différentes ressources informatiques sont offertes à <a class="reference external" href="https://docs.computecanada.ca/wiki/Cloud_resources/fr">différents sites à Calcul Canada</a> :</p>
-<ul class="simple">
-<li><p>Arbutus (Colombie-Britannique)</p></li>
-<li><p>Béluga (Québec)</p></li>
-<li><p>Cedar (Colombie-Britannique)</p></li>
-<li><p>Graham (Ontario)</p></li>
-</ul>
-<p>La documentation concernant les services infonuagiques débute à la page : <a class="reference external" href="https://docs.computecanada.ca/wiki/Cloud/fr">https://docs.computecanada.ca/wiki/Cloud/fr</a></p>
-</div>
+<p>Le principal but de ce chapitre est de vous permettre d’analyser
+vos besoins en <strong>ressources de calcul haut-performance</strong>, et ce,
+dans le but de choisir les ressources nécessaires pour votre projet.</p>
 <div class="section" id="calcul-haute-performance">
-<h2>Calcul haute performance<a class="headerlink" href="#calcul-haute-performance" title="Permalink to this headline">¶</a></h2>
+<h2>Calcul haute performance<a class="headerlink" href="#calcul-haute-performance" title="Lien permanent vers ce titre">¶</a></h2>
 <ul class="simple">
-<li><p>Lorsqu’il est question de lancer une <strong>grande quantité de calculs</strong> (séquentiels ou parallèles) ou de <strong>traitements de données</strong>, l’utilisation d’une grappe de calcul haute performance devient nécessaire.</p></li>
-<li><p>Puisque les <strong>ressources sont partagées</strong> et en grande demande, chaque tâche doit être soumise à un ordonnanceur de tâches.</p></li>
-<li><p>Il devient donc nécessaire <strong>d’estimer à l’avance les ressources</strong> qui seront réservées lors de l’exécution d’un calcul.</p></li>
+<li><p>Lorsqu’il est question de lancer une <strong>grande quantité de calculs</strong>
+(séquentiels ou parallèles) ou de <strong>traitements de données</strong>,
+l’utilisation d’une grappe de calcul haute performance devient nécessaire.</p></li>
+<li><p>Puisque les <strong>ressources sont partagées</strong> et en grande demande,
+chaque tâche doit être soumise à un ordonnanceur de tâches.</p></li>
+<li><p>Il devient donc nécessaire <strong>d’estimer à l’avance les ressources</strong>
+qui seront réservées lors de l’exécution d’un calcul.</p></li>
 </ul>
-<p>Dans cette section, on cherche à évaluer localement le comportement d’une tâche de calcul afin d’estimer les ressources à réserver sur la grappe de calcul.</p>
+<p>Dans cette section, on cherche à évaluer le comportement d’une tâche de calcul
+afin d’estimer et d’optimiser les ressources à réserver sur la grappe de calcul.</p>
 <div class="section" id="objectif-construction-d-un-script-de-tache-slurm-rappel">
-<h3>Objectif : construction d’un script de tâche Slurm (rappel)<a class="headerlink" href="#objectif-construction-d-un-script-de-tache-slurm-rappel" title="Permalink to this headline">¶</a></h3>
+<h3>Objectif : construction d’un script de tâche Slurm (rappel)<a class="headerlink" href="#objectif-construction-d-un-script-de-tache-slurm-rappel" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Un script de tâche pour <a class="reference external" href="https://slurm.schedmd.com/documentation.html">l’ordonnanceur Slurm</a> est typiquement un script Bash dans lequel on retrouve :</p>
 <ul class="simple">
 <li><p>Le <a class="reference external" href="https://fr.wikipedia.org/wiki/Shebang">shebang</a> en toute première ligne. Par exemple : <code class="docutils literal notranslate"><span class="pre">#!/bin/bash</span></code></p></li>
@@ -405,7 +347,7 @@ En somme, c’est le regroupement de <a class="reference external" href="https:/
 <li><p><a class="reference external" href="https://docs.computecanada.ca/wiki/Utiliser_des_modules">Chargement des modules</a> requis</p></li>
 <li><p>Les commandes Bash qui seront exécutées automatiquement sur des processeurs réservés pour la tâche</p></li>
 </ul>
-<p>Par exemple : <span class="xref myst"><code class="docutils literal notranslate"><span class="pre">scripts/mpi_allo.sh</span></code></span></p>
+<p>Par exemple : <a class="reference external" href="https://github.com/calculquebec/utilisation-serveurs-calcul/blob/main/scripts/mpi_allo.sh"><code class="docutils literal notranslate"><span class="pre">scripts/mpi_allo.sh</span></code></a></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
 <span class="c1">#SBATCH --ntasks=10</span>
 <span class="c1">#SBATCH --mem-per-cpu=1000M</span>
@@ -417,7 +359,7 @@ En somme, c’est le regroupement de <a class="reference external" href="https:/
 <p>Notre documentation à cet effet débute à la page : <a class="reference external" href="https://docs.computecanada.ca/wiki/Running_jobs/fr">Exécuter des tâches</a></p>
 </div>
 <div class="section" id="gestionnaire-des-taches-locales">
-<h3>Gestionnaire des tâches locales<a class="headerlink" href="#gestionnaire-des-taches-locales" title="Permalink to this headline">¶</a></h3>
+<h3>Gestionnaire des tâches locales<a class="headerlink" href="#gestionnaire-des-taches-locales" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Lorsqu’une tâche de calcul est en cours sur votre ordinateur, vous pouvez surveiller différentes métriques :</p>
 <ul class="simple">
 <li><p>Utilisation CPU</p></li>
@@ -426,7 +368,7 @@ En somme, c’est le regroupement de <a class="reference external" href="https:/
 <li><p>Les accès au stockage</p></li>
 </ul>
 <div class="section" id="sous-windows">
-<h4>Sous Windows<a class="headerlink" href="#sous-windows" title="Permalink to this headline">¶</a></h4>
+<h4>Sous Windows<a class="headerlink" href="#sous-windows" title="Lien permanent vers ce titre">¶</a></h4>
 <ul class="simple">
 <li><p><a class="reference external" href="https://fr.wikipedia.org/wiki/Gestionnaire_des_t%C3%A2ches_Windows">Gestionnaire des tâches Windows</a></p></li>
 <li><p>Pour le faire afficher :</p>
@@ -439,20 +381,20 @@ En somme, c’est le regroupement de <a class="reference external" href="https:/
 <p><img alt="Aperçu du gestionnaire des tâches Windows" src="_images/win-task-manager.png" /></p>
 </div>
 <div class="section" id="sous-mac-os">
-<h4>Sous Mac OS<a class="headerlink" href="#sous-mac-os" title="Permalink to this headline">¶</a></h4>
+<h4>Sous Mac OS<a class="headerlink" href="#sous-mac-os" title="Lien permanent vers ce titre">¶</a></h4>
 <ul class="simple">
 <li><p><a class="reference external" href="https://support.apple.com/fr-ca/guide/activity-monitor/actmntr1001/mac">Moniteur d’activité</a></p></li>
 <li><p>Pour le faire afficher :</p>
 <ul>
 <li><p>Démarrer l’application à partir des <em>Applications et Utilitaires</em> de Mac OS</p></li>
-<li><p>Sinon, utiliser le raccourcis clavier Commande+Espace et taper les premières lettres de “Moniteur d’activité” pour pouvoir sélectionner cette application</p></li>
+<li><p>Sinon, utiliser le raccourcis clavier Commande+Espace et taper les premières lettres de « Moniteur d’activité » pour pouvoir sélectionner cette application</p></li>
 </ul>
 </li>
 </ul>
 <p><img alt="Aperçu du moniteur d'activité Mac OS" src="https://help.apple.com/assets/5FDCF1894EB74318147EC0CF/5FDCF18A4EB74318147EC0D6/fr_CA/ad6337d66061aa27122e75521960fc5a.png" /></p>
 </div>
 <div class="section" id="sous-linux">
-<h4>Sous Linux<a class="headerlink" href="#sous-linux" title="Permalink to this headline">¶</a></h4>
+<h4>Sous Linux<a class="headerlink" href="#sous-linux" title="Lien permanent vers ce titre">¶</a></h4>
 <p>Dans un terminal Unix, on peut utiliser :</p>
 <ul class="simple">
 <li><p>La <a class="reference external" href="https://man7.org/linux/man-pages/man1/top.1.html">commande <code class="docutils literal notranslate"><span class="pre">top</span></code></a> (<code class="docutils literal notranslate"><span class="pre">q</span></code> pour quitter)</p></li>
@@ -465,7 +407,7 @@ En somme, c’est le regroupement de <a class="reference external" href="https:/
 </div>
 </div>
 <div class="section" id="verifier-l-utilisation-du-gpu-local">
-<h3>Vérifier l’utilisation du GPU local<a class="headerlink" href="#verifier-l-utilisation-du-gpu-local" title="Permalink to this headline">¶</a></h3>
+<h3>Vérifier l’utilisation du GPU local<a class="headerlink" href="#verifier-l-utilisation-du-gpu-local" title="Lien permanent vers ce titre">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bash</span> <span class="n">scripts</span><span class="o">/</span><span class="n">installer</span><span class="o">/</span><span class="n">cuda</span><span class="o">-</span><span class="n">samples</span><span class="o">.</span><span class="n">sh</span>
 <span class="n">salloc</span> <span class="o">--</span><span class="n">gres</span><span class="o">=</span><span class="n">gpu</span><span class="p">:</span><span class="mi">1</span> <span class="o">--</span><span class="n">mem</span><span class="o">=</span><span class="mi">2000</span><span class="n">M</span> <span class="o">--</span><span class="n">time</span><span class="o">=</span><span class="mi">0</span><span class="o">-</span><span class="mi">00</span><span class="p">:</span><span class="mi">05</span>
 <span class="n">bash</span> <span class="n">scripts</span><span class="o">/</span><span class="n">cuda</span><span class="o">-</span><span class="n">matmul</span><span class="o">.</span><span class="n">sh</span> <span class="o">&amp;&gt;</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">null</span> <span class="o">&amp;</span>
@@ -481,10 +423,10 @@ En somme, c’est le regroupement de <a class="reference external" href="https:/
 </ul>
 <p><img alt="Capture nvtop" src="https://raw.githubusercontent.com/Syllo/nvtop/master/screenshot/NVTOP_ex1.png" /></p>
 <div class="section" id="comparer-la-vitesse-cpu-vs-gpu">
-<h4>Comparer la vitesse CPU vs GPU<a class="headerlink" href="#comparer-la-vitesse-cpu-vs-gpu" title="Permalink to this headline">¶</a></h4>
+<h4>Comparer la vitesse CPU vs GPU<a class="headerlink" href="#comparer-la-vitesse-cpu-vs-gpu" title="Lien permanent vers ce titre">¶</a></h4>
 <p>Si votre application ne fait pas bon usage d’un GPU ou n’est pas du tout conçue pour fonctionner avec un accélérateur, il n’y a aucun avantage à soumettre une tâche en demandant un ou plusieurs GPUs.</p>
 <ul class="simple">
-<li><p>Avant d’utiliser massivement les GPUs d’une grappe de calcul, il faut tout d’abord que l’application puisse démontrer une “bonne performance” en utilisant plusieurs processeurs en parallèle.</p></li>
+<li><p>Avant d’utiliser massivement les GPUs d’une grappe de calcul, il faut tout d’abord que l’application puisse démontrer une « bonne performance » en utilisant plusieurs processeurs en parallèle.</p></li>
 <li><p>La métrique à noter et à comparer est le <strong>temps écoulé</strong>, et non le temps CPU.</p></li>
 <li><p><strong>Accélération</strong> = (temps avec un processeur) / (temps avec plusieurs processeurs)</p></li>
 <li><p><strong>Efficacité</strong> = (Accélération) / (nombre de processeurs)</p></li>
@@ -493,7 +435,7 @@ En somme, c’est le regroupement de <a class="reference external" href="https:/
 </ul>
 </div>
 <div class="section" id="exercice-calcul-d-acceleration-et-d-efficacite">
-<h4>Exercice - Calcul d’accélération et d’efficacité<a class="headerlink" href="#exercice-calcul-d-acceleration-et-d-efficacite" title="Permalink to this headline">¶</a></h4>
+<h4>Exercice - Calcul d’accélération et d’efficacité<a class="headerlink" href="#exercice-calcul-d-acceleration-et-d-efficacite" title="Lien permanent vers ce titre">¶</a></h4>
 <p>Soumission d’une tâche séquentielle et d’une tâche parallèle :</p>
 <ul class="simple">
 <li><p><strong>Si ce n’est pas déjà fait</strong>, télécharger et compiler le programme N-Body en exécutant :</p></li>
@@ -502,7 +444,7 @@ En somme, c’est le regroupement de <a class="reference external" href="https:/
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>Explorer le script de tâche <span class="xref myst"><code class="docutils literal notranslate"><span class="pre">scripts/nbody-openmp.sh</span></code></span></p></li>
+<li><p>Explorer le script de tâche <a class="reference external" href="https://github.com/calculquebec/utilisation-serveurs-calcul/blob/main/scripts/nbody-openmp.sh"><code class="docutils literal notranslate"><span class="pre">scripts/nbody-openmp.sh</span></code></a></p></li>
 </ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="n">scripts</span><span class="o">/</span><span class="n">nbody</span><span class="o">-</span><span class="n">openmp</span><span class="o">.</span><span class="n">sh</span>
 </pre></div>
@@ -529,7 +471,7 @@ En somme, c’est le regroupement de <a class="reference external" href="https:/
 <ul class="simple">
 <li><p>Les résultats seront dans les fichiers <code class="docutils literal notranslate"><span class="pre">slurm-JOBID.out</span></code></p>
 <ul>
-<li><p>Pour une exécution valide, tous les fichiers <code class="docutils literal notranslate"><span class="pre">*.mol</span></code> doivent être “<code class="docutils literal notranslate"><span class="pre">OK</span></code>”</p></li>
+<li><p>Pour une exécution valide, tous les fichiers <code class="docutils literal notranslate"><span class="pre">*.mol</span></code> doivent être « <code class="docutils literal notranslate"><span class="pre">OK</span></code> »</p></li>
 </ul>
 </li>
 </ul>
@@ -543,7 +485,9 @@ En somme, c’est le regroupement de <a class="reference external" href="https:/
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>Selon les résultats obtenus ci-dessus, une analyse d’accélération et d’efficacité peut être faite à l’aide du script <span class="xref myst"><code class="docutils literal notranslate"><span class="pre">scripts/calc-acc-eff.sh</span></code></span></p></li>
+<li><p>Selon les résultats obtenus ci-dessus, une analyse d’accélération et
+d’efficacité peut être faite à l’aide du script
+<a class="reference external" href="https://github.com/calculquebec/utilisation-serveurs-calcul/blob/main/scripts/calc-acc-eff.sh"><code class="docutils literal notranslate"><span class="pre">scripts/calc-acc-eff.sh</span></code></a></p></li>
 </ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="n">scripts</span><span class="o">/</span><span class="n">calc</span><span class="o">-</span><span class="n">acc</span><span class="o">-</span><span class="n">eff</span><span class="o">.</span><span class="n">sh</span>
 </pre></div>
@@ -566,9 +510,9 @@ En somme, c’est le regroupement de <a class="reference external" href="https:/
 </div>
 </div>
 <div class="section" id="prevoir-les-ressources-de-calcul">
-<h3>Prévoir les ressources de calcul<a class="headerlink" href="#prevoir-les-ressources-de-calcul" title="Permalink to this headline">¶</a></h3>
+<h3>Prévoir les ressources de calcul<a class="headerlink" href="#prevoir-les-ressources-de-calcul" title="Lien permanent vers ce titre">¶</a></h3>
 <div class="section" id="efficacite-cible-du-calcul-parallele">
-<h4>Efficacité cible du calcul parallèle<a class="headerlink" href="#efficacite-cible-du-calcul-parallele" title="Permalink to this headline">¶</a></h4>
+<h4>Efficacité cible du calcul parallèle<a class="headerlink" href="#efficacite-cible-du-calcul-parallele" title="Lien permanent vers ce titre">¶</a></h4>
 <p>Une efficacité de 80%, voire 90%, devrait être un seuil minimal pour les tâches parallèles. Il reste donc à <strong>déterminer le nombre maximal de processeurs</strong> pour notre application.</p>
 <p>Nous allons utiliser la <a class="reference external" href="https://fr.wikipedia.org/wiki/Loi_d%27Amdahl">loi d’Amdahl</a>. Voici quelques définitions :</p>
 <ul class="simple">
@@ -605,13 +549,14 @@ En somme, c’est le regroupement de <a class="reference external" href="https:/
 </ul>
 <p><strong>Exercice - Taille maximale d’une tâche parallèle</strong></p>
 <ul class="simple">
-<li><p>Explorer le script <span class="xref myst"><code class="docutils literal notranslate"><span class="pre">scripts/calc-n-max.sh</span></code></span></p></li>
+<li><p>Explorer le script <a class="reference external" href="https://github.com/calculquebec/utilisation-serveurs-calcul/blob/main/scripts/calc-n-max.sh"><code class="docutils literal notranslate"><span class="pre">scripts/calc-n-max.sh</span></code></a></p></li>
 </ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="n">scripts</span><span class="o">/</span><span class="n">calc</span><span class="o">-</span><span class="n">n</span><span class="o">-</span><span class="nb">max</span><span class="o">.</span><span class="n">sh</span>
 </pre></div>
 </div>
 <ul class="simple">
-<li><p><strong>Important</strong> - ce script est conçu pour recevoir le résultat redirigé du script <code class="docutils literal notranslate"><span class="pre">scripts/calc-acc-eff.sh</span></code> dans son canal STDIN</p>
+<li><p><strong>Important</strong> - ce script est conçu pour recevoir le résultat redirigé du script
+<a class="reference external" href="https://github.com/calculquebec/utilisation-serveurs-calcul/blob/main/scripts/calc-acc-eff.sh"><code class="docutils literal notranslate"><span class="pre">scripts/calc-acc-eff.sh</span></code></a> dans son canal STDIN</p>
 <ul>
 <li><p>En cas de blocage du terminal, faites Ctrl+C</p></li>
 </ul>
@@ -632,7 +577,7 @@ En somme, c’est le regroupement de <a class="reference external" href="https:/
 </div>
 </div>
 <div class="section" id="taille-des-donnees-et-nombre-de-fichiers-a-traiter">
-<h4>Taille des données et nombre de fichiers à traiter<a class="headerlink" href="#taille-des-donnees-et-nombre-de-fichiers-a-traiter" title="Permalink to this headline">¶</a></h4>
+<h4>Taille des données et nombre de fichiers à traiter<a class="headerlink" href="#taille-des-donnees-et-nombre-de-fichiers-a-traiter" title="Lien permanent vers ce titre">¶</a></h4>
 <p>Pour un calcul donné, il y a deux métriques de stockage à considérer :</p>
 <ul class="simple">
 <li><p>La <strong>quantité</strong> totale en octets (ou Go)</p></li>
@@ -672,7 +617,7 @@ En somme, c’est le regroupement de <a class="reference external" href="https:/
 </ul>
 </div>
 <div class="section" id="stockage-en-memoire-selon-les-types-de-base">
-<h4>Stockage en mémoire selon les types de base<a class="headerlink" href="#stockage-en-memoire-selon-les-types-de-base" title="Permalink to this headline">¶</a></h4>
+<h4>Stockage en mémoire selon les types de base<a class="headerlink" href="#stockage-en-memoire-selon-les-types-de-base" title="Lien permanent vers ce titre">¶</a></h4>
 <p>En ayant une idée de la taille des données à traiter, il devient aussi possible d’estimer la place que les données peuvent prendre en mémoire-vive.</p>
 <ul class="simple">
 <li><p>Dans un fichier texte, <strong>chaque caractère</strong> prend de un (1) à deux (2) octets, en moyenne.
@@ -760,7 +705,7 @@ Par exemple, dans une session Python :</p></li>
 </div>
 </div>
 <div class="section" id="la-complexite-des-algorithmes">
-<h4>La complexité des algorithmes<a class="headerlink" href="#la-complexite-des-algorithmes" title="Permalink to this headline">¶</a></h4>
+<h4>La complexité des algorithmes<a class="headerlink" href="#la-complexite-des-algorithmes" title="Lien permanent vers ce titre">¶</a></h4>
 <p>La question qui se pose : en augmentant la ou les dimensions du problème, quelles devraient être la durée du calcul et la consommation en mémoire-vive?
 Une <a class="reference external" href="https://fr.wikipedia.org/wiki/Analyse_de_la_complexit%C3%A9_des_algorithmes">analyse de la complexité de l’algorithme principal</a>
 permettrait de connaître l’ordre <span class="math notranslate nohighlight">\(O\)</span> du calcul en fonction de la taille <span class="math notranslate nohighlight">\(n\)</span> des données :</p>
@@ -780,16 +725,16 @@ où il y a <span class="math notranslate nohighlight">\(n\)</span> éléments à
 </ul>
 </div>
 <div class="section" id="exercice-complexite-de-l-algorithme">
-<h4>Exercice - Complexité de l’algorithme<a class="headerlink" href="#exercice-complexite-de-l-algorithme" title="Permalink to this headline">¶</a></h4>
+<h4>Exercice - Complexité de l’algorithme<a class="headerlink" href="#exercice-complexite-de-l-algorithme" title="Lien permanent vers ce titre">¶</a></h4>
 <p>Dans cet exercice, il est question d’inverser une matrice de valeurs aléatoires de taille <code class="docutils literal notranslate"><span class="pre">n*n</span></code> :</p>
 <ul class="simple">
-<li><p>Soumettre le script <span class="xref myst"><code class="docutils literal notranslate"><span class="pre">scripts/inv-mat.sh</span></code></span> avec la commande <code class="docutils literal notranslate"><span class="pre">sbatch</span></code> :</p></li>
+<li><p>Soumettre le script <a class="reference external" href="https://github.com/calculquebec/utilisation-serveurs-calcul/blob/main/scripts/inv-mat.sh"><code class="docutils literal notranslate"><span class="pre">scripts/inv-mat.sh</span></code></a> avec la commande <code class="docutils literal notranslate"><span class="pre">sbatch</span></code> :</p></li>
 </ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sbatch</span> <span class="n">scripts</span><span class="o">/</span><span class="n">inv</span><span class="o">-</span><span class="n">mat</span><span class="o">.</span><span class="n">sh</span>
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>Explorer le script Python <span class="xref myst"><code class="docutils literal notranslate"><span class="pre">scripts/inv-mat.py</span></code></span> :</p></li>
+<li><p>Explorer le script Python <a class="reference external" href="https://github.com/calculquebec/utilisation-serveurs-calcul/blob/main/scripts/inv-mat.py"><code class="docutils literal notranslate"><span class="pre">scripts/inv-mat.py</span></code></a> :</p></li>
 </ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">less</span> <span class="n">scripts</span><span class="o">/</span><span class="n">inv</span><span class="o">-</span><span class="n">mat</span><span class="o">.</span><span class="n">py</span>  <span class="c1"># q pour quitter</span>
 </pre></div>
@@ -797,7 +742,7 @@ où il y a <span class="math notranslate nohighlight">\(n\)</span> éléments à
 <ul class="simple">
 <li><p>Suivre l’évolution du calcul avec <code class="docutils literal notranslate"><span class="pre">squeue</span> <span class="pre">-u</span> <span class="pre">$USER</span></code>, environ aux 30 secondes</p></li>
 <li><p>Le résultat sera sauvegardé dans le fichier <code class="docutils literal notranslate"><span class="pre">temps_inv.csv</span></code></p></li>
-<li><p>Analyse avec Python, Pandas et Numpy dans le script <span class="xref myst"><code class="docutils literal notranslate"><span class="pre">scripts/inv-mat-pred.py</span></code></span> :</p></li>
+<li><p>Analyse avec Python, Pandas et Numpy dans le script <a class="reference external" href="https://github.com/calculquebec/utilisation-serveurs-calcul/blob/main/scripts/inv-mat-pred.py"><code class="docutils literal notranslate"><span class="pre">scripts/inv-mat-pred.py</span></code></a> :</p></li>
 </ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">module</span> <span class="n">load</span> <span class="n">gcc</span> <span class="n">python</span> <span class="n">scipy</span><span class="o">-</span><span class="n">stack</span>
 
@@ -809,7 +754,7 @@ où il y a <span class="math notranslate nohighlight">\(n\)</span> éléments à
 </div>
 </div>
 <div class="section" id="principales-differences-entre-les-grappes-de-calcul">
-<h2>Principales différences entre les grappes de calcul<a class="headerlink" href="#principales-differences-entre-les-grappes-de-calcul" title="Permalink to this headline">¶</a></h2>
+<h2>Principales différences entre les grappes de calcul<a class="headerlink" href="#principales-differences-entre-les-grappes-de-calcul" title="Lien permanent vers ce titre">¶</a></h2>
 <ul class="simple">
 <li><p>À propos des grappes :</p></li>
 </ul>
@@ -1091,7 +1036,7 @@ où il y a <span class="math notranslate nohighlight">\(n\)</span> éléments à
 </tbody>
 </table>
 <ul class="simple">
-<li><p>Stockage : le tout sera décrit au <a class="reference internal" href="stockage.html"><span class="doc std std-doc">chapitre suivant…</span></a></p></li>
+<li><p>Stockage : le tout sera décrit au dernier chapitre.</p></li>
 </ul>
 </div>
 </div>
@@ -1126,18 +1071,18 @@ où il y a <span class="math notranslate nohighlight">\(n\)</span> éléments à
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="a_propos.html" title="previous page">
+        <a class="left-prev" href="a_propos.html" title="précédent page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
+                <p class="prevnext-label">précédent</p>
                 <p class="prevnext-title">À propos</p>
             </div>
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="analyse-taches.html" title="next page">
+        <a class="right-next" href="analyse-taches.html" title="suivant page">
             <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
+                <p class="prevnext-label">suivant</p>
                 <p class="prevnext-title">Analyse des tâches</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
@@ -1152,9 +1097,9 @@ où il y a <span class="math notranslate nohighlight">\(n\)</span> éléments à
     <div class="container">
       <p>
         
-          By Équipe Calcul Québec<br/>
+          Par Équipe Calcul Québec<br/>
         
-            &copy; Copyright 2021.<br/>
+            &copy; droits d'auteur 2021.<br/>
       </p>
     </div>
   </footer>

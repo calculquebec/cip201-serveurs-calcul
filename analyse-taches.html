@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="fr">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -40,6 +40,7 @@
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
+    <script src="_static/translations.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
@@ -51,7 +52,7 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="shortcut icon" href="_static/logo.png"/>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
+    <link rel="search" title="Recherche" href="search.html" />
     <link rel="next" title="Lots de tâches" href="lots-taches.html" />
     <link rel="prev" title="Bien choisir les ressources" href="ressources.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -84,7 +85,7 @@
     </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Rechercher dans ce livre ..." aria-label="Rechercher dans ce livre ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
@@ -140,8 +141,8 @@
             
             <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
                 data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                aria-expanded="true" aria-label="Basculer la navigation" aria-controls="site-navigation"
+                title="Basculer la navigation" data-toggle="tooltip" data-placement="left">
                 <i class="fas fa-bars"></i>
                 <i class="fas fa-arrow-left"></i>
                 <i class="fas fa-arrow-up"></i>
@@ -149,7 +150,7 @@
             
             
 <div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Téléchargez cette page"><i
             class="fas fa-download"></i></button>
 
     <div class="dropdown-buttons">
@@ -157,10 +158,10 @@
         
         <!-- Download raw file -->
         <a class="dropdown-buttons" href="_sources/analyse-taches.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                class="btn btn-secondary topbarbtn" title="Télécharger le fichier source" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Imprimer au format PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
@@ -173,8 +174,8 @@
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
             href="https://github.com/calculquebec/utilisation-serveurs-calcul"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
+                data-toggle="tooltip" data-placement="left" title="Dépôt source"><i
+                    class="fab fa-github"></i>dépôt</button></a>
         
         
     </div>
@@ -183,8 +184,8 @@
             <!-- Full screen (wrap in <a> to have style consistency -->
 
 <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Mode plein écran"
+        title="Mode plein écran"><i
             class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
@@ -195,7 +196,7 @@
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
             <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+                <i class="fas fa-list"></i> Contenu
             </div>
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
@@ -233,7 +234,7 @@
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="analyse-des-taches">
-<h1>Analyse des tâches<a class="headerlink" href="#analyse-des-taches" title="Permalink to this headline">¶</a></h1>
+<h1>Analyse des tâches<a class="headerlink" href="#analyse-des-taches" title="Lien permanent vers ce titre">¶</a></h1>
 <p>Le but de ce chapitre est d’approfondir <a class="reference external" href="https://docs.computecanada.ca/wiki/Running_jobs/fr#Suivi_des_t.C3.A2ches">l’analyse des tâches</a> en attente, en cours et les tâches terminées.</p>
 <p>Remplissons la liste de tâches gérées par l’ordonnanceur :</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="n">scripts</span><span class="o">/</span><span class="n">sleep</span><span class="o">-</span><span class="mi">300</span><span class="n">s</span><span class="o">.</span><span class="n">sh</span>
@@ -241,7 +242,7 @@
 </pre></div>
 </div>
 <div class="section" id="taches-en-attente">
-<h2>Tâches en attente<a class="headerlink" href="#taches-en-attente" title="Permalink to this headline">¶</a></h2>
+<h2>Tâches en attente<a class="headerlink" href="#taches-en-attente" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Pour afficher les tâches en attente, on utilise la commande :</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://slurm.schedmd.com/squeue.html"><code class="docutils literal notranslate"><span class="pre">squeue</span> <span class="pre">-t</span> <span class="pre">pending</span></code></a> pour toutes les tâches en attente</p></li>
@@ -297,7 +298,7 @@ Ainsi, son importance est progressivement réduite avec un ratio réduisant l’
 </ul>
 </div>
 <div class="section" id="taches-actives">
-<h2>Tâches actives<a class="headerlink" href="#taches-actives" title="Permalink to this headline">¶</a></h2>
+<h2>Tâches actives<a class="headerlink" href="#taches-actives" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Pour afficher les tâches actives, on utilise la commande :</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://slurm.schedmd.com/squeue.html"><code class="docutils literal notranslate"><span class="pre">squeue</span> <span class="pre">-t</span> <span class="pre">running</span></code></a> pour toutes les tâches actives</p></li>
@@ -339,7 +340,7 @@ Ainsi, son importance est progressivement réduite avec un ratio réduisant l’
 <p>Toutes ces informations devraient vous permettre d’ajuster votre script de soumission et d’optimiser l’exécution parallèle de votre programme.</p>
 </div>
 <div class="section" id="taches-terminees">
-<h2>Tâches terminées<a class="headerlink" href="#taches-terminees" title="Permalink to this headline">¶</a></h2>
+<h2>Tâches terminées<a class="headerlink" href="#taches-terminees" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Lorsqu’une <a class="reference external" href="https://docs.computecanada.ca/wiki/Running_jobs/fr#T.C3.A2ches_termin.C3.A9es">tâche est complétée</a>, la commande la plus simple pour obtenir des informations sur cette tâche est la commande :</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">seff</span> <span class="o">&lt;</span><span class="n">jobid</span><span class="o">&gt;</span>
 </pre></div>
@@ -355,7 +356,7 @@ Ainsi, son importance est progressivement réduite avec un ratio réduisant l’
 </ul>
 <p>En tenant compte de l’utilisation passée, il devient possible d’estimer ses besoins pour le <a class="reference external" href="https://www.computecanada.ca/page-daccueil-du-portail-de-recherche/acces-aux-ressources/concours-dallocation-des-ressources/?lang=fr">Concours d’allocation de ressources</a>.</p>
 <div class="section" id="exercice-analyse-d-execution-d-un-pipeline">
-<h3>Exercice - Analyse d’exécution d’un pipeline<a class="headerlink" href="#exercice-analyse-d-execution-d-un-pipeline" title="Permalink to this headline">¶</a></h3>
+<h3>Exercice - Analyse d’exécution d’un pipeline<a class="headerlink" href="#exercice-analyse-d-execution-d-un-pipeline" title="Lien permanent vers ce titre">¶</a></h3>
 <ul class="simple">
 <li><p>Lancer à nouveau le pipeline avec la commande :</p></li>
 </ul>
@@ -431,18 +432,18 @@ squeue -t running -u $USER
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="ressources.html" title="previous page">
+        <a class="left-prev" href="ressources.html" title="précédent page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
+                <p class="prevnext-label">précédent</p>
                 <p class="prevnext-title">Bien choisir les ressources</p>
             </div>
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="lots-taches.html" title="next page">
+        <a class="right-next" href="lots-taches.html" title="suivant page">
             <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
+                <p class="prevnext-label">suivant</p>
                 <p class="prevnext-title">Lots de tâches</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
@@ -457,9 +458,9 @@ squeue -t running -u $USER
     <div class="container">
       <p>
         
-          By Équipe Calcul Québec<br/>
+          Par Équipe Calcul Québec<br/>
         
-            &copy; Copyright 2021.<br/>
+            &copy; droits d'auteur 2021.<br/>
       </p>
     </div>
   </footer>

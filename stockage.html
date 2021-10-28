@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="fr">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -40,6 +40,7 @@
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
+    <script src="_static/translations.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
@@ -51,7 +52,7 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="shortcut icon" href="_static/logo.png"/>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
+    <link rel="search" title="Recherche" href="search.html" />
     <link rel="prev" title="Lots de tâches" href="lots-taches.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -83,7 +84,7 @@
     </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Rechercher dans ce livre ..." aria-label="Rechercher dans ce livre ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
@@ -139,8 +140,8 @@
             
             <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
                 data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                aria-expanded="true" aria-label="Basculer la navigation" aria-controls="site-navigation"
+                title="Basculer la navigation" data-toggle="tooltip" data-placement="left">
                 <i class="fas fa-bars"></i>
                 <i class="fas fa-arrow-left"></i>
                 <i class="fas fa-arrow-up"></i>
@@ -148,7 +149,7 @@
             
             
 <div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Téléchargez cette page"><i
             class="fas fa-download"></i></button>
 
     <div class="dropdown-buttons">
@@ -156,10 +157,10 @@
         
         <!-- Download raw file -->
         <a class="dropdown-buttons" href="_sources/stockage.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                class="btn btn-secondary topbarbtn" title="Télécharger le fichier source" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Imprimer au format PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
@@ -172,8 +173,8 @@
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
             href="https://github.com/calculquebec/utilisation-serveurs-calcul"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
+                data-toggle="tooltip" data-placement="left" title="Dépôt source"><i
+                    class="fab fa-github"></i>dépôt</button></a>
         
         
     </div>
@@ -182,8 +183,8 @@
             <!-- Full screen (wrap in <a> to have style consistency -->
 
 <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Mode plein écran"
+        title="Mode plein écran"><i
             class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
@@ -194,7 +195,7 @@
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
             <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+                <i class="fas fa-list"></i> Contenu
             </div>
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
@@ -355,7 +356,7 @@
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="les-espaces-de-stockage">
-<h1>Les espaces de stockage<a class="headerlink" href="#les-espaces-de-stockage" title="Permalink to this headline">¶</a></h1>
+<h1>Les espaces de stockage<a class="headerlink" href="#les-espaces-de-stockage" title="Lien permanent vers ce titre">¶</a></h1>
 <p>Il y a plusieurs types de stockage à l’Alliance de Recherche numérique du Canada :</p>
 <ul class="simple">
 <li><p>Personnel (<code class="docutils literal notranslate"><span class="pre">/home</span></code>)</p></li>
@@ -375,7 +376,7 @@
 </ul>
 <p>Le but de ce chapitre est de pouvoir considérer tous les aspects nécessaires à la gestion des données actives sur les différents espaces de stockage disponibles.</p>
 <div class="section" id="description-de-vos-donnees">
-<h2>Description de vos données<a class="headerlink" href="#description-de-vos-donnees" title="Permalink to this headline">¶</a></h2>
+<h2>Description de vos données<a class="headerlink" href="#description-de-vos-donnees" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Au chapitre précédent, nous avons vu comment obtenir le nombre de fichiers de nos données locales, de même que la taille totale.</p>
 <p>Sur une grappe de calcul, un <strong>système de fichiers parallel</strong>
 <a class="reference external" href="https://docs.computecanada.ca/wiki/Tuning_Lustre/fr"><em>Lustre</em></a> ou <em>GPFS</em>
@@ -407,9 +408,9 @@ c’est-à-dire pour des accès à large bande-passante. Ainsi, à l’échelle 
 </li>
 </ul>
 <div class="section" id="transferabilite">
-<h3>Transférabilité<a class="headerlink" href="#transferabilite" title="Permalink to this headline">¶</a></h3>
+<h3>Transférabilité<a class="headerlink" href="#transferabilite" title="Lien permanent vers ce titre">¶</a></h3>
 <div class="section" id="regroupement-dans-un-fichier-archive">
-<h4>Regroupement dans un fichier archive<a class="headerlink" href="#regroupement-dans-un-fichier-archive" title="Permalink to this headline">¶</a></h4>
+<h4>Regroupement dans un fichier archive<a class="headerlink" href="#regroupement-dans-un-fichier-archive" title="Lien permanent vers ce titre">¶</a></h4>
 <p>Étant donné que le transfert ou la synchronisation de <a class="reference external" href="https://docs.computecanada.ca/wiki/Handling_large_collections_of_files/fr">plusieurs petits fichiers</a> implique un accès fréquent aux métadonnées du système de stockage <em>Lustre</em>, il est donc préférable de <a class="reference external" href="https://docs.computecanada.ca/wiki/Archiving_and_compressing_files/fr">regrouper les fichiers</a> d’un jeu de données avant tout transfert.
 Pour ce faire, il existe plusieurs formats décodables sur les différentes grappes :</p>
 <ul class="simple">
@@ -438,10 +439,10 @@ Pour ce faire, il existe plusieurs formats décodables sur les différentes grap
 </div>
 </div>
 <div class="section" id="compression">
-<h4>Compression<a class="headerlink" href="#compression" title="Permalink to this headline">¶</a></h4>
+<h4>Compression<a class="headerlink" href="#compression" title="Lien permanent vers ce titre">¶</a></h4>
 <p>La <a class="reference external" href="https://docs.computecanada.ca/wiki/Archiving_and_compressing_files/fr">compression des fichiers</a> a un <strong>coût en temps CPU</strong> à chaque fois que nous voulons lire les données ou les écrire.</p>
 <ul class="simple">
-<li><p>Ainsi, il vaut mieux utiliser la compression <strong>lorsque c’est “avantageux”</strong> en espace et/ou en temps.</p>
+<li><p>Ainsi, il vaut mieux utiliser la compression <strong>lorsque c’est « avantageux »</strong> en espace et/ou en temps.</p>
 <ul>
 <li><p>Par exemple : décompression des fichiers sur le noeud de calcul plutôt que de lire chaque fichier de <em>Lustre</em>.</p></li>
 </ul>
@@ -454,7 +455,7 @@ Pour ce faire, il existe plusieurs formats décodables sur les différentes grap
 </ul>
 </div>
 <div class="section" id="exercice-dar">
-<h4>Exercice - DAR<a class="headerlink" href="#exercice-dar" title="Permalink to this headline">¶</a></h4>
+<h4>Exercice - DAR<a class="headerlink" href="#exercice-dar" title="Lien permanent vers ce titre">¶</a></h4>
 <p>Dans un terminal :</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dar</span> <span class="o">-</span><span class="n">w</span> <span class="o">-</span><span class="n">c</span> <span class="n">dossiers</span> <span class="o">-</span><span class="n">g</span> <span class="n">images</span> <span class="o">-</span><span class="n">g</span> <span class="n">scripts</span>
 </pre></div>
@@ -520,7 +521,7 @@ Pour ce faire, il existe plusieurs formats décodables sur les différentes grap
 </ul>
 </div>
 <div class="section" id="exercice-espace-utilise">
-<h4>Exercice - Espace utilisé<a class="headerlink" href="#exercice-espace-utilise" title="Permalink to this headline">¶</a></h4>
+<h4>Exercice - Espace utilisé<a class="headerlink" href="#exercice-espace-utilise" title="Lien permanent vers ce titre">¶</a></h4>
 <p>Dans un terminal Jupyter, essayez les commandes :</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">du</span> <span class="pre">-s</span> <span class="pre">~</span></code></p></li>
@@ -532,7 +533,7 @@ Pour ce faire, il existe plusieurs formats décodables sur les différentes grap
 Nous verrons cela à la fin du chapitre.</p>
 </div>
 <div class="section" id="fichiers-epars-sparse-files">
-<h4>Fichiers épars (sparse files)<a class="headerlink" href="#fichiers-epars-sparse-files" title="Permalink to this headline">¶</a></h4>
+<h4>Fichiers épars (sparse files)<a class="headerlink" href="#fichiers-epars-sparse-files" title="Lien permanent vers ce titre">¶</a></h4>
 <p>Restez à l’affût des fichiers épars dont la faible taille sur le disque n’est pas représentative de la taille normale du fichier :</p>
 <ul class="simple">
 <li><p>Une certaine taille <code class="docutils literal notranslate"><span class="pre">T</span></code> est allouée pour le fichier. Par exemple : 1 To</p></li>
@@ -544,10 +545,10 @@ Nous verrons cela à la fin du chapitre.</p>
 </div>
 </div>
 <div class="section" id="plan-de-gestion-des-donnees-actives">
-<h3>Plan de gestion des données actives<a class="headerlink" href="#plan-de-gestion-des-donnees-actives" title="Permalink to this headline">¶</a></h3>
+<h3>Plan de gestion des données actives<a class="headerlink" href="#plan-de-gestion-des-donnees-actives" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Les données sur les grappes de calcul sont généralement présentes en attente d’être traitées, manipulées ou publiées, d’où la notion de <em>données actives</em>. Or, il y a une planification à faire et des questions à se poser.</p>
 <div class="section" id="vie-des-donnees">
-<h4>Vie des données<a class="headerlink" href="#vie-des-donnees" title="Permalink to this headline">¶</a></h4>
+<h4>Vie des données<a class="headerlink" href="#vie-des-donnees" title="Lien permanent vers ce titre">¶</a></h4>
 <ul class="simple">
 <li><p><strong>Durée de vie variable</strong> - avons-nous affaire à des données temporaires ou à des données persistantes?</p>
 <ul>
@@ -573,7 +574,7 @@ Nous verrons cela à la fin du chapitre.</p>
 </div>
 </div>
 <div class="section" id="niveaux-d-acces">
-<h4>Niveaux d’accès<a class="headerlink" href="#niveaux-d-acces" title="Permalink to this headline">¶</a></h4>
+<h4>Niveaux d’accès<a class="headerlink" href="#niveaux-d-acces" title="Lien permanent vers ce titre">¶</a></h4>
 <ul class="simple">
 <li><p>Quel est le <strong>niveau de confidentialité</strong> de vos données?</p>
 <ul>
@@ -590,7 +591,7 @@ Dans tous les cas, sans précaution, les données que vous laissez sur les grapp
 </div>
 </div>
 <div class="section" id="les-differents-types-de-stockage">
-<h2>Les différents types de stockage<a class="headerlink" href="#les-differents-types-de-stockage" title="Permalink to this headline">¶</a></h2>
+<h2>Les différents types de stockage<a class="headerlink" href="#les-differents-types-de-stockage" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Stockage accessible selon le type de noeud :</p>
 <ul class="simple">
 <li><p>Noeud de connexion (ou interactif)</p></li>
@@ -632,7 +633,7 @@ Dans tous les cas, sans précaution, les données que vous laissez sur les grapp
 </table>
 <p>À propos des <a class="reference external" href="https://docs.computecanada.ca/wiki/Storage_and_file_management/fr#Types_de_stockage">différents espaces de stockage</a>.</p>
 <div class="section" id="votre-dossier-personnel-home">
-<h3>Votre dossier personnel (<code class="docutils literal notranslate"><span class="pre">/home</span></code>)<a class="headerlink" href="#votre-dossier-personnel-home" title="Permalink to this headline">¶</a></h3>
+<h3>Votre dossier personnel (<code class="docutils literal notranslate"><span class="pre">/home</span></code>)<a class="headerlink" href="#votre-dossier-personnel-home" title="Lien permanent vers ce titre">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ls -a
 ls -la
 ls -ld $HOME
@@ -648,7 +649,7 @@ ls -ld $HOME
 </ul>
 </div>
 <div class="section" id="dossier-temporaire-local-slurm-tmpdir">
-<h3>Dossier temporaire local (<code class="docutils literal notranslate"><span class="pre">$SLURM_TMPDIR</span></code>)<a class="headerlink" href="#dossier-temporaire-local-slurm-tmpdir" title="Permalink to this headline">¶</a></h3>
+<h3>Dossier temporaire local (<code class="docutils literal notranslate"><span class="pre">$SLURM_TMPDIR</span></code>)<a class="headerlink" href="#dossier-temporaire-local-slurm-tmpdir" title="Lien permanent vers ce titre">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ls -ld $SLURM_TMPDIR
 salloc
   ls -ld $SLURM_TMPDIR
@@ -674,7 +675,7 @@ salloc
 </ul>
 </div>
 <div class="section" id="espace-reseau-pour-donnees-temporaires-scratch">
-<h3>Espace réseau pour données temporaires (<code class="docutils literal notranslate"><span class="pre">/scratch</span></code>)<a class="headerlink" href="#espace-reseau-pour-donnees-temporaires-scratch" title="Permalink to this headline">¶</a></h3>
+<h3>Espace réseau pour données temporaires (<code class="docutils literal notranslate"><span class="pre">/scratch</span></code>)<a class="headerlink" href="#espace-reseau-pour-donnees-temporaires-scratch" title="Lien permanent vers ce titre">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>df -h /scratch
 ls -ld $SCRATCH
 
@@ -722,7 +723,7 @@ cd $HOME
 </ul>
 </div>
 <div class="section" id="espace-projet-partage-project">
-<h3>Espace projet partagé (<code class="docutils literal notranslate"><span class="pre">/project</span></code>)<a class="headerlink" href="#espace-projet-partage-project" title="Permalink to this headline">¶</a></h3>
+<h3>Espace projet partagé (<code class="docutils literal notranslate"><span class="pre">/project</span></code>)<a class="headerlink" href="#espace-projet-partage-project" title="Lien permanent vers ce titre">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="o">-</span><span class="n">ld</span> <span class="o">/</span><span class="n">project</span>
 <span class="n">ls</span> <span class="o">-</span><span class="n">ld</span> <span class="o">/</span><span class="n">project</span><span class="o">/</span><span class="n">def</span><span class="o">-</span><span class="n">sponsor00</span>
 <span class="n">ls</span> <span class="o">-</span><span class="n">l</span> <span class="o">/</span><span class="n">project</span><span class="o">/</span><span class="n">def</span><span class="o">-</span><span class="n">sponsor00</span>
@@ -760,7 +761,7 @@ cd $HOME
 </ul>
 </div>
 <div class="section" id="stockage-tres-longue-duree-nearline">
-<h3>Stockage très longue durée (<code class="docutils literal notranslate"><span class="pre">/nearline</span></code>)<a class="headerlink" href="#stockage-tres-longue-duree-nearline" title="Permalink to this headline">¶</a></h3>
+<h3>Stockage très longue durée (<code class="docutils literal notranslate"><span class="pre">/nearline</span></code>)<a class="headerlink" href="#stockage-tres-longue-duree-nearline" title="Lien permanent vers ce titre">¶</a></h3>
 <ul class="simple">
 <li><p>Malgré une interface de stockage sur disque (on peut voir les fichiers avec la commande <code class="docutils literal notranslate"><span class="pre">ls</span></code>), les données les plus anciennes dans <a class="reference external" href="https://docs.computecanada.ca/wiki/Using_nearline_storage/fr"><code class="docutils literal notranslate"><span class="pre">/nearline</span></code> sont probablement sur ruban</a></p>
 <ul>
@@ -783,9 +784,9 @@ cd $HOME
 </ul>
 </div>
 <div class="section" id="exemples-de-cycles-de-vie-des-donnees">
-<h3>Exemples de cycles de vie des données<a class="headerlink" href="#exemples-de-cycles-de-vie-des-donnees" title="Permalink to this headline">¶</a></h3>
+<h3>Exemples de cycles de vie des données<a class="headerlink" href="#exemples-de-cycles-de-vie-des-donnees" title="Lien permanent vers ce titre">¶</a></h3>
 <div class="section" id="exemple-de-pipeline-1">
-<h4>Exemple de pipeline 1<a class="headerlink" href="#exemple-de-pipeline-1" title="Permalink to this headline">¶</a></h4>
+<h4>Exemple de pipeline 1<a class="headerlink" href="#exemple-de-pipeline-1" title="Lien permanent vers ce titre">¶</a></h4>
 <p><img alt="Pipeline 1" src="_images/data-flow-1.png" /></p>
 <p>Description des différentes étapes :</p>
 <ul class="simple">
@@ -813,7 +814,7 @@ cd $HOME
 </ul>
 </div>
 <div class="section" id="exemple-de-pipeline-2">
-<h4>Exemple de pipeline 2<a class="headerlink" href="#exemple-de-pipeline-2" title="Permalink to this headline">¶</a></h4>
+<h4>Exemple de pipeline 2<a class="headerlink" href="#exemple-de-pipeline-2" title="Lien permanent vers ce titre">¶</a></h4>
 <p><img alt="Pipeline 2" src="_images/data-flow-2.png" /></p>
 <p>Description des différentes étapes :</p>
 <ul class="simple">
@@ -852,7 +853,7 @@ cd $HOME
 </ul>
 </div>
 <div class="section" id="exercice-execution-d-un-pipeline">
-<h4>Exercice - Exécution d’un pipeline<a class="headerlink" href="#exercice-execution-d-un-pipeline" title="Permalink to this headline">¶</a></h4>
+<h4>Exercice - Exécution d’un pipeline<a class="headerlink" href="#exercice-execution-d-un-pipeline" title="Lien permanent vers ce titre">¶</a></h4>
 <ul class="simple">
 <li><p>Étudier les scripts :</p>
 <ul>
@@ -870,7 +871,7 @@ cd $HOME
 </div>
 </div>
 <div class="section" id="gestion-du-stockage">
-<h2>Gestion du stockage<a class="headerlink" href="#gestion-du-stockage" title="Permalink to this headline">¶</a></h2>
+<h2>Gestion du stockage<a class="headerlink" href="#gestion-du-stockage" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Avec le temps, les données s’accumulent. Il devient alors nécessaire de surveiller l’espace utilisé, de même que le nombre de fichiers qui s’y trouvent.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">-</span><span class="n">h</span> <span class="o">/</span><span class="n">project</span>
 <span class="n">df</span> <span class="o">-</span><span class="n">hi</span> <span class="o">/</span><span class="n">project</span>
@@ -935,10 +936,10 @@ cd $HOME
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="lots-taches.html" title="previous page">
+        <a class="left-prev" href="lots-taches.html" title="précédent page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
+                <p class="prevnext-label">précédent</p>
                 <p class="prevnext-title">Lots de tâches</p>
             </div>
         </a>
@@ -952,9 +953,9 @@ cd $HOME
     <div class="container">
       <p>
         
-          By Équipe Calcul Québec<br/>
+          Par Équipe Calcul Québec<br/>
         
-            &copy; Copyright 2021.<br/>
+            &copy; droits d'auteur 2021.<br/>
       </p>
     </div>
   </footer>
