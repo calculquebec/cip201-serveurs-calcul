@@ -11,6 +11,10 @@ repository:
   url: https://github.com/calculquebec/utilisation-serveurs-calcul
   branch: main
 
+# https://jupyterbook.org/structure/configure.html#exclude-pages-from-your-build
+exclude_patterns:
+  README*
+
 # https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
 html:
   favicon: images/logo.png
