@@ -208,42 +208,52 @@ const thebe_selector_output = ".output, .cell_output"
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#calcul-haute-performance">
-   Calcul haute performance
+  <a class="reference internal nav-link" href="#rappel-le-calcul-haute-performance">
+   Rappel - le calcul haute performance
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#objectif-construction-d-un-script-de-tache-slurm-rappel">
-     Objectif : construction d’un script de tâche Slurm (rappel)
+    <a class="reference internal nav-link" href="#objectif-construction-d-un-script-de-tache-slurm">
+     Objectif - construction d’un script de tâche Slurm
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#analyse-des-calculs-a-petite-echelle">
+   Analyse des calculs à petite échelle
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sous-windows">
+     Sous Windows
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#gestionnaire-des-taches-locales">
-     Gestionnaire des tâches locales
+    <a class="reference internal nav-link" href="#sous-mac-os">
+     Sous Mac OS
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#sous-windows">
-       Sous Windows
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#sous-mac-os">
-       Sous Mac OS
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#sous-linux">
-       Sous Linux
-      </a>
-     </li>
-    </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#verifier-l-utilisation-du-gpu-local">
-     Vérifier l’utilisation du GPU local
+    <a class="reference internal nav-link" href="#sous-linux">
+     Sous Linux
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sur-la-grappe-de-calcul-directement">
+     Sur la grappe de calcul directement
     </a>
     <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#verifier-l-utilisation-du-cpu-et-de-la-memoire">
+       Vérifier l’utilisation du CPU et de la mémoire
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#verifier-l-utilisation-du-gpu">
+       Vérifier l’utilisation du GPU
+      </a>
+     </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#comparer-la-vitesse-cpu-vs-gpu">
        Comparer la vitesse CPU vs GPU
@@ -256,37 +266,37 @@ const thebe_selector_output = ".output, .cell_output"
      </li>
     </ul>
    </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#extrapoler-les-ressources-necessaires">
+   Extrapoler les ressources nécessaires
+  </a>
+  <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#prevoir-les-ressources-de-calcul">
-     Prévoir les ressources de calcul
+    <a class="reference internal nav-link" href="#efficacite-cible-du-calcul-parallele">
+     Efficacité cible du calcul parallèle
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#efficacite-cible-du-calcul-parallele">
-       Efficacité cible du calcul parallèle
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#taille-des-donnees-et-nombre-de-fichiers-a-traiter">
-       Taille des données et nombre de fichiers à traiter
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#stockage-en-memoire-selon-les-types-de-base">
-       Stockage en mémoire selon les types de base
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#la-complexite-des-algorithmes">
-       La complexité des algorithmes
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#exercice-complexite-de-l-algorithme">
-       Exercice - Complexité de l’algorithme
-      </a>
-     </li>
-    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taille-des-donnees-et-nombre-de-fichiers-a-traiter">
+     Taille des données et nombre de fichiers à traiter
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#stockage-en-memoire-selon-les-types-de-base">
+     Stockage en mémoire selon les types de base
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#la-complexite-des-algorithmes">
+     La complexité des algorithmes
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercice-complexite-de-l-algorithme">
+     Exercice - Complexité de l’algorithme
+    </a>
    </li>
   </ul>
  </li>
@@ -316,42 +326,52 @@ const thebe_selector_output = ".output, .cell_output"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#calcul-haute-performance">
-   Calcul haute performance
+  <a class="reference internal nav-link" href="#rappel-le-calcul-haute-performance">
+   Rappel - le calcul haute performance
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#objectif-construction-d-un-script-de-tache-slurm-rappel">
-     Objectif : construction d’un script de tâche Slurm (rappel)
+    <a class="reference internal nav-link" href="#objectif-construction-d-un-script-de-tache-slurm">
+     Objectif - construction d’un script de tâche Slurm
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#analyse-des-calculs-a-petite-echelle">
+   Analyse des calculs à petite échelle
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sous-windows">
+     Sous Windows
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#gestionnaire-des-taches-locales">
-     Gestionnaire des tâches locales
+    <a class="reference internal nav-link" href="#sous-mac-os">
+     Sous Mac OS
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#sous-windows">
-       Sous Windows
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#sous-mac-os">
-       Sous Mac OS
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#sous-linux">
-       Sous Linux
-      </a>
-     </li>
-    </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#verifier-l-utilisation-du-gpu-local">
-     Vérifier l’utilisation du GPU local
+    <a class="reference internal nav-link" href="#sous-linux">
+     Sous Linux
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sur-la-grappe-de-calcul-directement">
+     Sur la grappe de calcul directement
     </a>
     <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#verifier-l-utilisation-du-cpu-et-de-la-memoire">
+       Vérifier l’utilisation du CPU et de la mémoire
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#verifier-l-utilisation-du-gpu">
+       Vérifier l’utilisation du GPU
+      </a>
+     </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#comparer-la-vitesse-cpu-vs-gpu">
        Comparer la vitesse CPU vs GPU
@@ -364,37 +384,37 @@ const thebe_selector_output = ".output, .cell_output"
      </li>
     </ul>
    </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#extrapoler-les-ressources-necessaires">
+   Extrapoler les ressources nécessaires
+  </a>
+  <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#prevoir-les-ressources-de-calcul">
-     Prévoir les ressources de calcul
+    <a class="reference internal nav-link" href="#efficacite-cible-du-calcul-parallele">
+     Efficacité cible du calcul parallèle
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#efficacite-cible-du-calcul-parallele">
-       Efficacité cible du calcul parallèle
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#taille-des-donnees-et-nombre-de-fichiers-a-traiter">
-       Taille des données et nombre de fichiers à traiter
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#stockage-en-memoire-selon-les-types-de-base">
-       Stockage en mémoire selon les types de base
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#la-complexite-des-algorithmes">
-       La complexité des algorithmes
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#exercice-complexite-de-l-algorithme">
-       Exercice - Complexité de l’algorithme
-      </a>
-     </li>
-    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taille-des-donnees-et-nombre-de-fichiers-a-traiter">
+     Taille des données et nombre de fichiers à traiter
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#stockage-en-memoire-selon-les-types-de-base">
+     Stockage en mémoire selon les types de base
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#la-complexite-des-algorithmes">
+     La complexité des algorithmes
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercice-complexite-de-l-algorithme">
+     Exercice - Complexité de l’algorithme
+    </a>
    </li>
   </ul>
  </li>
@@ -436,8 +456,8 @@ l’Alliance de Recherche numérique du Canada :</p>
 <p>Le principal but de ce chapitre est de vous permettre d’analyser
 vos besoins en <strong>ressources de calcul haut-performance</strong>, et ce,
 dans le but de choisir les ressources nécessaires pour votre projet.</p>
-<div class="section" id="calcul-haute-performance">
-<h2>Calcul haute performance<a class="headerlink" href="#calcul-haute-performance" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="section" id="rappel-le-calcul-haute-performance">
+<h2>Rappel - le calcul haute performance<a class="headerlink" href="#rappel-le-calcul-haute-performance" title="Lien permanent vers ce titre">¶</a></h2>
 <ul class="simple">
 <li><p>Lorsqu’il est question de lancer une <strong>grande quantité de calculs</strong>
 (séquentiels ou parallèles) ou de <strong>traitements de données</strong>,
@@ -449,8 +469,8 @@ qui seront réservées lors de l’exécution d’un calcul.</p></li>
 </ul>
 <p>Dans cette section, on cherche à évaluer le comportement d’une tâche de calcul
 afin d’estimer et d’optimiser les ressources à réserver sur la grappe de calcul.</p>
-<div class="section" id="objectif-construction-d-un-script-de-tache-slurm-rappel">
-<h3>Objectif : construction d’un script de tâche Slurm (rappel)<a class="headerlink" href="#objectif-construction-d-un-script-de-tache-slurm-rappel" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="section" id="objectif-construction-d-un-script-de-tache-slurm">
+<h3>Objectif - construction d’un script de tâche Slurm<a class="headerlink" href="#objectif-construction-d-un-script-de-tache-slurm" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Un script de tâche pour <a class="reference external" href="https://slurm.schedmd.com/documentation.html">l’ordonnanceur Slurm</a> est typiquement un script Bash dans lequel on retrouve :</p>
 <ul class="simple">
 <li><p>Le <a class="reference external" href="https://fr.wikipedia.org/wiki/Shebang">shebang</a> en toute première ligne. Par exemple : <code class="docutils literal notranslate"><span class="pre">#!/bin/bash</span></code></p></li>
@@ -469,8 +489,9 @@ afin d’estimer et d’optimiser les ressources à réserver sur la grappe de c
 </div>
 <p>Notre documentation à cet effet débute à la page : <a class="reference external" href="https://docs.computecanada.ca/wiki/Running_jobs/fr">Exécuter des tâches</a></p>
 </div>
-<div class="section" id="gestionnaire-des-taches-locales">
-<h3>Gestionnaire des tâches locales<a class="headerlink" href="#gestionnaire-des-taches-locales" title="Lien permanent vers ce titre">¶</a></h3>
+</div>
+<div class="section" id="analyse-des-calculs-a-petite-echelle">
+<h2>Analyse des calculs à petite échelle<a class="headerlink" href="#analyse-des-calculs-a-petite-echelle" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Lorsqu’une tâche de calcul est en cours sur votre ordinateur, vous pouvez surveiller différentes métriques :</p>
 <ul class="simple">
 <li><p>Utilisation CPU</p></li>
@@ -479,7 +500,7 @@ afin d’estimer et d’optimiser les ressources à réserver sur la grappe de c
 <li><p>Les accès au stockage</p></li>
 </ul>
 <div class="section" id="sous-windows">
-<h4>Sous Windows<a class="headerlink" href="#sous-windows" title="Lien permanent vers ce titre">¶</a></h4>
+<h3>Sous Windows<a class="headerlink" href="#sous-windows" title="Lien permanent vers ce titre">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference external" href="https://fr.wikipedia.org/wiki/Gestionnaire_des_t%C3%A2ches_Windows">Gestionnaire des tâches Windows</a></p></li>
 <li><p>Pour le faire afficher :</p>
@@ -492,7 +513,7 @@ afin d’estimer et d’optimiser les ressources à réserver sur la grappe de c
 <p><img alt="Aperçu du gestionnaire des tâches Windows" src="_images/win-task-manager.png" /></p>
 </div>
 <div class="section" id="sous-mac-os">
-<h4>Sous Mac OS<a class="headerlink" href="#sous-mac-os" title="Lien permanent vers ce titre">¶</a></h4>
+<h3>Sous Mac OS<a class="headerlink" href="#sous-mac-os" title="Lien permanent vers ce titre">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference external" href="https://support.apple.com/fr-ca/guide/activity-monitor/actmntr1001/mac">Moniteur d’activité</a></p></li>
 <li><p>Pour le faire afficher :</p>
@@ -505,7 +526,7 @@ afin d’estimer et d’optimiser les ressources à réserver sur la grappe de c
 <p><img alt="Aperçu du moniteur d'activité Mac OS" src="https://help.apple.com/assets/5FDCF1894EB74318147EC0CF/5FDCF18A4EB74318147EC0D6/fr_CA/ad6337d66061aa27122e75521960fc5a.png" /></p>
 </div>
 <div class="section" id="sous-linux">
-<h4>Sous Linux<a class="headerlink" href="#sous-linux" title="Lien permanent vers ce titre">¶</a></h4>
+<h3>Sous Linux<a class="headerlink" href="#sous-linux" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Dans un terminal Unix, on peut utiliser :</p>
 <ul class="simple">
 <li><p>La <a class="reference external" href="https://man7.org/linux/man-pages/man1/top.1.html">commande <code class="docutils literal notranslate"><span class="pre">top</span></code></a> (<code class="docutils literal notranslate"><span class="pre">q</span></code> pour quitter)</p></li>
@@ -516,9 +537,24 @@ afin d’estimer et d’optimiser les ressources à réserver sur la grappe de c
 </ul>
 <p><img alt="Capture de htop" src="_images/linux-htop.png" /></p>
 </div>
+<div class="section" id="sur-la-grappe-de-calcul-directement">
+<h3>Sur la grappe de calcul directement<a class="headerlink" href="#sur-la-grappe-de-calcul-directement" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Avec votre accès par défaut, vous avez un compte de calcul <code class="docutils literal notranslate"><span class="pre">def-*</span></code> de base
+vous permettant de lancer des tâches de test.</p>
+<div class="section" id="verifier-l-utilisation-du-cpu-et-de-la-memoire">
+<h4>Vérifier l’utilisation du CPU et de la mémoire<a class="headerlink" href="#verifier-l-utilisation-du-cpu-et-de-la-memoire" title="Lien permanent vers ce titre">¶</a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="n">login1</span>
+<span class="o">...</span>
+</pre></div>
 </div>
-<div class="section" id="verifier-l-utilisation-du-gpu-local">
-<h3>Vérifier l’utilisation du GPU local<a class="headerlink" href="#verifier-l-utilisation-du-gpu-local" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Avec la commande <code class="docutils literal notranslate"><span class="pre">seff</span></code>, on peut obtenir un court rapport d’exécution de tâche.
+Ce rapport inclut une mesure du temps écoulé, une mesure du temps CPU
+et une mesure de consommation maximale de la mémoire-vive.
+Des valeurs d’efficacité en pourcentages sont données pour les cycles CPU
+et la mémoire-vives en fonction des quantités réservées.</p>
+</div>
+<div class="section" id="verifier-l-utilisation-du-gpu">
+<h4>Vérifier l’utilisation du GPU<a class="headerlink" href="#verifier-l-utilisation-du-gpu" title="Lien permanent vers ce titre">¶</a></h4>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bash</span> <span class="n">scripts</span><span class="o">/</span><span class="n">installer</span><span class="o">/</span><span class="n">cuda</span><span class="o">-</span><span class="n">samples</span><span class="o">.</span><span class="n">sh</span>
 <span class="n">salloc</span> <span class="o">--</span><span class="n">gres</span><span class="o">=</span><span class="n">gpu</span><span class="p">:</span><span class="mi">1</span> <span class="o">--</span><span class="n">mem</span><span class="o">=</span><span class="mi">2000</span><span class="n">M</span> <span class="o">--</span><span class="n">time</span><span class="o">=</span><span class="mi">0</span><span class="o">-</span><span class="mi">00</span><span class="p">:</span><span class="mi">05</span>
 <span class="n">bash</span> <span class="n">scripts</span><span class="o">/</span><span class="n">cuda</span><span class="o">-</span><span class="n">matmul</span><span class="o">.</span><span class="n">sh</span> <span class="o">&amp;&gt;</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">null</span> <span class="o">&amp;</span>
@@ -533,6 +569,7 @@ afin d’estimer et d’optimiser les ressources à réserver sur la grappe de c
 <li><p>Il existe aussi un projet <a class="reference external" href="https://github.com/Syllo/nvtop"><code class="docutils literal notranslate"><span class="pre">nvtop</span></code></a> permettant de visualiser l’utilisation d’un ou plusieurs GPUs dans un terminal</p></li>
 </ul>
 <p><img alt="Capture nvtop" src="https://raw.githubusercontent.com/Syllo/nvtop/master/screenshot/NVTOP_ex1.png" /></p>
+</div>
 <div class="section" id="comparer-la-vitesse-cpu-vs-gpu">
 <h4>Comparer la vitesse CPU vs GPU<a class="headerlink" href="#comparer-la-vitesse-cpu-vs-gpu" title="Lien permanent vers ce titre">¶</a></h4>
 <p>Si votre application ne fait pas bon usage d’un GPU ou n’est pas du tout conçue pour fonctionner avec un accélérateur, il n’y a aucun avantage à soumettre une tâche en demandant un ou plusieurs GPUs.</p>
@@ -620,10 +657,11 @@ d’efficacité peut être faite à l’aide du script
 </div>
 </div>
 </div>
-<div class="section" id="prevoir-les-ressources-de-calcul">
-<h3>Prévoir les ressources de calcul<a class="headerlink" href="#prevoir-les-ressources-de-calcul" title="Lien permanent vers ce titre">¶</a></h3>
+</div>
+<div class="section" id="extrapoler-les-ressources-necessaires">
+<h2>Extrapoler les ressources nécessaires<a class="headerlink" href="#extrapoler-les-ressources-necessaires" title="Lien permanent vers ce titre">¶</a></h2>
 <div class="section" id="efficacite-cible-du-calcul-parallele">
-<h4>Efficacité cible du calcul parallèle<a class="headerlink" href="#efficacite-cible-du-calcul-parallele" title="Lien permanent vers ce titre">¶</a></h4>
+<h3>Efficacité cible du calcul parallèle<a class="headerlink" href="#efficacite-cible-du-calcul-parallele" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Une efficacité de 80%, voire 90%, devrait être un seuil minimal pour les tâches parallèles. Il reste donc à <strong>déterminer le nombre maximal de processeurs</strong> pour notre application.</p>
 <p>Nous allons utiliser la <a class="reference external" href="https://fr.wikipedia.org/wiki/Loi_d%27Amdahl">loi d’Amdahl</a>. Voici quelques définitions :</p>
 <ul class="simple">
@@ -688,7 +726,7 @@ d’efficacité peut être faite à l’aide du script
 </div>
 </div>
 <div class="section" id="taille-des-donnees-et-nombre-de-fichiers-a-traiter">
-<h4>Taille des données et nombre de fichiers à traiter<a class="headerlink" href="#taille-des-donnees-et-nombre-de-fichiers-a-traiter" title="Lien permanent vers ce titre">¶</a></h4>
+<h3>Taille des données et nombre de fichiers à traiter<a class="headerlink" href="#taille-des-donnees-et-nombre-de-fichiers-a-traiter" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Pour un calcul donné, il y a deux métriques de stockage à considérer :</p>
 <ul class="simple">
 <li><p>La <strong>quantité</strong> totale en octets (ou Go)</p></li>
@@ -728,7 +766,7 @@ d’efficacité peut être faite à l’aide du script
 </ul>
 </div>
 <div class="section" id="stockage-en-memoire-selon-les-types-de-base">
-<h4>Stockage en mémoire selon les types de base<a class="headerlink" href="#stockage-en-memoire-selon-les-types-de-base" title="Lien permanent vers ce titre">¶</a></h4>
+<h3>Stockage en mémoire selon les types de base<a class="headerlink" href="#stockage-en-memoire-selon-les-types-de-base" title="Lien permanent vers ce titre">¶</a></h3>
 <p>En ayant une idée de la taille des données à traiter, il devient aussi possible d’estimer la place que les données peuvent prendre en mémoire-vive.</p>
 <ul class="simple">
 <li><p>Dans un fichier texte, <strong>chaque caractère</strong> prend de un (1) à deux (2) octets, en moyenne.
@@ -816,7 +854,7 @@ Par exemple, dans une session Python :</p></li>
 </div>
 </div>
 <div class="section" id="la-complexite-des-algorithmes">
-<h4>La complexité des algorithmes<a class="headerlink" href="#la-complexite-des-algorithmes" title="Lien permanent vers ce titre">¶</a></h4>
+<h3>La complexité des algorithmes<a class="headerlink" href="#la-complexite-des-algorithmes" title="Lien permanent vers ce titre">¶</a></h3>
 <p>La question qui se pose : en augmentant la ou les dimensions du problème, quelles devraient être la durée du calcul et la consommation en mémoire-vive?
 Une <a class="reference external" href="https://fr.wikipedia.org/wiki/Analyse_de_la_complexit%C3%A9_des_algorithmes">analyse de la complexité de l’algorithme principal</a>
 permettrait de connaître l’ordre <span class="math notranslate nohighlight">\(O\)</span> du calcul en fonction de la taille <span class="math notranslate nohighlight">\(n\)</span> des données :</p>
@@ -836,7 +874,7 @@ où il y a <span class="math notranslate nohighlight">\(n\)</span> éléments à
 </ul>
 </div>
 <div class="section" id="exercice-complexite-de-l-algorithme">
-<h4>Exercice - Complexité de l’algorithme<a class="headerlink" href="#exercice-complexite-de-l-algorithme" title="Lien permanent vers ce titre">¶</a></h4>
+<h3>Exercice - Complexité de l’algorithme<a class="headerlink" href="#exercice-complexite-de-l-algorithme" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Dans cet exercice, il est question d’inverser une matrice de valeurs aléatoires de taille <code class="docutils literal notranslate"><span class="pre">n*n</span></code> :</p>
 <ul class="simple">
 <li><p>Soumettre le script <a class="reference external" href="https://github.com/calculquebec/utilisation-serveurs-calcul/blob/main/scripts/inv-mat.sh"><code class="docutils literal notranslate"><span class="pre">scripts/inv-mat.sh</span></code></a> avec la commande <code class="docutils literal notranslate"><span class="pre">sbatch</span></code> :</p></li>
@@ -860,7 +898,6 @@ où il y a <span class="math notranslate nohighlight">\(n\)</span> éléments à
 <span class="n">cat</span> <span class="n">scripts</span><span class="o">/</span><span class="n">inv</span><span class="o">-</span><span class="n">mat</span><span class="o">-</span><span class="n">pred</span><span class="o">.</span><span class="n">py</span>
 <span class="n">python</span> <span class="n">scripts</span><span class="o">/</span><span class="n">inv</span><span class="o">-</span><span class="n">mat</span><span class="o">-</span><span class="n">pred</span><span class="o">.</span><span class="n">py</span> <span class="n">temps_inv</span><span class="o">.</span><span class="n">csv</span>
 </pre></div>
-</div>
 </div>
 </div>
 </div>
