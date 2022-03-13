@@ -2,9 +2,9 @@
 # Learn more at https://jupyterbook.org/customize/toc.html
 
 format: jb-book
-root: a_propos
+root: 0-a_propos
 chapters:
-- file: ressources
-- file: analyse-taches
-- file: lots-taches
-- file: stockage
+- file: 1-ressources
+- file: 2-analyse-taches
+- file: 3-lots-taches
+- file: 4-stockage
