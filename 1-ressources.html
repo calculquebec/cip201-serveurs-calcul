@@ -250,13 +250,18 @@ const thebe_selector_output = ".output, .cell_output"
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#verifier-l-utilisation-du-gpu">
-       Vérifier l’utilisation du GPU
+      <a class="reference internal nav-link" href="#verifier-l-utilisation-du-gpu-et-de-sa-memoire">
+       Vérifier l’utilisation du GPU et de sa mémoire
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#comparer-la-vitesse-cpu-vs-gpu">
        Comparer la vitesse CPU vs GPU
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exercice-mesure-du-temps-d-execution">
+       Exercice - Mesure du temps d’exécution
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
@@ -282,21 +287,23 @@ const thebe_selector_output = ".output, .cell_output"
     <a class="reference internal nav-link" href="#taille-des-donnees-et-nombre-de-fichiers-a-traiter">
      Taille des données et nombre de fichiers à traiter
     </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#stockage-en-memoire-selon-les-types-de-base">
-     Stockage en mémoire selon les types de base
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#la-complexite-des-algorithmes">
-     La complexité des algorithmes
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercice-complexite-de-l-algorithme">
-     Exercice - Complexité de l’algorithme
-    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#stockage-en-memoire-selon-les-types-de-base">
+       Stockage en mémoire selon les types de base
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#la-complexite-des-algorithmes">
+       La complexité des algorithmes
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exercice-complexite-de-l-algorithme">
+       Exercice - Complexité de l’algorithme
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -368,13 +375,18 @@ const thebe_selector_output = ".output, .cell_output"
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#verifier-l-utilisation-du-gpu">
-       Vérifier l’utilisation du GPU
+      <a class="reference internal nav-link" href="#verifier-l-utilisation-du-gpu-et-de-sa-memoire">
+       Vérifier l’utilisation du GPU et de sa mémoire
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#comparer-la-vitesse-cpu-vs-gpu">
        Comparer la vitesse CPU vs GPU
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exercice-mesure-du-temps-d-execution">
+       Exercice - Mesure du temps d’exécution
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
@@ -400,21 +412,23 @@ const thebe_selector_output = ".output, .cell_output"
     <a class="reference internal nav-link" href="#taille-des-donnees-et-nombre-de-fichiers-a-traiter">
      Taille des données et nombre de fichiers à traiter
     </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#stockage-en-memoire-selon-les-types-de-base">
-     Stockage en mémoire selon les types de base
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#la-complexite-des-algorithmes">
-     La complexité des algorithmes
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercice-complexite-de-l-algorithme">
-     Exercice - Complexité de l’algorithme
-    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#stockage-en-memoire-selon-les-types-de-base">
+       Stockage en mémoire selon les types de base
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#la-complexite-des-algorithmes">
+       La complexité des algorithmes
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exercice-complexite-de-l-algorithme">
+       Exercice - Complexité de l’algorithme
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -435,11 +449,11 @@ const thebe_selector_output = ".output, .cell_output"
   <div class="tex2jax_ignore mathjax_ignore section" id="bien-choisir-les-ressources">
 <h1>Bien choisir les ressources<a class="headerlink" href="#bien-choisir-les-ressources" title="Lien permanent vers ce titre">¶</a></h1>
 <p>Il y a plusieurs ressources informatiques qui vous sont disponibles à
-l’Alliance de Recherche numérique du Canada :</p>
+l’Alliance de recherche numérique du Canada :</p>
 <ul class="simple">
 <li><p>Calcul haute performance</p>
 <ul>
-<li><p>Béluga, Cedar, Graham, Niagara</p></li>
+<li><p>Béluga, Cedar, Graham, Narval, Niagara</p></li>
 </ul>
 </li>
 <li><p>Stockage</p>
@@ -454,7 +468,7 @@ l’Alliance de Recherche numérique du Canada :</p>
 </li>
 </ul>
 <p>Le principal but de ce chapitre est de vous permettre d’analyser
-vos besoins en <strong>ressources de calcul haut-performance</strong>, et ce,
+vos besoins en <strong>ressources de calcul haute performance</strong>, et ce,
 dans le but de choisir les ressources nécessaires pour votre projet.</p>
 <div class="section" id="rappel-le-calcul-haute-performance">
 <h2>Rappel - le calcul haute performance<a class="headerlink" href="#rappel-le-calcul-haute-performance" title="Lien permanent vers ce titre">¶</a></h2>
@@ -479,6 +493,9 @@ afin d’estimer et d’optimiser les ressources à réserver sur la grappe de c
 <li><p>Les commandes Bash qui seront exécutées automatiquement sur des processeurs réservés pour la tâche</p></li>
 </ul>
 <p>Par exemple : <a class="reference external" href="https://github.com/calculquebec/utilisation-serveurs-calcul/blob/main/scripts/mpi_allo.sh"><code class="docutils literal notranslate"><span class="pre">scripts/mpi_allo.sh</span></code></a></p>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>cat scripts/mpi_allo.sh
+</pre></div>
+</div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
 <span class="c1">#SBATCH --ntasks=10</span>
 <span class="c1">#SBATCH --mem-per-cpu=1000M</span>
@@ -492,9 +509,9 @@ afin d’estimer et d’optimiser les ressources à réserver sur la grappe de c
 </div>
 <div class="section" id="analyse-des-calculs-a-petite-echelle">
 <h2>Analyse des calculs à petite échelle<a class="headerlink" href="#analyse-des-calculs-a-petite-echelle" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Lorsqu’une tâche de calcul est en cours sur votre ordinateur, vous pouvez surveiller différentes métriques :</p>
+<p>Lorsqu’une tâche de calcul est en cours d’exécution, vous pouvez surveiller différentes métriques :</p>
 <ul class="simple">
-<li><p>Utilisation CPU</p></li>
+<li><p>Utilisation CPU (et GPU, s’il y a lieu)</p></li>
 <li><p>Mémoire résidente (réellement utilisée)</p></li>
 <li><p>Mémoire virtuelle (allouée)</p></li>
 <li><p>Les accès au stockage</p></li>
@@ -543,21 +560,39 @@ afin d’estimer et d’optimiser les ressources à réserver sur la grappe de c
 vous permettant de lancer des tâches de test.</p>
 <div class="section" id="verifier-l-utilisation-du-cpu-et-de-la-memoire">
 <h4>Vérifier l’utilisation du CPU et de la mémoire<a class="headerlink" href="#verifier-l-utilisation-du-cpu-et-de-la-memoire" title="Lien permanent vers ce titre">¶</a></h4>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="n">login1</span>
-<span class="o">...</span>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>ssh login1
+...
 </pre></div>
 </div>
-<p>Avec la commande <code class="docutils literal notranslate"><span class="pre">seff</span></code>, on peut obtenir un court rapport d’exécution de tâche.
+<p><strong>Note</strong> : pour accéder aux grappes de calcul en production,
+il vaut mieux utiliser <a class="reference external" href="https://docs.computecanada.ca/wiki/Using_SSH_keys_in_Linux/fr">une paire de clés SSH</a>.</p>
+<p>Pour soumettre un script, on fait :</p>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>sbatch scripts/blastn-gen-seq.sh
+</pre></div>
+</div>
+<p>Pour voir l’état de la tâche, on ferait :</p>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>squeue -u <span class="nv">$USER</span>  <span class="c1"># ou &#39;sq&#39;</span>
+</pre></div>
+</div>
+<p>Avec la commande <a class="reference external" href="https://slurm.schedmd.com/sacct.html"><code class="docutils literal notranslate"><span class="pre">sacct</span></code></a>, on peut obtenir un tableau de nos tâches exécutées depuis minuit.</p>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>sacct
+</pre></div>
+</div>
+<p>Avec la commande <a class="reference external" href="https://docs.computecanada.ca/wiki/Running_jobs/fr#T.C3.A2ches_termin.C3.A9es"><code class="docutils literal notranslate"><span class="pre">seff</span></code></a>,
+on peut obtenir un court rapport d’exécution de tâche.
 Ce rapport inclut une mesure du temps écoulé, une mesure du temps CPU
 et une mesure de consommation maximale de la mémoire-vive.
 Des valeurs d’efficacité en pourcentages sont données pour les cycles CPU
 et la mémoire-vives en fonction des quantités réservées.</p>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>seff &lt;No_tâche&gt;
+</pre></div>
 </div>
-<div class="section" id="verifier-l-utilisation-du-gpu">
-<h4>Vérifier l’utilisation du GPU<a class="headerlink" href="#verifier-l-utilisation-du-gpu" title="Lien permanent vers ce titre">¶</a></h4>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bash</span> <span class="n">scripts</span><span class="o">/</span><span class="n">installer</span><span class="o">/</span><span class="n">cuda</span><span class="o">-</span><span class="n">samples</span><span class="o">.</span><span class="n">sh</span>
-<span class="n">salloc</span> <span class="o">--</span><span class="n">gres</span><span class="o">=</span><span class="n">gpu</span><span class="p">:</span><span class="mi">1</span> <span class="o">--</span><span class="n">mem</span><span class="o">=</span><span class="mi">2000</span><span class="n">M</span> <span class="o">--</span><span class="n">time</span><span class="o">=</span><span class="mi">0</span><span class="o">-</span><span class="mi">00</span><span class="p">:</span><span class="mi">05</span>
-<span class="n">bash</span> <span class="n">scripts</span><span class="o">/</span><span class="n">cuda</span><span class="o">-</span><span class="n">matmul</span><span class="o">.</span><span class="n">sh</span> <span class="o">&amp;&gt;</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">null</span> <span class="o">&amp;</span>
+</div>
+<div class="section" id="verifier-l-utilisation-du-gpu-et-de-sa-memoire">
+<h4>Vérifier l’utilisation du GPU et de sa mémoire<a class="headerlink" href="#verifier-l-utilisation-du-gpu-et-de-sa-memoire" title="Lien permanent vers ce titre">¶</a></h4>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>bash scripts/installer/cuda-samples.sh
+salloc --gres<span class="o">=</span>gpu:1 --mem<span class="o">=</span>2000M --time<span class="o">=</span><span class="m">0</span>-00:05
+bash scripts/cuda-matmul.sh <span class="p">&amp;</span>&gt; /dev/null <span class="p">&amp;</span>
 </pre></div>
 </div>
 <ul class="simple">
@@ -572,87 +607,46 @@ et la mémoire-vives en fonction des quantités réservées.</p>
 </div>
 <div class="section" id="comparer-la-vitesse-cpu-vs-gpu">
 <h4>Comparer la vitesse CPU vs GPU<a class="headerlink" href="#comparer-la-vitesse-cpu-vs-gpu" title="Lien permanent vers ce titre">¶</a></h4>
-<p>Si votre application ne fait pas bon usage d’un GPU ou n’est pas du tout conçue pour fonctionner avec un accélérateur, il n’y a aucun avantage à soumettre une tâche en demandant un ou plusieurs GPUs.</p>
+<p>Avant d’utiliser massivement les GPUs d’une grappe de calcul, il faut tout d’abord que l’application ou l’algorithme puisse démontrer une « bonne performance » en utilisant plusieurs processeurs en parallèle.</p>
+<p>Quelques définitions :</p>
 <ul class="simple">
-<li><p>Avant d’utiliser massivement les GPUs d’une grappe de calcul, il faut tout d’abord que l’application puisse démontrer une « bonne performance » en utilisant plusieurs processeurs en parallèle.</p></li>
-<li><p>La métrique à noter et à comparer est le <strong>temps écoulé</strong>, et non le temps CPU.</p></li>
-<li><p><strong>Accélération</strong> = (temps avec un processeur) / (temps avec plusieurs processeurs)</p></li>
+<li><p><strong>Temps écoulé</strong> = temps d’exécution total que l’on perçoit et non le temps CPU</p></li>
+<li><p><strong>Accélération</strong> = (temps avec un processeur) / (temps avec parallélisme)</p></li>
 <li><p><strong>Efficacité</strong> = (Accélération) / (nombre de processeurs)</p></li>
-<li><p>Le coût d’un noeud GPU étant de quatre à cinq fois supérieur à celui d’un noeud régulier, l’utilisation d’un seul GPU doit permettre une accélération d’au moins quatre fois (4x) la vitesse de huit (8) à dix (10) processeurs.</p></li>
-<li><p><strong>Accélération</strong> = (temps avec 8 à 10 processeurs) / (temps avec un GPU)</p></li>
 </ul>
+<p>Le coût d’un noeud GPU étant de quatre à cinq fois supérieur à celui d’un noeud régulier, l’utilisation d’un seul GPU doit permettre une accélération d’au moins quatre fois (4x) la vitesse de huit (8) à douze (12) processeurs.</p>
+<ul class="simple">
+<li><p><strong>Accélération</strong> = (temps avec 8 à 12 processeurs) / (temps avec un accélérateur)</p></li>
+</ul>
+</div>
+<div class="section" id="exercice-mesure-du-temps-d-execution">
+<h4>Exercice - Mesure du temps d’exécution<a class="headerlink" href="#exercice-mesure-du-temps-d-execution" title="Lien permanent vers ce titre">¶</a></h4>
+<p>Mesurer le temps d’exécution avec la commande <code class="docutils literal notranslate"><span class="pre">time</span></code> :</p>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>salloc --gres<span class="o">=</span>gpu:1 --mem<span class="o">=</span>2000M --time<span class="o">=</span><span class="m">0</span>-00:05
+<span class="nb">time</span> -p bash scripts/cuda-matmul.sh
+</pre></div>
+</div>
 </div>
 <div class="section" id="exercice-calcul-d-acceleration-et-d-efficacite">
 <h4>Exercice - Calcul d’accélération et d’efficacité<a class="headerlink" href="#exercice-calcul-d-acceleration-et-d-efficacite" title="Lien permanent vers ce titre">¶</a></h4>
-<p>Soumission d’une tâche séquentielle et d’une tâche parallèle :</p>
-<ul class="simple">
-<li><p><strong>Si ce n’est pas déjà fait</strong>, télécharger et compiler le programme N-Body en exécutant :</p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bash</span> <span class="n">scripts</span><span class="o">/</span><span class="n">installer</span><span class="o">/</span><span class="n">nbody</span><span class="o">.</span><span class="n">sh</span>
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>Explorer le script de tâche <a class="reference external" href="https://github.com/calculquebec/utilisation-serveurs-calcul/blob/main/scripts/nbody-openmp.sh"><code class="docutils literal notranslate"><span class="pre">scripts/nbody-openmp.sh</span></code></a></p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="n">scripts</span><span class="o">/</span><span class="n">nbody</span><span class="o">-</span><span class="n">openmp</span><span class="o">.</span><span class="n">sh</span>
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>Soumettre ce script à l’ordonnanceur en demandant un (1) processeur par tâche :</p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sbatch</span> <span class="o">--</span><span class="n">cpus</span><span class="o">-</span><span class="n">per</span><span class="o">-</span><span class="n">task</span><span class="o">=</span><span class="mi">1</span> <span class="n">scripts</span><span class="o">/</span><span class="n">nbody</span><span class="o">-</span><span class="n">openmp</span><span class="o">.</span><span class="n">sh</span>
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>Soumettre à nouveau ce script à l’ordonnanceur en demandant quatre (4) processeurs par tâche :</p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sbatch</span> <span class="o">--</span><span class="n">cpus</span><span class="o">-</span><span class="n">per</span><span class="o">-</span><span class="n">task</span><span class="o">=</span><span class="mi">4</span> <span class="n">scripts</span><span class="o">/</span><span class="n">nbody</span><span class="o">-</span><span class="n">openmp</span><span class="o">.</span><span class="n">sh</span>
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>Attendre que les deux tâches se terminent (après les états <code class="docutils literal notranslate"><span class="pre">PD</span></code> et <code class="docutils literal notranslate"><span class="pre">R</span></code>) :</p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>squeue -u $USER  # Environ aux 30 secondes
-</pre></div>
-</div>
-<p>Analyse des résultats :</p>
-<ul class="simple">
-<li><p>Les résultats seront dans les fichiers <code class="docutils literal notranslate"><span class="pre">slurm-JOBID.out</span></code></p>
-<ul>
-<li><p>Pour une exécution valide, tous les fichiers <code class="docutils literal notranslate"><span class="pre">*.mol</span></code> doivent être « <code class="docutils literal notranslate"><span class="pre">OK</span></code> »</p></li>
-</ul>
-</li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">grep</span> <span class="o">.</span><span class="n">mol</span> <span class="n">slurm</span><span class="o">-*.</span><span class="n">out</span>
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>Le temps écoulé est donné à la dernière ligne des fichiers <code class="docutils literal notranslate"><span class="pre">slurm-JOBID.out</span></code></p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tail</span> <span class="o">-</span><span class="n">n</span> <span class="mi">1</span> <span class="n">slurm</span><span class="o">-*.</span><span class="n">out</span>
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>Selon les résultats obtenus ci-dessus, une analyse d’accélération et
-d’efficacité peut être faite à l’aide du script
-<a class="reference external" href="https://github.com/calculquebec/utilisation-serveurs-calcul/blob/main/scripts/calc-acc-eff.sh"><code class="docutils literal notranslate"><span class="pre">scripts/calc-acc-eff.sh</span></code></a></p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="n">scripts</span><span class="o">/</span><span class="n">calc</span><span class="o">-</span><span class="n">acc</span><span class="o">-</span><span class="n">eff</span><span class="o">.</span><span class="n">sh</span>
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>Exemple d’utilisation : avec 61.8 secondes pour 1 processeur et 16.8 secondes pour 4 processeurs :</p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bash</span> <span class="n">scripts</span><span class="o">/</span><span class="n">calc</span><span class="o">-</span><span class="n">acc</span><span class="o">-</span><span class="n">eff</span><span class="o">.</span><span class="n">sh</span> <span class="mi">1</span><span class="p">:</span><span class="mf">61.8</span> <span class="mi">4</span><span class="p">:</span><span class="mf">16.8</span>
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>Une efficacité parfaite serait de 1.0 (ou 100%) :</p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Metrique</span><span class="p">,</span><span class="n">Valeur</span>
-<span class="n">acc_lineaire</span><span class="p">,</span><span class="mf">4.00000000000000000000</span>
-<span class="n">acceleration</span><span class="p">,</span><span class="mf">3.67857142857142857142</span>
-<span class="n">efficacite</span><span class="p">,</span><span class="mf">.91964285714285714285</span>
+<p>En supposant les résultats suivants pour un programme parallèle lancé sur <span class="math notranslate nohighlight">\(n\)</span> processeurs :</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p><span class="math notranslate nohighlight">\(n\)</span> proc.</p></th>
+<th class="text-align:center head"><p>temp (s)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p>1</p></td>
+<td class="text-align:center"><p>61.8</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>4</p></td>
+<td class="text-align:center"><p>16.8</p></td>
+</tr>
+</tbody>
+</table>
+<p>Étant donné le script <a class="reference external" href="https://github.com/calculquebec/cip201-serveurs-calcul/blob/main/scripts/calc-acc-eff.sh"><code class="docutils literal notranslate"><span class="pre">scripts/calc-acc-eff.sh</span></code></a> :</p>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>bash scripts/calc-acc-eff.sh <span class="m">1</span>:61.8 <span class="m">4</span>:16.8
 </pre></div>
 </div>
 </div>
@@ -662,68 +656,20 @@ d’efficacité peut être faite à l’aide du script
 <h2>Extrapoler les ressources nécessaires<a class="headerlink" href="#extrapoler-les-ressources-necessaires" title="Lien permanent vers ce titre">¶</a></h2>
 <div class="section" id="efficacite-cible-du-calcul-parallele">
 <h3>Efficacité cible du calcul parallèle<a class="headerlink" href="#efficacite-cible-du-calcul-parallele" title="Lien permanent vers ce titre">¶</a></h3>
-<p>Une efficacité de 80%, voire 90%, devrait être un seuil minimal pour les tâches parallèles. Il reste donc à <strong>déterminer le nombre maximal de processeurs</strong> pour notre application.</p>
-<p>Nous allons utiliser la <a class="reference external" href="https://fr.wikipedia.org/wiki/Loi_d%27Amdahl">loi d’Amdahl</a>. Voici quelques définitions :</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(T_s\)</span>: temps requis pour une exécution avec un seul processeur (donc 100% séquentiel)</p></li>
-<li><p><span class="math notranslate nohighlight">\(P\)</span> : fraction de <span class="math notranslate nohighlight">\(T_s\)</span> correspondant à des opérations <strong>parallèles</strong>, donc <strong>divisible</strong> par <span class="math notranslate nohighlight">\(n\)</span> processeurs.</p></li>
-<li><p><span class="math notranslate nohighlight">\(S\)</span> : fraction de <span class="math notranslate nohighlight">\(T_s\)</span> correspondant à des opérations <strong>séquentielles</strong>, donc <strong>non-divisible</strong> par <span class="math notranslate nohighlight">\(n\)</span> processeurs.</p></li>
-<li><p>Exemples d’opérations séquentielles : lecture-écriture d’un fichier, communications, synchronisation, etc.</p></li>
-<li><p>Dans ce modèle, <span class="math notranslate nohighlight">\(P + S = 1\)</span>, donc <span class="math notranslate nohighlight">\(S = 1 - P\)</span></p></li>
-</ul>
-<div class="math notranslate nohighlight">
-\[T_p(n) = T_s * \left(S + \frac{P}{n}\right) = T_s * \left(1 - P + \frac{P}{n}\right)\]</div>
-<ul class="simple">
-<li><p>De là, on peut redéfinir l’accélération <span class="math notranslate nohighlight">\(A(n)\)</span> selon <span class="math notranslate nohighlight">\(n\)</span> processeurs et isoler <span class="math notranslate nohighlight">\(P\)</span> pour éventuellement le calculer :</p></li>
-</ul>
-<div class="math notranslate nohighlight">
-\[A(n) = \frac{T_p(1)}{T_p(n)} = \frac{T_s * \left(1 - P + \frac{P}{1}\right)}{T_s * \left(1 - P + \frac{P}{n}\right)} = \frac{1 - P + P}{1 - P + \frac{P}{n}} = \frac{1}{1 - P + \frac{P}{n}}\]</div>
-<div class="math notranslate nohighlight">
-\[\frac{1}{A(n)} = 1 - P + \frac{P}{n} = 1 - P * \left(1 - \frac{1}{n}\right) \implies P * \left(1 - \frac{1}{n}\right) = 1 - \frac{1}{A(n)}\]</div>
-<div class="math notranslate nohighlight">
-\[P = \frac{1 - \frac{1}{A(n)}}{1 - \frac{1}{n}}\]</div>
-<ul class="simple">
-<li><p>Pour finalement imposer une efficacité <span class="math notranslate nohighlight">\(E(n)\)</span> minimale <span class="math notranslate nohighlight">\(e\)</span> afin de calculer le <span class="math notranslate nohighlight">\(n\)</span> maximal :</p></li>
-</ul>
-<div class="math notranslate nohighlight">
-\[E(n) = \frac{A(n)}{n} \geq e \implies A(n) \geq e * n \implies \frac{1}{1 - P + \frac{P}{n}} \geq e * n\]</div>
-<div class="math notranslate nohighlight">
-\[1 \geq e * n * \left(1 - P + \frac{P}{n} \right) = e * (1 - P) * n + e * P\]</div>
-<div class="math notranslate nohighlight">
-\[1 - e * P \geq (e - e * P) * n \implies \frac{1 - e * P}{e - e * P} \geq n\]</div>
-<div class="math notranslate nohighlight">
-\[n \leq \frac{\frac{1}{e} - P}{1 - P}\]</div>
-<ul class="simple">
-<li><p>De là, c’est possible de calculer <span class="math notranslate nohighlight">\(n\)</span> lorsque <span class="math notranslate nohighlight">\(e = 0.8\)</span>, par exemple.</p></li>
-</ul>
-<p><strong>Exercice - Taille maximale d’une tâche parallèle</strong></p>
-<ul class="simple">
-<li><p>Explorer le script <a class="reference external" href="https://github.com/calculquebec/utilisation-serveurs-calcul/blob/main/scripts/calc-n-max.sh"><code class="docutils literal notranslate"><span class="pre">scripts/calc-n-max.sh</span></code></a></p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="n">scripts</span><span class="o">/</span><span class="n">calc</span><span class="o">-</span><span class="n">n</span><span class="o">-</span><span class="nb">max</span><span class="o">.</span><span class="n">sh</span>
-</pre></div>
-</div>
-<ul class="simple">
-<li><p><strong>Important</strong> - ce script est conçu pour recevoir le résultat redirigé du script
-<a class="reference external" href="https://github.com/calculquebec/utilisation-serveurs-calcul/blob/main/scripts/calc-acc-eff.sh"><code class="docutils literal notranslate"><span class="pre">scripts/calc-acc-eff.sh</span></code></a> dans son canal STDIN</p>
+<li><p>Une efficacité de 80%, voire 90%, devrait être un seuil minimal pour les tâches parallèles. Or, il existe un <strong>nombre maximal de processeurs</strong> à utiliser pour respecter ce seuil :</p>
 <ul>
-<li><p>En cas de blocage du terminal, faites Ctrl+C</p></li>
+<li><p>Voir la figure dans la page <a class="reference external" href="https://fr.wikipedia.org/wiki/Loi_d%27Amdahl">loi d’Amdahl</a></p></li>
+<li><p>Matériel en extra <a class="reference internal" href="extra/loi-Amdahl.html"><span class="doc std std-doc">ici</span></a></p></li>
 </ul>
 </li>
-<li><p>Réutilisons les résultats du précédent exercice pour calculer <code class="docutils literal notranslate"><span class="pre">n_max</span></code>, soit le nombre maximal suggéré de processeurs pour une efficacité minimale de 80%. Par exemple :</p></li>
+<li><p>On vise aussi une consommation en mémoire-vive de l’ordre de 80% de ce qui est demandé à l’ordonnanceur Slurm</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bash</span> <span class="n">scripts</span><span class="o">/</span><span class="n">calc</span><span class="o">-</span><span class="n">acc</span><span class="o">-</span><span class="n">eff</span><span class="o">.</span><span class="n">sh</span> <span class="mi">1</span><span class="p">:</span><span class="mf">61.8</span> <span class="mi">4</span><span class="p">:</span><span class="mf">16.8</span> <span class="o">|</span> <span class="n">bash</span> <span class="n">scripts</span><span class="o">/</span><span class="n">calc</span><span class="o">-</span><span class="n">n</span><span class="o">-</span><span class="nb">max</span><span class="o">.</span><span class="n">sh</span>
-</pre></div>
-</div>
+<p>Rappel - vous pouvez obtenir ces pourcentages via les commandes <code class="docutils literal notranslate"><span class="pre">sacct</span> <span class="pre">-X</span></code> (surtout pour obtenir les numéros de tâches) et <code class="docutils literal notranslate"><span class="pre">seff</span></code>. Les valeurs à considérer sont :</p>
 <ul class="simple">
-<li><p>On note que le calcul de <code class="docutils literal notranslate"><span class="pre">n_max</span></code> peut donner une valeur qu’il faut arrondir à la baisse, car l’efficacité diminue en fonction du nombre de processeurs :</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CPU</span> <span class="pre">Efficiency</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Memory</span> <span class="pre">Efficiency</span></code></p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Metrique</span><span class="p">,</span><span class="n">Valeur</span>
-<span class="n">P</span><span class="p">,</span><span class="mf">0.970874</span>
-<span class="n">n_max</span><span class="p">,</span><span class="mf">9.58333</span>
-<span class="n">n_max_entier</span><span class="p">,</span><span class="mi">9</span>
-</pre></div>
-</div>
 </div>
 <div class="section" id="taille-des-donnees-et-nombre-de-fichiers-a-traiter">
 <h3>Taille des données et nombre de fichiers à traiter<a class="headerlink" href="#taille-des-donnees-et-nombre-de-fichiers-a-traiter" title="Lien permanent vers ce titre">¶</a></h3>
@@ -764,9 +710,8 @@ d’efficacité peut être faite à l’aide du script
 </ul>
 </li>
 </ul>
-</div>
 <div class="section" id="stockage-en-memoire-selon-les-types-de-base">
-<h3>Stockage en mémoire selon les types de base<a class="headerlink" href="#stockage-en-memoire-selon-les-types-de-base" title="Lien permanent vers ce titre">¶</a></h3>
+<h4>Stockage en mémoire selon les types de base<a class="headerlink" href="#stockage-en-memoire-selon-les-types-de-base" title="Lien permanent vers ce titre">¶</a></h4>
 <p>En ayant une idée de la taille des données à traiter, il devient aussi possible d’estimer la place que les données peuvent prendre en mémoire-vive.</p>
 <ul class="simple">
 <li><p>Dans un fichier texte, <strong>chaque caractère</strong> prend de un (1) à deux (2) octets, en moyenne.
@@ -854,7 +799,7 @@ Par exemple, dans une session Python :</p></li>
 </div>
 </div>
 <div class="section" id="la-complexite-des-algorithmes">
-<h3>La complexité des algorithmes<a class="headerlink" href="#la-complexite-des-algorithmes" title="Lien permanent vers ce titre">¶</a></h3>
+<h4>La complexité des algorithmes<a class="headerlink" href="#la-complexite-des-algorithmes" title="Lien permanent vers ce titre">¶</a></h4>
 <p>La question qui se pose : en augmentant la ou les dimensions du problème, quelles devraient être la durée du calcul et la consommation en mémoire-vive?
 Une <a class="reference external" href="https://fr.wikipedia.org/wiki/Analyse_de_la_complexit%C3%A9_des_algorithmes">analyse de la complexité de l’algorithme principal</a>
 permettrait de connaître l’ordre <span class="math notranslate nohighlight">\(O\)</span> du calcul en fonction de la taille <span class="math notranslate nohighlight">\(n\)</span> des données :</p>
@@ -874,7 +819,7 @@ où il y a <span class="math notranslate nohighlight">\(n\)</span> éléments à
 </ul>
 </div>
 <div class="section" id="exercice-complexite-de-l-algorithme">
-<h3>Exercice - Complexité de l’algorithme<a class="headerlink" href="#exercice-complexite-de-l-algorithme" title="Lien permanent vers ce titre">¶</a></h3>
+<h4>Exercice - Complexité de l’algorithme<a class="headerlink" href="#exercice-complexite-de-l-algorithme" title="Lien permanent vers ce titre">¶</a></h4>
 <p>Dans cet exercice, il est question d’inverser une matrice de valeurs aléatoires de taille <code class="docutils literal notranslate"><span class="pre">n*n</span></code> :</p>
 <ul class="simple">
 <li><p>Soumettre le script <a class="reference external" href="https://github.com/calculquebec/utilisation-serveurs-calcul/blob/main/scripts/inv-mat.sh"><code class="docutils literal notranslate"><span class="pre">scripts/inv-mat.sh</span></code></a> avec la commande <code class="docutils literal notranslate"><span class="pre">sbatch</span></code> :</p></li>
@@ -898,6 +843,7 @@ où il y a <span class="math notranslate nohighlight">\(n\)</span> éléments à
 <span class="n">cat</span> <span class="n">scripts</span><span class="o">/</span><span class="n">inv</span><span class="o">-</span><span class="n">mat</span><span class="o">-</span><span class="n">pred</span><span class="o">.</span><span class="n">py</span>
 <span class="n">python</span> <span class="n">scripts</span><span class="o">/</span><span class="n">inv</span><span class="o">-</span><span class="n">mat</span><span class="o">-</span><span class="n">pred</span><span class="o">.</span><span class="n">py</span> <span class="n">temps_inv</span><span class="o">.</span><span class="n">csv</span>
 </pre></div>
+</div>
 </div>
 </div>
 </div>
