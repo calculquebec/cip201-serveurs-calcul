@@ -15,9 +15,9 @@ temps2=$(echo $2 | cut -d: -f2)
 
 acc_lineaire=$(echo $n_proc2 / $n_proc1 | bc -l)
 acceleration=$(echo $temps1 / $temps2 | bc -l)
-efficacite=$(echo $acceleration / $acc_lineaire | bc -l)
+efficacite=$(echo $acceleration / $acc_lineaire '*' 100.0 | bc -l)
 
 echo Metrique,Valeur
-echo acc_lineaire,$acc_lineaire
-echo acceleration,$acceleration
-echo efficacite,$efficacite
+echo acc_lineaire,${acc_lineaire:0:5}x
+echo acceleration,${acceleration:0:5}x
+echo efficacite,${efficacite:0:5}'%'
