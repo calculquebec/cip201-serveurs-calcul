@@ -1,2 +1,4 @@
 .ipynb_checkpoints
 _build
+donnees/chr_*
+donnees/espece_*
