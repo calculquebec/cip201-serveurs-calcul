@@ -492,7 +492,7 @@ afin d’estimer et d’optimiser les ressources à réserver sur la grappe de c
 <li><p><a class="reference external" href="https://docs.computecanada.ca/wiki/Utiliser_des_modules">Chargement des modules</a> requis</p></li>
 <li><p>Les commandes Bash qui seront exécutées automatiquement sur des processeurs réservés pour la tâche</p></li>
 </ul>
-<p>Par exemple : <a class="reference external" href="https://github.com/calculquebec/utilisation-serveurs-calcul/blob/main/scripts/mpi_allo.sh"><code class="docutils literal notranslate"><span class="pre">scripts/mpi_allo.sh</span></code></a></p>
+<p>Par exemple : <a class="reference external" href="https://github.com/calculquebec/cip201-serveurs-calcul/blob/main/scripts/mpi_allo.sh"><code class="docutils literal notranslate"><span class="pre">scripts/mpi_allo.sh</span></code></a></p>
 <div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>cat scripts/mpi_allo.sh
 </pre></div>
 </div>
@@ -667,17 +667,17 @@ bash scripts/cuda-matmul.sh <span class="p">&amp;</span>&gt; /dev/null <span cla
 </ul>
 <p>Rappel - vous pouvez obtenir ces pourcentages via les commandes <code class="docutils literal notranslate"><span class="pre">sacct</span> <span class="pre">-X</span></code> (surtout pour obtenir les numéros de tâches) et <code class="docutils literal notranslate"><span class="pre">seff</span></code>. Les valeurs à considérer sont :</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">CPU</span> <span class="pre">Efficiency</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Memory</span> <span class="pre">Efficiency</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CPU</span> <span class="pre">Utilized</span></code> et <code class="docutils literal notranslate"><span class="pre">CPU</span> <span class="pre">Efficiency</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Memory</span> <span class="pre">Utilized</span></code> et <code class="docutils literal notranslate"><span class="pre">Memory</span> <span class="pre">Efficiency</span></code></p></li>
 </ul>
 </div>
 <div class="section" id="taille-des-donnees-et-nombre-de-fichiers-a-traiter">
 <h3>Taille des données et nombre de fichiers à traiter<a class="headerlink" href="#taille-des-donnees-et-nombre-de-fichiers-a-traiter" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Pour un calcul donné, il y a deux métriques de stockage à considérer :</p>
-<ul class="simple">
+<ol class="simple">
 <li><p>La <strong>quantité</strong> totale en octets (ou Go)</p></li>
 <li><p>Le <strong>nombre</strong> total de fichiers</p></li>
-</ul>
+</ol>
 <p>Pour obtenir ces informations :</p>
 <ul class="simple">
 <li><p><strong>Sous Windows</strong> : dans l’explorateur Windows (raccourcis clavier : Windows + E)</p>
@@ -712,7 +712,8 @@ bash scripts/cuda-matmul.sh <span class="p">&amp;</span>&gt; /dev/null <span cla
 </ul>
 <div class="section" id="stockage-en-memoire-selon-les-types-de-base">
 <h4>Stockage en mémoire selon les types de base<a class="headerlink" href="#stockage-en-memoire-selon-les-types-de-base" title="Lien permanent vers ce titre">¶</a></h4>
-<p>En ayant une idée de la taille des données à traiter, il devient aussi possible d’estimer la place que les données peuvent prendre en mémoire-vive.</p>
+<p>En ayant une idée de la taille des données à traiter,
+il devient possible d’estimer l’espace que les données prendront en mémoire-vive.</p>
 <ul class="simple">
 <li><p>Dans un fichier texte, <strong>chaque caractère</strong> prend de un (1) à deux (2) octets, en moyenne.
 Cependant, pour certaines langues, l’encodage
@@ -721,51 +722,48 @@ peut se rendre jusqu’à quatre (4) octets par caractère.
 Pour les langues latines et germaniques, on peut considérer <strong>deux (2) octets</strong> par caractère.
 Par exemple, dans une session Python :</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>python
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">sys</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">euro</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">sys</span><span class="o">.</span><span class="n">getsizeof</span><span class="p">(</span><span class="n">euro</span><span class="p">)</span>
-<span class="go">49</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">euro</span> <span class="o">=</span> <span class="s2">&quot;Euro&quot;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">sys</span><span class="o">.</span><span class="n">getsizeof</span><span class="p">(</span><span class="n">euro</span><span class="p">)</span>
-<span class="go">53</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">euro</span> <span class="o">=</span> <span class="s2">&quot;€&quot;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">sys</span><span class="o">.</span><span class="n">getsizeof</span><span class="p">(</span><span class="n">euro</span><span class="p">)</span>
-<span class="go">76</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">euro</span> <span class="o">*=</span> <span class="mi">2</span>  <span class="c1"># Donc &quot;€€&quot;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">sys</span><span class="o">.</span><span class="n">getsizeof</span><span class="p">(</span><span class="n">euro</span><span class="p">)</span>
-<span class="go">78</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">sys</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">euro</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">sys</span><span class="o">.</span><span class="n">getsizeof</span><span class="p">(</span><span class="n">euro</span><span class="p">)</span>
+<span class="mi">49</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">euro</span> <span class="o">=</span> <span class="s2">&quot;Euro&quot;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">sys</span><span class="o">.</span><span class="n">getsizeof</span><span class="p">(</span><span class="n">euro</span><span class="p">)</span>
+<span class="mi">53</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">euro</span> <span class="o">=</span> <span class="s2">&quot;€&quot;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">sys</span><span class="o">.</span><span class="n">getsizeof</span><span class="p">(</span><span class="n">euro</span><span class="p">)</span>
+<span class="mi">76</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">euro</span> <span class="o">*=</span> <span class="mi">2</span>  <span class="c1"># Donc &quot;€€&quot;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">sys</span><span class="o">.</span><span class="n">getsizeof</span><span class="p">(</span><span class="n">euro</span><span class="p">)</span>
+<span class="mi">78</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">quit</span><span class="p">()</span>  <span class="c1"># ou Ctrl+D pour sortir</span>
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>Note : pour sortir de la session Python : Ctrl+D ou <code class="docutils literal notranslate"><span class="pre">quit()</span></code></p></li>
-</ul>
-<ul class="simple">
-<li><p>Les <strong>nombres entiers</strong> prennent typiquement 1 octet (8 bits), 2 octets (16 bits), 4 octets (32 bits) ou 8 octets (64 bits) chacun. Tout dépend de la <a class="reference external" href="https://en.wikipedia.org/wiki/C_data_types#Main_types">plage de valeurs souhaitée</a>:</p>
+<li><p>Les <strong>nombres entiers</strong> prennent typiquement 2 octets (16 bits), 4 octets (32 bits) ou 8 octets (64 bits) chacun. Tout dépend de la <a class="reference external" href="https://en.wikipedia.org/wiki/C_data_types#Main_types">plage de valeurs souhaitée</a> :</p>
 <ul>
-<li><p>1 octet : 256 valeurs de 0 à 255, ou de -128 à 127</p></li>
-<li><p>2 octets : ~65 milles valeurs de <span class="math notranslate nohighlight">\(0\)</span> à <span class="math notranslate nohighlight">\((2^{16}-1)\)</span>, ou de <span class="math notranslate nohighlight">\(-2^{15}\)</span> à <span class="math notranslate nohighlight">\((2^{15}-1)\)</span></p></li>
-<li><p>4 octets : ~4 milliards de valeurs de 0 à <span class="math notranslate nohighlight">\((2^{32}-1)\)</span> ou de <span class="math notranslate nohighlight">\(-2^{31}\)</span> à <span class="math notranslate nohighlight">\((2^{31}-1)\)</span></p></li>
-<li><p>8 octets : ~18 trillions de valeurs de 0 à <span class="math notranslate nohighlight">\((2^{64}-1)\)</span> ou de <span class="math notranslate nohighlight">\(-2^{63}\)</span> à <span class="math notranslate nohighlight">\((2^{63}-1)\)</span></p></li>
+<li><p>2 octets : ~65 milles valeurs de <span class="math notranslate nohighlight">\(0\)</span> à <span class="math notranslate nohighlight">\(65535\)</span>, ou de <span class="math notranslate nohighlight">\(-32767\)</span> à <span class="math notranslate nohighlight">\(32767\)</span></p></li>
+<li><p>4 octets : ~4 milliards de valeurs de 0 à <span class="math notranslate nohighlight">\((2^{32}-1)\)</span> ou de <span class="math notranslate nohighlight">\(-(2^{31}-1)\)</span> à <span class="math notranslate nohighlight">\((2^{31}-1)\)</span></p></li>
+<li><p>8 octets : ~18 trillions de valeurs de 0 à <span class="math notranslate nohighlight">\((2^{64}-1)\)</span> ou de <span class="math notranslate nohighlight">\(-(2^{63}-1)\)</span> à <span class="math notranslate nohighlight">\((2^{63}-1)\)</span></p></li>
 </ul>
 </li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">module</span> <span class="n">load</span> <span class="n">python</span> <span class="n">scipy</span><span class="o">-</span><span class="n">stack</span>
-<span class="n">python</span>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>module load python scipy-stack
+python
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">sys</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">cube</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int64</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">sys</span><span class="o">.</span><span class="n">getsizeof</span><span class="p">(</span><span class="n">cube</span><span class="p">)</span>
-<span class="go">8000136</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">cube</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">sys</span><span class="o">.</span><span class="n">getsizeof</span><span class="p">(</span><span class="n">cube</span><span class="p">)</span>
-<span class="go">4000136</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">iinfo</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int16</span><span class="p">)</span>
-<span class="go">iinfo(min=-32768, max=32767, dtype=int16)</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">sys</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">cube</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int64</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">sys</span><span class="o">.</span><span class="n">getsizeof</span><span class="p">(</span><span class="n">cube</span><span class="p">)</span>
+<span class="mi">8000136</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">cube</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">sys</span><span class="o">.</span><span class="n">getsizeof</span><span class="p">(</span><span class="n">cube</span><span class="p">)</span>
+<span class="mi">4000136</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">iinfo</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int16</span><span class="p">)</span>
+<span class="n">iinfo</span><span class="p">(</span><span class="nb">min</span><span class="o">=-</span><span class="mi">32768</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">32767</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">int16</span><span class="p">)</span>
 </pre></div>
 </div>
 <ul class="simple">
@@ -776,12 +774,12 @@ Par exemple, dans une session Python :</p></li>
 </ul>
 </li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cube</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">((</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">cube</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">cube</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
-<span class="go">3.1415927</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">cube</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
-<span class="go">3.1415927 3.141592653589793</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">cube</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">((</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">cube</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">cube</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
+<span class="mf">3.1415927</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">cube</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+<span class="mf">3.1415927</span> <span class="mf">3.141592653589793</span>
 </pre></div>
 </div>
 <ul class="simple">
@@ -790,11 +788,13 @@ Par exemple, dans une session Python :</p></li>
 <li><p>Pour les nombres complexes, on multiplie l’espace mémoire par deux (2).</p></li>
 </ul>
 <p>Exemple de calcul de l’espace-mémoire :</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">nb_matrices</span> <span class="o">=</span> <span class="mi">3</span>        <span class="c1"># Trois matrices C = prod_mat(A, B)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">taille</span> <span class="o">=</span> <span class="mi">25000</span>         <span class="c1"># Matrices carrées</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">octets_par_nombre</span> <span class="o">=</span> <span class="mi">8</span>  <span class="c1"># Double précision</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">memoire</span> <span class="o">=</span> <span class="n">nb_matrices</span> <span class="o">*</span> <span class="n">taille</span><span class="o">*</span><span class="n">taille</span> <span class="o">*</span> <span class="n">octets_par_nombre</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">memoire</span> <span class="o">/</span> <span class="mi">1000</span><span class="o">**</span><span class="mi">3</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">nb_matrices</span> <span class="o">=</span> <span class="mi">3</span>        <span class="c1"># Trois matrices C = prod_mat(A, B)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">taille</span> <span class="o">=</span> <span class="mi">25000</span>         <span class="c1"># Matrices carrées</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">octets_par_nombre</span> <span class="o">=</span> <span class="mi">8</span>  <span class="c1"># Double précision</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">memoire</span> <span class="o">=</span> <span class="n">nb_matrices</span> <span class="o">*</span> <span class="n">taille</span><span class="o">*</span><span class="n">taille</span> <span class="o">*</span> <span class="n">octets_par_nombre</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">memoire</span> <span class="o">/</span> <span class="mi">1000</span><span class="o">**</span><span class="mi">3</span>
+<span class="o">&gt;&gt;&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">quit</span><span class="p">()</span>  <span class="c1"># ou Ctrl+D pour sortir</span>
 </pre></div>
 </div>
 </div>
@@ -820,28 +820,31 @@ où il y a <span class="math notranslate nohighlight">\(n\)</span> éléments à
 </div>
 <div class="section" id="exercice-complexite-de-l-algorithme">
 <h4>Exercice - Complexité de l’algorithme<a class="headerlink" href="#exercice-complexite-de-l-algorithme" title="Lien permanent vers ce titre">¶</a></h4>
-<p>Dans cet exercice, il est question d’inverser une matrice de valeurs aléatoires de taille <code class="docutils literal notranslate"><span class="pre">n*n</span></code> :</p>
+<p>Dans cet exercice, il est question d’inverser une matrice de valeurs aléatoires de taille <span class="math notranslate nohighlight">\(n*n\)</span> :</p>
 <ul class="simple">
-<li><p>Soumettre le script <a class="reference external" href="https://github.com/calculquebec/utilisation-serveurs-calcul/blob/main/scripts/inv-mat.sh"><code class="docutils literal notranslate"><span class="pre">scripts/inv-mat.sh</span></code></a> avec la commande <code class="docutils literal notranslate"><span class="pre">sbatch</span></code> :</p></li>
+<li><p>Soumettre le script <a class="reference external" href="https://github.com/calculquebec/cip201-serveurs-calcul/blob/main/scripts/inv-mat.sh"><code class="docutils literal notranslate"><span class="pre">scripts/inv-mat.sh</span></code></a> avec la commande <code class="docutils literal notranslate"><span class="pre">sbatch</span></code> :</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sbatch</span> <span class="n">scripts</span><span class="o">/</span><span class="n">inv</span><span class="o">-</span><span class="n">mat</span><span class="o">.</span><span class="n">sh</span>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>sbatch scripts/inv-mat.sh
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>Explorer le script Python <a class="reference external" href="https://github.com/calculquebec/utilisation-serveurs-calcul/blob/main/scripts/inv-mat.py"><code class="docutils literal notranslate"><span class="pre">scripts/inv-mat.py</span></code></a> :</p></li>
+<li><p>Explorer les scripts Python
+<a class="reference external" href="https://github.com/calculquebec/cip201-serveurs-calcul/blob/main/scripts/inv-mat.py"><code class="docutils literal notranslate"><span class="pre">scripts/inv-mat.py</span></code></a> et
+<a class="reference external" href="https://github.com/calculquebec/cip201-serveurs-calcul/blob/main/scripts/inv-mat.sh"><code class="docutils literal notranslate"><span class="pre">scripts/inv-mat.sh</span></code></a> :</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">less</span> <span class="n">scripts</span><span class="o">/</span><span class="n">inv</span><span class="o">-</span><span class="n">mat</span><span class="o">.</span><span class="n">py</span>  <span class="c1"># q pour quitter</span>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>cat scripts/inv-mat.py
+cat scripts/inv-mat.sh
 </pre></div>
 </div>
 <ul class="simple">
 <li><p>Suivre l’évolution du calcul avec <code class="docutils literal notranslate"><span class="pre">squeue</span> <span class="pre">-u</span> <span class="pre">$USER</span></code>, environ aux 30 secondes</p></li>
 <li><p>Le résultat sera sauvegardé dans le fichier <code class="docutils literal notranslate"><span class="pre">temps_inv.csv</span></code></p></li>
-<li><p>Analyse avec Python, Pandas et Numpy dans le script <a class="reference external" href="https://github.com/calculquebec/utilisation-serveurs-calcul/blob/main/scripts/inv-mat-pred.py"><code class="docutils literal notranslate"><span class="pre">scripts/inv-mat-pred.py</span></code></a> :</p></li>
+<li><p>Analyse avec Python, Pandas et Numpy dans le script <a class="reference external" href="https://github.com/calculquebec/cip201-serveurs-calcul/blob/main/scripts/inv-mat-pred.py"><code class="docutils literal notranslate"><span class="pre">scripts/inv-mat-pred.py</span></code></a> :</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">module</span> <span class="n">load</span> <span class="n">gcc</span> <span class="n">python</span> <span class="n">scipy</span><span class="o">-</span><span class="n">stack</span>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>module load gcc python scipy-stack
 
-<span class="n">cat</span> <span class="n">scripts</span><span class="o">/</span><span class="n">inv</span><span class="o">-</span><span class="n">mat</span><span class="o">-</span><span class="n">pred</span><span class="o">.</span><span class="n">py</span>
-<span class="n">python</span> <span class="n">scripts</span><span class="o">/</span><span class="n">inv</span><span class="o">-</span><span class="n">mat</span><span class="o">-</span><span class="n">pred</span><span class="o">.</span><span class="n">py</span> <span class="n">temps_inv</span><span class="o">.</span><span class="n">csv</span>
+cat scripts/inv-mat-pred.py
+python scripts/inv-mat-pred.py temps_inv.csv
 </pre></div>
 </div>
 </div>
@@ -1014,7 +1017,7 @@ où il y a <span class="math notranslate nohighlight">\(n\)</span> éléments à
 </tbody>
 </table>
 <ul class="simple">
-<li><p><a class="reference external" href="https://docs.computecanada.ca/wiki/Using_GPUs_with_Slurm">Nombre de GPUs</a> selon le cas :</p></li>
+<li><p><a class="reference external" href="https://docs.computecanada.ca/wiki/Using_GPUs_with_Slurm/fr">Nombre de GPUs</a> selon le cas :</p></li>
 </ul>
 <table class="colwidths-auto table">
 <thead>
