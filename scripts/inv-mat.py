@@ -1,8 +1,7 @@
 #!/usr/bin/env python
 
 import numpy as np
-import pandas as pd
-import timeit
+import sys
 
 
 def inv_mat(n):
@@ -13,23 +12,12 @@ def inv_mat(n):
 
 
 def main():
-    # Différentes tailles n, augmentation exponentielle
-    valeurs_n = [3 * 2**e for e in range(6, 12)]
-    les_temps = []  # Pour le cumul des temps de calcul
+    assert len(sys.argv) > 1, f'syntaxe: python {sys.argv[0]} n  # où n > 0'
 
-    # Pour chaque valeur de taille n
-    for n in valeurs_n:
-        # Réduire le nombre d'appels selon n
-        nb_appels = int(2 * max(valeurs_n) / n)
-        print(f'Appel de inv_mat({n}) {nb_appels} fois ...')
+    n = int(sys.argv[1])
+    assert n > 0, f'n doit être plus grand que 0'
 
-        # Mesurer nb_appels fois le temps de calcul de inv_mat(n)
-        # Sauvegarder le temps d'un seul calcul
-        temps = timeit.timeit(lambda: inv_mat(n), number=nb_appels)
-        les_temps.append(temps / nb_appels)
-
-    resultats = pd.DataFrame({'temps': les_temps, 'n': valeurs_n})
-    resultats.to_csv('temps_inv.csv', index=False)
+    inv_mat(n)
 
 
 if __name__ == "__main__":

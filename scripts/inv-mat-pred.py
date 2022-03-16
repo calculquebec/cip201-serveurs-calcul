@@ -46,7 +46,7 @@ def main():
     input('--- Appuyez sur Entrée pour continuer ---')
 
     # Faire une prédiction avec une grande taille n
-    n = 10000
+    n = 12288
     n2 = n ** 2
     n3 = n ** 3
     pred_temps = coeff[0] * n2 + coeff[1] * n3
