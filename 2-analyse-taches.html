@@ -52,6 +52,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="shortcut icon" href="_static/logo.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
@@ -209,23 +211,40 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal nav-link" href="#taches-en-attente">
    Tâches en attente
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#partition-et-autres-specifications-d-une-tache">
+     Partition et autres spécifications d’une tâche
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#politique-d-ordonnancement">
+     Politique d’ordonnancement
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taches-actives">
    Tâches actives
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#valider-le-comportement-d-une-tache-active">
+     Valider le comportement d’une tâche active
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taches-terminees">
    Tâches terminées
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercice-analyse-d-execution-d-un-pipeline">
-     Exercice - Analyse d’exécution d’un pipeline
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#points-a-retenir">
+   Points à retenir
+  </a>
  </li>
 </ul>
 
@@ -251,23 +270,40 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal nav-link" href="#taches-en-attente">
    Tâches en attente
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#partition-et-autres-specifications-d-une-tache">
+     Partition et autres spécifications d’une tâche
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#politique-d-ordonnancement">
+     Politique d’ordonnancement
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taches-actives">
    Tâches actives
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#valider-le-comportement-d-une-tache-active">
+     Valider le comportement d’une tâche active
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taches-terminees">
    Tâches terminées
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercice-analyse-d-execution-d-un-pipeline">
-     Exercice - Analyse d’exécution d’un pipeline
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#points-a-retenir">
+   Points à retenir
+  </a>
  </li>
 </ul>
 
@@ -282,8 +318,8 @@ const thebe_selector_output = ".output, .cell_output"
 <h1>Analyse des tâches<a class="headerlink" href="#analyse-des-taches" title="Lien permanent vers ce titre">¶</a></h1>
 <p>Le but de ce chapitre est d’approfondir <a class="reference external" href="https://docs.computecanada.ca/wiki/Running_jobs/fr#Suivi_des_t.C3.A2ches">l’analyse des tâches</a> en attente, en cours et les tâches terminées.</p>
 <p>Remplissons la liste de tâches gérées par l’ordonnanceur :</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="n">scripts</span><span class="o">/</span><span class="n">sleep</span><span class="o">-</span><span class="mi">300</span><span class="n">s</span><span class="o">.</span><span class="n">sh</span>
-<span class="n">sbatch</span> <span class="n">scripts</span><span class="o">/</span><span class="n">sleep</span><span class="o">-</span><span class="mi">300</span><span class="n">s</span><span class="o">.</span><span class="n">sh</span>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>cat scripts/sleep-300s.sh
+sbatch scripts/sleep-300s.sh  <span class="c1"># Répéter au besoin</span>
 </pre></div>
 </div>
 <div class="section" id="taches-en-attente">
@@ -292,12 +328,14 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="simple">
 <li><p><a class="reference external" href="https://slurm.schedmd.com/squeue.html"><code class="docutils literal notranslate"><span class="pre">squeue</span> <span class="pre">-t</span> <span class="pre">pending</span></code></a> pour toutes les tâches en attente</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">squeue</span> <span class="pre">-t</span> <span class="pre">pending</span> <span class="pre">-u</span> <span class="pre">$USER</span></code> pour seulement <strong>vos</strong> tâches en attente</p></li>
-<li><p>ou bien la commande suivante pour toutes les tâches triées par priorité descendante :</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">squeue</span> <span class="o">-</span><span class="n">t</span> <span class="n">pending</span> <span class="o">--</span><span class="n">sort</span><span class="o">=-</span><span class="n">p</span> <span class="o">--</span><span class="nb">format</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">%.16i</span><span class="s2"> %.9p </span><span class="si">%.8u</span><span class="s2"> </span><span class="si">%.16a</span><span class="s2"> %.18P %.10l %.4C %.7m&quot;</span>
+<p>La commande suivante affiche les tâches en attente triées par priorité descendante :</p>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>squeue -t pending --sort<span class="o">=</span>-p --format<span class="o">=</span><span class="s2">&quot;%.16i %.9p %.8u %.16a %.18P %.10l %.4C %.7m&quot;</span>
 </pre></div>
 </div>
 <ul class="simple">
+<li><p>À propos des différentes colonnes :</p>
+<ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">%i</span></code> : identifiant numérique de la tâche</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">%p</span></code> : priorité de la tâche (entre 0.0 et 1.0)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">%u</span></code> : nom d’utilisateur</p></li>
@@ -307,40 +345,51 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p><code class="docutils literal notranslate"><span class="pre">%C</span></code> : nombre de processeurs demandé</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">%m</span></code> : mémoire demandée</p></li>
 </ul>
-<p>Dans tous les cas, l’utilisation de <code class="docutils literal notranslate"><span class="pre">squeue</span></code> crée une certaine charge sur l’ordonnanceur (à cause du grand nombre de tâches à gérer), alors il vaut mieux <strong>se limiter à un appel par minute</strong> sur les grappes nationales</p>
+</li>
+</ul>
+<p>Dans tous les cas, l’utilisation de <code class="docutils literal notranslate"><span class="pre">squeue</span></code> crée une certaine charge
+sur l’ordonnanceur (à cause du grand nombre de tâches à traiter),
+alors il vaut mieux <strong>se limiter à un appel par minute</strong> sur les grappes nationales.</p>
 <ul class="simple">
 <li><p>Si jamais il vous venait l’idée d’utiliser la commande <code class="docutils literal notranslate"><span class="pre">watch</span></code>, <strong>ne le faites pas!</strong></p></li>
 </ul>
+<div class="section" id="partition-et-autres-specifications-d-une-tache">
+<h3>Partition et autres spécifications d’une tâche<a class="headerlink" href="#partition-et-autres-specifications-d-une-tache" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Une chose à savoir : vos tâches sont généralement en compétition avec des <a class="reference external" href="https://docs.computecanada.ca/wiki/Job_scheduling_policies/fr#Pourcentages_des_n.C5.93uds_disponibles">tâches de la même partition</a>.
 Ainsi, <strong>une tâche CPU n’a aucun impact sur le temps d’attente d’une tâche GPU</strong>.
 Vous pouvez utiliser la commande suivante pour obtenir le détail de votre tâche, incluant la partition à laquelle elle est assignée :</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">scontrol</span> <span class="n">show</span> <span class="n">job</span> <span class="o">-</span><span class="n">dd</span> <span class="o">&lt;</span><span class="n">jobid</span><span class="o">&gt;</span>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>scontrol show job -dd &lt;jobid&gt;
 </pre></div>
 </div>
+</div>
+<div class="section" id="politique-d-ordonnancement">
+<h3>Politique d’ordonnancement<a class="headerlink" href="#politique-d-ordonnancement" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Ce qu’il faut aussi comprendre de la <a class="reference external" href="https://docs.computecanada.ca/wiki/Job_scheduling_policies/fr">politique d’ordonnancement</a> :</p>
 <ul class="simple">
-<li><p><strong>La priorité de votre tâche dépend majoritairement de l’utilisation récente</strong> de votre groupe de recherche</p>
-<ul>
+<li><p><strong>La priorité de votre tâche dépend majoritairement de l’utilisation récente</strong> de votre groupe de recherche</p></li>
 <li><p>Pour le reste, la priorité dépend aussi du temps d’attente, mais dans une très faible proportion</p></li>
 </ul>
-</li>
-<li><p>L’information concernant <strong>l’utilisation du groupe</strong> est donnée par la commande <a class="reference external" href="https://docs.computecanada.ca/wiki/Job_scheduling_policies/fr#Priorisation_selon_la_juste_part"><code class="docutils literal notranslate"><span class="pre">sshare</span></code></a> :</p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sshare</span> <span class="o">-</span><span class="n">l</span> <span class="o">-</span><span class="n">A</span> <span class="n">def</span><span class="o">-</span><span class="n">prof1_cpu</span> <span class="o">-</span><span class="n">u</span> <span class="n">prof1</span><span class="p">,</span><span class="n">grad2</span><span class="p">,</span><span class="n">postdoc3</span>
-<span class="n">sshare</span> <span class="o">-</span><span class="n">l</span>  <span class="c1"># Tous les comptes</span>
+<p>L’information concernant <strong>l’utilisation récente du groupe</strong> est donnée par la commande <a class="reference external" href="https://docs.computecanada.ca/wiki/Job_scheduling_policies/fr#Priorisation_selon_la_juste_part"><code class="docutils literal notranslate"><span class="pre">sshare</span></code></a> :</p>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>sshare -l -A def-prof1_cpu -u prof1,grad2,postdoc3
+sshare -l  <span class="c1"># Tous les comptes</span>
 </pre></div>
 </div>
 <ul class="simple">
+<li><p>À propos des différentes colonnes :</p>
+<ul>
 <li><p>Plus le <code class="docutils literal notranslate"><span class="pre">LevelFS</span></code> du groupe est élevé, plus la priorité est élevée</p></li>
 <li><p>L’utilisation est considérée normale si <code class="docutils literal notranslate"><span class="pre">LevelFS</span></code> est autour de 1.0</p></li>
 <li><p>Si <code class="docutils literal notranslate"><span class="pre">LevelFS</span></code> est proche de 0.0, la priorité du groupe sera basse</p></li>
-<li><p><strong>L’utilisation récente perd de son importance avec le temps qui passe.</strong>
-Ainsi, son importance est progressivement réduite avec un ratio réduisant l’impact de 50% à chaque 7 jours</p>
+</ul>
+</li>
+<li><p>L’utilisation récente perd de son importance avec le temps qui passe.</p>
 <ul>
+<li><p>Son <strong>importance est progressivement réduite</strong> avec un ratio réduisant l’impact de 50% à chaque 7 jours</p></li>
 <li><p>Par conséquent, le <code class="docutils literal notranslate"><span class="pre">LevelFS</span></code> et la priorité augmentent à nouveau lorsque le groupe reste en attente</p></li>
 </ul>
 </li>
 </ul>
+</div>
 </div>
 <div class="section" id="taches-actives">
 <h2>Tâches actives<a class="headerlink" href="#taches-actives" title="Lien permanent vers ce titre">¶</a></h2>
@@ -348,50 +397,57 @@ Ainsi, son importance est progressivement réduite avec un ratio réduisant l’
 <ul class="simple">
 <li><p><a class="reference external" href="https://slurm.schedmd.com/squeue.html"><code class="docutils literal notranslate"><span class="pre">squeue</span> <span class="pre">-t</span> <span class="pre">running</span></code></a> pour toutes les tâches actives</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">squeue</span> <span class="pre">-t</span> <span class="pre">running</span> <span class="pre">-u</span> <span class="pre">$USER</span></code> pour seulement <strong>vos</strong> tâches actives</p></li>
-<li><p>ou bien la commande suivante pour toutes les tâches actives triées selon le temps qui leur reste :</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">squeue</span> <span class="o">-</span><span class="n">t</span> <span class="n">running</span> <span class="o">--</span><span class="n">sort</span><span class="o">=+</span><span class="n">M</span> <span class="o">--</span><span class="nb">format</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">%.14i</span><span class="s2"> %.18P %.10M %.4C %.7m %R&quot;</span>
+<p>La commande suivante affiche les tâches actives triées selon le temps qui leur reste :</p>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>squeue -t running --sort<span class="o">=</span>+M --format<span class="o">=</span><span class="s2">&quot;%.14i %.18P %.10M %.4C %.7m %R&quot;</span>
 </pre></div>
 </div>
 <ul class="simple">
+<li><p>À propos des différentes colonnes :</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">%i</span></code> : identifiant numérique de la tâche</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">%P</span></code> : partition de la grappe</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">%M</span></code> : temps de calcul écoulé</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">%C</span></code> : nombre de processeurs demandé</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">%m</span></code> : mémoire demandée</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">%R</span></code> : liste des noeuds alloués</p></li>
 </ul>
+</li>
+</ul>
+<div class="section" id="valider-le-comportement-d-une-tache-active">
+<h3>Valider le comportement d’une tâche active<a class="headerlink" href="#valider-le-comportement-d-une-tache-active" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Pendant que vos tâches sont actives, vous pouvez vous connecter par SSH aux noeuds de calcul correspondants afin de valider que l’exécution se passe bien :</p>
-<p>Tâche CPU :</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sbatch</span> <span class="o">--</span><span class="n">cpus</span><span class="o">-</span><span class="n">per</span><span class="o">-</span><span class="n">task</span><span class="o">=</span><span class="mi">2</span> <span class="n">scripts</span><span class="o">/</span><span class="n">nbody</span><span class="o">-</span><span class="n">openmp</span><span class="o">.</span><span class="n">sh</span>
-</pre></div>
-</div>
-<p>Tâche GPU :</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sbatch</span> <span class="n">scripts</span><span class="o">/</span><span class="n">cuda</span><span class="o">-</span><span class="n">matmul</span><span class="o">.</span><span class="n">sh</span>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>sbatch scripts/inv-mat.sh
 </pre></div>
 </div>
 <ul class="simple">
 <li><p>Identifier le ou les noeud(s) avec : <code class="docutils literal notranslate"><span class="pre">squeue</span> <span class="pre">-u</span> <span class="pre">$USER</span></code></p></li>
-<li><p>Connexion avec : <code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">NOEUD</span></code></p></li>
+<li><p>Connexion avec : <code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">&lt;nom_noeud&gt;</span></code></p></li>
 <li><p>Inspection avec <code class="docutils literal notranslate"><span class="pre">top</span></code>, <code class="docutils literal notranslate"><span class="pre">htop</span></code>, <code class="docutils literal notranslate"><span class="pre">nvtop</span></code> et/ou <code class="docutils literal notranslate"><span class="pre">nvidia-smi</span></code> :</p>
 <ul>
-<li><p>Est-ce que vos processus s’exécutent avec un pourcentage de 100%?</p></li>
-<li><p>Est-ce que vos processus parallèles s’exécutent avec un pourcentage de <code class="docutils literal notranslate"><span class="pre">n</span></code> * 100%, où <code class="docutils literal notranslate"><span class="pre">n</span></code> est le nombre de processeurs par tâche Slurm?</p></li>
-<li><p>Est-ce que les GPUs sont utilisés à leur plein potentiel?</p>
+<li><p>Est-ce que vos processus s’exécutent avec un <strong>pourcentage de 100%?</strong></p></li>
+<li><p>Est-ce que vos processus parallèles s’exécutent avec un <strong>pourcentage de <span class="math notranslate nohighlight">\(n\)</span> * 100%</strong>, où <span class="math notranslate nohighlight">\(n\)</span> est le nombre de processeurs par tâche Slurm?</p></li>
+<li><p>Est-ce que les <strong>accélérateurs</strong> sont utilisés à leur plein potentiel?</p>
 <ul>
-<li><p>Note : il est préférable de regarder la consommation en Watts plutôt que le pourcentage affiché</p></li>
+<li><p>Note : il est préférable de regarder la <strong>consommation en Watts</strong> plutôt que le pourcentage affiché</p></li>
 </ul>
 </li>
-<li><p>Est-ce que le noeud de calcul semble pleinement utilisé?</p></li>
+<li><p>Est-ce que le <strong>noeud de calcul</strong> semble pleinement utilisé (tous les processeurs, la mémoire et/ou les accélérateurs)?</p></li>
 </ul>
 </li>
 </ul>
-<p>Toutes ces informations devraient vous permettre d’ajuster votre script de soumission et d’optimiser l’exécution parallèle de votre programme.</p>
+<p>Toutes ces informations devraient vous permettre d’ajuster vos scripts de soumission et d’optimiser l’exécution parallèle de vos différents calculs.</p>
+</div>
 </div>
 <div class="section" id="taches-terminees">
 <h2>Tâches terminées<a class="headerlink" href="#taches-terminees" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Lorsqu’une <a class="reference external" href="https://docs.computecanada.ca/wiki/Running_jobs/fr#T.C3.A2ches_termin.C3.A9es">tâche est complétée</a>, la commande la plus simple pour obtenir des informations sur cette tâche est la commande :</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">seff</span> <span class="o">&lt;</span><span class="n">jobid</span><span class="o">&gt;</span>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>seff &lt;jobid&gt;
 </pre></div>
 </div>
-<p>Autrement, c’est aussi possible d’utiliser la commande Slurm <code class="docutils literal notranslate"><span class="pre">sacct</span></code> :</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sacct</span> <span class="o">-</span><span class="n">j</span> <span class="o">&lt;</span><span class="n">jobid</span><span class="o">&gt;</span> <span class="o">--</span><span class="nb">format</span><span class="o">=</span><span class="n">JobID</span><span class="p">,</span><span class="n">JobName</span><span class="p">,</span><span class="n">MaxRSS</span><span class="p">,</span><span class="n">Elapsed</span>
+<p>Autrement, c’est aussi possible d’utiliser la commande Slurm
+<a class="reference external" href="https://slurm.schedmd.com/sacct.html"><code class="docutils literal notranslate"><span class="pre">sacct</span></code></a> :</p>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>sacct -j &lt;jobid&gt; --format<span class="o">=</span>JobID,JobName,MaxRSS,Elapsed
 </pre></div>
 </div>
 <p>Encore une fois, ces informations permettent d’ajuster vos scripts et de mieux déterminer vos besoins en ressources.</p>
@@ -400,50 +456,28 @@ Ainsi, son importance est progressivement réduite avec un ratio réduisant l’
 <li><p><a class="reference external" href="https://ccdb.computecanada.ca/me/group_usage">https://ccdb.computecanada.ca/me/group_usage</a></p></li>
 </ul>
 <p>En tenant compte de l’utilisation passée, il devient possible d’estimer ses besoins pour le <a class="reference external" href="https://www.computecanada.ca/page-daccueil-du-portail-de-recherche/acces-aux-ressources/concours-dallocation-des-ressources/?lang=fr">Concours d’allocation de ressources</a>.</p>
-<div class="section" id="exercice-analyse-d-execution-d-un-pipeline">
-<h3>Exercice - Analyse d’exécution d’un pipeline<a class="headerlink" href="#exercice-analyse-d-execution-d-un-pipeline" title="Lien permanent vers ce titre">¶</a></h3>
+</div>
+<div class="section" id="points-a-retenir">
+<h2>Points à retenir<a class="headerlink" href="#points-a-retenir" title="Lien permanent vers ce titre">¶</a></h2>
 <ul class="simple">
-<li><p>Lancer à nouveau le pipeline avec la commande :</p></li>
+<li><p>Lister nos <strong>tâches en attente</strong> : <code class="docutils literal notranslate"><span class="pre">squeue</span> <span class="pre">-t</span> <span class="pre">pending</span> <span class="pre">-u</span> <span class="pre">$USER</span></code></p>
+<ul>
+<li><p>Le détail d’une tâche : <code class="docutils literal notranslate"><span class="pre">scontrol</span> <span class="pre">show</span> <span class="pre">job</span> <span class="pre">-dd</span> <span class="pre">&lt;jobid&gt;</span></code></p></li>
+<li><p>L’utilisation récente : <code class="docutils literal notranslate"><span class="pre">sshare</span> <span class="pre">-l</span> <span class="pre">-A</span> <span class="pre">def-prof1_cpu</span> <span class="pre">-u</span> <span class="pre">$USER</span></code></p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bash</span> <span class="n">scripts</span><span class="o">/</span><span class="n">nbody</span><span class="o">-</span><span class="n">pipeline</span><span class="o">.</span><span class="n">sh</span>
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>Au besoin, relancer le pipeline si vos tâches se sont exécutées trop rapidement</p></li>
-<li><p>Surveiller vos tâches :</p></li>
+</li>
+<li><p>Lister nos <strong>tâches actives</strong> : <code class="docutils literal notranslate"><span class="pre">squeue</span> <span class="pre">-t</span> <span class="pre">running</span> <span class="pre">-u</span> <span class="pre">$USER</span></code></p>
+<ul>
+<li><p>Possibilité d’aller inspecter les tâches directement sur les noeuds de calcul</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>squeue -t pending -u $USER
-squeue -t running -u $USER
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>Surveiller toutes les tâches :</p></li>
+</li>
+<li><p>Lister nos <strong>tâches terminées</strong> : <code class="docutils literal notranslate"><span class="pre">sacct</span></code></p>
+<ul>
+<li><p>Pour une tâche précise : <code class="docutils literal notranslate"><span class="pre">seff</span> <span class="pre">&lt;jobid&gt;</span></code></p></li>
+<li><p>Ou bien : <code class="docutils literal notranslate"><span class="pre">sacct</span> <span class="pre">-j</span> <span class="pre">&lt;jobid&gt;</span> <span class="pre">--format=JobID,JobName,MaxRSS,Elapsed</span></code></p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">squeue</span> <span class="o">-</span><span class="n">t</span> <span class="n">pending</span>
-<span class="n">squeue</span> <span class="o">-</span><span class="n">t</span> <span class="n">running</span>
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>Trier les tâches selon un critère :</p></li>
+</li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">squeue</span> <span class="o">-</span><span class="n">t</span> <span class="n">pending</span> <span class="o">--</span><span class="n">sort</span><span class="o">=-</span><span class="n">p</span> <span class="o">--</span><span class="nb">format</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">%.16i</span><span class="s2"> %.9p </span><span class="si">%.8u</span><span class="s2"> </span><span class="si">%.16a</span><span class="s2"> %.18P %.10l %.4C %.7m&quot;</span>
-<span class="n">squeue</span> <span class="o">-</span><span class="n">t</span> <span class="n">running</span> <span class="o">--</span><span class="n">sort</span><span class="o">=+</span><span class="n">M</span> <span class="o">--</span><span class="nb">format</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">%.14i</span><span class="s2"> %.18P %.10M %.4C %.7m %R&quot;</span>
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>Trouver vos tâches récentes avec :</p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sacct</span>
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>Analyser quelques tâches complétées avec :</p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">seff</span> <span class="o">&lt;</span><span class="n">jobid</span><span class="o">&gt;</span>
-<span class="n">sacct</span> <span class="o">-</span><span class="n">j</span> <span class="o">&lt;</span><span class="n">jobid</span><span class="o">&gt;</span> <span class="o">--</span><span class="nb">format</span><span class="o">=</span><span class="n">JobID</span><span class="p">,</span><span class="n">JobName</span><span class="p">,</span><span class="n">MaxRSS</span><span class="p">,</span><span class="n">Elapsed</span>
-</pre></div>
-</div>
-</div>
 </div>
 </div>
 
