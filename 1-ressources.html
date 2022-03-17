@@ -245,23 +245,23 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#verifier-l-utilisation-du-cpu-et-de-la-memoire">
-       Vérifier l’utilisation du CPU et de la mémoire
+      <a class="reference internal nav-link" href="#ressources-utilisees-d-une-tache-terminee">
+       Ressources utilisées d’une tâche terminée
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#verifier-l-utilisation-du-gpu-et-de-sa-memoire">
-       Vérifier l’utilisation du GPU et de sa mémoire
+      <a class="reference internal nav-link" href="#ressources-utilisees-par-une-tache-cpu-en-cours">
+       Ressources utilisées par une tâche CPU en cours
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#ressources-utilisees-par-une-tache-gpu-en-cours">
+       Ressources utilisées par une tâche GPU en cours
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#comparer-la-vitesse-cpu-vs-gpu">
        Comparer la vitesse CPU vs GPU
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#exercice-mesure-du-temps-d-execution">
-       Exercice - Mesure du temps d’exécution
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
@@ -370,23 +370,23 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#verifier-l-utilisation-du-cpu-et-de-la-memoire">
-       Vérifier l’utilisation du CPU et de la mémoire
+      <a class="reference internal nav-link" href="#ressources-utilisees-d-une-tache-terminee">
+       Ressources utilisées d’une tâche terminée
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#verifier-l-utilisation-du-gpu-et-de-sa-memoire">
-       Vérifier l’utilisation du GPU et de sa mémoire
+      <a class="reference internal nav-link" href="#ressources-utilisees-par-une-tache-cpu-en-cours">
+       Ressources utilisées par une tâche CPU en cours
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#ressources-utilisees-par-une-tache-gpu-en-cours">
+       Ressources utilisées par une tâche GPU en cours
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#comparer-la-vitesse-cpu-vs-gpu">
        Comparer la vitesse CPU vs GPU
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#exercice-mesure-du-temps-d-execution">
-       Exercice - Mesure du temps d’exécution
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
@@ -558,8 +558,8 @@ afin d’estimer et d’optimiser les ressources à réserver sur la grappe de c
 <h3>Sur la grappe de calcul directement<a class="headerlink" href="#sur-la-grappe-de-calcul-directement" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Avec votre accès par défaut, vous avez un compte de calcul <code class="docutils literal notranslate"><span class="pre">def-*</span></code> de base
 vous permettant de lancer des tâches de test.</p>
-<div class="section" id="verifier-l-utilisation-du-cpu-et-de-la-memoire">
-<h4>Vérifier l’utilisation du CPU et de la mémoire<a class="headerlink" href="#verifier-l-utilisation-du-cpu-et-de-la-memoire" title="Lien permanent vers ce titre">¶</a></h4>
+<div class="section" id="ressources-utilisees-d-une-tache-terminee">
+<h4>Ressources utilisées d’une tâche terminée<a class="headerlink" href="#ressources-utilisees-d-une-tache-terminee" title="Lien permanent vers ce titre">¶</a></h4>
 <div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>ssh login1
 ...
 </pre></div>
@@ -588,21 +588,63 @@ et la mémoire-vives en fonction des quantités réservées.</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="verifier-l-utilisation-du-gpu-et-de-sa-memoire">
-<h4>Vérifier l’utilisation du GPU et de sa mémoire<a class="headerlink" href="#verifier-l-utilisation-du-gpu-et-de-sa-memoire" title="Lien permanent vers ce titre">¶</a></h4>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>bash scripts/installer/cuda-samples.sh
-salloc --gres<span class="o">=</span>gpu:1 --mem<span class="o">=</span>2000M --time<span class="o">=</span><span class="m">0</span>-00:05
-bash scripts/cuda-matmul.sh <span class="p">&amp;</span>&gt; /dev/null <span class="p">&amp;</span>
+<div class="section" id="ressources-utilisees-par-une-tache-cpu-en-cours">
+<h4>Ressources utilisées par une tâche CPU en cours<a class="headerlink" href="#ressources-utilisees-par-une-tache-cpu-en-cours" title="Lien permanent vers ce titre">¶</a></h4>
+<p>Étant donné un certain calcul matriciel dans le script Python
+<a class="reference external" href="https://github.com/calculquebec/cip201-serveurs-calcul/blob/main/scripts/crunch.py"><code class="docutils literal notranslate"><span class="pre">scripts/crunch.py</span></code></a> :</p>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>less scripts/crunch.py   <span class="c1"># q pour quitter</span>
+</pre></div>
+</div>
+<p>Lors d’une tâche interactive, on peut utiliser <code class="docutils literal notranslate"><span class="pre">top</span></code> et <code class="docutils literal notranslate"><span class="pre">htop</span></code> pour surveiller les ressources utilisées :</p>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tâche interactive et installation de modules Python</span>
+salloc --gres<span class="o">=</span>gpu:1 --ntasks-per-node<span class="o">=</span><span class="m">4</span> --mem<span class="o">=</span>8000M --time<span class="o">=</span><span class="m">0</span>:9:0
+less scripts/installer/cupy_tmp.sh  <span class="c1"># q pour quitter</span>
+bash scripts/installer/cupy_tmp.sh
+</pre></div>
+</div>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exécution avec un processeur</span>
+less scripts/crunch_1cpu.sh  <span class="c1"># q pour quitter</span>
+bash scripts/crunch_1cpu.sh  <span class="c1"># q pour quitter</span>
+
+<span class="c1"># Exécution avec 4 processeurs</span>
+less scripts/crunch_4cpu.sh  <span class="c1"># q pour quitter</span>
+bash scripts/crunch_4cpu.sh  <span class="c1"># q pour quitter</span>
+
+<span class="c1"># Comparer les résultats</span>
+grep sec *.log
+
+<span class="nb">exit</span>  <span class="c1"># Pour revenir à login1</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ressources-utilisees-par-une-tache-gpu-en-cours">
+<h4>Ressources utilisées par une tâche GPU en cours<a class="headerlink" href="#ressources-utilisees-par-une-tache-gpu-en-cours" title="Lien permanent vers ce titre">¶</a></h4>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tâche interactive et installation de modules Python</span>
+salloc --gres<span class="o">=</span>gpu:1 --ntasks-per-node<span class="o">=</span><span class="m">4</span> --mem<span class="o">=</span>8000M --time<span class="o">=</span><span class="m">0</span>:9:0
+bash scripts/installer/cupy_tmp.sh
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>Pour Windows et Mac OS, il existe des outils propriétaires permettant de visualiser en temps réel l’utilisation du GPU. Veuillez vous référer aux sites Web du manufacturier de votre GPU pour les détails</p></li>
+<li><p>Pour Windows et Mac OS, il existe des outils propriétaires permettant de visualiser en temps réel l’utilisation du GPU. Veuillez vous référer au site Web du manufacturier de votre GPU pour les détails</p></li>
 <li><p>Sous Linux, il y a d’abord la <a class="reference external" href="https://developer.nvidia.com/nvidia-system-management-interface">commande <code class="docutils literal notranslate"><span class="pre">nvidia-smi</span></code></a></p></li>
 </ul>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>nvidia-smi
+</pre></div>
+</div>
 <p><img alt="Capture nvidia-smi" src="_images/nvidia-smi.png" /></p>
 <ul class="simple">
 <li><p>Il existe aussi un projet <a class="reference external" href="https://github.com/Syllo/nvtop"><code class="docutils literal notranslate"><span class="pre">nvtop</span></code></a> permettant de visualiser l’utilisation d’un ou plusieurs GPUs dans un terminal</p></li>
 </ul>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exécution avec 1 GPU</span>
+less scripts/crunch_1gpu.sh  <span class="c1"># q pour quitter</span>
+bash scripts/crunch_1gpu.sh  <span class="c1"># q pour quitter</span>
+
+<span class="c1"># Regarder le résultat</span>
+less tg.log    <span class="c1"># q pour quitter</span>
+
+<span class="nb">exit</span>  <span class="c1"># Pour revenir à login1</span>
+</pre></div>
+</div>
 <p><img alt="Capture nvtop" src="https://raw.githubusercontent.com/Syllo/nvtop/master/screenshot/NVTOP_ex1.png" /></p>
 </div>
 <div class="section" id="comparer-la-vitesse-cpu-vs-gpu">
@@ -619,17 +661,12 @@ bash scripts/cuda-matmul.sh <span class="p">&amp;</span>&gt; /dev/null <span cla
 <li><p><strong>Accélération</strong> = (temps avec 8 à 12 processeurs) / (temps avec un accélérateur)</p></li>
 </ul>
 </div>
-<div class="section" id="exercice-mesure-du-temps-d-execution">
-<h4>Exercice - Mesure du temps d’exécution<a class="headerlink" href="#exercice-mesure-du-temps-d-execution" title="Lien permanent vers ce titre">¶</a></h4>
-<p>Mesurer le temps d’exécution avec la commande <code class="docutils literal notranslate"><span class="pre">time</span></code> :</p>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>salloc --gres<span class="o">=</span>gpu:1 --mem<span class="o">=</span>2000M --time<span class="o">=</span><span class="m">0</span>-00:05
-<span class="nb">time</span> -p bash scripts/cuda-matmul.sh
-</pre></div>
-</div>
-</div>
 <div class="section" id="exercice-calcul-d-acceleration-et-d-efficacite">
 <h4>Exercice - Calcul d’accélération et d’efficacité<a class="headerlink" href="#exercice-calcul-d-acceleration-et-d-efficacite" title="Lien permanent vers ce titre">¶</a></h4>
 <p>En supposant les résultats suivants pour un programme parallèle lancé sur <span class="math notranslate nohighlight">\(n\)</span> processeurs :</p>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>grep sec t*.log
+</pre></div>
+</div>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="text-align:center head"><p><span class="math notranslate nohighlight">\(n\)</span> proc.</p></th>
@@ -638,15 +675,16 @@ bash scripts/cuda-matmul.sh <span class="p">&amp;</span>&gt; /dev/null <span cla
 </thead>
 <tbody>
 <tr class="row-even"><td class="text-align:center"><p>1</p></td>
-<td class="text-align:center"><p>61.8</p></td>
+<td class="text-align:center"><p>9.876</p></td>
 </tr>
 <tr class="row-odd"><td class="text-align:center"><p>4</p></td>
-<td class="text-align:center"><p>16.8</p></td>
+<td class="text-align:center"><p>5.220</p></td>
 </tr>
 </tbody>
 </table>
 <p>Étant donné le script <a class="reference external" href="https://github.com/calculquebec/cip201-serveurs-calcul/blob/main/scripts/calc-acc-eff.sh"><code class="docutils literal notranslate"><span class="pre">scripts/calc-acc-eff.sh</span></code></a> :</p>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>bash scripts/calc-acc-eff.sh <span class="m">1</span>:61.8 <span class="m">4</span>:16.8
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>bash scripts/calc-acc-eff.sh <span class="m">1</span>:9.876 <span class="m">4</span>:5.220
+bash scripts/calc-acc-eff.sh <span class="m">1</span>:9.876 <span class="m">8</span>:0.035
 </pre></div>
 </div>
 </div>
