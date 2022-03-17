@@ -312,6 +312,11 @@ const thebe_selector_output = ".output, .cell_output"
    Principales différences entre les grappes de calcul
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#points-a-retenir">
+   Points à retenir
+  </a>
+ </li>
 </ul>
 
             </nav>
@@ -435,6 +440,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#principales-differences-entre-les-grappes-de-calcul">
    Principales différences entre les grappes de calcul
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#points-a-retenir">
+   Points à retenir
   </a>
  </li>
 </ul>
@@ -1172,6 +1182,33 @@ python scripts/inv-mat-pred.py temps_inv.csv
 </table>
 <ul class="simple">
 <li><p>Stockage : le tout sera décrit au dernier chapitre.</p></li>
+</ul>
+</div>
+<div class="section" id="points-a-retenir">
+<h2>Points à retenir<a class="headerlink" href="#points-a-retenir" title="Lien permanent vers ce titre">¶</a></h2>
+<ul class="simple">
+<li><p>Prévoir les <strong>paramètres d’une tâche Slurm</strong></p>
+<ul>
+<li><p>Nombre de processeurs (CPU) et de noeuds de calcul</p></li>
+<li><p>Nombre d’accélérateurs (GPU)</p></li>
+<li><p>Quantité de mémoire-vive (RAM)</p></li>
+<li><p>Temps du calcul (<code class="docutils literal notranslate"><span class="pre">JJ-H:M</span></code> ou <code class="docutils literal notranslate"><span class="pre">H:M:S</span></code>)</p></li>
+</ul>
+</li>
+<li><p>Différents <strong>outils pour surveiller</strong> les ressources utilisées</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">time</span></code> et autres bibliothèques de mesure du temps écoulé</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">top</span></code>, <code class="docutils literal notranslate"><span class="pre">htop</span></code>, <code class="docutils literal notranslate"><span class="pre">nvtop</span></code>, <code class="docutils literal notranslate"><span class="pre">nvidia-smi</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sacct</span></code>, <code class="docutils literal notranslate"><span class="pre">seff</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">du</span> <span class="pre">-bs</span></code>, <code class="docutils literal notranslate"><span class="pre">find</span> <span class="pre">|</span> <span class="pre">wc</span> <span class="pre">-l</span></code> et autres outils du système d’exploitation</p></li>
+</ul>
+</li>
+<li><p>On vise une <strong>efficacité de 80%</strong> pour les tâches parallèles CPU</p>
+<ul>
+<li><p>L’accélération avec un accélérateur (GPU) doit être significative (&gt;4x)</p></li>
+</ul>
+</li>
+<li><p>Le choix de la grappe dépend des besoins de chaque type de calcul</p></li>
 </ul>
 </div>
 </div>
