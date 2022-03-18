@@ -398,13 +398,13 @@ C’est un peu comme l’ordonnanceur Slurm, mais à plus petite échelle et en 
 <h3>Pourquoi pas Slurm?<a class="headerlink" href="#pourquoi-pas-slurm" title="Lien permanent vers ce titre">¶</a></h3>
 <p>OK, mais pourquoi ne pas tout simplement soumettre <strong>des centaines de tâches à Slurm</strong>?</p>
 <ul class="simple">
-<li><p>À tout moment, Slurm <strong>limite chaque usager à 1000 tâches</strong> en tout dans <code class="docutils literal notranslate"><span class="pre">squeue</span></code> (<em>pending</em> + <em>running</em>)</p></li>
+<li><p>À tout moment, Slurm <strong>limite chaque usager à 1000 tâches</strong> au total dans <code class="docutils literal notranslate"><span class="pre">squeue</span></code> (<em>pending</em> + <em>running</em>)</p></li>
 <li><p>Certains calculs sont tellement <strong>courts (&lt; 5 minutes)</strong> que le démarrage et la fin de la tâche Slurm compteraient pour un pourcentage significatif du temps réel utilisé</p>
 <ul>
 <li><p>On veut donc réduire les pertes de temps</p></li>
 </ul>
 </li>
-<li><p>GNU Parallel nous <strong>évite d’utiliser un pipeline</strong> soumettant des centaines de scripts similaires, ce qui, dans bien des cas, facilite l’exécution de centaines de tâches de calcul semblables</p></li>
+<li><p>GNU Parallel nous <strong>évite d’utiliser une boucle</strong> soumettant des centaines de scripts similaires, ce qui, dans bien des cas, facilite l’exécution de centaines de tâches de calcul semblables</p></li>
 <li><p>Enfin, si toutes vos tâches envoient des <strong>notifications par courriel</strong>, imaginez recevoir ces centaines de courriels!</p></li>
 </ul>
 <p>Les autres avantages à considérer :</p>
@@ -420,7 +420,7 @@ C’est un peu comme l’ordonnanceur Slurm, mais à plus petite échelle et en 
 <div class="section" id="syntaxe-de-la-commande-gnu-parallel">
 <h3>Syntaxe de la commande GNU Parallel<a class="headerlink" href="#syntaxe-de-la-commande-gnu-parallel" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Les éléments de base de la commande <code class="docutils literal notranslate"><span class="pre">parallel</span></code> : options, gabarit de commande, liste de valeurs. Voir :</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">man</span> <span class="n">parallel</span>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>man parallel
 </pre></div>
 </div>
 </div>
@@ -429,59 +429,59 @@ C’est un peu comme l’ordonnanceur Slurm, mais à plus petite échelle et en 
 <div class="section" id="sequence-de-parametre">
 <h4>Séquence de paramètre<a class="headerlink" href="#sequence-de-parametre" title="Lien permanent vers ce titre">¶</a></h4>
 <p>Le paramètre changeant est donné via une paire d”<code class="docutils literal notranslate"><span class="pre">{}</span></code> :</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">parallel</span> <span class="n">echo</span> <span class="n">fichier</span><span class="p">{}</span><span class="o">.</span><span class="n">txt</span> <span class="p">:::</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span>
-<span class="n">parallel</span> <span class="o">--</span><span class="n">citation</span>  <span class="c1"># Il faut citer les développeurs</span>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>parallel <span class="nb">echo</span> fichier<span class="o">{}</span>.txt ::: <span class="m">1</span> <span class="m">2</span> <span class="m">3</span> <span class="m">4</span>
+parallel --citation  <span class="c1"># Il faut citer les développeurs</span>
 </pre></div>
 </div>
 <p>Utilisation d’une séquence générée par la commande <code class="docutils literal notranslate"><span class="pre">seq</span></code> :</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>seq 1 20
-seq -w 1 20
-echo $(seq -w 1 20)
-parallel echo fichier{}.txt ::: $(seq -w 1 20)
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>seq <span class="m">1</span> <span class="m">20</span>
+seq -w <span class="m">1</span> <span class="m">20</span>
+<span class="nb">echo</span> <span class="k">$(</span>seq -w <span class="m">1</span> <span class="m">20</span><span class="k">)</span>
+parallel <span class="nb">echo</span> fichier<span class="o">{}</span>.txt ::: <span class="k">$(</span>seq -w <span class="m">1</span> <span class="m">20</span><span class="k">)</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="combinaisons-de-parametres">
 <h4>Combinaisons de paramètres<a class="headerlink" href="#combinaisons-de-parametres" title="Lien permanent vers ce titre">¶</a></h4>
 <p>Les paramètres changeants peuvent être donnés via une paire d”<code class="docutils literal notranslate"><span class="pre">{}</span></code>, ou plus précisément par des paire d”<code class="docutils literal notranslate"><span class="pre">{}</span></code> numérotées telles que <code class="docutils literal notranslate"><span class="pre">{1}</span></code>, <code class="docutils literal notranslate"><span class="pre">{2}</span></code>, etc. :</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>parallel echo fichier{}.txt ::: $(seq -w 1 10) ::: a b
-parallel echo fichier{1}{2}.txt ::: $(seq -w 1 10) ::: a b
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>parallel <span class="nb">echo</span> fichier<span class="o">{}</span>.txt ::: <span class="k">$(</span>seq -w <span class="m">1</span> <span class="m">10</span><span class="k">)</span> ::: a b
+parallel <span class="nb">echo</span> fichier<span class="o">{</span><span class="m">1</span><span class="o">}{</span><span class="m">2</span><span class="o">}</span>.txt ::: <span class="k">$(</span>seq -w <span class="m">1</span> <span class="m">10</span><span class="k">)</span> ::: a b
 </pre></div>
 </div>
-<p>Si jamais les différentes combinaisons de paramètres proviennent d’un fichier texte :</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">parallel</span> <span class="n">echo</span> <span class="p">{}</span> <span class="p">:::</span> <span class="mi">3</span> <span class="mi">5</span> <span class="mi">7</span> <span class="p">:::</span> <span class="mi">4</span> <span class="mi">6</span> <span class="mi">8</span> <span class="o">&gt;</span> <span class="n">param</span><span class="o">.</span><span class="n">txt</span>
-<span class="n">cat</span> <span class="n">param</span><span class="o">.</span><span class="n">txt</span>
+<p>Dans le cas où on retrouve les <strong>combinaisons de paramètres dans un fichier texte</strong> :</p>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># parallel echo {} ::: 3 5 7 ::: 4 6 8 &gt; param.txt</span>
+bash scripts/prll-creer-param.sh
 </pre></div>
 </div>
 <p>Par la suite, dans le script de tâche Slurm :</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">parallel</span> <span class="o">-</span><span class="n">C</span> <span class="s1">&#39; &#39;</span> <span class="n">echo</span> <span class="s1">&#39;</span><span class="si">{1}</span><span class="s1">*</span><span class="si">{2}</span><span class="s1"> | bc &gt; prod_</span><span class="si">{1}</span><span class="s1">x</span><span class="si">{2}</span><span class="s1">&#39;</span> <span class="p">::::</span> <span class="n">param</span><span class="o">.</span><span class="n">txt</span>
-<span class="n">ls</span> <span class="n">prod_</span><span class="o">*</span>
-<span class="n">grep</span> <span class="o">-</span><span class="n">E</span> <span class="s1">&#39;[0-9]+&#39;</span> <span class="n">prod</span><span class="o">*</span>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># parallel -C &#39; &#39; echo &#39;{1}*{2} | bc &gt; prod_{1}x{2}&#39; :::: param.txt</span>
+sbatch scripts/prll-exec-param.sh
 </pre></div>
 </div>
-<p>Si on préfère valider la liste des commandes générées avant de soumettre une tâche Slurm, on peut utiliser <code class="docutils literal notranslate"><span class="pre">parallel</span></code> pour la générer dans un fichier. Par exemple :</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">parallel</span> <span class="o">-</span><span class="n">C</span> <span class="s1">&#39; &#39;</span> <span class="n">echo</span> <span class="s1">&#39;echo </span><span class="si">{1}</span><span class="s1">&quot;*&quot;</span><span class="si">{2}</span><span class="s1"> &quot;|&quot; bc &quot;&gt;&quot; prod_</span><span class="si">{1}</span><span class="s1">x</span><span class="si">{2}</span><span class="s1">&#39;</span> <span class="p">::::</span> <span class="n">param</span><span class="o">.</span><span class="n">txt</span> <span class="o">&gt;</span> <span class="n">commandes</span><span class="o">.</span><span class="n">txt</span>
-<span class="n">cat</span> <span class="n">commandes</span><span class="o">.</span><span class="n">txt</span>
+<p>Si on préfère valider la liste des commandes générées avant de soumettre
+une tâche Slurm, on peut générer une <strong>liste de commandes dans un fichier texte</strong> :</p>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># parallel -C &#39; &#39; echo &#39;echo {1}&quot;*&quot;{2} &quot;|&quot; bc &quot;&gt;&quot; prod_{1}x{2}&#39; :::: param.txt &gt; commandes.txt</span>
+bash scripts/prll-creer-cmd.sh
 </pre></div>
 </div>
 <p>Et dans la tâche Slurm :</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">parallel</span> <span class="o">&lt;</span> <span class="n">commandes</span><span class="o">.</span><span class="n">txt</span>
-<span class="n">grep</span> <span class="o">-</span><span class="n">E</span> <span class="s1">&#39;[0-9]+&#39;</span> <span class="n">prod_</span><span class="o">*</span>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># parallel &lt; commandes.txt</span>
+sbatch scripts/prll-exec-cmd.sh
 </pre></div>
 </div>
 </div>
 <div class="section" id="limiter-le-nombre-de-taches-paralleles">
 <h4>Limiter le nombre de tâches parallèles<a class="headerlink" href="#limiter-le-nombre-de-taches-paralleles" title="Lien permanent vers ce titre">¶</a></h4>
-<p>Par exemple, sur 8 processeurs, c’est possible de limiter le nombre de tâches à deux (2) tâches parallèles de quatre (4) processeurs chacune :</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>parallel --jobs 2 &#39;echo {} &amp;&amp; sleep 3&#39; ::: $(seq -w 1 8)
+<p>Le paramètre <code class="docutils literal notranslate"><span class="pre">--jobs</span></code> permet de forcer une limite sur le nombre de processus lancés à la fois. Par exemple, 8 exécutions avec 2 processus en simultané :</p>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>parallel --jobs <span class="m">2</span> <span class="s1">&#39;echo {} &amp;&amp; sleep 3&#39;</span> ::: <span class="k">$(</span>seq -w <span class="m">1</span> <span class="m">8</span><span class="k">)</span>
 </pre></div>
 </div>
 <p>Si jamais un noeud n’est pas suffisant pour répondre au besoin de centaines de tâches parallèles, GNU Parallel peut distribuer des tâches sur plusieurs noeuds</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>salloc --nodes=2 --ntasks-per-node=1 --mem-per-cpu=2000M
-  scontrol show hostname &gt; noeuds.txt
-  cat noeuds.txt
-  parallel --jobs $SLURM_NTASKS_PER_NODE --sshloginfile noeuds.txt \
-    &#39;echo -n {}: &amp;&amp; hostname&#39; ::: $(seq 1 $SLURM_NTASKS)
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># parallel \</span>
+<span class="c1">#    --jobs $SLURM_NTASKS_PER_NODE \</span>
+<span class="c1">#    --sshloginfile noeuds.txt \</span>
+<span class="c1">#   &#39;echo -n {}: &amp;&amp; hostname&#39; ::: $(seq 1 $SLURM_NTASKS)</span>
+sbatch scripts/prll-multi-noeud.sh
 </pre></div>
 </div>
 </div>
