@@ -502,8 +502,8 @@ afin d’estimer et d’optimiser les ressources à réserver sur la grappe de c
 <li><p><a class="reference external" href="https://docs.computecanada.ca/wiki/Utiliser_des_modules">Chargement des modules</a> requis</p></li>
 <li><p>Les commandes Bash qui seront exécutées automatiquement sur des processeurs réservés pour la tâche</p></li>
 </ul>
-<p>Par exemple : <a class="reference external" href="https://github.com/calculquebec/cip201-serveurs-calcul/blob/main/scripts/mpi_allo.sh"><code class="docutils literal notranslate"><span class="pre">scripts/mpi_allo.sh</span></code></a></p>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>cat scripts/mpi_allo.sh
+<p>Par exemple : <a class="reference external" href="https://github.com/calculquebec/cip201-serveurs-calcul/blob/main/scripts/mpi-allo.sh"><code class="docutils literal notranslate"><span class="pre">scripts/mpi-allo.sh</span></code></a></p>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>cat scripts/mpi-allo.sh
 </pre></div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
@@ -608,17 +608,17 @@ et la mémoire-vives en fonction des quantités réservées.</p>
 <p>Lors d’une tâche interactive, on peut utiliser <code class="docutils literal notranslate"><span class="pre">top</span></code> et <code class="docutils literal notranslate"><span class="pre">htop</span></code> pour surveiller les ressources utilisées :</p>
 <div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tâche interactive et installation de modules Python</span>
 salloc --gres<span class="o">=</span>gpu:1 --ntasks-per-node<span class="o">=</span><span class="m">4</span> --mem<span class="o">=</span>8000M --time<span class="o">=</span><span class="m">0</span>:9:0
-less scripts/installer/cupy_tmp.sh  <span class="c1"># q pour quitter</span>
-bash scripts/installer/cupy_tmp.sh
+less scripts/installer/cupy-tmp.sh  <span class="c1"># q pour quitter</span>
+bash scripts/installer/cupy-tmp.sh
 </pre></div>
 </div>
 <div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exécution avec un processeur</span>
-less scripts/crunch_1cpu.sh  <span class="c1"># q pour quitter</span>
-bash scripts/crunch_1cpu.sh  <span class="c1"># q pour quitter</span>
+less scripts/crunch-1cpu.sh  <span class="c1"># q pour quitter</span>
+bash scripts/crunch-1cpu.sh  <span class="c1"># q pour quitter</span>
 
 <span class="c1"># Exécution avec 4 processeurs</span>
-less scripts/crunch_4cpu.sh  <span class="c1"># q pour quitter</span>
-bash scripts/crunch_4cpu.sh  <span class="c1"># q pour quitter</span>
+less scripts/crunch-4cpu.sh  <span class="c1"># q pour quitter</span>
+bash scripts/crunch-4cpu.sh  <span class="c1"># q pour quitter</span>
 
 <span class="c1"># Comparer les résultats</span>
 grep sec *.log
@@ -631,7 +631,7 @@ grep sec *.log
 <h4>Ressources utilisées par une tâche GPU en cours<a class="headerlink" href="#ressources-utilisees-par-une-tache-gpu-en-cours" title="Lien permanent vers ce titre">¶</a></h4>
 <div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tâche interactive et installation de modules Python</span>
 salloc --gres<span class="o">=</span>gpu:1 --ntasks-per-node<span class="o">=</span><span class="m">4</span> --mem<span class="o">=</span>8000M --time<span class="o">=</span><span class="m">0</span>:9:0
-bash scripts/installer/cupy_tmp.sh
+bash scripts/installer/cupy-tmp.sh
 </pre></div>
 </div>
 <ul class="simple">
@@ -646,8 +646,8 @@ bash scripts/installer/cupy_tmp.sh
 <li><p>Il existe aussi un projet <a class="reference external" href="https://github.com/Syllo/nvtop"><code class="docutils literal notranslate"><span class="pre">nvtop</span></code></a> permettant de visualiser l’utilisation d’un ou plusieurs GPUs dans un terminal</p></li>
 </ul>
 <div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exécution avec 1 GPU</span>
-less scripts/crunch_1gpu.sh  <span class="c1"># q pour quitter</span>
-bash scripts/crunch_1gpu.sh  <span class="c1"># q pour quitter</span>
+less scripts/crunch-1gpu.sh  <span class="c1"># q pour quitter</span>
+bash scripts/crunch-1gpu.sh  <span class="c1"># q pour quitter</span>
 
 <span class="c1"># Regarder le résultat</span>
 less tg.log    <span class="c1"># q pour quitter</span>
