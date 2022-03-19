@@ -12,4 +12,4 @@ cd donnees
 module load gcc python blast+ seqkit
 
 make clean
-make
+make -j 2

@@ -1,7 +1,5 @@
 CHR_FILES = \
- chr_M.fa chr_N.fa chr_O.fa chr_P.fa\
- chr_Q.fa chr_R.fa chr_S.fa chr_T.fa\
- chr_U.fa chr_V.fa chr_W.fa chr_X.fa
+ chr_M.fa chr_N.fa chr_O.fa chr_P.fa chr_Q.fa chr_R.fa
 
 DB_FILES = espece_A.nsq espece_B.nsq
 REF_FILES = espece_A.fa espece_B.fa
