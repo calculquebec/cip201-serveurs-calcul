@@ -523,11 +523,21 @@ ls donnees/res_prll/
 </div>
 <div class="section" id="vecteurs-de-taches">
 <h2>Vecteurs de tâches<a class="headerlink" href="#vecteurs-de-taches" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Alors que GNU Parallel s’utilise bien avec des calculs séquentiels et parallèles de petite taille (&lt;=16 processeurs),
-GNU Parallel <strong>n’est pas vraiment l’outil approprié</strong> pour un lot de longs <strong>calculs parallèles de plus grande taille</strong> (&gt;16 processeurs par calcul).
-Dans le cas où un même programme parallèle doit être exécuté avec différentes combinaisons de paramètres,
-il y a moyen de soumettre un seul <a class="reference external" href="https://docs.computecanada.ca/wiki/Job_arrays/fr">vecteur de tâches</a> et de coder le script de tâche de telle sorte que les paramètres seront déterminés en <strong>fonction d’un indice unique</strong> du vecteur de tâches.</p>
-<p>Pour soumettre un vecteur de tâches à l’ordonnanceur Slurm, à la ligne de commande <code class="docutils literal notranslate"><span class="pre">sbatch</span></code> ou dans l’entête <code class="docutils literal notranslate"><span class="pre">#SBATCH</span></code> du script de tâche, on <strong>doit ajouter l’option</strong> <code class="docutils literal notranslate"><span class="pre">--array=&lt;indices&gt;</span></code>.
+<p>Alors que GNU Parallel s’utilise bien avec un lot de calculs séquentiels
+ou parallèles de petite taille (16 processeurs ou moins),
+<strong>GNU Parallel n’est pas</strong> vraiment l’outil <strong>approprié pour</strong>
+un lot de <strong>longs calculs parallèles de plus grande taille</strong>
+(plus de 16 processeurs par calcul) :</p>
+<ul class="simple">
+<li><p>on veut éviter les longues tâches qui dépassent trois (3) jours et</p></li>
+<li><p>on veut réduire le risque de subir une défaillance matérielle.</p></li>
+</ul>
+<p>Dans le cas où un même programme parallèle doit être exécuté avec
+différentes combinaisons de paramètres, il y a moyen de soumettre un seul
+<a class="reference external" href="https://docs.computecanada.ca/wiki/Job_arrays/fr">vecteur de tâches</a>
+et de coder le script de tâche de telle sorte que les paramètres
+seront déterminés <strong>en fonction d’un indice unique</strong> du vecteur de tâches.</p>
+<p><strong>Pour soumettre un vecteur de tâches</strong> à l’ordonnanceur Slurm, à la ligne de commande <code class="docutils literal notranslate"><span class="pre">sbatch</span></code> ou dans l’entête <code class="docutils literal notranslate"><span class="pre">#SBATCH</span></code> du script de tâche, <strong>on doit ajouter l’option</strong> <code class="docutils literal notranslate"><span class="pre">--array=&lt;indices&gt;</span></code>.
 Voir <a class="reference external" href="https://docs.computecanada.ca/wiki/Job_arrays/fr">ici quelques exemples</a>.</p>
 <p>L’identifiant d’une tâche Slurm dans un vecteur de tâches contient :</p>
 <ul class="simple">
@@ -536,36 +546,39 @@ Voir <a class="reference external" href="https://docs.computecanada.ca/wiki/Job_
 <li><p>L’indice unique associé à la tâche</p></li>
 </ul>
 <p><strong>Par exemple :</strong> <code class="docutils literal notranslate"><span class="pre">25249551_15</span></code></p>
-<p>Dans le script de tâche, la <strong>variable d’environnement</strong> <code class="docutils literal notranslate"><span class="pre">$SLURM_ARRAY_TASK_ID</span></code> peut être utilisée pour retrouver la valeur actuelle de l’indice unique associé à la tâche en cours d’exécution, soit <strong>un entier parmis</strong> les <code class="docutils literal notranslate"><span class="pre">&lt;indices&gt;</span></code>.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">SLURM_ARRAY_TASK_ID</span><span class="o">=</span><span class="mi">42</span>  <span class="c1"># Émule la variable créée par Slurm</span>
+<p>Dans le script de tâche, la <strong>variable d’environnement</strong>
+<code class="docutils literal notranslate"><span class="pre">$SLURM_ARRAY_TASK_ID</span></code> peut être utilisée pour retrouver la valeur
+actuelle de l’indice unique associé à la tâche en cours d’exécution.
+Il s’agit d’un <strong>entier parmis</strong> les <code class="docutils literal notranslate"><span class="pre">&lt;indices&gt;</span></code>.</p>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">SLURM_ARRAY_TASK_ID</span><span class="o">=</span><span class="m">71</span>  <span class="c1"># Pour émuler la variable</span>
 </pre></div>
 </div>
 <p>La variable <code class="docutils literal notranslate"><span class="pre">$SLURM_ARRAY_TASK_ID</span></code> peut être utilisée de différentes façons :</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>echo nom_fichier.$SLURM_ARRAY_TASK_ID
-echo nom_dossier-$SLURM_ARRAY_TASK_ID
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> nom_fichier.<span class="nv">$SLURM_ARRAY_TASK_ID</span>
+<span class="nb">echo</span> nom_dossier-<span class="nv">$SLURM_ARRAY_TASK_ID</span>
 
-PARAM=$SLURM_ARRAY_TASK_ID
-echo $PARAM
+<span class="nv">PARAM</span><span class="o">=</span><span class="nv">$SLURM_ARRAY_TASK_ID</span>
+<span class="nb">echo</span> <span class="nv">$PARAM</span>
 
-PARAM_R=$((PARAM / 12))  # Division entière
-PARAM_C=$((PARAM % 12))  # Modulo (reste de division)
-echo $PARAM_R $PARAM_C
+<span class="nv">PARAM_R</span><span class="o">=</span><span class="k">$((</span>PARAM <span class="o">/</span> <span class="m">12</span><span class="k">))</span>  <span class="c1"># Division entière</span>
+<span class="nv">PARAM_C</span><span class="o">=</span><span class="k">$((</span>PARAM <span class="o">%</span> <span class="m">12</span><span class="k">))</span>  <span class="c1"># Modulo (reste de division)</span>
+<span class="nb">echo</span> <span class="nv">$PARAM_R</span> <span class="nv">$PARAM_C</span>
 
-echo $(sed -n &quot;${PARAM_C}p&quot; param.txt)
+<span class="nb">echo</span> <span class="k">$(</span>sed -n <span class="s2">&quot;</span><span class="si">${</span><span class="nv">PARAM_R</span><span class="si">}</span><span class="s2">p&quot;</span> param.txt<span class="k">)</span>
 </pre></div>
 </div>
 <div class="section" id="exercice-vecteur-de-taches">
 <h3>Exercice - Vecteur de tâches<a class="headerlink" href="#exercice-vecteur-de-taches" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Pour lancer le vecteur de tâches :</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cat scripts/sleep-array.sh
-sbatch scripts/sleep-array.sh
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>cat scripts/blastn-array.sh
+sbatch scripts/blastn-array.sh
 
-squeue -u $USER
+squeue -u <span class="nv">$USER</span>
 </pre></div>
 </div>
-<p>Après l’exécution des trois tâches, on peut inspecter les résultats :</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="n">slurm</span><span class="o">-*</span><span class="n">_</span><span class="o">*.</span><span class="n">out</span>
-<span class="n">cat</span> <span class="n">slurm</span><span class="o">-*</span><span class="n">_</span><span class="o">*.</span><span class="n">out</span>
+<p>Après l’exécution des quatre tâches, on peut inspecter les résultats :</p>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>ls slurm-*_*.out
+ls -l donnees/res_array/
 </pre></div>
 </div>
 </div>
