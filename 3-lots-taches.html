@@ -52,6 +52,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="shortcut icon" href="_static/logo.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
@@ -271,8 +273,8 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercice-liste-de-taches-benchmark5d-avec-glost">
-     Exercice - Liste de tâches Benchmark5D avec GLOST
+    <a class="reference internal nav-link" href="#exercice-liste-de-taches-blastn-avec-glost">
+     Exercice - Liste de tâches Blastn avec GLOST
     </a>
    </li>
   </ul>
@@ -363,8 +365,8 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercice-liste-de-taches-benchmark5d-avec-glost">
-     Exercice - Liste de tâches Benchmark5D avec GLOST
+    <a class="reference internal nav-link" href="#exercice-liste-de-taches-blastn-avec-glost">
+     Exercice - Liste de tâches Blastn avec GLOST
     </a>
    </li>
   </ul>
@@ -602,33 +604,33 @@ ls -l donnees/res_array/
 </ul>
 </li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="o">-</span><span class="n">n</span> <span class="s1">&#39;Bonjour &#39;</span> <span class="o">&amp;&amp;</span> <span class="n">echo</span> <span class="n">le</span> <span class="n">monde</span>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> -n <span class="s1">&#39;Bonjour &#39;</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> le monde
 </pre></div>
 </div>
-<div class="section" id="exercice-liste-de-taches-benchmark5d-avec-glost">
-<h3>Exercice - Liste de tâches Benchmark5D avec GLOST<a class="headerlink" href="#exercice-liste-de-taches-benchmark5d-avec-glost" title="Lien permanent vers ce titre">¶</a></h3>
-<p>Pour générer la liste de tâches dans le fichier <code class="docutils literal notranslate"><span class="pre">$SCRATCH/cas-b5D.txt</span></code> :</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cat scripts/b5D-gen-cas.sh
-bash scripts/b5D-gen-cas.sh
-cat $SCRATCH/cas-b5D.txt
+<div class="section" id="exercice-liste-de-taches-blastn-avec-glost">
+<h3>Exercice - Liste de tâches Blastn avec GLOST<a class="headerlink" href="#exercice-liste-de-taches-blastn-avec-glost" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Pour générer la liste de tâches dans le fichier <code class="docutils literal notranslate"><span class="pre">$SCRATCH/cas-blastn.txt</span></code> :</p>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>cat scripts/blastn-cas.sh
+bash scripts/blastn-cas.sh
+
+cat <span class="nv">$SCRATCH</span>/cas-blastn.txt
 </pre></div>
 </div>
-<p>Pour lancer une tâche de 4 processeurs utilisant GLOST pour tester 3*4 combinaisons de paramètres :</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cat scripts/b5D-glost.sh
-sbatch scripts/b5D-glost.sh
-squeue -u $USER
+<p>Pour lancer une tâche de 4 processeurs utilisant GLOST pour tester les <span class="math notranslate nohighlight">\(3*2*2\)</span> combinaisons de paramètres :</p>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>cat scripts/blastn-glost.sh
+sbatch scripts/blastn-glost.sh
+
+squeue -u <span class="nv">$USER</span>
 </pre></div>
 </div>
-<ul class="simple">
-<li><p>Les résultats seront dans un fichier <code class="docutils literal notranslate"><span class="pre">slurm-&lt;jobid&gt;.out</span></code></p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="n">slurm</span><span class="o">-&lt;</span><span class="n">jobid</span><span class="o">&gt;.</span><span class="n">out</span>
+<p>On peut aller voir les processus en exécution :</p>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>ssh &lt;nom_noeud&gt;
+top -u <span class="nv">$USER</span>  <span class="c1"># q pour quitter</span>
+<span class="nb">exit</span>
 </pre></div>
 </div>
-<ul class="simple">
-<li><p>À la fin de la tâche, on peut analyser les ressources utilisées :</p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">seff</span> <span class="o">&lt;</span><span class="n">jobid</span><span class="o">&gt;</span>
+<p>Les résultats seront dans le dossier <code class="docutils literal notranslate"><span class="pre">$SCRATCH/res_glost</span></code></p>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>ls -l <span class="nv">$SCRATCH</span>/res_glost
 </pre></div>
 </div>
 </div>
