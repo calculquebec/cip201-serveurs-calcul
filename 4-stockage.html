@@ -225,16 +225,6 @@ const thebe_selector_output = ".output, .cell_output"
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#exercice-dar">
-       Exercice - DAR
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#exercice-espace-utilise">
-       Exercice - Espace utilisé
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#fichiers-epars-sparse-files">
        Fichiers épars (sparse files)
       </a>
@@ -390,16 +380,6 @@ const thebe_selector_output = ".output, .cell_output"
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#exercice-dar">
-       Exercice - DAR
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#exercice-espace-utilise">
-       Exercice - Espace utilisé
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#fichiers-epars-sparse-files">
        Fichiers épars (sparse files)
       </a>
@@ -525,7 +505,7 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="les-espaces-de-stockage">
 <h1>Les espaces de stockage<a class="headerlink" href="#les-espaces-de-stockage" title="Lien permanent vers ce titre">¶</a></h1>
-<p>Il y a plusieurs types de stockage à l’Alliance de Recherche numérique du Canada :</p>
+<p>Il y a plusieurs types de stockage à l’Alliance de recherche numérique du Canada :</p>
 <ul class="simple">
 <li><p>Personnel (<code class="docutils literal notranslate"><span class="pre">/home</span></code>)</p></li>
 <li><p>Temporaire local (<code class="docutils literal notranslate"><span class="pre">$SLURM_TMPDIR</span></code>)</p></li>
@@ -545,7 +525,8 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Le but de ce chapitre est de pouvoir considérer tous les aspects nécessaires à la gestion des données actives sur les différents espaces de stockage disponibles.</p>
 <div class="section" id="description-de-vos-donnees">
 <h2>Description de vos données<a class="headerlink" href="#description-de-vos-donnees" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Au chapitre précédent, nous avons vu comment obtenir le nombre de fichiers de nos données locales, de même que la taille totale.</p>
+<p>Au premier chapitre, nous avons vu comment obtenir le nombre de
+fichiers de nos données locales, de même que la taille totale.</p>
 <p>Sur une grappe de calcul, un <strong>système de fichiers parallel</strong>
 <a class="reference external" href="https://docs.computecanada.ca/wiki/Tuning_Lustre/fr"><em>Lustre</em></a> ou <em>GPFS</em>
 est surtout optimisé pour des fichiers de plus de 10 Mo,
@@ -558,12 +539,14 @@ c’est-à-dire pour des accès à large bande-passante. Ainsi, à l’échelle 
 <li><p>10 Go - 100 Go : gros fichier</p></li>
 <li><p>1 To - 10 To : très gros fichier</p></li>
 </ul>
-<p>À quantité totale égale d’octets, il est plus difficile pour <em>Lustre</em> de gérer un grand nombre de petits fichiers qu’un plus petit nombre de grands fichiers. Ainsi, du point de vue du système de stockage :</p>
+<p>À quantité totale égale d’octets, il est plus <strong>difficile pour <em>Lustre</em>
+de gérer un grand nombre</strong> de petits fichiers qu’un plus petit nombre
+de grands fichiers. Ainsi, du point de vue du système de stockage :</p>
 <ul class="simple">
 <li><p>Par dossier :</p>
 <ul>
 <li><p>1 à 100 fichiers par dossier : c’est raisonnable</p></li>
-<li><p>1000 à 5k fichiers par dossier : des lenteurs se font sentir</p></li>
+<li><p>300 à 3k fichiers par dossier : une lourdeur se fait sentir</p></li>
 <li><p>10k fichiers et plus : il faut classer les fichiers dans des sous-dossiers</p></li>
 </ul>
 </li>
@@ -579,104 +562,102 @@ c’est-à-dire pour des accès à large bande-passante. Ainsi, à l’échelle 
 <h3>Transférabilité<a class="headerlink" href="#transferabilite" title="Lien permanent vers ce titre">¶</a></h3>
 <div class="section" id="regroupement-dans-un-fichier-archive">
 <h4>Regroupement dans un fichier archive<a class="headerlink" href="#regroupement-dans-un-fichier-archive" title="Lien permanent vers ce titre">¶</a></h4>
-<p>Étant donné que le transfert ou la synchronisation de <a class="reference external" href="https://docs.computecanada.ca/wiki/Handling_large_collections_of_files/fr">plusieurs petits fichiers</a> implique un accès fréquent aux métadonnées du système de stockage <em>Lustre</em>, il est donc préférable de <a class="reference external" href="https://docs.computecanada.ca/wiki/Archiving_and_compressing_files/fr">regrouper les fichiers</a> d’un jeu de données avant tout transfert.
-Pour ce faire, il existe plusieurs formats décodables sur les différentes grappes :</p>
-<ul class="simple">
-<li><p>WinZip ou Zip (<code class="docutils literal notranslate"><span class="pre">.zip</span></code>) - compressé</p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">man</span> <span class="nb">zip</span>  <span class="c1"># q pour quitter</span>
+<p>Étant donné que le transfert ou la synchronisation de
+<a class="reference external" href="https://docs.computecanada.ca/wiki/Handling_large_collections_of_files/fr">plusieurs petits fichiers</a>
+implique un accès fréquent aux métadonnées du système de stockage
+<em>Lustre</em>, il est donc préférable de
+<a class="reference external" href="https://docs.computecanada.ca/wiki/Archiving_and_compressing_files/fr">regrouper les fichiers</a>
+d’un jeu de données avant tout transfert. Pour ce faire, il existe
+plusieurs formats décodables sur les différentes grappes :</p>
+<p><strong>WinZip</strong> ou <strong>Zip</strong> (<code class="docutils literal notranslate"><span class="pre">.zip</span></code>) - compressé</p>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>man zip  <span class="c1"># q pour quitter</span>
 </pre></div>
 </div>
-<ul class="simple">
-<li><p>7-Zip (<code class="docutils literal notranslate"><span class="pre">.7z</span></code>) - compressé</p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">man</span> <span class="mi">7</span><span class="n">z</span>  <span class="c1"># q pour quitter</span>
+<p><strong>7-Zip</strong> (<code class="docutils literal notranslate"><span class="pre">.7z</span></code>) - compressé</p>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>man 7z  <span class="c1"># q pour quitter</span>
 </pre></div>
 </div>
-<ul class="simple">
-<li><p>Tape ARchive ou <a class="reference external" href="https://docs.computecanada.ca/wiki/A_tutorial_on_%27tar%27/fr">TAR</a> (<code class="docutils literal notranslate"><span class="pre">.tar</span></code>) - non compressé, sauf si utilisé avec Gzip ou autre</p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">man</span> <span class="n">tar</span>  <span class="c1"># q pour quitter</span>
+<p><strong>Tape ARchive</strong> ou <a class="reference external" href="https://docs.computecanada.ca/wiki/A_tutorial_on_%27tar%27/fr"><strong>TAR</strong></a> (<code class="docutils literal notranslate"><span class="pre">.tar</span></code>) - non compressé, sauf si utilisé avec Gzip ou autre</p>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>man tar  <span class="c1"># q pour quitter</span>
 </pre></div>
 </div>
-<ul class="simple">
-<li><p>Disk ARchive ou <a class="reference external" href="https://docs.computecanada.ca/wiki/Dar/fr">DAR</a> (<code class="docutils literal notranslate"><span class="pre">.dar</span></code>) - compression configurable</p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">man</span> <span class="n">dar</span>  <span class="c1"># q pour quitter</span>
+<p><strong>Disk ARchive</strong> ou <a class="reference external" href="https://docs.computecanada.ca/wiki/Dar/fr"><strong>DAR</strong></a> (<code class="docutils literal notranslate"><span class="pre">.dar</span></code>) - compression configurable</p>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>man dar  <span class="c1"># q pour quitter</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="compression">
 <h4>Compression<a class="headerlink" href="#compression" title="Lien permanent vers ce titre">¶</a></h4>
-<p>La <a class="reference external" href="https://docs.computecanada.ca/wiki/Archiving_and_compressing_files/fr">compression des fichiers</a> a un <strong>coût en temps CPU</strong> à chaque fois que nous voulons lire les données ou les écrire.</p>
+<p>La <a class="reference external" href="https://docs.computecanada.ca/wiki/Archiving_and_compressing_files/fr">compression des fichiers</a>
+a un <strong>coût en temps CPU</strong> à chaque fois que nous voulons lire ou écrire
+les données. Ainsi, il vaut mieux utiliser la compression <strong>lorsque
+c’est « avantageux »</strong> en espace et/ou en temps. Par exemple :</p>
 <ul class="simple">
-<li><p>Ainsi, il vaut mieux utiliser la compression <strong>lorsque c’est « avantageux »</strong> en espace et/ou en temps.</p>
-<ul>
-<li><p>Par exemple : décompression des fichiers sur le noeud de calcul plutôt que de lire chaque fichier de <em>Lustre</em>.</p></li>
+<li><p>Décompresser de nombreux fichiers sur le noeud de calcul plutôt que
+de lire chaque petit fichier de <em>Lustre</em>.</p></li>
 </ul>
-</li>
-</ul>
-<p>Concernant les fichiers binaires tels que FLAC, JPEG, PNG, etc., leur encodage <strong>inclut déjà une compression</strong> des données.</p>
+<p>Concernant les fichiers binaires tels que FLAC, JPEG, PDF, PNG, etc.,
+leur encodage <strong>inclut déjà une compression</strong> des données.</p>
 <ul class="simple">
 <li><p>Selon le type de données que vous utilisez dans votre domaine de recherche, il se pourrait qu’elles soient déjà compressées. À vous de vérifier.</p></li>
 <li><p>Habituellement, on gagne peu d’espace à compresser davantage ces fichiers.</p></li>
 </ul>
-</div>
-<div class="section" id="exercice-dar">
-<h4>Exercice - DAR<a class="headerlink" href="#exercice-dar" title="Lien permanent vers ce titre">¶</a></h4>
+<p><strong>Exercice - DAR</strong></p>
 <p>Dans un terminal :</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dar</span> <span class="o">-</span><span class="n">w</span> <span class="o">-</span><span class="n">c</span> <span class="n">dossiers</span> <span class="o">-</span><span class="n">g</span> <span class="n">images</span> <span class="o">-</span><span class="n">g</span> <span class="n">scripts</span>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>dar -w -c arch -g donnees -g images
 </pre></div>
 </div>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">-w</span></code> : pour éviter un avertissement d’écrasement d’archive existante</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">-c</span></code> : pour créer l’archive <code class="docutils literal notranslate"><span class="pre">dossiers</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-w</span></code> : pour taire un avertissement d’écrasement d’archive existante</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-c</span></code> : pour créer l’archive <code class="docutils literal notranslate"><span class="pre">arch</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">-g</span></code> : pour spécifier un fichier ou dossier à la fois</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dar</span> <span class="o">-</span><span class="n">l</span> <span class="n">dossiers</span>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>ls arch*
+dar -l arch
 </pre></div>
 </div>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">-l</span></code> : pour lister les fichiers dans l’archive DAR <code class="docutils literal notranslate"><span class="pre">dossiers</span></code></p></li>
-<li><p>Note : <strong>ne pas</strong> fournir le nom d’une <em>slice</em> avec l’extension <code class="docutils literal notranslate"><span class="pre">.1.dar</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-l</span></code> : pour lister les fichiers dans l’archive DAR <code class="docutils literal notranslate"><span class="pre">arch</span></code></p></li>
+<li><p>Note : <strong>ne pas</strong> fournir le nom d’une découpe avec l’extension <code class="docutils literal notranslate"><span class="pre">.1.dar</span></code></p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dar</span> <span class="o">-</span><span class="n">w</span> <span class="o">-</span><span class="n">z</span> <span class="o">-</span><span class="n">c</span> <span class="n">dossiers</span> <span class="o">-</span><span class="n">g</span> <span class="n">images</span> <span class="o">-</span><span class="n">g</span> <span class="n">scripts</span>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>dar -w -z -c arch -g donnees -g images
 </pre></div>
 </div>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">-z</span></code> : pour activer la compression</p></li>
-<li><p>Voir le résultat avec <code class="docutils literal notranslate"><span class="pre">dar</span> <span class="pre">-l</span> <span class="pre">dossiers</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-z</span></code> : pour activer la compression pour tous les fichiers</p></li>
+<li><p>Voir le résultat avec <code class="docutils literal notranslate"><span class="pre">dar</span> <span class="pre">-l</span> <span class="pre">arch</span></code></p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dar</span> <span class="o">-</span><span class="n">w</span> <span class="o">-</span><span class="n">z</span> <span class="o">-</span><span class="n">Z</span> <span class="s1">&#39;*.png&#39;</span> <span class="o">-</span><span class="n">c</span> <span class="n">dossiers</span> <span class="o">-</span><span class="n">g</span> <span class="n">images</span> <span class="o">-</span><span class="n">g</span> <span class="n">scripts</span>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>dar -w -z -Z <span class="s1">&#39;*.png&#39;</span> -c arch -g donnees -g images
 </pre></div>
 </div>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">-Z</span> <span class="pre">'*.png'</span></code> : pour exclure les fichiers PNG</p></li>
-<li><p>Voir le résultat avec <code class="docutils literal notranslate"><span class="pre">dar</span> <span class="pre">-l</span> <span class="pre">dossiers</span></code></p></li>
+<li><p>Voir le résultat avec <code class="docutils literal notranslate"><span class="pre">dar</span> <span class="pre">-l</span> <span class="pre">arch</span></code></p></li>
 </ul>
-<p>Sur les grappes de calcul, il y a deux (2) types de compression :</p>
-<ol class="simple">
-<li><p>Compression explicite :</p></li>
-</ol>
+<p><strong>Les deux (2) types de compression</strong> :</p>
+<p>a) Compression explicite :</p>
 <ul class="simple">
-<li><p>Lorsque vous utilisez un outil de compression (<code class="docutils literal notranslate"><span class="pre">7z</span></code>, <code class="docutils literal notranslate"><span class="pre">bzip2</span></code>, <code class="docutils literal notranslate"><span class="pre">gzip</span></code>, <code class="docutils literal notranslate"><span class="pre">zip</span></code>, etc.)</p></li>
-<li><p>Lorsque l’encodage permet de compresser les données (<code class="docutils literal notranslate"><span class="pre">dar</span></code>, bibliothèque <code class="docutils literal notranslate"><span class="pre">zlib</span></code>, etc.)</p></li>
-<li><p>Lors d’un transfert avec <code class="docutils literal notranslate"><span class="pre">rsync</span></code>, il existe des options permettant de compresser automatiquement les données lors du transfert. Cela étant dit, le transfert risque d’être limité par la vitesse du processeur…</p></li>
+<li><p>Lorsque vous utilisez un outil de compression (<code class="docutils literal notranslate"><span class="pre">gzip</span></code>, <code class="docutils literal notranslate"><span class="pre">zip</span></code>, etc.)</p></li>
+<li><p>Lorsque l’encodage permet de compresser les données
+(<code class="docutils literal notranslate"><span class="pre">dar</span></code>, bibliothèque <code class="docutils literal notranslate"><span class="pre">zlib</span></code>, etc.)</p></li>
+<li><p>Lors d’un transfert avec <code class="docutils literal notranslate"><span class="pre">rsync</span></code>, il existe des options permettant
+de compresser automatiquement les données lors du transfert.
+Cela étant dit, le transfert risque d’être limité par la vitesse du processeur…</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">man</span> <span class="n">rsync</span>  <span class="c1"># Chercher: /compress + n, Quitter: q</span>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>man rsync  <span class="c1"># Chercher: /compress + n, Quitter: q</span>
 </pre></div>
 </div>
-<ol class="simple">
-<li><p>Compression implicite :</p></li>
-</ol>
+<p>b) Compression implicite :</p>
 <ul class="simple">
-<li><p>Lorsque le système de fichiers compresse automatiquement vos données avant de les écrire sur le système de stockage</p>
+<li><p>Lorsque le <strong>système de fichiers compresse automatiquement</strong> vos
+données avant de les écrire sur le système de stockage :</p>
 <ul>
 <li><p>La commande <code class="docutils literal notranslate"><span class="pre">du</span></code> montre l’espace réellement utilisée sur le disque</p></li>
 <li><p>La commande <code class="docutils literal notranslate"><span class="pre">du</span> <span class="pre">--apparent-size</span></code> montre la taille normale du fichier</p></li>
 </ul>
 </li>
-<li><p>Lorsque le format du fichier de données inclut une compression des données. Par exemple :</p>
+<li><p>Lorsque le format du fichier de données inclut une compression des
+données. Voici quelques exemples :</p>
 <ul>
 <li><p><a class="reference external" href="https://docs.computecanada.ca/wiki/HDF5/fr">Hierarchical Data Format - HDF5</a> - format standard pour données scientifiques</p></li>
 <li><p><a class="reference external" href="https://parquet.apache.org/documentation/latest/">Apache Parquet</a> - stockage compressé de données tabulaires</p>
@@ -687,28 +668,38 @@ Pour ce faire, il existe plusieurs formats décodables sur les différentes grap
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="exercice-espace-utilise">
-<h4>Exercice - Espace utilisé<a class="headerlink" href="#exercice-espace-utilise" title="Lien permanent vers ce titre">¶</a></h4>
+<p><strong>Exercice - Espace utilisé</strong></p>
 <p>Dans un terminal Jupyter, essayez les commandes :</p>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>du -s ~
+du -s --apparent-size ~
+</pre></div>
+</div>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">du</span> <span class="pre">-s</span> <span class="pre">~</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">du</span> <span class="pre">-s</span> <span class="pre">--apparent-size</span> <span class="pre">~</span></code></p></li>
 <li><p>Notez les différences, s’il y en a</p></li>
-<li><p>Notez à quel point cette commande peut surcharger le système de stockage; le survol récursif des fichiers constitue un grand nombre d’accès aux métadonnées de <em>Lustre</em></p></li>
+<li><p>Notez à quel point cette commande peut surcharger le système de
+stockage; le survol récursif des fichiers constitue un grand nombre
+d’accès aux métadonnées de <em>Lustre</em></p></li>
 </ul>
-<p>En pratique, les grappes de calcul offrent des outils efficaces pour mesurer l’espace utilisé en fonction de l’espace alloué.
+<p>En pratique, les grappes de calcul offrent des outils efficaces pour
+mesurer l’espace utilisé en fonction de l’espace alloué.
 Nous verrons cela à la fin du chapitre.</p>
 </div>
 <div class="section" id="fichiers-epars-sparse-files">
 <h4>Fichiers épars (sparse files)<a class="headerlink" href="#fichiers-epars-sparse-files" title="Lien permanent vers ce titre">¶</a></h4>
 <p>Restez à l’affût des fichiers épars dont la faible taille sur le disque n’est pas représentative de la taille normale du fichier :</p>
 <ul class="simple">
-<li><p>Une certaine taille <code class="docutils literal notranslate"><span class="pre">T</span></code> est allouée pour le fichier. Par exemple : 1 To</p></li>
-<li><p>Seulement <code class="docutils literal notranslate"><span class="pre">t</span></code> octets sont réellement écrits dans le fichier (où <code class="docutils literal notranslate"><span class="pre">t</span> <span class="pre">&lt;&lt;</span> <span class="pre">T</span></code>). Par exemple : 1 Go</p></li>
-<li><p>Ce type de fichiers est typiquement utilisé pour des volumes de stockage de machines virtuelles, ce qui économise de l’espace sur le serveur hôte</p></li>
-<li><p>Problème : lors d’un transfert ou d’une sauvegarde (backup), ce sont les <code class="docutils literal notranslate"><span class="pre">T</span></code> octets qui sont lus, ce qui peut être catastrophique si <code class="docutils literal notranslate"><span class="pre">T</span></code> est vraiment très grand</p></li>
-<li><p><strong>Solution</strong> : les fichiers <code class="docutils literal notranslate"><span class="pre">.dar</span></code> permettent d’optimiser l’encapsulation de fichiers épars avant un transfert ou une copie des données</p></li>
+<li><p>Une certaine taille <code class="docutils literal notranslate"><span class="pre">T</span></code> est allouée pour le fichier.
+Par exemple : 1 To</p></li>
+<li><p>Seulement <code class="docutils literal notranslate"><span class="pre">t</span></code> octets sont réellement écrits dans le fichier
+(où <code class="docutils literal notranslate"><span class="pre">t</span> <span class="pre">&lt;&lt;</span> <span class="pre">T</span></code>). Par exemple : 1 Go</p></li>
+<li><p>Ce type de fichiers est typiquement utilisé pour des volumes de
+stockage de machines virtuelles, ce qui économise de l’espace sur le
+serveur hôte</p></li>
+<li><p>Problème : lors d’un transfert ou d’une sauvegarde (<em>backup</em>),
+ce sont les <code class="docutils literal notranslate"><span class="pre">T</span></code> octets qui sont lus, ce qui peut être catastrophique
+si <code class="docutils literal notranslate"><span class="pre">T</span></code> est vraiment très grand</p></li>
+<li><p><strong>Solution</strong> : les fichiers <code class="docutils literal notranslate"><span class="pre">.dar</span></code> permettent d’optimiser
+l’encapsulation de fichiers épars avant un transfert ou une copie</p></li>
 </ul>
 </div>
 </div>
@@ -732,12 +723,13 @@ Nous verrons cela à la fin du chapitre.</p>
 <li><p>Utilisation courante (à chaque jour, semaine ou mois)?</p></li>
 <li><p>Données à garder pour plus tard, par exemple pour reproduire les résultats?</p></li>
 <li><p>Données à publier sur des dépôts de données de recherche?</p></li>
+<li><p>Données critiques qui doivent être accessibles en tout temps?</p></li>
 </ul>
 </li>
 </ul>
 <p>Si aucune planification n’est faite, les données temporaires s’accumulent et prennent de la place dans l’espace alloué qui est de taille limitée. Si les données sont mal décrites, leur identification, leur compréhension et leur publication deviennent des tâches laborieuses pour les personnes qui en héritent.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">.</span><span class="n">gitignore</span>  <span class="c1"># Fichiers à ignorer, car temporaires</span>
-<span class="n">cat</span> <span class="n">README</span><span class="o">.</span><span class="n">md</span>   <span class="c1"># Description du projet</span>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>cat .gitignore  <span class="c1"># Fichiers à ignorer, car temporaires</span>
+cat README.md   <span class="c1"># Description du projet</span>
 </pre></div>
 </div>
 </div>
@@ -748,13 +740,18 @@ Nous verrons cela à la fin du chapitre.</p>
 <ul>
 <li><p><strong>Qui</strong> devrait avoir accès à quelles données?</p></li>
 <li><p><strong>Où</strong> pouvez-vous héberger vos données?</p></li>
+<li><p><strong>Quand</strong> : qui devrait avoir accès à vos données à votre départ?
+Et à partir de quand peut-on publier les données?</p></li>
 </ul>
 </li>
-<li><p><strong>Quand</strong> : qui devrait avoir accès à vos données à votre départ?</p></li>
 </ul>
-<p>Référez-vous aux <strong>politiques de votre université</strong> concernant la gestion des données de recherche.
-Dans tous les cas, sans précaution, les données que vous laissez sur les grappes de calcul risquent de ne pas être accessibles aux membres d’un laboratoire qui poursuivent leur recherche.</p>
-<p>Dès que possible, mettez en place les accès nécessaires pour le <a class="reference external" href="https://docs.computecanada.ca/wiki/Sharing_data/fr">partage de vos données</a>.</p>
+<p>Référez-vous aux <strong>politiques de votre université</strong> concernant la gestion
+des données de recherche.
+Sans précaution, les données que vous laissez sur les grappes de
+calcul risquent de ne pas être accessibles aux membres d’un
+laboratoire qui poursuivent leur recherche.</p>
+<p>Dès que possible, mettez en place les accès nécessaires pour le
+<a class="reference external" href="https://docs.computecanada.ca/wiki/Sharing_data/fr">partage de vos données</a>.</p>
 </div>
 </div>
 </div>
