@@ -260,7 +260,7 @@ const thebe_selector_output = ".output, .cell_output"
      Votre dossier personnel (
      <code class="docutils literal notranslate">
       <span class="pre">
-       /home
+       $HOME
       </span>
      </code>
      )
@@ -282,7 +282,7 @@ const thebe_selector_output = ".output, .cell_output"
      Espace réseau pour données temporaires (
      <code class="docutils literal notranslate">
       <span class="pre">
-       /scratch
+       $SCRATCH
       </span>
      </code>
      )
@@ -311,20 +311,10 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exemples-de-cycles-de-vie-des-donnees">
-     Exemples de cycles de vie des données
+    <a class="reference internal nav-link" href="#exemple-de-cycle-de-vie-des-donnees">
+     Exemple de cycle de vie des données
     </a>
     <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#exemple-de-pipeline-1">
-       Exemple de pipeline 1
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#exemple-de-pipeline-2">
-       Exemple de pipeline 2
-      </a>
-     </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#exercice-execution-d-un-pipeline">
        Exercice - Exécution d’un pipeline
@@ -415,7 +405,7 @@ const thebe_selector_output = ".output, .cell_output"
      Votre dossier personnel (
      <code class="docutils literal notranslate">
       <span class="pre">
-       /home
+       $HOME
       </span>
      </code>
      )
@@ -437,7 +427,7 @@ const thebe_selector_output = ".output, .cell_output"
      Espace réseau pour données temporaires (
      <code class="docutils literal notranslate">
       <span class="pre">
-       /scratch
+       $SCRATCH
       </span>
      </code>
      )
@@ -466,20 +456,10 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exemples-de-cycles-de-vie-des-donnees">
-     Exemples de cycles de vie des données
+    <a class="reference internal nav-link" href="#exemple-de-cycle-de-vie-des-donnees">
+     Exemple de cycle de vie des données
     </a>
     <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#exemple-de-pipeline-1">
-       Exemple de pipeline 1
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#exemple-de-pipeline-2">
-       Exemple de pipeline 2
-      </a>
-     </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#exercice-execution-d-un-pipeline">
        Exercice - Exécution d’un pipeline
@@ -723,7 +703,12 @@ l’encapsulation de fichiers épars avant un transfert ou une copie</p></li>
 <li><p>Utilisation courante (à chaque jour, semaine ou mois)?</p></li>
 <li><p>Données à garder pour plus tard, par exemple pour reproduire les résultats?</p></li>
 <li><p>Données à publier sur des dépôts de données de recherche?</p></li>
-<li><p>Données critiques qui doivent être accessibles en tout temps?</p></li>
+</ul>
+</li>
+<li><p><strong>Urgence d’accès</strong> - à propos de données critiques ou importantes :</p>
+<ul>
+<li><p>Combien y a-t-il de copies?</p></li>
+<li><p>Doivent-elles être accessibles en tout temps?</p></li>
 </ul>
 </li>
 </ul>
@@ -757,11 +742,9 @@ laboratoire qui poursuivent leur recherche.</p>
 </div>
 <div class="section" id="les-differents-types-de-stockage">
 <h2>Les différents types de stockage<a class="headerlink" href="#les-differents-types-de-stockage" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Stockage accessible selon le type de noeud :</p>
-<ul class="simple">
-<li><p>Noeud de connexion (ou interactif)</p></li>
-<li><p>Noeud de calcul (CPU ou GPU)</p></li>
-</ul>
+<p>Stockage accessible selon le type de noeud :
+noeud de <strong>connexion</strong> (ou interactif) ou
+noeud de <strong>calcul</strong> (CPU ou GPU) :</p>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Stockage</p></th>
@@ -798,10 +781,10 @@ laboratoire qui poursuivent leur recherche.</p>
 </table>
 <p>À propos des <a class="reference external" href="https://docs.computecanada.ca/wiki/Storage_and_file_management/fr#Types_de_stockage">différents espaces de stockage</a>.</p>
 <div class="section" id="votre-dossier-personnel-home">
-<h3>Votre dossier personnel (<code class="docutils literal notranslate"><span class="pre">/home</span></code>)<a class="headerlink" href="#votre-dossier-personnel-home" title="Lien permanent vers ce titre">¶</a></h3>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ls -a
+<h3>Votre dossier personnel (<code class="docutils literal notranslate"><span class="pre">$HOME</span></code>)<a class="headerlink" href="#votre-dossier-personnel-home" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>ls -a
 ls -la
-ls -ld $HOME
+ls -ld <span class="nv">$HOME</span>
 </pre></div>
 </div>
 <ul class="simple">
@@ -815,11 +798,12 @@ ls -ld $HOME
 </div>
 <div class="section" id="dossier-temporaire-local-slurm-tmpdir">
 <h3>Dossier temporaire local (<code class="docutils literal notranslate"><span class="pre">$SLURM_TMPDIR</span></code>)<a class="headerlink" href="#dossier-temporaire-local-slurm-tmpdir" title="Lien permanent vers ce titre">¶</a></h3>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ls -ld $SLURM_TMPDIR
-salloc
-  ls -ld $SLURM_TMPDIR
-  df -h $SLURM_TMPDIR
-  exit
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>ls -ld <span class="nv">$SLURM_TMPDIR</span>
+salloc  <span class="c1"># À partir de login1</span>
+
+ls -ld <span class="nv">$SLURM_TMPDIR</span>
+df -h <span class="nv">$SLURM_TMPDIR</span>
+<span class="nb">exit</span>
 </pre></div>
 </div>
 <ul class="simple">
@@ -840,34 +824,34 @@ salloc
 </ul>
 </div>
 <div class="section" id="espace-reseau-pour-donnees-temporaires-scratch">
-<h3>Espace réseau pour données temporaires (<code class="docutils literal notranslate"><span class="pre">/scratch</span></code>)<a class="headerlink" href="#espace-reseau-pour-donnees-temporaires-scratch" title="Lien permanent vers ce titre">¶</a></h3>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>df -h /scratch
-ls -ld $SCRATCH
+<h3>Espace réseau pour données temporaires (<code class="docutils literal notranslate"><span class="pre">$SCRATCH</span></code>)<a class="headerlink" href="#espace-reseau-pour-donnees-temporaires-scratch" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>df -h /scratch
+ls -ld <span class="nv">$SCRATCH</span>
 
-# Enlever l&#39;accès en lecture
-chmod g-r $SCRATCH
-ls -ld $SCRATCH
+<span class="c1"># Enlever l&#39;accès en lecture</span>
+chmod g-r <span class="nv">$SCRATCH</span>
+ls -ld <span class="nv">$SCRATCH</span>
 
-# Modifier le GID du répertoire
+<span class="c1"># Modifier le GID du répertoire</span>
 id
-chgrp def-sponsor00 $SCRATCH
-ls -ld $SCRATCH
+chgrp def-sponsor00 <span class="nv">$SCRATCH</span>
+ls -ld <span class="nv">$SCRATCH</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># Création d&#39;un dossier de résultats partagés
-mkdir -p $SCRATCH/partage/resultats
-ls -lR $SCRATCH
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Création d&#39;un dossier de résultats partagés</span>
+mkdir -p <span class="nv">$SCRATCH</span>/partage/resultats
+ls -lR <span class="nv">$SCRATCH</span>
 
-# Ajouter les permissions r (et x, s&#39;il y a lieu) récursivement
-chmod -R o+rX $SCRATCH/partage
-ls -lR $SCRATCH
+<span class="c1"># Ajouter les permissions r (et x, s&#39;il y a lieu) récursivement</span>
+chmod -R o+rX <span class="nv">$SCRATCH</span>/partage
+ls -lR <span class="nv">$SCRATCH</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># Visiter le dossier partagé de quelqu&#39;un d&#39;autre
-cd /scratch/userXY/partage
-pwd
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Visiter le dossier partagé de quelqu&#39;un d&#39;autre</span>
+<span class="nb">cd</span> /scratch/userXY/partage
+<span class="nb">pwd</span>
 ls -l
-cd $HOME
+<span class="nb">cd</span> <span class="nv">$HOME</span>
 </pre></div>
 </div>
 <ul class="simple">
@@ -889,9 +873,9 @@ cd $HOME
 </div>
 <div class="section" id="espace-projet-partage-project">
 <h3>Espace projet partagé (<code class="docutils literal notranslate"><span class="pre">/project</span></code>)<a class="headerlink" href="#espace-projet-partage-project" title="Lien permanent vers ce titre">¶</a></h3>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="o">-</span><span class="n">ld</span> <span class="o">/</span><span class="n">project</span>
-<span class="n">ls</span> <span class="o">-</span><span class="n">ld</span> <span class="o">/</span><span class="n">project</span><span class="o">/</span><span class="n">def</span><span class="o">-</span><span class="n">sponsor00</span>
-<span class="n">ls</span> <span class="o">-</span><span class="n">l</span> <span class="o">/</span><span class="n">project</span><span class="o">/</span><span class="n">def</span><span class="o">-</span><span class="n">sponsor00</span>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>ls -ld /project
+ls -ld /project/def-sponsor00
+ls -l /project/def-sponsor00
 </pre></div>
 </div>
 <ul class="simple">
@@ -905,7 +889,7 @@ cd $HOME
 </li>
 <li><p>Sauvegardé <strong>quotidiennement</strong></p>
 <ul>
-<li><p>Nombre de fichiers relativement limité</p></li>
+<li><p>Nombre de fichiers relativement limité (500k par défaut)</p></li>
 </ul>
 </li>
 </ul>
@@ -927,31 +911,42 @@ cd $HOME
 </div>
 <div class="section" id="stockage-tres-longue-duree-nearline">
 <h3>Stockage très longue durée (<code class="docutils literal notranslate"><span class="pre">/nearline</span></code>)<a class="headerlink" href="#stockage-tres-longue-duree-nearline" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Interface de stockage sur disque :</p>
 <ul class="simple">
-<li><p>Malgré une interface de stockage sur disque (on peut voir les fichiers avec la commande <code class="docutils literal notranslate"><span class="pre">ls</span></code>), les données les plus anciennes dans <a class="reference external" href="https://docs.computecanada.ca/wiki/Using_nearline_storage/fr"><code class="docutils literal notranslate"><span class="pre">/nearline</span></code> sont probablement sur ruban</a></p>
+<li><p>On peut voir les fichiers avec la commande <code class="docutils literal notranslate"><span class="pre">ls</span></code></p></li>
+<li><p>Les données les plus anciennes dans
+<a class="reference external" href="https://docs.computecanada.ca/wiki/Using_nearline_storage/fr"><code class="docutils literal notranslate"><span class="pre">/nearline</span></code> sont probablement sur ruban</a></p>
 <ul>
 <li><p>Voir les commandes pour <a class="reference external" href="https://docs.computecanada.ca/wiki/Using_nearline_storage/fr#Transf.C3.A9rer_des_donn.C3.A9es_.C3.A0_partir_de_.2Fnearline">diagnostiquer l’état des fichiers</a> dans <code class="docutils literal notranslate"><span class="pre">/nearline</span></code></p></li>
-<li><p>D’une part, la migration de données sur ruban réduit l’espace utilisé sur les disques - économie d’argent pour le stockage</p></li>
-<li><p>D’autre part, chaque lecture de fichier migré sur ruban créera <strong>une requête bloquante</strong> causant un temps de réponse de quelques minutes à quelques heures (si le système d’archivage est surchargé de requêtes)</p>
+</ul>
+</li>
+</ul>
+<p>À considérer :</p>
+<ul class="simple">
+<li><p>D’une part, la migration de données sur ruban réduit l’espace
+utilisé sur les disques - économie d’argent pour le stockage</p></li>
+<li><p>D’autre part, chaque lecture de fichier migré sur ruban créera
+<strong>une requête bloquante</strong> causant un temps de réponse de quelques
+minutes à quelques heures (si le système d’archivage est surchargé
+de requêtes)</p>
 <ul>
-<li><p>Voilà pourquoi il est impératif d’y sauvegarder un faible nombre de très grands fichiers</p></li>
-<li><p><strong>À éviter</strong> : y copier de nombreux petits fichiers avant de les regrouper dans un fichier d’archive</p></li>
+<li><p>Voilà pourquoi il est impératif d’y sauvegarder un faible nombre
+de très grands fichiers</p></li>
+<li><p><strong>À éviter</strong> : y copier de nombreux petits fichiers avant de les
+regrouper dans un fichier d’archive</p></li>
 </ul>
 </li>
 </ul>
-</li>
-<li><p>Cas d’utilisation :</p>
-<ul>
-<li><p>Les commandes <code class="docutils literal notranslate"><span class="pre">7z</span></code>, <code class="docutils literal notranslate"><span class="pre">dar</span></code>, <code class="docutils literal notranslate"><span class="pre">tar</span></code> et <code class="docutils literal notranslate"><span class="pre">zip</span></code> devraient uniquement regrouper des fichiers provenant de <code class="docutils literal notranslate"><span class="pre">/project</span></code> ou de <code class="docutils literal notranslate"><span class="pre">/scratch</span></code></p></li>
-<li><p>Stockage de données importantes <strong>qui ne seront pas utilisées pendant plusieurs mois</strong></p></li>
-</ul>
-</li>
+<p>Cas d’utilisation :</p>
+<ul class="simple">
+<li><p>Les commandes <code class="docutils literal notranslate"><span class="pre">7z</span></code>, <code class="docutils literal notranslate"><span class="pre">dar</span></code>, <code class="docutils literal notranslate"><span class="pre">tar</span></code> et <code class="docutils literal notranslate"><span class="pre">zip</span></code> devraient uniquement
+regrouper des fichiers provenant de <code class="docutils literal notranslate"><span class="pre">/project</span></code> ou de <code class="docutils literal notranslate"><span class="pre">/scratch</span></code></p></li>
+<li><p>Stockage de données importantes <strong>qui ne seront pas utilisées
+pendant plusieurs mois</strong></p></li>
 </ul>
 </div>
-<div class="section" id="exemples-de-cycles-de-vie-des-donnees">
-<h3>Exemples de cycles de vie des données<a class="headerlink" href="#exemples-de-cycles-de-vie-des-donnees" title="Lien permanent vers ce titre">¶</a></h3>
-<div class="section" id="exemple-de-pipeline-1">
-<h4>Exemple de pipeline 1<a class="headerlink" href="#exemple-de-pipeline-1" title="Lien permanent vers ce titre">¶</a></h4>
+<div class="section" id="exemple-de-cycle-de-vie-des-donnees">
+<h3>Exemple de cycle de vie des données<a class="headerlink" href="#exemple-de-cycle-de-vie-des-donnees" title="Lien permanent vers ce titre">¶</a></h3>
 <p><img alt="Pipeline 1" src="_images/data-flow-1.png" /></p>
 <p>Description des différentes étapes :</p>
 <ul class="simple">
@@ -977,59 +972,34 @@ cd $HOME
 </li>
 <li><p>Post-traitement - traiter tous les fichiers de résultats afin de ne garder que l’essentiel dans <code class="docutils literal notranslate"><span class="pre">/project</span></code></p></li>
 </ul>
-</div>
-<div class="section" id="exemple-de-pipeline-2">
-<h4>Exemple de pipeline 2<a class="headerlink" href="#exemple-de-pipeline-2" title="Lien permanent vers ce titre">¶</a></h4>
-<p><img alt="Pipeline 2" src="_images/data-flow-2.png" /></p>
-<p>Description des différentes étapes :</p>
-<ul class="simple">
-<li><p>Téléchargement des données dans <code class="docutils literal notranslate"><span class="pre">/project</span></code></p>
-<ul>
-<li><p>Pour un partage des données</p></li>
-<li><p>Pour une réutilisation à moyen-long terme</p></li>
-</ul>
-</li>
-<li><p>Soumettre une série de tâches de calcul</p>
-<ul>
-<li><p>Une tâche par <em>cas</em> (un sous-dossier de données) dans <code class="docutils literal notranslate"><span class="pre">dossier</span></code> dans la partition <code class="docutils literal notranslate"><span class="pre">/project</span></code></p></li>
-</ul>
-</li>
-<li><p>Le script de tâche est dans la partition <code class="docutils literal notranslate"><span class="pre">/home</span></code></p>
-<ul>
-<li><p>Utilisation des variables <code class="docutils literal notranslate"><span class="pre">$CAS</span></code> et <code class="docutils literal notranslate"><span class="pre">$SLURM_SUBMIT_DIR</span></code> pour le chemin complet vers le <em>cas</em> à étudier (situé dans <code class="docutils literal notranslate"><span class="pre">/project</span></code>)</p></li>
-<li><p>Se déplacer dans le dossier local <code class="docutils literal notranslate"><span class="pre">$SLURM_TMPDIR</span></code> du noeud de calcul</p></li>
-<li><p>Exécution de scripts présents dans <code class="docutils literal notranslate"><span class="pre">/home</span></code></p></li>
-<li><p>Toute la trace d’exécution est sauvegardée dans un fichier créé dans <code class="docutils literal notranslate"><span class="pre">$SLURM_TMPDIR</span></code></p></li>
-<li><p>À chaque itération globale, tous les fichiers archives dans le sous-dossier du <em>cas</em> (présent dans <code class="docutils literal notranslate"><span class="pre">/project</span></code>) sont traités :</p>
-<ul>
-<li><p>Le traitement consiste à extraire localement les données groupées et compressées</p></li>
-<li><p>Les données extraites sont dans un dossier local <code class="docutils literal notranslate"><span class="pre">donnees</span></code></p></li>
-</ul>
-</li>
-<li><p>Rapatrier le fichier de résultats dans un dossier dans <code class="docutils literal notranslate"><span class="pre">/scratch</span></code></p></li>
-</ul>
-</li>
-<li><p>Post-traitement - traiter tous les fichiers de résultats :</p>
-<ul>
-<li><p>Conversion en format CSV dans <code class="docutils literal notranslate"><span class="pre">/scratch</span></code></p></li>
-<li><p>Regrouper les fichiers CSV dans la partition <code class="docutils literal notranslate"><span class="pre">/project</span></code> où il y a de la compression implicite</p></li>
-</ul>
-</li>
-</ul>
-</div>
 <div class="section" id="exercice-execution-d-un-pipeline">
 <h4>Exercice - Exécution d’un pipeline<a class="headerlink" href="#exercice-execution-d-un-pipeline" title="Lien permanent vers ce titre">¶</a></h4>
 <ul class="simple">
 <li><p>Étudier les scripts :</p>
 <ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">scripts/nbody-pipeline.sh</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">scripts/nbody-traitement.sh</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">scripts/blastn-pipeline.sh</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">scripts/blastn-traitement.sh</span></code></p></li>
 </ul>
 </li>
-<li><p>Lancer le pipeline avec la commande <code class="docutils literal notranslate"><span class="pre">bash</span> <span class="pre">scripts/nbody-pipeline.sh</span></code></p></li>
+<li><p>Lancer le pipeline avec la commande :</p></li>
+</ul>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>bash scripts/blastn-pipeline.sh
+</pre></div>
+</div>
+<ul class="simple">
 <li><p>Surveiller les tâches avec <code class="docutils literal notranslate"><span class="pre">squeue</span> <span class="pre">-u</span> <span class="pre">$USER</span></code></p></li>
-<li><p>Trouver les fichiers créés dans <code class="docutils literal notranslate"><span class="pre">/scratch/$USER/resultats</span></code></p></li>
-<li><p>Lancer le post-traitement avec la commande <code class="docutils literal notranslate"><span class="pre">bash</span> <span class="pre">scripts/nbody-traitement.sh</span></code></p></li>
+<li><p>Trouver les fichiers créés dans :</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">$SCRATCH/donnees</span></code> et</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">$SCRATCH/donnees/res_prll</span></code></p></li>
+</ul>
+</li>
+<li><p>Lancer le post-traitement avec la commande :</p></li>
+</ul>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>bash scripts/blastn-traitement.sh
+</pre></div>
+</div>
+<ul class="simple">
 <li><p>Trouver le fichier TSV dans l’espace projet</p></li>
 </ul>
 </div>
@@ -1051,14 +1021,15 @@ cd $HOME
 <li><p>Disponible sur demande pour Graham et Niagara</p></li>
 </ul>
 </li>
-<li><p>Sur Béluga, il existe aussi un outil plus avancé : <a class="reference external" href="https://docs.computecanada.ca/wiki/Diskusage_Explorer/fr"><code class="docutils literal notranslate"><span class="pre">diskusage_explorer</span></code></a></p>
+<li><p>Sur Béluga et Narval, il existe aussi un outil plus avancé :
+<a class="reference external" href="https://docs.computecanada.ca/wiki/Diskusage_Explorer/fr"><code class="docutils literal notranslate"><span class="pre">diskusage_explorer</span></code></a></p>
 <ul>
 <li><p>Utilise les données en format SQLite générées quotidiennement dans <code class="docutils literal notranslate"><span class="pre">/project/.duc_databases/</span></code></p></li>
 <li><p>Permet d’avoir des statistiques de consommation du stockage par répertoire, ce qui évite d’utiliser la commande <code class="docutils literal notranslate"><span class="pre">du</span> <span class="pre">-sh</span> <span class="pre">*</span></code></p></li>
 </ul>
 </li>
 </ul>
-<p>En cas de données inaccessibles :</p>
+<p><strong>En cas de données inaccessibles</strong> :</p>
 <ul class="simple">
 <li><p>Une professeure ou un professeur peut demander à ce que les données soient supprimées</p></li>
 <li><p>Par contre, pour obtenir l’accès aux données, il faut avoir le consentement de la personne qui les a isolées (probablement involontairement)</p>
