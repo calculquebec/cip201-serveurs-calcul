@@ -329,6 +329,11 @@ const thebe_selector_output = ".output, .cell_output"
    Gestion du stockage
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#points-a-retenir">
+   Points à retenir
+  </a>
+ </li>
 </ul>
 
             </nav>
@@ -472,6 +477,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#gestion-du-stockage">
    Gestion du stockage
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#points-a-retenir">
+   Points à retenir
   </a>
  </li>
 </ul>
@@ -1039,6 +1049,30 @@ pendant plusieurs mois</strong></p></li>
 </li>
 </ul>
 <p>Dans tous les cas, il vaut mieux prévenir, et ce, dès l’importation de données sur les grappes de calcul.</p>
+</div>
+<div class="section" id="points-a-retenir">
+<h2>Points à retenir<a class="headerlink" href="#points-a-retenir" title="Lien permanent vers ce titre">¶</a></h2>
+<ul class="simple">
+<li><p>Le système de fichiers <em>Lustre</em> est optimisé pour des gros fichiers
+(+10 Mo)</p>
+<ul>
+<li><p>Ne pas mettre trop de fichiers et dossiers dans un même répertoire
+(maximum 1000 items)</p></li>
+</ul>
+</li>
+<li><p>Pour le transfert de données et l’utilisation du <em>Nearline</em>,
+il vaut mieux regrouper les données dans un fichier archive
+(comme Zip, DAR, etc.)</p></li>
+<li><p>Dans l’espace projet, il faut planifier qui devrait avoir accès à quoi et quand</p></li>
+<li><p>Pour optimiser les tâches, utiliser <code class="docutils literal notranslate"><span class="pre">$SLURM_TMPDIR</span></code></p></li>
+<li><p>La commande <code class="docutils literal notranslate"><span class="pre">diskusage_report</span></code> pour un aperçu de l’espace utilisé</p></li>
+<li><p>Pour les données et codes critiques :</p>
+<ul>
+<li><p>avoir une copie ailleurs et</p></li>
+<li><p>utiliser un gestionnaire de versions.</p></li>
+</ul>
+</li>
+</ul>
 </div>
 </div>
 
