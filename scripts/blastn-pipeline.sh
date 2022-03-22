@@ -5,7 +5,8 @@ cd $(dirname $0)/..
 CIP201=$PWD
 
 echo '- Importer les données dans $SCRATCH ...'
-cp -a donnees $SCRATCH/
+mkdir -p $SCRATCH/donnees
+rsync -av donnees/ $SCRATCH/
 cd $SCRATCH
 
 echo '- Soumettre la première tâche ...'
