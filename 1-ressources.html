@@ -608,8 +608,8 @@ et la mémoire-vives en fonction des quantités réservées.</p>
 <p>Lors d’une tâche interactive, on peut utiliser <code class="docutils literal notranslate"><span class="pre">top</span></code> et <code class="docutils literal notranslate"><span class="pre">htop</span></code> pour surveiller les ressources utilisées :</p>
 <div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tâche interactive et installation de modules Python</span>
 salloc --gres<span class="o">=</span>gpu:1 --ntasks-per-node<span class="o">=</span><span class="m">4</span> --mem<span class="o">=</span>8000M --time<span class="o">=</span><span class="m">0</span>:9:0
-less scripts/installer/cupy-tmp.sh  <span class="c1"># q pour quitter</span>
-bash scripts/installer/cupy-tmp.sh
+less scripts/installer/cupy_tmp.sh  <span class="c1"># q pour quitter</span>
+bash scripts/installer/cupy_tmp.sh
 </pre></div>
 </div>
 <div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exécution avec un processeur</span>
