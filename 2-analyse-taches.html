@@ -422,7 +422,11 @@ sshare -l  <span class="c1"># Tous les comptes</span>
 </div>
 <ul class="simple">
 <li><p>Identifier le ou les noeud(s) avec : <code class="docutils literal notranslate"><span class="pre">squeue</span> <span class="pre">-u</span> <span class="pre">$USER</span></code></p></li>
-<li><p>Connexion avec : <code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">&lt;nom_noeud&gt;</span></code></p></li>
+<li><p>Connexion avec : <code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">&lt;nom_noeud&gt;</span></code></p>
+<ul>
+<li><p>Autrement : <code class="docutils literal notranslate"><span class="pre">srun</span> <span class="pre">--jobid</span> <span class="pre">&lt;No_Tache&gt;</span> <span class="pre">--pty</span> <span class="pre">&lt;commande&gt;</span></code></p></li>
+</ul>
+</li>
 <li><p>Inspection avec <code class="docutils literal notranslate"><span class="pre">top</span></code>, <code class="docutils literal notranslate"><span class="pre">htop</span></code>, <code class="docutils literal notranslate"><span class="pre">nvtop</span></code> et/ou <code class="docutils literal notranslate"><span class="pre">nvidia-smi</span></code> :</p>
 <ul>
 <li><p>Est-ce que vos processus s’exécutent avec un <strong>pourcentage de 100%?</strong></p></li>

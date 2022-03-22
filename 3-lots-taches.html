@@ -430,7 +430,7 @@ C’est un peu comme l’ordonnanceur Slurm, mais à plus petite échelle et en 
 <div class="section" id="syntaxe-de-la-commande-gnu-parallel">
 <h3>Syntaxe de la commande GNU Parallel<a class="headerlink" href="#syntaxe-de-la-commande-gnu-parallel" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Les éléments de base de la commande <code class="docutils literal notranslate"><span class="pre">parallel</span></code> : options, gabarit de commande, liste de valeurs. Voir :</p>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>man parallel
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>man parallel  <span class="c1"># q pour quitter</span>
 </pre></div>
 </div>
 </div>
@@ -634,7 +634,7 @@ squeue -u <span class="nv">$USER</span>
 </pre></div>
 </div>
 <p>On peut aller voir les processus en exécution :</p>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>ssh &lt;nom_noeud&gt;
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>ssh &lt;nom_noeud&gt;  <span class="c1"># srun --jobid &lt;No_Tache&gt; --pty &lt;commande&gt;</span>
 top -u <span class="nv">$USER</span>  <span class="c1"># q pour quitter</span>
 <span class="nb">exit</span>
 </pre></div>
