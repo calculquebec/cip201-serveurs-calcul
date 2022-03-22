@@ -6,7 +6,7 @@ CIP201=$PWD
 
 echo '- Importer les données dans $SCRATCH ...'
 mkdir -p $SCRATCH/donnees
-rsync -av donnees/ $SCRATCH/
+rsync -a donnees/ $SCRATCH/donnees/
 cd $SCRATCH
 
 echo '- Soumettre la première tâche ...'
