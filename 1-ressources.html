@@ -4,11 +4,13 @@
 <html lang="fr">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Bien choisir les ressources &#8212; CIP201 - Maîtriser l’utilisation des serveurs de calcul</title>
     
-  <link href="_static/css/theme.css" rel="stylesheet">
-  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,20 +20,16 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -39,13 +37,14 @@
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
     <script src="_static/translations.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -66,7 +65,21 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -75,9 +88,10 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -92,17 +106,18 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Rechercher dans ce livre ..." aria-label="Rechercher dans ce livre ..." autocomplete="off" >
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="0-a_propos.html">
-   À propos
-  </a>
- </li>
-</ul>
-<ul class="current nav bd-sidenav">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="0-a_propos.html">
+                    À propos
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Bien choisir les ressources
@@ -123,90 +138,167 @@ const thebe_selector_output = ".output, .cell_output"
    Les espaces de stockage
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="99-references.html">
+   Références
+  </a>
+ </li>
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Basculer la navigation" aria-controls="site-navigation"
-                title="Basculer la navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Téléchargez cette page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/1-ressources.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Télécharger le fichier source" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Imprimer au format PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/calculquebec/utilisation-serveurs-calcul"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Dépôt source"><i
-                    class="fab fa-github"></i>dépôt</button></a>
-        
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Mode plein écran"
-        title="Mode plein écran"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contenu
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+<a href="https://github.com/calculquebec/utilisation-serveurs-calcul"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="bottom"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/1-ressources.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#rappel-le-calcul-haute-performance">
    Rappel - le calcul haute performance
@@ -319,12 +411,11 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Bien choisir les ressources</h1>
@@ -333,7 +424,7 @@ const thebe_selector_output = ".output, .cell_output"
                     <div id="jb-print-toc">
                         
                         <div>
-                            <h2> Contenu </h2>
+                            <h2> Contents </h2>
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
@@ -453,11 +544,12 @@ const thebe_selector_output = ".output, .cell_output"
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="bien-choisir-les-ressources">
-<h1>Bien choisir les ressources<a class="headerlink" href="#bien-choisir-les-ressources" title="Lien permanent vers ce titre">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="bien-choisir-les-ressources">
+<h1>Bien choisir les ressources<a class="headerlink" href="#bien-choisir-les-ressources" title="Lien permanent vers ce titre">#</a></h1>
 <p>Il y a plusieurs ressources informatiques qui vous sont disponibles à
 l’Alliance de recherche numérique du Canada :</p>
 <ul class="simple">
@@ -480,8 +572,8 @@ l’Alliance de recherche numérique du Canada :</p>
 <p>Le principal but de ce chapitre est de vous permettre d’analyser
 vos besoins en <strong>ressources de calcul haute performance</strong>, et ce,
 dans le but de choisir les ressources nécessaires pour votre projet.</p>
-<div class="section" id="rappel-le-calcul-haute-performance">
-<h2>Rappel - le calcul haute performance<a class="headerlink" href="#rappel-le-calcul-haute-performance" title="Lien permanent vers ce titre">¶</a></h2>
+<section id="rappel-le-calcul-haute-performance">
+<h2>Rappel - le calcul haute performance<a class="headerlink" href="#rappel-le-calcul-haute-performance" title="Lien permanent vers ce titre">#</a></h2>
 <ul class="simple">
 <li><p>Lorsqu’il est question de lancer une <strong>grande quantité de calculs</strong>
 (séquentiels ou parallèles) ou de <strong>traitements de données</strong>,
@@ -493,8 +585,8 @@ qui seront réservées lors de l’exécution d’un calcul.</p></li>
 </ul>
 <p>Dans cette section, on cherche à évaluer le comportement d’une tâche de calcul
 afin d’estimer et d’optimiser les ressources à réserver sur la grappe de calcul.</p>
-<div class="section" id="objectif-construction-d-un-script-de-tache-slurm">
-<h3>Objectif - construction d’un script de tâche Slurm<a class="headerlink" href="#objectif-construction-d-un-script-de-tache-slurm" title="Lien permanent vers ce titre">¶</a></h3>
+<section id="objectif-construction-d-un-script-de-tache-slurm">
+<h3>Objectif - construction d’un script de tâche Slurm<a class="headerlink" href="#objectif-construction-d-un-script-de-tache-slurm" title="Lien permanent vers ce titre">#</a></h3>
 <p>Un script de tâche pour <a class="reference external" href="https://slurm.schedmd.com/documentation.html">l’ordonnanceur Slurm</a> est typiquement un script Bash dans lequel on retrouve :</p>
 <ul class="simple">
 <li><p>Le <a class="reference external" href="https://fr.wikipedia.org/wiki/Shebang">shebang</a> en toute première ligne. Par exemple : <code class="docutils literal notranslate"><span class="pre">#!/bin/bash</span></code></p></li>
@@ -515,10 +607,10 @@ afin d’estimer et d’optimiser les ressources à réserver sur la grappe de c
 </pre></div>
 </div>
 <p>Notre documentation à cet effet débute à la page : <a class="reference external" href="https://docs.computecanada.ca/wiki/Running_jobs/fr">Exécuter des tâches</a></p>
-</div>
-</div>
-<div class="section" id="analyse-des-calculs-a-petite-echelle">
-<h2>Analyse des calculs à petite échelle<a class="headerlink" href="#analyse-des-calculs-a-petite-echelle" title="Lien permanent vers ce titre">¶</a></h2>
+</section>
+</section>
+<section id="analyse-des-calculs-a-petite-echelle">
+<h2>Analyse des calculs à petite échelle<a class="headerlink" href="#analyse-des-calculs-a-petite-echelle" title="Lien permanent vers ce titre">#</a></h2>
 <p>Lorsqu’une tâche de calcul est en cours d’exécution, vous pouvez surveiller différentes métriques :</p>
 <ul class="simple">
 <li><p>Utilisation CPU (et GPU, s’il y a lieu)</p></li>
@@ -526,8 +618,8 @@ afin d’estimer et d’optimiser les ressources à réserver sur la grappe de c
 <li><p>Mémoire virtuelle (allouée)</p></li>
 <li><p>Les accès au stockage</p></li>
 </ul>
-<div class="section" id="sous-windows">
-<h3>Sous Windows<a class="headerlink" href="#sous-windows" title="Lien permanent vers ce titre">¶</a></h3>
+<section id="sous-windows">
+<h3>Sous Windows<a class="headerlink" href="#sous-windows" title="Lien permanent vers ce titre">#</a></h3>
 <ul class="simple">
 <li><p><a class="reference external" href="https://fr.wikipedia.org/wiki/Gestionnaire_des_t%C3%A2ches_Windows">Gestionnaire des tâches Windows</a></p></li>
 <li><p>Pour le faire afficher :</p>
@@ -538,9 +630,9 @@ afin d’estimer et d’optimiser les ressources à réserver sur la grappe de c
 </li>
 </ul>
 <p><img alt="Aperçu du gestionnaire des tâches Windows" src="_images/win-task-manager.png" /></p>
-</div>
-<div class="section" id="sous-mac-os">
-<h3>Sous Mac OS<a class="headerlink" href="#sous-mac-os" title="Lien permanent vers ce titre">¶</a></h3>
+</section>
+<section id="sous-mac-os">
+<h3>Sous Mac OS<a class="headerlink" href="#sous-mac-os" title="Lien permanent vers ce titre">#</a></h3>
 <ul class="simple">
 <li><p><a class="reference external" href="https://support.apple.com/fr-ca/guide/activity-monitor/actmntr1001/mac">Moniteur d’activité</a></p></li>
 <li><p>Pour le faire afficher :</p>
@@ -551,9 +643,9 @@ afin d’estimer et d’optimiser les ressources à réserver sur la grappe de c
 </li>
 </ul>
 <p><img alt="Aperçu du moniteur d'activité Mac OS" src="https://help.apple.com/assets/5FDCF1894EB74318147EC0CF/5FDCF18A4EB74318147EC0D6/fr_CA/ad6337d66061aa27122e75521960fc5a.png" /></p>
-</div>
-<div class="section" id="sous-linux">
-<h3>Sous Linux<a class="headerlink" href="#sous-linux" title="Lien permanent vers ce titre">¶</a></h3>
+</section>
+<section id="sous-linux">
+<h3>Sous Linux<a class="headerlink" href="#sous-linux" title="Lien permanent vers ce titre">#</a></h3>
 <p>Dans un terminal Unix, on peut utiliser :</p>
 <ul class="simple">
 <li><p>La <a class="reference external" href="https://man7.org/linux/man-pages/man1/top.1.html">commande <code class="docutils literal notranslate"><span class="pre">top</span></code></a> (<code class="docutils literal notranslate"><span class="pre">q</span></code> pour quitter)</p></li>
@@ -563,13 +655,13 @@ afin d’estimer et d’optimiser les ressources à réserver sur la grappe de c
 <li><p>La <a class="reference external" href="https://man7.org/linux/man-pages/man1/htop.1.html">commande <code class="docutils literal notranslate"><span class="pre">htop</span></code></a> (<code class="docutils literal notranslate"><span class="pre">q</span></code> pour quitter)</p></li>
 </ul>
 <p><img alt="Capture de htop" src="_images/linux-htop.png" /></p>
-</div>
-<div class="section" id="sur-la-grappe-de-calcul-directement">
-<h3>Sur la grappe de calcul directement<a class="headerlink" href="#sur-la-grappe-de-calcul-directement" title="Lien permanent vers ce titre">¶</a></h3>
+</section>
+<section id="sur-la-grappe-de-calcul-directement">
+<h3>Sur la grappe de calcul directement<a class="headerlink" href="#sur-la-grappe-de-calcul-directement" title="Lien permanent vers ce titre">#</a></h3>
 <p>Avec votre accès par défaut, vous avez un compte de calcul <code class="docutils literal notranslate"><span class="pre">def-*</span></code> de base
 vous permettant de lancer des tâches de test.</p>
-<div class="section" id="ressources-utilisees-d-une-tache-terminee">
-<h4>Ressources utilisées d’une tâche terminée<a class="headerlink" href="#ressources-utilisees-d-une-tache-terminee" title="Lien permanent vers ce titre">¶</a></h4>
+<section id="ressources-utilisees-d-une-tache-terminee">
+<h4>Ressources utilisées d’une tâche terminée<a class="headerlink" href="#ressources-utilisees-d-une-tache-terminee" title="Lien permanent vers ce titre">#</a></h4>
 <div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>ssh login1
 ...
 </pre></div>
@@ -597,9 +689,9 @@ et la mémoire-vives en fonction des quantités réservées.</p>
 <div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>seff &lt;No_tâche&gt;
 </pre></div>
 </div>
-</div>
-<div class="section" id="ressources-utilisees-par-une-tache-cpu-en-cours">
-<h4>Ressources utilisées par une tâche CPU en cours<a class="headerlink" href="#ressources-utilisees-par-une-tache-cpu-en-cours" title="Lien permanent vers ce titre">¶</a></h4>
+</section>
+<section id="ressources-utilisees-par-une-tache-cpu-en-cours">
+<h4>Ressources utilisées par une tâche CPU en cours<a class="headerlink" href="#ressources-utilisees-par-une-tache-cpu-en-cours" title="Lien permanent vers ce titre">#</a></h4>
 <p>Étant donné un certain calcul matriciel dans le script Python
 <a class="reference external" href="https://github.com/calculquebec/cip201-serveurs-calcul/blob/main/scripts/crunch.py"><code class="docutils literal notranslate"><span class="pre">scripts/crunch.py</span></code></a> :</p>
 <div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>less scripts/crunch.py   <span class="c1"># q pour quitter</span>
@@ -626,9 +718,9 @@ grep sec *.log
 <span class="nb">exit</span>  <span class="c1"># Pour revenir à login1</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="ressources-utilisees-par-une-tache-gpu-en-cours">
-<h4>Ressources utilisées par une tâche GPU en cours<a class="headerlink" href="#ressources-utilisees-par-une-tache-gpu-en-cours" title="Lien permanent vers ce titre">¶</a></h4>
+</section>
+<section id="ressources-utilisees-par-une-tache-gpu-en-cours">
+<h4>Ressources utilisées par une tâche GPU en cours<a class="headerlink" href="#ressources-utilisees-par-une-tache-gpu-en-cours" title="Lien permanent vers ce titre">#</a></h4>
 <div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tâche interactive et installation de modules Python</span>
 salloc --gres<span class="o">=</span>gpu:1 --ntasks-per-node<span class="o">=</span><span class="m">4</span> --mem<span class="o">=</span>8000M --time<span class="o">=</span><span class="m">0</span>:9:0
 bash scripts/installer/cupy_tmp.sh
@@ -656,9 +748,9 @@ less tg.log    <span class="c1"># q pour quitter</span>
 </pre></div>
 </div>
 <p><img alt="Capture nvtop" src="https://raw.githubusercontent.com/Syllo/nvtop/master/screenshot/NVTOP_ex1.png" /></p>
-</div>
-<div class="section" id="comparer-la-vitesse-cpu-vs-gpu">
-<h4>Comparer la vitesse CPU vs GPU<a class="headerlink" href="#comparer-la-vitesse-cpu-vs-gpu" title="Lien permanent vers ce titre">¶</a></h4>
+</section>
+<section id="comparer-la-vitesse-cpu-vs-gpu">
+<h4>Comparer la vitesse CPU vs GPU<a class="headerlink" href="#comparer-la-vitesse-cpu-vs-gpu" title="Lien permanent vers ce titre">#</a></h4>
 <p>Avant d’utiliser massivement les GPUs d’une grappe de calcul, il faut tout d’abord que l’application ou l’algorithme puisse démontrer une « bonne performance » en utilisant plusieurs processeurs en parallèle.</p>
 <p>Quelques définitions :</p>
 <ul class="simple">
@@ -670,9 +762,9 @@ less tg.log    <span class="c1"># q pour quitter</span>
 <ul class="simple">
 <li><p><strong>Accélération</strong> = (temps avec 8 à 12 processeurs) / (temps avec un accélérateur)</p></li>
 </ul>
-</div>
-<div class="section" id="exercice-calcul-d-acceleration-et-d-efficacite">
-<h4>Exercice - Calcul d’accélération et d’efficacité<a class="headerlink" href="#exercice-calcul-d-acceleration-et-d-efficacite" title="Lien permanent vers ce titre">¶</a></h4>
+</section>
+<section id="exercice-calcul-d-acceleration-et-d-efficacite">
+<h4>Exercice - Calcul d’accélération et d’efficacité<a class="headerlink" href="#exercice-calcul-d-acceleration-et-d-efficacite" title="Lien permanent vers ce titre">#</a></h4>
 <p>En supposant les résultats suivants pour un programme parallèle lancé sur <span class="math notranslate nohighlight">\(n\)</span> processeurs :</p>
 <div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>grep sec t*.log
 </pre></div>
@@ -697,13 +789,13 @@ less tg.log    <span class="c1"># q pour quitter</span>
 bash scripts/calc-acc-eff.sh <span class="m">1</span>:9.876 <span class="m">8</span>:0.035
 </pre></div>
 </div>
-</div>
-</div>
-</div>
-<div class="section" id="extrapoler-les-ressources-necessaires">
-<h2>Extrapoler les ressources nécessaires<a class="headerlink" href="#extrapoler-les-ressources-necessaires" title="Lien permanent vers ce titre">¶</a></h2>
-<div class="section" id="efficacite-cible-du-calcul-parallele">
-<h3>Efficacité cible du calcul parallèle<a class="headerlink" href="#efficacite-cible-du-calcul-parallele" title="Lien permanent vers ce titre">¶</a></h3>
+</section>
+</section>
+</section>
+<section id="extrapoler-les-ressources-necessaires">
+<h2>Extrapoler les ressources nécessaires<a class="headerlink" href="#extrapoler-les-ressources-necessaires" title="Lien permanent vers ce titre">#</a></h2>
+<section id="efficacite-cible-du-calcul-parallele">
+<h3>Efficacité cible du calcul parallèle<a class="headerlink" href="#efficacite-cible-du-calcul-parallele" title="Lien permanent vers ce titre">#</a></h3>
 <ul class="simple">
 <li><p>Une efficacité de 80%, voire 90%, devrait être un seuil minimal pour les tâches parallèles. Or, il existe un <strong>nombre maximal de processeurs</strong> à utiliser pour respecter ce seuil :</p>
 <ul>
@@ -718,9 +810,9 @@ bash scripts/calc-acc-eff.sh <span class="m">1</span>:9.876 <span class="m">8</s
 <li><p><code class="docutils literal notranslate"><span class="pre">CPU</span> <span class="pre">Utilized</span></code> et <code class="docutils literal notranslate"><span class="pre">CPU</span> <span class="pre">Efficiency</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Memory</span> <span class="pre">Utilized</span></code> et <code class="docutils literal notranslate"><span class="pre">Memory</span> <span class="pre">Efficiency</span></code></p></li>
 </ul>
-</div>
-<div class="section" id="taille-des-donnees-et-nombre-de-fichiers-a-traiter">
-<h3>Taille des données et nombre de fichiers à traiter<a class="headerlink" href="#taille-des-donnees-et-nombre-de-fichiers-a-traiter" title="Lien permanent vers ce titre">¶</a></h3>
+</section>
+<section id="taille-des-donnees-et-nombre-de-fichiers-a-traiter">
+<h3>Taille des données et nombre de fichiers à traiter<a class="headerlink" href="#taille-des-donnees-et-nombre-de-fichiers-a-traiter" title="Lien permanent vers ce titre">#</a></h3>
 <p>Pour un calcul donné, il y a deux métriques de stockage à considérer :</p>
 <ol class="simple">
 <li><p>La <strong>quantité</strong> totale en octets (ou Go)</p></li>
@@ -758,8 +850,8 @@ bash scripts/calc-acc-eff.sh <span class="m">1</span>:9.876 <span class="m">8</s
 </ul>
 </li>
 </ul>
-<div class="section" id="stockage-en-memoire-selon-les-types-de-base">
-<h4>Stockage en mémoire selon les types de base<a class="headerlink" href="#stockage-en-memoire-selon-les-types-de-base" title="Lien permanent vers ce titre">¶</a></h4>
+<section id="stockage-en-memoire-selon-les-types-de-base">
+<h4>Stockage en mémoire selon les types de base<a class="headerlink" href="#stockage-en-memoire-selon-les-types-de-base" title="Lien permanent vers ce titre">#</a></h4>
 <p>En ayant une idée de la taille des données à traiter,
 il devient possible d’estimer l’espace que les données prendront en mémoire-vive.</p>
 <ul class="simple">
@@ -845,9 +937,9 @@ python
 <span class="o">&gt;&gt;&gt;</span> <span class="n">quit</span><span class="p">()</span>  <span class="c1"># ou Ctrl+D pour sortir</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="la-complexite-des-algorithmes">
-<h4>La complexité des algorithmes<a class="headerlink" href="#la-complexite-des-algorithmes" title="Lien permanent vers ce titre">¶</a></h4>
+</section>
+<section id="la-complexite-des-algorithmes">
+<h4>La complexité des algorithmes<a class="headerlink" href="#la-complexite-des-algorithmes" title="Lien permanent vers ce titre">#</a></h4>
 <p>La question qui se pose : en augmentant la ou les dimensions du problème, quelles devraient être la durée du calcul et la consommation en mémoire-vive?
 Une <a class="reference external" href="https://fr.wikipedia.org/wiki/Analyse_de_la_complexit%C3%A9_des_algorithmes">analyse de la complexité de l’algorithme principal</a>
 permettrait de connaître l’ordre <span class="math notranslate nohighlight">\(O\)</span> du calcul en fonction de la taille <span class="math notranslate nohighlight">\(n\)</span> des données :</p>
@@ -865,9 +957,9 @@ où il y a <span class="math notranslate nohighlight">\(n\)</span> éléments à
 <li><p>Vous pouvez vous inspirer des données en entrées pour deviner l’ordre du calcul principal.</p></li>
 <li><p>Vous pouvez mesurer le temps d’exécution en fonction de la taille du problème. En extrapolant les résultats, il serait possible de prévoir le comportement du programme sur une grappe de calcul.</p></li>
 </ul>
-</div>
-<div class="section" id="exercice-complexite-de-l-algorithme">
-<h4>Exercice - Complexité de l’algorithme<a class="headerlink" href="#exercice-complexite-de-l-algorithme" title="Lien permanent vers ce titre">¶</a></h4>
+</section>
+<section id="exercice-complexite-de-l-algorithme">
+<h4>Exercice - Complexité de l’algorithme<a class="headerlink" href="#exercice-complexite-de-l-algorithme" title="Lien permanent vers ce titre">#</a></h4>
 <p>Dans cet exercice, il est question d’inverser une matrice de valeurs aléatoires de taille <span class="math notranslate nohighlight">\(n*n\)</span> :</p>
 <ul class="simple">
 <li><p>Soumettre le script <a class="reference external" href="https://github.com/calculquebec/cip201-serveurs-calcul/blob/main/scripts/inv-mat.sh"><code class="docutils literal notranslate"><span class="pre">scripts/inv-mat.sh</span></code></a> avec la commande <code class="docutils literal notranslate"><span class="pre">sbatch</span></code> :</p></li>
@@ -895,11 +987,11 @@ cat scripts/inv-mat-pred.py
 python scripts/inv-mat-pred.py temps_inv.csv
 </pre></div>
 </div>
-</div>
-</div>
-</div>
-<div class="section" id="principales-differences-entre-les-grappes-de-calcul">
-<h2>Principales différences entre les grappes de calcul<a class="headerlink" href="#principales-differences-entre-les-grappes-de-calcul" title="Lien permanent vers ce titre">¶</a></h2>
+</section>
+</section>
+</section>
+<section id="principales-differences-entre-les-grappes-de-calcul">
+<h2>Principales différences entre les grappes de calcul<a class="headerlink" href="#principales-differences-entre-les-grappes-de-calcul" title="Lien permanent vers ce titre">#</a></h2>
 <ul class="simple">
 <li><p>À propos des grappes :</p></li>
 </ul>
@@ -1183,9 +1275,9 @@ python scripts/inv-mat-pred.py temps_inv.csv
 <ul class="simple">
 <li><p>Stockage : le tout sera décrit au dernier chapitre.</p></li>
 </ul>
-</div>
-<div class="section" id="points-a-retenir">
-<h2>Points à retenir<a class="headerlink" href="#points-a-retenir" title="Lien permanent vers ce titre">¶</a></h2>
+</section>
+<section id="points-a-retenir">
+<h2>Points à retenir<a class="headerlink" href="#points-a-retenir" title="Lien permanent vers ce titre">#</a></h2>
 <ul class="simple">
 <li><p>Prévoir les <strong>paramètres d’une tâche Slurm</strong></p>
 <ul>
@@ -1210,8 +1302,8 @@ python scripts/inv-mat-pred.py temps_inv.csv
 </li>
 <li><p>Le choix de la grappe dépend des besoins de chaque type de calcul</p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1235,9 +1327,11 @@ python scripts/inv-mat-pred.py temps_inv.csv
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="0-a_propos.html" title="précédent page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1253,24 +1347,28 @@ python scripts/inv-mat-pred.py temps_inv.csv
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Équipe Calcul Québec<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
     
-      Par Équipe Calcul Québec<br/>
-    
-        &copy; droits d'auteur 2021.<br/>
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>
