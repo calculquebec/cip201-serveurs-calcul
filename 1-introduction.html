@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>À propos &#8212; CIP201 - Maîtriser l’utilisation des serveurs de calcul</title>
+    <title>Introduction &#8212; CIP201 - Maîtriser l’utilisation des serveurs de calcul</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -54,7 +54,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="_static/logo.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
-    <link rel="next" title="Introduction" href="1-introduction.html" />
+    <link rel="next" title="Bien choisir les ressources" href="1-ressources.html" />
+    <link rel="prev" title="À propos" href="0-a_propos.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="fr">
     
@@ -108,15 +109,15 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="bd-toc-item active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1 current active">
-                <a class="reference internal" href="#">
+            <li class="toctree-l1">
+                <a class="reference internal" href="0-a_propos.html">
                     À propos
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="1-introduction.html">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Introduction
   </a>
  </li>
@@ -242,7 +243,7 @@ title="Source repository"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="_sources/0-a_propos.ipynb"
+        <a href="_sources/1-introduction.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -302,13 +303,18 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#table-des-matieres">
-   Table des matières
+  <a class="reference internal nav-link" href="#rappel-le-calcul-haute-performance">
+   Rappel - le calcul haute performance
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#differents-types-de-taches">
+   Différents types de tâches
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#references">
-     Références
+    <a class="reference internal nav-link" href="#parallelisme-de-donnees">
+     Parallélisme de données
     </a>
    </li>
   </ul>
@@ -322,7 +328,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>À propos</h1>
+                <h1>Introduction</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -333,13 +339,18 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#table-des-matieres">
-   Table des matières
+  <a class="reference internal nav-link" href="#rappel-le-calcul-haute-performance">
+   Rappel - le calcul haute performance
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#differents-types-de-taches">
+   Différents types de tâches
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#references">
-     Références
+    <a class="reference internal nav-link" href="#parallelisme-de-donnees">
+     Parallélisme de données
     </a>
    </li>
   </ul>
@@ -354,55 +365,91 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="a-propos">
-<h1>À propos<a class="headerlink" href="#a-propos" title="Lien permanent vers ce titre">#</a></h1>
-<p>Cet atelier de formation de niveau intermédiaire est la suite de l’atelier <a class="reference external" href="https://docs.computecanada.ca/wiki/%C3%89v%C3%A9nements_pass%C3%A9s"><em>Premiers pas sur les serveurs de calcul</em></a>. L’objectif principal est d’explorer un peu plus en profondeur certains aspects clés du calcul informatique de pointe.</p>
-<p>Note : les <em>notebooks</em> IPython du présent atelier et les données associées sont <a class="reference external" href="https://github.com/calculquebec/cip201-serveurs-calcul">publiés sur GitHub</a>.</p>
-<section id="table-des-matieres">
-<h2>Table des matières<a class="headerlink" href="#table-des-matieres" title="Lien permanent vers ce titre">#</a></h2>
-<ol class="simple">
-<li><p><a class="reference internal" href="1-ressources.html"><span class="doc std std-doc">Bien choisir les ressources</span></a></p>
-<ol class="simple">
-<li><p>Rappel - le calcul haute performance</p></li>
-<li><p>Analyse des calculs à petite échelle</p></li>
-<li><p>Extrapoler les ressources nécessaires</p></li>
-<li><p>Principales différences entre les grappes de calcul</p></li>
-</ol>
+  <section class="tex2jax_ignore mathjax_ignore" id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Lien permanent vers ce titre">#</a></h1>
+<section id="rappel-le-calcul-haute-performance">
+<h2>Rappel - le calcul haute performance<a class="headerlink" href="#rappel-le-calcul-haute-performance" title="Lien permanent vers ce titre">#</a></h2>
+<ul class="simple">
+<li><p>Lorsqu’il est question de lancer une <strong>grande quantité de calculs</strong>
+(séquentiels ou parallèles) ou de <strong>traitements de données</strong>,
+l’utilisation d’une grappe de calcul haute performance devient nécessaire.</p></li>
+<li><p>Puisque les <strong>ressources sont partagées</strong> et en grande demande,
+chaque tâche doit être soumise à un ordonnanceur de tâches.</p></li>
+<li><p>Il devient donc nécessaire <strong>d’estimer à l’avance les ressources</strong>
+qui seront réservées lors de l’exécution d’un calcul.</p></li>
+</ul>
+</section>
+<section id="differents-types-de-taches">
+<h2>Différents types de tâches<a class="headerlink" href="#differents-types-de-taches" title="Lien permanent vers ce titre">#</a></h2>
+<p>Deux grandes catégories de tâches qui travaillent sur un même problème :</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Type :</p></th>
+<th class="text-align:center head"><p>Séquentielles /</p></th>
+<th class="text-align:center head"><p>Parallèles ////</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Description :</p></td>
+<td class="text-align:center"><p>Une opération à la fois</p></td>
+<td class="text-align:center"><p>Plusieurs opérations en simultané</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td class="text-align:center"><p>Un processus</p></td>
+<td class="text-align:center"><p>Plusieurs processus</p></td>
+</tr>
+<tr class="row-even"><td><p>Via :</p></td>
+<td class="text-align:center"><p>AVEC</p></td>
+<td class="text-align:center"><p>ET/OU</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td class="text-align:center"><p>un seul fil d’exécution (<em>thread</em>)</p></td>
+<td class="text-align:center"><p>plusieurs fils d’exécution</p></td>
+</tr>
+<tr class="row-even"><td><p>Ressources :</p></td>
+<td class="text-align:center"><p>Un processeur</p></td>
+<td class="text-align:center"><p>Plusieurs processeurs ou noeuds de calcul</p></td>
+</tr>
+</tbody>
+</table>
+<p>Avec le calcul parallèle, il y a <strong>deux modèles de mémoire</strong> :</p>
+<ul class="simple">
+<li><p><strong>Partagée</strong> : un seul processus de plusieurs fils d’exécution</p></li>
+<li><p><strong>Distribuée</strong> : plusieurs processus sur un ou plusieurs noeuds</p></li>
+</ul>
+<p>Enfin, un sous-type parmi les tâches séquentielles :</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Type :</p></th>
+<th class="text-align:center head"><p>Calcul vectoriel //</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Description :</p></td>
+<td class="text-align:center"><p>Une même opération sur des vecteurs de données</p></td>
+</tr>
+<tr class="row-odd"><td><p>Ressources :</p></td>
+<td class="text-align:center"><p>Un processeur moderne ou un accélérateur (GPU)</p></td>
+</tr>
+</tbody>
+</table>
+<section id="parallelisme-de-donnees">
+<h3>Parallélisme de données<a class="headerlink" href="#parallelisme-de-donnees" title="Lien permanent vers ce titre">#</a></h3>
+<ul class="simple">
+<li><p>Beaucoup de données à traiter de manière indépendante</p></li>
+<li><p><strong>Plusieurs tâches séquentielles en simultané</strong></p>
+<ul>
+<li><p>Utilisation de <strong>lots de tâches</strong></p></li>
+<li><p>Ou une tâche parallèle qui partitionne les données en différents problèmes à traiter sur des processeurs différents</p>
+<ul>
+<li><p>Par exemple, <a class="reference external" href="https://docs.alliancecan.ca/wiki/Apache_Spark">Spark</a> - une solution pour traiter des méga-données en parallèle</p></li>
+</ul>
 </li>
-<li><p><a class="reference internal" href="2-analyse-taches.html"><span class="doc std std-doc">Analyse des tâches</span></a></p>
-<ol class="simple">
-<li><p>Tâches en attente</p></li>
-<li><p>Tâches actives</p></li>
-<li><p>Tâches terminées</p></li>
-</ol>
+</ul>
 </li>
-<li><p><a class="reference internal" href="3-lots-taches.html"><span class="doc std std-doc">Lots de tâches - parallélisme de données</span></a></p>
-<ol class="simple">
-<li><p>GNU Parallel</p></li>
-<li><p>Vecteurs de tâches</p></li>
-<li><p>Le <em>Greedy Launcher Of Small Tasks</em>, ou GLOST</p></li>
-</ol>
-</li>
-<li><p><a class="reference internal" href="4-stockage.html"><span class="doc std std-doc">Les espaces de stockage</span></a></p>
-<ol class="simple">
-<li><p>Description de vos données</p>
-<ol class="simple">
-<li><p>Transférabilité</p></li>
-<li><p>Plan de gestion des données actives</p></li>
-</ol>
-</li>
-<li><p>Les différents types de stockage</p></li>
-<li><p>Gestion du stockage</p></li>
-</ol>
-</li>
-</ol>
-<section id="references">
-<h3>Références<a class="headerlink" href="#references" title="Lien permanent vers ce titre">#</a></h3>
-<p>Voir le notebook des <a class="reference internal" href="99-references.html"><span class="doc std std-doc">Références</span></a>.</p>
+</ul>
 </section>
 </section>
-<div class="toctree-wrapper compound">
-</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -432,10 +479,17 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='right-next' id="next-link" href="1-introduction.html" title="suivant page">
+    <a class='left-prev' id="prev-link" href="0-a_propos.html" title="précédent page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">précédent</p>
+            <p class="prev-next-title">À propos</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="1-ressources.html" title="suivant page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">suivant</p>
-        <p class="prev-next-title">Introduction</p>
+        <p class="prev-next-title">Bien choisir les ressources</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

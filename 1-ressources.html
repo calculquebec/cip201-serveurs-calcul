@@ -57,7 +57,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
     <link rel="next" title="Analyse des tâches" href="2-analyse-taches.html" />
-    <link rel="prev" title="À propos" href="0-a_propos.html" />
+    <link rel="prev" title="Introduction" href="1-introduction.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="fr">
     
@@ -118,6 +118,11 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="1-introduction.html">
+   Introduction
+  </a>
+ </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Bien choisir les ressources
@@ -300,16 +305,9 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#rappel-le-calcul-haute-performance">
-   Rappel - le calcul haute performance
+  <a class="reference internal nav-link" href="#objectif-construction-d-un-script-de-tache-slurm">
+   Objectif - construction d’un script de tâche Slurm
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#objectif-construction-d-un-script-de-tache-slurm">
-     Objectif - construction d’un script de tâche Slurm
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#analyse-des-calculs-a-petite-echelle">
@@ -429,16 +427,9 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#rappel-le-calcul-haute-performance">
-   Rappel - le calcul haute performance
+  <a class="reference internal nav-link" href="#objectif-construction-d-un-script-de-tache-slurm">
+   Objectif - construction d’un script de tâche Slurm
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#objectif-construction-d-un-script-de-tache-slurm">
-     Objectif - construction d’un script de tâche Slurm
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#analyse-des-calculs-a-petite-echelle">
@@ -572,21 +563,10 @@ l’Alliance de recherche numérique du Canada :</p>
 <p>Le principal but de ce chapitre est de vous permettre d’analyser
 vos besoins en <strong>ressources de calcul haute performance</strong>, et ce,
 dans le but de choisir les ressources nécessaires pour votre projet.</p>
-<section id="rappel-le-calcul-haute-performance">
-<h2>Rappel - le calcul haute performance<a class="headerlink" href="#rappel-le-calcul-haute-performance" title="Lien permanent vers ce titre">#</a></h2>
-<ul class="simple">
-<li><p>Lorsqu’il est question de lancer une <strong>grande quantité de calculs</strong>
-(séquentiels ou parallèles) ou de <strong>traitements de données</strong>,
-l’utilisation d’une grappe de calcul haute performance devient nécessaire.</p></li>
-<li><p>Puisque les <strong>ressources sont partagées</strong> et en grande demande,
-chaque tâche doit être soumise à un ordonnanceur de tâches.</p></li>
-<li><p>Il devient donc nécessaire <strong>d’estimer à l’avance les ressources</strong>
-qui seront réservées lors de l’exécution d’un calcul.</p></li>
-</ul>
 <p>Dans cette section, on cherche à évaluer le comportement d’une tâche de calcul
 afin d’estimer et d’optimiser les ressources à réserver sur la grappe de calcul.</p>
 <section id="objectif-construction-d-un-script-de-tache-slurm">
-<h3>Objectif - construction d’un script de tâche Slurm<a class="headerlink" href="#objectif-construction-d-un-script-de-tache-slurm" title="Lien permanent vers ce titre">#</a></h3>
+<h2>Objectif - construction d’un script de tâche Slurm<a class="headerlink" href="#objectif-construction-d-un-script-de-tache-slurm" title="Lien permanent vers ce titre">#</a></h2>
 <p>Un script de tâche pour <a class="reference external" href="https://slurm.schedmd.com/documentation.html">l’ordonnanceur Slurm</a> est typiquement un script Bash dans lequel on retrouve :</p>
 <ul class="simple">
 <li><p>Le <a class="reference external" href="https://fr.wikipedia.org/wiki/Shebang">shebang</a> en toute première ligne. Par exemple : <code class="docutils literal notranslate"><span class="pre">#!/bin/bash</span></code></p></li>
@@ -607,7 +587,6 @@ afin d’estimer et d’optimiser les ressources à réserver sur la grappe de c
 </pre></div>
 </div>
 <p>Notre documentation à cet effet débute à la page : <a class="reference external" href="https://docs.computecanada.ca/wiki/Running_jobs/fr">Exécuter des tâches</a></p>
-</section>
 </section>
 <section id="analyse-des-calculs-a-petite-echelle">
 <h2>Analyse des calculs à petite échelle<a class="headerlink" href="#analyse-des-calculs-a-petite-echelle" title="Lien permanent vers ce titre">#</a></h2>
@@ -1332,11 +1311,11 @@ python scripts/inv-mat-pred.py temps_inv.csv
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="0-a_propos.html" title="précédent page">
+    <a class='left-prev' id="prev-link" href="1-introduction.html" title="précédent page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">précédent</p>
-            <p class="prev-next-title">À propos</p>
+            <p class="prev-next-title">Introduction</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="2-analyse-taches.html" title="suivant page">
