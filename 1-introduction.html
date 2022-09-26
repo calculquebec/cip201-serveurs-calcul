@@ -319,6 +319,11 @@ title="Print to PDF"
    </li>
   </ul>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#des-questions-a-se-poser">
+   Des questions à se poser
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -355,6 +360,11 @@ title="Print to PDF"
    </li>
   </ul>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#des-questions-a-se-poser">
+   Des questions à se poser
+  </a>
+ </li>
 </ul>
 
                         </nav>
@@ -381,7 +391,8 @@ qui seront réservées lors de l’exécution d’un calcul.</p></li>
 </section>
 <section id="differents-types-de-taches">
 <h2>Différents types de tâches<a class="headerlink" href="#differents-types-de-taches" title="Lien permanent vers ce titre">#</a></h2>
-<p>Deux grandes catégories de tâches qui travaillent sur un même problème :</p>
+<p>Deux grandes catégories de tâches qui travaillent sur un même problème :
+<img alt="Séquentiel vs parallel" src="_images/serial-vs-parallel.svg" /></p>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Type :</p></th>
@@ -417,22 +428,13 @@ qui seront réservées lors de l’exécution d’un calcul.</p></li>
 <li><p><strong>Partagée</strong> : un seul processus de plusieurs fils d’exécution</p></li>
 <li><p><strong>Distribuée</strong> : plusieurs processus sur un ou plusieurs noeuds</p></li>
 </ul>
-<p>Enfin, un sous-type parmi les tâches séquentielles :</p>
-<table class="colwidths-auto table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Type :</p></th>
-<th class="text-align:center head"><p>Calcul vectoriel //</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Description :</p></td>
-<td class="text-align:center"><p>Une même opération sur des vecteurs de données</p></td>
-</tr>
-<tr class="row-odd"><td><p>Ressources :</p></td>
-<td class="text-align:center"><p>Un processeur moderne ou un accélérateur (GPU)</p></td>
-</tr>
-</tbody>
-</table>
+<p><img alt="Mémoire partagée ou distribuée" src="_images/memory-models.svg" /></p>
+<p>Enfin, un sous-type parmi les tâches séquentielles : le calcul vectoriel.</p>
+<ul class="simple">
+<li><p>Description : <strong>une même opération</strong> sur des vecteurs de données</p></li>
+<li><p>Ressources : un processeur moderne ou un <strong>accélérateur</strong> (GPU)</p></li>
+</ul>
+<p><img alt="Calcul vectoriel" src="_images/calcul-vectoriel.svg" /></p>
 <section id="parallelisme-de-donnees">
 <h3>Parallélisme de données<a class="headerlink" href="#parallelisme-de-donnees" title="Lien permanent vers ce titre">#</a></h3>
 <ul class="simple">
@@ -440,15 +442,43 @@ qui seront réservées lors de l’exécution d’un calcul.</p></li>
 <li><p><strong>Plusieurs tâches séquentielles en simultané</strong></p>
 <ul>
 <li><p>Utilisation de <strong>lots de tâches</strong></p></li>
-<li><p>Ou une tâche parallèle qui partitionne les données en différents problèmes à traiter sur des processeurs différents</p>
-<ul>
-<li><p>Par exemple, <a class="reference external" href="https://docs.alliancecan.ca/wiki/Apache_Spark">Spark</a> - une solution pour traiter des méga-données en parallèle</p></li>
+<li><p>Ou une tâche parallèle qui partitionne les données en différents problèmes à traiter sur des processeurs différents</p></li>
 </ul>
 </li>
 </ul>
-</li>
-</ul>
+<p><img alt="Parallélisme de données" src="_images/data-parallelism.svg" /></p>
 </section>
+</section>
+<section id="des-questions-a-se-poser">
+<h2>Des questions à se poser<a class="headerlink" href="#des-questions-a-se-poser" title="Lien permanent vers ce titre">#</a></h2>
+<ul class="simple">
+<li><p>Quel <strong>type de calculs</strong> effectuez-vous?</p>
+<ul>
+<li><p>Séquentiel ou parallel?</p></li>
+<li><p>Traiter beaucoup de petits fichiers ou quelques grands fichiers?</p></li>
+<li><p>Algorithme vectorisé?</p></li>
+</ul>
+</li>
+<li><p>Quelles <strong>ressources</strong> vont être consommées?</p>
+<ul>
+<li><p>Quelles ressources choisir?</p></li>
+<li><p>Quelle quantité de ressources?</p></li>
+</ul>
+</li>
+<li><p>Comment <strong>planifier le stockage</strong> nécessaire?</p>
+<ul>
+<li><p>Avez-vous un plan de gestion des données?</p></li>
+<li><p>Quels espaces de stockage utiliser?</p></li>
+<li><p>Qui devrait accéder à quoi?</p></li>
+<li><p>Quand devriez-vous archiver certaines données?</p></li>
+</ul>
+</li>
+<li><p>Comment <strong>lancer des tâches</strong>?</p>
+<ul>
+<li><p>Comment en faire le suivi?</p></li>
+</ul>
+</li>
+</ul>
 </section>
 </section>
 
