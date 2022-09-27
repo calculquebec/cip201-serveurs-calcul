@@ -56,8 +56,6 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="_static/logo.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
-    <link rel="next" title="Analyse des tâches" href="2-analyse-taches.html" />
-    <link rel="prev" title="Introduction" href="1-introduction.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="fr">
     
@@ -117,15 +115,10 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="1-introduction.html">
    Introduction
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Bien choisir les ressources
   </a>
  </li>
  <li class="toctree-l1">
@@ -245,7 +238,7 @@ title="Source repository"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="_sources/1-ressources.ipynb"
+        <a href="_sources/2-ressources.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -541,41 +534,40 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="bien-choisir-les-ressources">
 <h1>Bien choisir les ressources<a class="headerlink" href="#bien-choisir-les-ressources" title="Lien permanent vers ce titre">#</a></h1>
-<p>Il y a plusieurs ressources informatiques qui vous sont disponibles à
-l’Alliance de recherche numérique du Canada :</p>
+<p>Il y a plusieurs <strong>ressources de calcul haute performance</strong> qui vous
+sont disponibles à l’Alliance de recherche numérique du Canada :</p>
 <ul class="simple">
-<li><p>Calcul haute performance</p>
+<li><p>Grappes de calcul :</p>
 <ul>
 <li><p>Béluga, Cedar, Graham, Narval, Niagara</p></li>
 </ul>
 </li>
-<li><p>Stockage</p>
+<li><p>Stockage :</p>
 <ul>
 <li><p>Temporaire, projet, <em>nearline</em>, dépôt de données de recherche</p></li>
 </ul>
 </li>
-<li><p>Infonuagique</p>
-<ul>
-<li><p>Arbutus, Béluga, Cedar, Graham</p></li>
 </ul>
-</li>
-</ul>
-<p>Le principal but de ce chapitre est de vous permettre d’analyser
-vos besoins en <strong>ressources de calcul haute performance</strong>, et ce,
-dans le but de choisir les ressources nécessaires pour votre projet.</p>
-<p>Dans cette section, on cherche à évaluer le comportement d’une tâche de calcul
-afin d’estimer et d’optimiser les ressources à réserver sur la grappe de calcul.</p>
 <section id="objectif-construction-d-un-script-de-tache-slurm">
 <h2>Objectif - construction d’un script de tâche Slurm<a class="headerlink" href="#objectif-construction-d-un-script-de-tache-slurm" title="Lien permanent vers ce titre">#</a></h2>
-<p>Un script de tâche pour <a class="reference external" href="https://slurm.schedmd.com/documentation.html">l’ordonnanceur Slurm</a> est typiquement un script Bash dans lequel on retrouve :</p>
+<p>Le principal objectif de ce chapitre est de vous permettre d’analyser
+vos besoins dans le but de <strong>déterminer les ressources nécessaires</strong>
+pour vos tâches de calcul.
+Chaque tâche de calcul est définie par un <strong>script de tâche</strong> destiné à
+<a class="reference external" href="https://slurm.schedmd.com/documentation.html">l’ordonnanceur Slurm</a>.
+Typiquement écrit en commandes Bash, on y retrouve :</p>
 <ul class="simple">
-<li><p>Le <a class="reference external" href="https://fr.wikipedia.org/wiki/Shebang">shebang</a> en toute première ligne. Par exemple : <code class="docutils literal notranslate"><span class="pre">#!/bin/bash</span></code></p></li>
-<li><p>Les options <code class="docutils literal notranslate"><span class="pre">#SBATCH</span></code> en entête pour les besoins de la tâche. Les options en entête seront lues par la commande de soumission de tâche <a class="reference external" href="https://slurm.schedmd.com/sbatch.html"><code class="docutils literal notranslate"><span class="pre">sbatch</span></code></a></p></li>
+<li><p>Le <a class="reference external" href="https://fr.wikipedia.org/wiki/Shebang">shebang</a> en toute
+première ligne. Par exemple : <code class="docutils literal notranslate"><span class="pre">#!/bin/bash</span></code></p></li>
+<li><p>Les options <code class="docutils literal notranslate"><span class="pre">#SBATCH</span></code> en entête pour les besoins de la tâche. Les
+options en entête seront lues par la commande de soumission de tâche
+<a class="reference external" href="https://slurm.schedmd.com/sbatch.html"><code class="docutils literal notranslate"><span class="pre">sbatch</span></code></a></p></li>
 <li><p><a class="reference external" href="https://docs.computecanada.ca/wiki/Utiliser_des_modules">Chargement des modules</a> requis</p></li>
-<li><p>Les commandes Bash qui seront exécutées automatiquement sur des processeurs réservés pour la tâche</p></li>
+<li><p>Les commandes Bash qui seront exécutées automatiquement sur des
+processeurs réservés pour la tâche</p></li>
 </ul>
 <p>Par exemple : <a class="reference external" href="https://github.com/calculquebec/cip201-serveurs-calcul/blob/main/scripts/mpi-allo.sh"><code class="docutils literal notranslate"><span class="pre">scripts/mpi-allo.sh</span></code></a></p>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>cat scripts/mpi-allo.sh
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>nano scripts/mpi-allo.sh  <span class="c1"># Ctrl+Q pour quitter</span>
 </pre></div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
@@ -586,15 +578,15 @@ afin d’estimer et d’optimiser les ressources à réserver sur la grappe de c
 <span class="n">mpirun</span> <span class="n">printenv</span> <span class="n">HOSTNAME</span> <span class="n">OMPI_COMM_WORLD_RANK</span> <span class="n">OMPI_COMM_WORLD_SIZE</span>
 </pre></div>
 </div>
-<p>Notre documentation à cet effet débute à la page : <a class="reference external" href="https://docs.computecanada.ca/wiki/Running_jobs/fr">Exécuter des tâches</a></p>
+<p>Notre documentation à cet effet débute à la page :
+<a class="reference external" href="https://docs.computecanada.ca/wiki/Running_jobs/fr">Exécuter des tâches</a></p>
 </section>
 <section id="analyse-des-calculs-a-petite-echelle">
 <h2>Analyse des calculs à petite échelle<a class="headerlink" href="#analyse-des-calculs-a-petite-echelle" title="Lien permanent vers ce titre">#</a></h2>
-<p>Lorsqu’une tâche de calcul est en cours d’exécution, vous pouvez surveiller différentes métriques :</p>
+<p>Lorsqu’une tâche est en cours d’exécution, vous pouvez surveiller différentes métriques :</p>
 <ul class="simple">
 <li><p>Utilisation CPU (et GPU, s’il y a lieu)</p></li>
-<li><p>Mémoire résidente (réellement utilisée)</p></li>
-<li><p>Mémoire virtuelle (allouée)</p></li>
+<li><p>Mémoire-vive utilisée</p></li>
 <li><p>Les accès au stockage</p></li>
 </ul>
 <section id="sous-windows">
@@ -617,7 +609,9 @@ afin d’estimer et d’optimiser les ressources à réserver sur la grappe de c
 <li><p>Pour le faire afficher :</p>
 <ul>
 <li><p>Démarrer l’application à partir des <em>Applications et Utilitaires</em> de Mac OS</p></li>
-<li><p>Sinon, utiliser le raccourcis clavier Commande+Espace et taper les premières lettres de « Moniteur d’activité » pour pouvoir sélectionner cette application</p></li>
+<li><p>Sinon, utiliser le raccourcis clavier Commande+Espace et taper les
+premières lettres de « Moniteur d’activité » pour pouvoir sélectionner
+cette application</p></li>
 </ul>
 </li>
 </ul>
@@ -1311,20 +1305,6 @@ python scripts/inv-mat-pred.py temps_inv.csv
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="1-introduction.html" title="précédent page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">précédent</p>
-            <p class="prev-next-title">Introduction</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="2-analyse-taches.html" title="suivant page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">suivant</p>
-        <p class="prev-next-title">Analyse des tâches</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
 </div>
             </footer>
         </div>
