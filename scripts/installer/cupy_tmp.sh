@@ -3,8 +3,8 @@
 module load gcc cuda python
 
 cd $SLURM_TMPDIR
-virtualenv venv_cupy
+virtualenv --no-download venv_cupy
 
 source venv_cupy/bin/activate
-pip install numpy cupy
+pip install --no-index numpy cupy
 deactivate
