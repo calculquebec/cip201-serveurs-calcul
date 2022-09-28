@@ -303,8 +303,8 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#analyse-des-calculs-a-petite-echelle">
-   Analyse des calculs à petite échelle
+  <a class="reference internal nav-link" href="#analyse-des-calculs-localement">
+   Analyse des calculs localement
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -322,26 +322,28 @@ title="Print to PDF"
      Sous Linux
     </a>
    </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#analyse-des-taches-sur-la-grappe-de-calcul">
+   Analyse des tâches sur la grappe de calcul
+  </a>
+  <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sur-la-grappe-de-calcul-directement">
-     Sur la grappe de calcul directement
+    <a class="reference internal nav-link" href="#ressources-utilisees-d-une-tache-terminee">
+     Ressources utilisées d’une tâche terminée
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ressources-utilisees-par-une-tache-cpu-en-cours">
+     Ressources utilisées par une tâche CPU en cours
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#demo-ressources-utilisees-par-une-tache-gpu-en-cours">
+     (Démo) Ressources utilisées par une tâche GPU en cours
     </a>
     <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#ressources-utilisees-d-une-tache-terminee">
-       Ressources utilisées d’une tâche terminée
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#ressources-utilisees-par-une-tache-cpu-en-cours">
-       Ressources utilisées par une tâche CPU en cours
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#ressources-utilisees-par-une-tache-gpu-en-cours">
-       Ressources utilisées par une tâche GPU en cours
-      </a>
-     </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#comparer-la-vitesse-cpu-vs-gpu">
        Comparer la vitesse CPU vs GPU
@@ -425,8 +427,8 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#analyse-des-calculs-a-petite-echelle">
-   Analyse des calculs à petite échelle
+  <a class="reference internal nav-link" href="#analyse-des-calculs-localement">
+   Analyse des calculs localement
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -444,26 +446,28 @@ title="Print to PDF"
      Sous Linux
     </a>
    </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#analyse-des-taches-sur-la-grappe-de-calcul">
+   Analyse des tâches sur la grappe de calcul
+  </a>
+  <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sur-la-grappe-de-calcul-directement">
-     Sur la grappe de calcul directement
+    <a class="reference internal nav-link" href="#ressources-utilisees-d-une-tache-terminee">
+     Ressources utilisées d’une tâche terminée
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ressources-utilisees-par-une-tache-cpu-en-cours">
+     Ressources utilisées par une tâche CPU en cours
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#demo-ressources-utilisees-par-une-tache-gpu-en-cours">
+     (Démo) Ressources utilisées par une tâche GPU en cours
     </a>
     <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#ressources-utilisees-d-une-tache-terminee">
-       Ressources utilisées d’une tâche terminée
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#ressources-utilisees-par-une-tache-cpu-en-cours">
-       Ressources utilisées par une tâche CPU en cours
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#ressources-utilisees-par-une-tache-gpu-en-cours">
-       Ressources utilisées par une tâche GPU en cours
-      </a>
-     </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#comparer-la-vitesse-cpu-vs-gpu">
        Comparer la vitesse CPU vs GPU
@@ -581,9 +585,10 @@ processeurs réservés pour la tâche</p></li>
 <p>Notre documentation à cet effet débute à la page :
 <a class="reference external" href="https://docs.computecanada.ca/wiki/Running_jobs/fr">Exécuter des tâches</a></p>
 </section>
-<section id="analyse-des-calculs-a-petite-echelle">
-<h2>Analyse des calculs à petite échelle<a class="headerlink" href="#analyse-des-calculs-a-petite-echelle" title="Lien permanent vers ce titre">#</a></h2>
-<p>Lorsqu’une tâche est en cours d’exécution, vous pouvez surveiller différentes métriques :</p>
+<section id="analyse-des-calculs-localement">
+<h2>Analyse des calculs localement<a class="headerlink" href="#analyse-des-calculs-localement" title="Lien permanent vers ce titre">#</a></h2>
+<p>Lorsqu’une tâche est en cours d’exécution sur votre ordinateur,
+vous pouvez surveiller différentes métriques :</p>
 <ul class="simple">
 <li><p>Utilisation CPU (et GPU, s’il y a lieu)</p></li>
 <li><p>Mémoire-vive utilisée</p></li>
@@ -629,32 +634,38 @@ cette application</p></li>
 </ul>
 <p><img alt="Capture de htop" src="_images/linux-htop.png" /></p>
 </section>
-<section id="sur-la-grappe-de-calcul-directement">
-<h3>Sur la grappe de calcul directement<a class="headerlink" href="#sur-la-grappe-de-calcul-directement" title="Lien permanent vers ce titre">#</a></h3>
-<p>Avec votre accès par défaut, vous avez un compte de calcul <code class="docutils literal notranslate"><span class="pre">def-*</span></code> de base
-vous permettant de lancer des tâches de test.</p>
-<section id="ressources-utilisees-d-une-tache-terminee">
-<h4>Ressources utilisées d’une tâche terminée<a class="headerlink" href="#ressources-utilisees-d-une-tache-terminee" title="Lien permanent vers ce titre">#</a></h4>
+</section>
+<section id="analyse-des-taches-sur-la-grappe-de-calcul">
+<h2>Analyse des tâches sur la grappe de calcul<a class="headerlink" href="#analyse-des-taches-sur-la-grappe-de-calcul" title="Lien permanent vers ce titre">#</a></h2>
+<p>On commence par <strong>se connecter au noeud frontal</strong> de la grappe :</p>
 <div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>ssh login1
 ...
 </pre></div>
 </div>
-<p><strong>Note</strong> : pour accéder aux grappes de calcul en production,
+<p><strong>Note 1</strong> : pour accéder aux grappes de calcul en production,
 il vaut mieux utiliser <a class="reference external" href="https://docs.computecanada.ca/wiki/Using_SSH_keys_in_Linux/fr">une paire de clés SSH</a>.</p>
-<p>Pour soumettre un script, on fait :</p>
+<p><strong>Note 2</strong> : Avec votre accès par défaut, vous avez un compte de
+calcul <code class="docutils literal notranslate"><span class="pre">def-*</span></code> de base qui vous permet de lancer des tâches de test.</p>
+<p>Pour soumettre un script de tâche, on utilise la
+<a class="reference external" href="https://slurm.schedmd.com/sbatch.html">commande <code class="docutils literal notranslate"><span class="pre">sbatch</span></code></a> :</p>
 <div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>sbatch scripts/blastn-gen-seq.sh
 </pre></div>
 </div>
-<p>Pour voir l’état de la tâche, on ferait :</p>
+<p>Et pour voir l’état de la tâche, on utilise la
+<a class="reference external" href="https://slurm.schedmd.com/squeue.html">commande <code class="docutils literal notranslate"><span class="pre">squeue</span></code></a> :</p>
 <div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>squeue -u <span class="nv">$USER</span>  <span class="c1"># ou &#39;sq&#39;</span>
 </pre></div>
 </div>
-<p>Avec la commande <a class="reference external" href="https://slurm.schedmd.com/sacct.html"><code class="docutils literal notranslate"><span class="pre">sacct</span></code></a>, on peut obtenir un tableau de nos tâches exécutées depuis minuit.</p>
+<section id="ressources-utilisees-d-une-tache-terminee">
+<h3>Ressources utilisées d’une tâche terminée<a class="headerlink" href="#ressources-utilisees-d-une-tache-terminee" title="Lien permanent vers ce titre">#</a></h3>
+<p>Avec la <a class="reference external" href="https://slurm.schedmd.com/sacct.html">commande <code class="docutils literal notranslate"><span class="pre">sacct</span></code></a>,
+on peut obtenir un tableau détaillé de nos tâches exécutées
+depuis minuit :</p>
 <div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>sacct
 </pre></div>
 </div>
-<p>Avec la commande <a class="reference external" href="https://docs.computecanada.ca/wiki/Running_jobs/fr#T.C3.A2ches_termin.C3.A9es"><code class="docutils literal notranslate"><span class="pre">seff</span></code></a>,
-on peut obtenir un court rapport d’exécution de tâche.
+<p>Avec la <a class="reference external" href="https://docs.computecanada.ca/wiki/Running_jobs/fr#T.C3.A2ches_termin.C3.A9es">commande <code class="docutils literal notranslate"><span class="pre">seff</span></code></a>,
+on peut obtenir un court rapport d’exécution d’une tâche.
 Ce rapport inclut une mesure du temps écoulé, une mesure du temps CPU
 et une mesure de consommation maximale de la mémoire-vive.
 Des valeurs d’efficacité en pourcentages sont données pour les cycles CPU
@@ -664,7 +675,7 @@ et la mémoire-vives en fonction des quantités réservées.</p>
 </div>
 </section>
 <section id="ressources-utilisees-par-une-tache-cpu-en-cours">
-<h4>Ressources utilisées par une tâche CPU en cours<a class="headerlink" href="#ressources-utilisees-par-une-tache-cpu-en-cours" title="Lien permanent vers ce titre">#</a></h4>
+<h3>Ressources utilisées par une tâche CPU en cours<a class="headerlink" href="#ressources-utilisees-par-une-tache-cpu-en-cours" title="Lien permanent vers ce titre">#</a></h3>
 <p>Étant donné un certain calcul matriciel dans le script Python
 <a class="reference external" href="https://github.com/calculquebec/cip201-serveurs-calcul/blob/main/scripts/crunch.py"><code class="docutils literal notranslate"><span class="pre">scripts/crunch.py</span></code></a> :</p>
 <div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>less scripts/crunch.py   <span class="c1"># q pour quitter</span>
@@ -672,9 +683,9 @@ et la mémoire-vives en fonction des quantités réservées.</p>
 </div>
 <p>Lors d’une tâche interactive, on peut utiliser <code class="docutils literal notranslate"><span class="pre">top</span></code> et <code class="docutils literal notranslate"><span class="pre">htop</span></code> pour surveiller les ressources utilisées :</p>
 <div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tâche interactive et installation de modules Python</span>
-salloc --gres<span class="o">=</span>gpu:1 --ntasks-per-node<span class="o">=</span><span class="m">4</span> --mem<span class="o">=</span>8000M --time<span class="o">=</span><span class="m">0</span>:9:0
-less scripts/installer/cupy_tmp.sh  <span class="c1"># q pour quitter</span>
-bash scripts/installer/cupy_tmp.sh
+salloc --ntasks-per-node<span class="o">=</span><span class="m">4</span> --mem<span class="o">=</span>8000M --time<span class="o">=</span><span class="m">0</span>:9:0
+less scripts/installer/numpy_tmp.sh  <span class="c1"># q pour quitter</span>
+bash scripts/installer/numpy_tmp.sh
 </pre></div>
 </div>
 <div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exécution avec un processeur</span>
@@ -692,8 +703,8 @@ grep sec *.log
 </pre></div>
 </div>
 </section>
-<section id="ressources-utilisees-par-une-tache-gpu-en-cours">
-<h4>Ressources utilisées par une tâche GPU en cours<a class="headerlink" href="#ressources-utilisees-par-une-tache-gpu-en-cours" title="Lien permanent vers ce titre">#</a></h4>
+<section id="demo-ressources-utilisees-par-une-tache-gpu-en-cours">
+<h3>(Démo) Ressources utilisées par une tâche GPU en cours<a class="headerlink" href="#demo-ressources-utilisees-par-une-tache-gpu-en-cours" title="Lien permanent vers ce titre">#</a></h3>
 <div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tâche interactive et installation de modules Python</span>
 salloc --gres<span class="o">=</span>gpu:1 --ntasks-per-node<span class="o">=</span><span class="m">4</span> --mem<span class="o">=</span>8000M --time<span class="o">=</span><span class="m">0</span>:9:0
 bash scripts/installer/cupy_tmp.sh
@@ -721,7 +732,6 @@ less tg.log    <span class="c1"># q pour quitter</span>
 </pre></div>
 </div>
 <p><img alt="Capture nvtop" src="https://raw.githubusercontent.com/Syllo/nvtop/master/screenshot/NVTOP_ex1.png" /></p>
-</section>
 <section id="comparer-la-vitesse-cpu-vs-gpu">
 <h4>Comparer la vitesse CPU vs GPU<a class="headerlink" href="#comparer-la-vitesse-cpu-vs-gpu" title="Lien permanent vers ce titre">#</a></h4>
 <p>Avant d’utiliser massivement les GPUs d’une grappe de calcul, il faut tout d’abord que l’application ou l’algorithme puisse démontrer une « bonne performance » en utilisant plusieurs processeurs en parallèle.</p>
