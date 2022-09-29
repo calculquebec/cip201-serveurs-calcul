@@ -345,6 +345,11 @@ title="Print to PDF"
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exercice-tester-crunch-avec-un-gpu">
+       Exercice - Tester Crunch avec un GPU
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#comparer-la-vitesse-cpu-vs-gpu">
        Comparer la vitesse CPU vs GPU
       </a>
@@ -468,6 +473,11 @@ title="Print to PDF"
      (Démo) Ressources utilisées par une tâche GPU en cours
     </a>
     <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exercice-tester-crunch-avec-un-gpu">
+       Exercice - Tester Crunch avec un GPU
+      </a>
+     </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#comparer-la-vitesse-cpu-vs-gpu">
        Comparer la vitesse CPU vs GPU
@@ -706,13 +716,17 @@ grep sec *.log
 <section id="demo-ressources-utilisees-par-une-tache-gpu-en-cours">
 <h3>(Démo) Ressources utilisées par une tâche GPU en cours<a class="headerlink" href="#demo-ressources-utilisees-par-une-tache-gpu-en-cours" title="Lien permanent vers ce titre">#</a></h3>
 <div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tâche interactive et installation de modules Python</span>
-salloc --gres<span class="o">=</span>gpu:1 --ntasks-per-node<span class="o">=</span><span class="m">4</span> --mem<span class="o">=</span>8000M --time<span class="o">=</span><span class="m">0</span>:9:0
+salloc --ntasks-per-node<span class="o">=</span><span class="m">4</span> --mem<span class="o">=</span>8000M --time<span class="o">=</span><span class="m">0</span>:9:0 --gres<span class="o">=</span>gpu:1
 bash scripts/installer/cupy_tmp.sh
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>Pour Windows et Mac OS, il existe des outils propriétaires permettant de visualiser en temps réel l’utilisation du GPU. Veuillez vous référer au site Web du manufacturier de votre GPU pour les détails</p></li>
-<li><p>Sous Linux, il y a d’abord la <a class="reference external" href="https://developer.nvidia.com/nvidia-system-management-interface">commande <code class="docutils literal notranslate"><span class="pre">nvidia-smi</span></code></a></p></li>
+<li><p>Pour Windows et Mac OS, il existe des outils propriétaires
+permettant de visualiser en temps réel l’utilisation du GPU.
+Veuillez vous référer au site Web du manufacturier de votre GPU
+pour les détails</p></li>
+<li><p>Sous Linux, il y a d’abord la
+<a class="reference external" href="https://developer.nvidia.com/nvidia-system-management-interface">commande <code class="docutils literal notranslate"><span class="pre">nvidia-smi</span></code></a></p></li>
 </ul>
 <div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>nvidia-smi
 </pre></div>
@@ -732,6 +746,16 @@ less tg.log    <span class="c1"># q pour quitter</span>
 </pre></div>
 </div>
 <p><img alt="Capture nvtop" src="https://raw.githubusercontent.com/Syllo/nvtop/master/screenshot/NVTOP_ex1.png" /></p>
+<section id="exercice-tester-crunch-avec-un-gpu">
+<h4>Exercice - Tester Crunch avec un GPU<a class="headerlink" href="#exercice-tester-crunch-avec-un-gpu" title="Lien permanent vers ce titre">#</a></h4>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>less   scripts/crunch-sbatch-1gpu.sh
+sbatch scripts/crunch-sbatch-1gpu.sh
+
+sq
+tail -24 <span class="k">$(</span>ls slurm-* <span class="p">|</span> tail -1<span class="k">)</span>
+</pre></div>
+</div>
+</section>
 <section id="comparer-la-vitesse-cpu-vs-gpu">
 <h4>Comparer la vitesse CPU vs GPU<a class="headerlink" href="#comparer-la-vitesse-cpu-vs-gpu" title="Lien permanent vers ce titre">#</a></h4>
 <p>Avant d’utiliser massivement les GPUs d’une grappe de calcul, il faut tout d’abord que l’application ou l’algorithme puisse démontrer une « bonne performance » en utilisant plusieurs processeurs en parallèle.</p>
@@ -783,7 +807,7 @@ bash scripts/calc-acc-eff.sh <span class="m">1</span>:9.876 <span class="m">8</s
 <li><p>Une efficacité de 80%, voire 90%, devrait être un seuil minimal pour les tâches parallèles. Or, il existe un <strong>nombre maximal de processeurs</strong> à utiliser pour respecter ce seuil :</p>
 <ul>
 <li><p>Voir la figure dans la page <a class="reference external" href="https://fr.wikipedia.org/wiki/Loi_d%27Amdahl">loi d’Amdahl</a></p></li>
-<li><p>Matériel en extra <a class="reference internal" href="extra/loi-Amdahl.html"><span class="doc std std-doc">ici</span></a></p></li>
+<li><p>Matériel en extra <span class="xref myst">ici</span></p></li>
 </ul>
 </li>
 <li><p>On vise aussi une consommation en mémoire-vive de l’ordre de 80% de ce qui est demandé à l’ordonnanceur Slurm</p></li>
