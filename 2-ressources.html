@@ -354,46 +354,43 @@ title="Print to PDF"
        Comparer la vitesse CPU vs GPU
       </a>
      </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#exercice-calcul-d-acceleration-et-d-efficacite">
-       Exercice - Calcul d’accélération et d’efficacité
-      </a>
-     </li>
     </ul>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#extrapoler-les-ressources-necessaires">
-   Extrapoler les ressources nécessaires
+  <a class="reference internal nav-link" href="#estimer-les-ressources-necessaires">
+   Estimer les ressources nécessaires
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#efficacite-cible-du-calcul-parallele">
-     Efficacité cible du calcul parallèle
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taille-des-donnees-et-nombre-de-fichiers-a-traiter">
-     Taille des données et nombre de fichiers à traiter
+    <a class="reference internal nav-link" href="#efficacite-cible-d-une-tache">
+     Efficacité cible d’une tâche
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#stockage-en-memoire-selon-les-types-de-base">
-       Stockage en mémoire selon les types de base
+      <a class="reference internal nav-link" href="#exercice-efficacite-des-taches">
+       Exercice - Efficacité des tâches
       </a>
      </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#la-complexite-des-algorithmes">
-       La complexité des algorithmes
-      </a>
-     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#la-complexite-des-algorithmes">
+     La complexité des algorithmes
+    </a>
+    <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#exercice-complexite-de-l-algorithme">
        Exercice - Complexité de l’algorithme
       </a>
      </li>
     </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taille-des-donnees-et-nombre-de-fichiers-a-traiter">
+     Taille des données et nombre de fichiers à traiter
+    </a>
    </li>
   </ul>
  </li>
@@ -483,46 +480,43 @@ title="Print to PDF"
        Comparer la vitesse CPU vs GPU
       </a>
      </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#exercice-calcul-d-acceleration-et-d-efficacite">
-       Exercice - Calcul d’accélération et d’efficacité
-      </a>
-     </li>
     </ul>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#extrapoler-les-ressources-necessaires">
-   Extrapoler les ressources nécessaires
+  <a class="reference internal nav-link" href="#estimer-les-ressources-necessaires">
+   Estimer les ressources nécessaires
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#efficacite-cible-du-calcul-parallele">
-     Efficacité cible du calcul parallèle
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taille-des-donnees-et-nombre-de-fichiers-a-traiter">
-     Taille des données et nombre de fichiers à traiter
+    <a class="reference internal nav-link" href="#efficacite-cible-d-une-tache">
+     Efficacité cible d’une tâche
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#stockage-en-memoire-selon-les-types-de-base">
-       Stockage en mémoire selon les types de base
+      <a class="reference internal nav-link" href="#exercice-efficacite-des-taches">
+       Exercice - Efficacité des tâches
       </a>
      </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#la-complexite-des-algorithmes">
-       La complexité des algorithmes
-      </a>
-     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#la-complexite-des-algorithmes">
+     La complexité des algorithmes
+    </a>
+    <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#exercice-complexite-de-l-algorithme">
        Exercice - Complexité de l’algorithme
       </a>
      </li>
     </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taille-des-donnees-et-nombre-de-fichiers-a-traiter">
+     Taille des données et nombre de fichiers à traiter
+    </a>
    </li>
   </ul>
  </li>
@@ -751,81 +745,158 @@ less tg.log    <span class="c1"># q pour quitter</span>
 <div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>less   scripts/crunch-sbatch-1gpu.sh
 sbatch scripts/crunch-sbatch-1gpu.sh
 
-sq
+squeue -u <span class="nv">$USER</span>  <span class="c1"># Pour vérifier l&#39;état de la tâche</span>
 tail -24 <span class="k">$(</span>ls slurm-* <span class="p">|</span> tail -1<span class="k">)</span>
 </pre></div>
 </div>
 </section>
 <section id="comparer-la-vitesse-cpu-vs-gpu">
 <h4>Comparer la vitesse CPU vs GPU<a class="headerlink" href="#comparer-la-vitesse-cpu-vs-gpu" title="Lien permanent vers ce titre">#</a></h4>
-<p>Avant d’utiliser massivement les GPUs d’une grappe de calcul, il faut tout d’abord que l’application ou l’algorithme puisse démontrer une « bonne performance » en utilisant plusieurs processeurs en parallèle.</p>
+<p>Avant d’utiliser massivement les GPUs d’une grappe de calcul, il faut
+tout d’abord que l’application ou l’algorithme puisse démontrer une
+« bonne performance » en utilisant plusieurs processeurs en parallèle.</p>
 <p>Quelques définitions :</p>
 <ul class="simple">
 <li><p><strong>Temps écoulé</strong> = temps d’exécution total que l’on perçoit et non le temps CPU</p></li>
 <li><p><strong>Accélération</strong> = (temps avec un processeur) / (temps avec parallélisme)</p></li>
 <li><p><strong>Efficacité</strong> = (Accélération) / (nombre de processeurs)</p></li>
 </ul>
-<p>Le coût d’un noeud GPU étant de quatre à cinq fois supérieur à celui d’un noeud régulier, l’utilisation d’un seul GPU doit permettre une accélération d’au moins quatre fois (4x) la vitesse de huit (8) à douze (12) processeurs.</p>
+<p>Le coût d’un noeud GPU étant cinq fois supérieur à celui d’un noeud
+régulier, l’utilisation d’un seul GPU doit permettre une accélération
+d’au moins cinq fois (5x) la vitesse de huit (8) à douze (12) processeurs.</p>
 <ul class="simple">
 <li><p><strong>Accélération</strong> = (temps avec 8 à 12 processeurs) / (temps avec un accélérateur)</p></li>
 </ul>
 </section>
-<section id="exercice-calcul-d-acceleration-et-d-efficacite">
-<h4>Exercice - Calcul d’accélération et d’efficacité<a class="headerlink" href="#exercice-calcul-d-acceleration-et-d-efficacite" title="Lien permanent vers ce titre">#</a></h4>
-<p>En supposant les résultats suivants pour un programme parallèle lancé sur <span class="math notranslate nohighlight">\(n\)</span> processeurs :</p>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>grep sec t*.log
-</pre></div>
-</div>
-<table class="colwidths-auto table">
-<thead>
-<tr class="row-odd"><th class="text-align:center head"><p><span class="math notranslate nohighlight">\(n\)</span> proc.</p></th>
-<th class="text-align:center head"><p>temp (s)</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td class="text-align:center"><p>1</p></td>
-<td class="text-align:center"><p>9.876</p></td>
-</tr>
-<tr class="row-odd"><td class="text-align:center"><p>4</p></td>
-<td class="text-align:center"><p>5.220</p></td>
-</tr>
-</tbody>
-</table>
-<p>Étant donné le script <a class="reference external" href="https://github.com/calculquebec/cip201-serveurs-calcul/blob/main/scripts/calc-acc-eff.sh"><code class="docutils literal notranslate"><span class="pre">scripts/calc-acc-eff.sh</span></code></a> :</p>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>bash scripts/calc-acc-eff.sh <span class="m">1</span>:9.876 <span class="m">4</span>:5.220
-bash scripts/calc-acc-eff.sh <span class="m">1</span>:9.876 <span class="m">8</span>:0.035
-</pre></div>
-</div>
 </section>
 </section>
-</section>
-<section id="extrapoler-les-ressources-necessaires">
-<h2>Extrapoler les ressources nécessaires<a class="headerlink" href="#extrapoler-les-ressources-necessaires" title="Lien permanent vers ce titre">#</a></h2>
-<section id="efficacite-cible-du-calcul-parallele">
-<h3>Efficacité cible du calcul parallèle<a class="headerlink" href="#efficacite-cible-du-calcul-parallele" title="Lien permanent vers ce titre">#</a></h3>
+<section id="estimer-les-ressources-necessaires">
+<h2>Estimer les ressources nécessaires<a class="headerlink" href="#estimer-les-ressources-necessaires" title="Lien permanent vers ce titre">#</a></h2>
+<section id="efficacite-cible-d-une-tache">
+<h3>Efficacité cible d’une tâche<a class="headerlink" href="#efficacite-cible-d-une-tache" title="Lien permanent vers ce titre">#</a></h3>
+<p>À coût d’essais et erreurs avec une <strong>tâche de petite taille</strong>,
+la cible pour :</p>
 <ul class="simple">
-<li><p>Une efficacité de 80%, voire 90%, devrait être un seuil minimal pour les tâches parallèles. Or, il existe un <strong>nombre maximal de processeurs</strong> à utiliser pour respecter ce seuil :</p>
+<li><p><strong>Le calcul</strong> est une <strong>efficacité d’au moins 90%</strong></p>
 <ul>
-<li><p>Voir la figure dans la page <a class="reference external" href="https://fr.wikipedia.org/wiki/Loi_d%27Amdahl">loi d’Amdahl</a></p></li>
-<li><p>Matériel en extra <span class="xref myst">ici</span></p></li>
+<li><p>Tâches séquentielles : il faut <strong>optimiser les accès aux données</strong></p>
+<ul>
+<li><p>Utiliser adéquatement les différents types de stockage</p></li>
 </ul>
 </li>
-<li><p>On vise aussi une consommation en mémoire-vive de l’ordre de 80% de ce qui est demandé à l’ordonnanceur Slurm</p></li>
+<li><p>Tâches parallèles : il existe un <strong>nombre maximal de processeurs</strong>
+à utiliser pour respecter ce seuil :</p>
+<ul>
+<li><p>Voir la figure dans la page
+<a class="reference external" href="https://fr.wikipedia.org/wiki/Loi_d%27Amdahl">loi d’Amdahl</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>La mémoire-vive</strong> est une consommation <strong>de l’ordre de 80%</strong>
+de ce qui est demandé à l’ordonnanceur Slurm</p></li>
 </ul>
 <p>Rappel - vous pouvez obtenir ces pourcentages via les commandes <code class="docutils literal notranslate"><span class="pre">sacct</span> <span class="pre">-X</span></code> (surtout pour obtenir les numéros de tâches) et <code class="docutils literal notranslate"><span class="pre">seff</span></code>. Les valeurs à considérer sont :</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">CPU</span> <span class="pre">Utilized</span></code> et <code class="docutils literal notranslate"><span class="pre">CPU</span> <span class="pre">Efficiency</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Memory</span> <span class="pre">Utilized</span></code> et <code class="docutils literal notranslate"><span class="pre">Memory</span> <span class="pre">Efficiency</span></code></p></li>
 </ul>
+<section id="exercice-efficacite-des-taches">
+<h4>Exercice - Efficacité des tâches<a class="headerlink" href="#exercice-efficacite-des-taches" title="Lien permanent vers ce titre">#</a></h4>
+<p>Pour chacune de vos tâches listées par la commande suivante :</p>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>sacct -X
+</pre></div>
+</div>
+<p>Obtenez le <code class="docutils literal notranslate"><span class="pre">CPU</span> <span class="pre">Efficiency</span></code> et le <code class="docutils literal notranslate"><span class="pre">Memory</span> <span class="pre">Efficiency</span></code> via la commande :</p>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>seff &lt;No_tâche&gt;
+</pre></div>
+</div>
+</section>
+</section>
+<section id="la-complexite-des-algorithmes">
+<h3>La complexité des algorithmes<a class="headerlink" href="#la-complexite-des-algorithmes" title="Lien permanent vers ce titre">#</a></h3>
+<p>La question qui se pose :
+<strong>en augmentant la ou les dimensions du problème</strong>,
+quelles devraient être la durée du calcul et la consommation en mémoire-vive?
+Une <a class="reference external" href="https://fr.wikipedia.org/wiki/Analyse_de_la_complexit%C3%A9_des_algorithmes">analyse de la complexité de l’algorithme principal</a>
+permettrait de connaître l’ordre <span class="math notranslate nohighlight">\(O\)</span> du calcul en fonction de la taille <span class="math notranslate nohighlight">\(n\)</span> des données :</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(O(n)\)</span>: proportionnel à <span class="math notranslate nohighlight">\(n\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(O(n*m)\)</span>: représente un calcul à deux (2) dimensions indépendantes</p></li>
+<li><p><span class="math notranslate nohighlight">\(O(n^3)\)</span>: calcul d’ordre cubique</p></li>
+<li><p><span class="math notranslate nohighlight">\(O(n*m*k^2)\)</span>: par exemple, un filtre de taille <span class="math notranslate nohighlight">\(k*k\)</span> sur une image <span class="math notranslate nohighlight">\(n*m\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(O(n*log(n))\)</span>: typique de certains
+<a class="reference external" href="https://fr.wikipedia.org/wiki/Algorithme_de_tri#Comparaison_des_algorithmes">algorithmes de tri</a>
+où il y a <span class="math notranslate nohighlight">\(n\)</span> éléments à trier en <span class="math notranslate nohighlight">\(log_2(n)\)</span> étapes.</p></li>
+</ul>
+<p>Une analyse détaillée du code n’est pas nécessaire pour déterminer
+le type de calcul qui est fait :</p>
+<ul class="simple">
+<li><p>Vous pouvez considérer le <strong>format des données en entrées</strong> pour
+deviner l’ordre du calcul principal.</p></li>
+<li><p>Vous pouvez <strong>mesurer le temps d’exécution</strong> en fonction de la
+taille du problème. En extrapolant les résultats, il serait possible
+de prévoir le comportement du programme sur une grappe de calcul.</p></li>
+</ul>
+<section id="exercice-complexite-de-l-algorithme">
+<h4>Exercice - Complexité de l’algorithme<a class="headerlink" href="#exercice-complexite-de-l-algorithme" title="Lien permanent vers ce titre">#</a></h4>
+<p>Dans cet exercice, il est question d’inverser une matrice de valeurs aléatoires de taille <span class="math notranslate nohighlight">\(n*n\)</span> :</p>
+<ul class="simple">
+<li><p>Soumettre le script <a class="reference external" href="https://github.com/calculquebec/cip201-serveurs-calcul/blob/main/scripts/inv-mat.sh"><code class="docutils literal notranslate"><span class="pre">scripts/inv-mat.sh</span></code></a> avec la commande <code class="docutils literal notranslate"><span class="pre">sbatch</span></code> :</p></li>
+</ul>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>sbatch scripts/inv-mat.sh
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Explorer les scripts Python
+<a class="reference external" href="https://github.com/calculquebec/cip201-serveurs-calcul/blob/main/scripts/inv-mat.py"><code class="docutils literal notranslate"><span class="pre">scripts/inv-mat.py</span></code></a> et
+<a class="reference external" href="https://github.com/calculquebec/cip201-serveurs-calcul/blob/main/scripts/inv-mat.sh"><code class="docutils literal notranslate"><span class="pre">scripts/inv-mat.sh</span></code></a> :</p></li>
+</ul>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>cat scripts/inv-mat.py
+cat scripts/inv-mat.sh
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Suivre l’évolution du calcul avec <code class="docutils literal notranslate"><span class="pre">squeue</span> <span class="pre">-u</span> <span class="pre">$USER</span></code>, environ aux 30 secondes</p></li>
+<li><p>Les mesures seront sauvegardées dans le fichier <code class="docutils literal notranslate"><span class="pre">temps_inv.csv</span></code></p></li>
+<li><p>Analyse avec Python, Pandas et Numpy dans le script <a class="reference external" href="https://github.com/calculquebec/cip201-serveurs-calcul/blob/main/scripts/inv-mat-pred.py"><code class="docutils literal notranslate"><span class="pre">scripts/inv-mat-pred.py</span></code></a> :</p></li>
+</ul>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>module load gcc python scipy-stack
+
+cat scripts/inv-mat-pred.py
+python scripts/inv-mat-pred.py temps_inv.csv
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Quelle a été la consommation maximale en mémoire-vive?</p></li>
+</ul>
+</section>
 </section>
 <section id="taille-des-donnees-et-nombre-de-fichiers-a-traiter">
 <h3>Taille des données et nombre de fichiers à traiter<a class="headerlink" href="#taille-des-donnees-et-nombre-de-fichiers-a-traiter" title="Lien permanent vers ce titre">#</a></h3>
-<p>Pour un calcul donné, il y a deux métriques de stockage à considérer :</p>
+<p>En plus du temps de calcul et de l’espace mémoire, il faut aussi
+considérer l’utilisation du stockage. Les valeurs à tenir compte :</p>
 <ol class="simple">
-<li><p>La <strong>quantité</strong> totale en octets (ou Go)</p></li>
-<li><p>Le <strong>nombre</strong> total de fichiers</p></li>
+<li><p>La <strong>quantité</strong> en octets (ou Go)</p>
+<ul class="simple">
+<li><p>Peut servir à <strong>estimer</strong> l’utilisation de la mémoire-vive</p></li>
+<li><p>Tenir compte de la taille du <strong>stockage local rapide</strong> pour
+optimiser les accès aux fichiers</p></li>
+</ul>
+</li>
+<li><p>Le <strong>nombre</strong> de fichiers à traiter</p>
+<ul class="simple">
+<li><p>Considérer le <strong>parallélisme de données</strong></p></li>
+<li><p><strong>Multiplier la durée moyenne</strong> du traitement d’un fichier par
+le nombre de fichiers à traiter par chaque tâche</p></li>
+<li><p><strong>Multiplier la taille moyenne</strong> des fichiers par leur nombre
+pour estimer l’espace en mémoire-vive</p></li>
+<li><p>Utiliser le stockage rapide pour <strong>optimiser les accès</strong>
+aléatoires et nombreux</p></li>
+</ul>
+</li>
 </ol>
-<p>Pour obtenir ces informations :</p>
+<p>Pour obtenir le nombre de fichiers et la taille totale :</p>
 <ul class="simple">
 <li><p><strong>Sous Windows</strong> : dans l’explorateur Windows (raccourcis clavier : Windows + E)</p>
 <ul>
@@ -849,7 +920,7 @@ bash scripts/calc-acc-eff.sh <span class="m">1</span>:9.876 <span class="m">8</s
 </li>
 </ul>
 <ul class="simple">
-<li><p><strong>Sous Linux</strong> :</p>
+<li><p><strong>Sous Linux</strong> et sur les <strong>grappes de calcul</strong> :</p>
 <ul>
 <li><p>L’environnement graphique peut offrir le même genre d’outils, mais tout dépend de la distribution et du bureau.</p></li>
 <li><p>La commande <code class="docutils literal notranslate"><span class="pre">du</span> <span class="pre">-bs</span> <span class="pre">DOSSIER</span></code> (<code class="docutils literal notranslate"><span class="pre">b</span></code> : taille apparente en octets, <code class="docutils literal notranslate"><span class="pre">s</span></code> : somme totale) calcule récursivement et affiche la taille totale en octets. La taille apparente est celle qui importe lors d’un transfert ou d’une sauvegarde de données.</p></li>
@@ -857,144 +928,6 @@ bash scripts/calc-acc-eff.sh <span class="m">1</span>:9.876 <span class="m">8</s
 </ul>
 </li>
 </ul>
-<section id="stockage-en-memoire-selon-les-types-de-base">
-<h4>Stockage en mémoire selon les types de base<a class="headerlink" href="#stockage-en-memoire-selon-les-types-de-base" title="Lien permanent vers ce titre">#</a></h4>
-<p>En ayant une idée de la taille des données à traiter,
-il devient possible d’estimer l’espace que les données prendront en mémoire-vive.</p>
-<ul class="simple">
-<li><p>Dans un fichier texte, <strong>chaque caractère</strong> prend de un (1) à deux (2) octets, en moyenne.
-Cependant, pour certaines langues, l’encodage
-<a class="reference external" href="https://fr.wikipedia.org/wiki/UTF-8#Description">UTF-8</a>
-peut se rendre jusqu’à quatre (4) octets par caractère.
-Pour les langues latines et germaniques, on peut considérer <strong>deux (2) octets</strong> par caractère.
-Par exemple, dans une session Python :</p></li>
-</ul>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>python
-</pre></div>
-</div>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">sys</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">euro</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">sys</span><span class="o">.</span><span class="n">getsizeof</span><span class="p">(</span><span class="n">euro</span><span class="p">)</span>
-<span class="mi">49</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">euro</span> <span class="o">=</span> <span class="s2">&quot;Euro&quot;</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">sys</span><span class="o">.</span><span class="n">getsizeof</span><span class="p">(</span><span class="n">euro</span><span class="p">)</span>
-<span class="mi">53</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">euro</span> <span class="o">=</span> <span class="s2">&quot;€&quot;</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">sys</span><span class="o">.</span><span class="n">getsizeof</span><span class="p">(</span><span class="n">euro</span><span class="p">)</span>
-<span class="mi">76</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">euro</span> <span class="o">*=</span> <span class="mi">2</span>  <span class="c1"># Donc &quot;€€&quot;</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">sys</span><span class="o">.</span><span class="n">getsizeof</span><span class="p">(</span><span class="n">euro</span><span class="p">)</span>
-<span class="mi">78</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">quit</span><span class="p">()</span>  <span class="c1"># ou Ctrl+D pour sortir</span>
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>Les <strong>nombres entiers</strong> prennent typiquement 2 octets (16 bits), 4 octets (32 bits) ou 8 octets (64 bits) chacun. Tout dépend de la <a class="reference external" href="https://en.wikipedia.org/wiki/C_data_types#Main_types">plage de valeurs souhaitée</a> :</p>
-<ul>
-<li><p>2 octets : ~65 milles valeurs de <span class="math notranslate nohighlight">\(0\)</span> à <span class="math notranslate nohighlight">\(65535\)</span>, ou de <span class="math notranslate nohighlight">\(-32767\)</span> à <span class="math notranslate nohighlight">\(32767\)</span></p></li>
-<li><p>4 octets : ~4 milliards de valeurs de 0 à <span class="math notranslate nohighlight">\((2^{32}-1)\)</span> ou de <span class="math notranslate nohighlight">\(-(2^{31}-1)\)</span> à <span class="math notranslate nohighlight">\((2^{31}-1)\)</span></p></li>
-<li><p>8 octets : ~18 trillions de valeurs de 0 à <span class="math notranslate nohighlight">\((2^{64}-1)\)</span> ou de <span class="math notranslate nohighlight">\(-(2^{63}-1)\)</span> à <span class="math notranslate nohighlight">\((2^{63}-1)\)</span></p></li>
-</ul>
-</li>
-</ul>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>module load python scipy-stack
-python
-</pre></div>
-</div>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">sys</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">cube</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int64</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">sys</span><span class="o">.</span><span class="n">getsizeof</span><span class="p">(</span><span class="n">cube</span><span class="p">)</span>
-<span class="mi">8000136</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">cube</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">sys</span><span class="o">.</span><span class="n">getsizeof</span><span class="p">(</span><span class="n">cube</span><span class="p">)</span>
-<span class="mi">4000136</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">iinfo</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int16</span><span class="p">)</span>
-<span class="n">iinfo</span><span class="p">(</span><span class="nb">min</span><span class="o">=-</span><span class="mi">32768</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">32767</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">int16</span><span class="p">)</span>
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>Les <strong>nombres à virgule flottante</strong> prennent typiquement 4 octets (32 bits) ou 8 octets (64 bits) chacun, mais on voit de plus en plus <a class="reference external" href="https://en.wikipedia.org/wiki/Bfloat16_floating-point_format">différents types de données à 2 octets (16 bits)</a> dans des applications d’apprentissage-machine. Il se peut néanmoins que les données soient initialement en simple ou double précision:</p>
-<ul>
-<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Single-precision_floating-point_format">simple précision</a> : 4 octets, une résolution de 23 bits (~7 décimales), une échelle de 8 bits (<span class="math notranslate nohighlight">\({10}^{-38}\)</span> à <span class="math notranslate nohighlight">\({10}^{38}\)</span>)</p></li>
-<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Double-precision_floating-point_format">double précision</a> : 8 octets, une résolution de 52 bits (~16 décimales), une échelle de 11 bits (<span class="math notranslate nohighlight">\({10}^{-308}\)</span> à <span class="math notranslate nohighlight">\({10}^{308}\)</span>)</p></li>
-</ul>
-</li>
-</ul>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">cube</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">((</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">cube</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">cube</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
-<span class="mf">3.1415927</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">cube</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
-<span class="mf">3.1415927</span> <span class="mf">3.141592653589793</span>
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>Certains langages utilisent systématiquement <strong>8 octets</strong> (64 bits) par nombre.</p></li>
-<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Quadruple-precision_floating-point_format">Certains compilateurs et certaines bibliothèques</a> peuvent calculer des valeurs représentées avec 128 bits <a class="reference external" href="https://gmplib.org/">ou plus</a>.</p></li>
-<li><p>Pour les nombres complexes, on multiplie l’espace mémoire par deux (2).</p></li>
-</ul>
-<p>Exemple de calcul de l’espace-mémoire :</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">nb_matrices</span> <span class="o">=</span> <span class="mi">3</span>        <span class="c1"># Trois matrices C = prod_mat(A, B)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">taille</span> <span class="o">=</span> <span class="mi">25000</span>         <span class="c1"># Matrices carrées</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">octets_par_nombre</span> <span class="o">=</span> <span class="mi">8</span>  <span class="c1"># Double précision</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">memoire</span> <span class="o">=</span> <span class="n">nb_matrices</span> <span class="o">*</span> <span class="n">taille</span><span class="o">*</span><span class="n">taille</span> <span class="o">*</span> <span class="n">octets_par_nombre</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">memoire</span> <span class="o">/</span> <span class="mi">1000</span><span class="o">**</span><span class="mi">3</span>
-<span class="o">&gt;&gt;&gt;</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">quit</span><span class="p">()</span>  <span class="c1"># ou Ctrl+D pour sortir</span>
-</pre></div>
-</div>
-</section>
-<section id="la-complexite-des-algorithmes">
-<h4>La complexité des algorithmes<a class="headerlink" href="#la-complexite-des-algorithmes" title="Lien permanent vers ce titre">#</a></h4>
-<p>La question qui se pose : en augmentant la ou les dimensions du problème, quelles devraient être la durée du calcul et la consommation en mémoire-vive?
-Une <a class="reference external" href="https://fr.wikipedia.org/wiki/Analyse_de_la_complexit%C3%A9_des_algorithmes">analyse de la complexité de l’algorithme principal</a>
-permettrait de connaître l’ordre <span class="math notranslate nohighlight">\(O\)</span> du calcul en fonction de la taille <span class="math notranslate nohighlight">\(n\)</span> des données :</p>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(O(n)\)</span>: proportionnel à <span class="math notranslate nohighlight">\(n\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(O(n*m)\)</span>: représente un calcul à deux (2) dimensions indépendantes</p></li>
-<li><p><span class="math notranslate nohighlight">\(O(n^3)\)</span>: calcul d’ordre cubique</p></li>
-<li><p><span class="math notranslate nohighlight">\(O(n*m*k^2)\)</span>: par exemple, un filtre de taille <span class="math notranslate nohighlight">\(k*k\)</span> sur une image <span class="math notranslate nohighlight">\(n*m\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(O(n*log(n))\)</span>: typique de certains
-<a class="reference external" href="https://fr.wikipedia.org/wiki/Algorithme_de_tri#Comparaison_des_algorithmes">algorithmes de tri</a>
-où il y a <span class="math notranslate nohighlight">\(n\)</span> éléments à trier en <span class="math notranslate nohighlight">\(log_2(n)\)</span> étapes.</p></li>
-</ul>
-<p>Une analyse détaillée du code (s’il est disponible) n’est pas nécessaire pour déterminer le type de calcul qui est fait.</p>
-<ul class="simple">
-<li><p>Vous pouvez vous inspirer des données en entrées pour deviner l’ordre du calcul principal.</p></li>
-<li><p>Vous pouvez mesurer le temps d’exécution en fonction de la taille du problème. En extrapolant les résultats, il serait possible de prévoir le comportement du programme sur une grappe de calcul.</p></li>
-</ul>
-</section>
-<section id="exercice-complexite-de-l-algorithme">
-<h4>Exercice - Complexité de l’algorithme<a class="headerlink" href="#exercice-complexite-de-l-algorithme" title="Lien permanent vers ce titre">#</a></h4>
-<p>Dans cet exercice, il est question d’inverser une matrice de valeurs aléatoires de taille <span class="math notranslate nohighlight">\(n*n\)</span> :</p>
-<ul class="simple">
-<li><p>Soumettre le script <a class="reference external" href="https://github.com/calculquebec/cip201-serveurs-calcul/blob/main/scripts/inv-mat.sh"><code class="docutils literal notranslate"><span class="pre">scripts/inv-mat.sh</span></code></a> avec la commande <code class="docutils literal notranslate"><span class="pre">sbatch</span></code> :</p></li>
-</ul>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>sbatch scripts/inv-mat.sh
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>Explorer les scripts Python
-<a class="reference external" href="https://github.com/calculquebec/cip201-serveurs-calcul/blob/main/scripts/inv-mat.py"><code class="docutils literal notranslate"><span class="pre">scripts/inv-mat.py</span></code></a> et
-<a class="reference external" href="https://github.com/calculquebec/cip201-serveurs-calcul/blob/main/scripts/inv-mat.sh"><code class="docutils literal notranslate"><span class="pre">scripts/inv-mat.sh</span></code></a> :</p></li>
-</ul>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>cat scripts/inv-mat.py
-cat scripts/inv-mat.sh
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>Suivre l’évolution du calcul avec <code class="docutils literal notranslate"><span class="pre">squeue</span> <span class="pre">-u</span> <span class="pre">$USER</span></code>, environ aux 30 secondes</p></li>
-<li><p>Le résultat sera sauvegardé dans le fichier <code class="docutils literal notranslate"><span class="pre">temps_inv.csv</span></code></p></li>
-<li><p>Analyse avec Python, Pandas et Numpy dans le script <a class="reference external" href="https://github.com/calculquebec/cip201-serveurs-calcul/blob/main/scripts/inv-mat-pred.py"><code class="docutils literal notranslate"><span class="pre">scripts/inv-mat-pred.py</span></code></a> :</p></li>
-</ul>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>module load gcc python scipy-stack
-
-cat scripts/inv-mat-pred.py
-python scripts/inv-mat-pred.py temps_inv.csv
-</pre></div>
-</div>
-</section>
 </section>
 </section>
 <section id="principales-differences-entre-les-grappes-de-calcul">
@@ -1075,7 +1008,7 @@ python scripts/inv-mat-pred.py temps_inv.csv
 <td class="text-align:center"><p></p></td>
 <td class="text-align:center"><p></p></td>
 <td class="text-align:center"><p></p></td>
-<td class="text-align:center"><p>1142 * 64</p></td>
+<td class="text-align:center"><p>1181 * 64</p></td>
 <td class="text-align:center"><p></p></td>
 </tr>
 </tbody>
@@ -1102,7 +1035,7 @@ python scripts/inv-mat-pred.py temps_inv.csv
 <td class="text-align:center"><p></p></td>
 <td class="text-align:center"><p>86016</p></td>
 <td class="text-align:center"><p>28896</p></td>
-<td class="text-align:center"><p>70976</p></td>
+<td class="text-align:center"><p>73280</p></td>
 <td class="text-align:center"><p></p></td>
 </tr>
 <tr class="row-even"><td class="text-align:right"><p>4400M</p></td>
@@ -1144,7 +1077,7 @@ python scripts/inv-mat-pred.py temps_inv.csv
 <td class="text-align:center"><p></p></td>
 <td class="text-align:center"><p></p></td>
 <td class="text-align:center"><p></p></td>
-<td class="text-align:center"><p>2112</p></td>
+<td class="text-align:center"><p>2304</p></td>
 <td class="text-align:center"><p></p></td>
 </tr>
 <tr class="row-even"><td class="text-align:right"><p>48000M</p></td>
@@ -1217,7 +1150,7 @@ python scripts/inv-mat-pred.py temps_inv.csv
 <td class="text-align:center"><p></p></td>
 <td class="text-align:center"><p></p></td>
 <td class="text-align:center"><p></p></td>
-<td class="text-align:center"><p>632</p></td>
+<td class="text-align:center"><p>636</p></td>
 </tr>
 </tbody>
 </table>
@@ -1273,7 +1206,7 @@ python scripts/inv-mat-pred.py temps_inv.csv
 <tr class="row-odd"><td class="text-align:right"><p>Durée maximale</p></td>
 <td class="text-align:center"><p>7 jours</p></td>
 <td class="text-align:center"><p>28 jours</p></td>
-<td class="text-align:center"><p>28 jours</p></td>
+<td class="text-align:center"><p>7 jours</p></td>
 <td class="text-align:center"><p>7 jours</p></td>
 <td class="text-align:center"><p>1 jour</p></td>
 </tr>
@@ -1302,9 +1235,9 @@ python scripts/inv-mat-pred.py temps_inv.csv
 <li><p><code class="docutils literal notranslate"><span class="pre">du</span> <span class="pre">-bs</span></code>, <code class="docutils literal notranslate"><span class="pre">find</span> <span class="pre">|</span> <span class="pre">wc</span> <span class="pre">-l</span></code> et autres outils du système d’exploitation</p></li>
 </ul>
 </li>
-<li><p>On vise une <strong>efficacité de 80%</strong> pour les tâches parallèles CPU</p>
+<li><p>On vise une <strong>efficacité de 90%</strong> et plus pour les tâches CPU</p>
 <ul>
-<li><p>L’accélération avec un accélérateur (GPU) doit être significative (&gt;4x)</p></li>
+<li><p>L’accélération avec un accélérateur (GPU) doit être significative (&gt;5x)</p></li>
 </ul>
 </li>
 <li><p>Le choix de la grappe dépend des besoins de chaque type de calcul</p></li>
