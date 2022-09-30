@@ -333,6 +333,13 @@ title="Print to PDF"
     <a class="reference internal nav-link" href="#ressources-utilisees-par-une-tache-cpu-en-cours">
      Ressources utilisées par une tâche CPU en cours
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exercice-valider-le-comportement-d-une-tache-active">
+       Exercice - Valider le comportement d’une tâche active
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#demo-ressources-utilisees-par-une-tache-gpu-en-cours">
@@ -459,6 +466,13 @@ title="Print to PDF"
     <a class="reference internal nav-link" href="#ressources-utilisees-par-une-tache-cpu-en-cours">
      Ressources utilisées par une tâche CPU en cours
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exercice-valider-le-comportement-d-une-tache-active">
+       Exercice - Valider le comportement d’une tâche active
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#demo-ressources-utilisees-par-une-tache-gpu-en-cours">
@@ -701,6 +715,30 @@ grep sec *.log
 <span class="nb">exit</span>  <span class="c1"># Pour revenir à login1</span>
 </pre></div>
 </div>
+<section id="exercice-valider-le-comportement-d-une-tache-active">
+<h4>Exercice - Valider le comportement d’une tâche active<a class="headerlink" href="#exercice-valider-le-comportement-d-une-tache-active" title="Lien permanent vers ce titre">#</a></h4>
+<p>Pendant que vos tâches sont actives, vous pouvez vous connecter par
+SSH aux noeuds de calcul correspondants afin de valider que
+l’exécution se passe bien :</p>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>sbatch scripts/inv-mat.sh
+</pre></div>
+</div>
+<p>Voici les étapes de validation (à adapter pour l’exercice) :</p>
+<ul class="simple">
+<li><p>Identification du ou des noeud(s) avec : <code class="docutils literal notranslate"><span class="pre">squeue</span> <span class="pre">-u</span> <span class="pre">$USER</span></code></p></li>
+<li><p>Connexion avec : <code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">&lt;nom_noeud&gt;</span></code></p></li>
+<li><p>Inspection avec <code class="docutils literal notranslate"><span class="pre">top</span></code> et/ou <code class="docutils literal notranslate"><span class="pre">htop</span></code> :</p>
+<ul>
+<li><p>Est-ce que vos processus s’exécutent avec un <strong>pourcentage de 100%?</strong></p></li>
+<li><p>Est-ce que vos processus parallèles s’exécutent avec un
+<strong>pourcentage de <span class="math notranslate nohighlight">\(n\)</span> * 100%</strong>, où <span class="math notranslate nohighlight">\(n\)</span> est le nombre de processeurs
+par tâche Slurm?</p></li>
+<li><p>Est-ce que le <strong>noeud de calcul</strong> semble pleinement utilisé
+(tous les processeurs et la mémoire)?</p></li>
+</ul>
+</li>
+</ul>
+</section>
 </section>
 <section id="demo-ressources-utilisees-par-une-tache-gpu-en-cours">
 <h3>(Démo) Ressources utilisées par une tâche GPU en cours<a class="headerlink" href="#demo-ressources-utilisees-par-une-tache-gpu-en-cours" title="Lien permanent vers ce titre">#</a></h3>

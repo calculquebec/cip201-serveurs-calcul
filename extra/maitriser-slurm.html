@@ -9,53 +9,51 @@
     <title>Maîtriser l’ordonnanceur Slurm &#8212; CIP201 - Maîtriser l’utilisation des serveurs de calcul</title>
     
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
-    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
   <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
   <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
-    <script src="_static/translations.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/translations.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/design-tabs.js"></script>
+    <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <link rel="shortcut icon" href="_static/logo.png"/>
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Recherche" href="search.html" />
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../_static/logo.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="fr">
     
@@ -90,19 +88,19 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="bd-sidebar noprint" id="site-navigation">
     <div class="bd-sidebar__content">
         <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
+    <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
         
       
       
-      <img src="_static/logo.png" class="logo" alt="logo">
+      <img src="../_static/logo.png" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">CIP201 - Maîtriser l’utilisation des serveurs de calcul</h1>
       
     </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
@@ -110,29 +108,29 @@ const thebe_selector_output = ".output, .cell_output"
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
-                <a class="reference internal" href="0-a_propos.html">
+                <a class="reference internal" href="../0-a_propos.html">
                     À propos
                 </a>
             </li>
         </ul>
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="1-introduction.html">
+  <a class="reference internal" href="../1-introduction.html">
    Introduction
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="3-lots-taches.html">
+  <a class="reference internal" href="../3-lots-taches.html">
    Lots de tâches
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="4-stockage.html">
+  <a class="reference internal" href="../4-stockage.html">
    Les espaces de stockage
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="99-references.html">
+  <a class="reference internal" href="../99-references.html">
    Références
   </a>
  </li>
@@ -233,7 +231,7 @@ title="Source repository"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="_sources/5-maitriser-slurm.ipynb"
+        <a href="../_sources/extra/maitriser-slurm.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -313,13 +311,6 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#taches-actives">
    Tâches actives
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#valider-le-comportement-d-une-tache-active">
-     Valider le comportement d’une tâche active
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taches-terminees">
@@ -371,13 +362,6 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#taches-actives">
    Tâches actives
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#valider-le-comportement-d-une-tache-active">
-     Valider le comportement d’une tâche active
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#taches-terminees">
@@ -507,34 +491,6 @@ bash scripts/squeue-temps-restant.sh
 </ul>
 </li>
 </ul>
-<section id="valider-le-comportement-d-une-tache-active">
-<h3>Valider le comportement d’une tâche active<a class="headerlink" href="#valider-le-comportement-d-une-tache-active" title="Lien permanent vers ce titre">#</a></h3>
-<p>Pendant que vos tâches sont actives, vous pouvez vous connecter par SSH aux noeuds de calcul correspondants afin de valider que l’exécution se passe bien :</p>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>sbatch scripts/inv-mat.sh
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>Identifier le ou les noeud(s) avec : <code class="docutils literal notranslate"><span class="pre">squeue</span> <span class="pre">-u</span> <span class="pre">$USER</span></code></p></li>
-<li><p>Connexion avec : <code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">&lt;nom_noeud&gt;</span></code></p>
-<ul>
-<li><p>Autrement : <code class="docutils literal notranslate"><span class="pre">srun</span> <span class="pre">--jobid</span> <span class="pre">&lt;No_Tache&gt;</span> <span class="pre">--pty</span> <span class="pre">&lt;commande&gt;</span></code></p></li>
-</ul>
-</li>
-<li><p>Inspection avec <code class="docutils literal notranslate"><span class="pre">top</span></code>, <code class="docutils literal notranslate"><span class="pre">htop</span></code>, <code class="docutils literal notranslate"><span class="pre">nvtop</span></code> et/ou <code class="docutils literal notranslate"><span class="pre">nvidia-smi</span></code> :</p>
-<ul>
-<li><p>Est-ce que vos processus s’exécutent avec un <strong>pourcentage de 100%?</strong></p></li>
-<li><p>Est-ce que vos processus parallèles s’exécutent avec un <strong>pourcentage de <span class="math notranslate nohighlight">\(n\)</span> * 100%</strong>, où <span class="math notranslate nohighlight">\(n\)</span> est le nombre de processeurs par tâche Slurm?</p></li>
-<li><p>Est-ce que les <strong>accélérateurs</strong> sont utilisés à leur plein potentiel?</p>
-<ul>
-<li><p>Note : il est préférable de regarder la <strong>consommation en Watts</strong> plutôt que le pourcentage affiché</p></li>
-</ul>
-</li>
-<li><p>Est-ce que le <strong>noeud de calcul</strong> semble pleinement utilisé (tous les processeurs, la mémoire et/ou les accélérateurs)?</p></li>
-</ul>
-</li>
-</ul>
-<p>Toutes ces informations devraient vous permettre d’ajuster vos scripts de soumission et d’optimiser l’exécution parallèle de vos différents calculs.</p>
-</section>
 </section>
 <section id="taches-terminees">
 <h2>Tâches terminées<a class="headerlink" href="#taches-terminees" title="Lien permanent vers ce titre">#</a></h2>
@@ -543,8 +499,8 @@ simple pour obtenir des informations sur cette tâche est la commande :</p>
 <div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>seff &lt;jobid&gt;
 </pre></div>
 </div>
-<p>Autrement, c’est aussi possible d’utiliser la commande Slurm
-<a class="reference external" href="https://slurm.schedmd.com/sacct.html"><code class="docutils literal notranslate"><span class="pre">sacct</span></code></a> :</p>
+<p>Autrement, c’est aussi possible d’utiliser la
+<a class="reference external" href="https://slurm.schedmd.com/sacct.html">commande <code class="docutils literal notranslate"><span class="pre">sacct</span></code></a> :</p>
 <div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>sacct -j &lt;jobid&gt; --format<span class="o">=</span>JobID,JobName,MaxRSS,Elapsed
 </pre></div>
 </div>
@@ -594,7 +550,7 @@ d’estimer ses besoins pour le <a class="reference external" href="https://alli
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./."
+            path: "./extra"
         },
         predefinedOutput: true
     }
@@ -629,7 +585,7 @@ d’estimer ses besoins pour le <a class="reference external" href="https://alli
     </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
 
 
   </body>
