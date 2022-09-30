@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Analyse des tâches &#8212; CIP201 - Maîtriser l’utilisation des serveurs de calcul</title>
+    <title>Maîtriser l’ordonnanceur Slurm &#8212; CIP201 - Maîtriser l’utilisation des serveurs de calcul</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -56,8 +56,6 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="_static/logo.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
-    <link rel="next" title="Lots de tâches" href="3-lots-taches.html" />
-    <link rel="prev" title="Introduction" href="1-introduction.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="fr">
     
@@ -117,15 +115,10 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="1-introduction.html">
    Introduction
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Analyse des tâches
   </a>
  </li>
  <li class="toctree-l1">
@@ -240,7 +233,7 @@ title="Source repository"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="_sources/2-analyse-taches.ipynb"
+        <a href="_sources/5-maitriser-slurm.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -347,7 +340,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Analyse des tâches</h1>
+                <h1>Maîtriser l’ordonnanceur Slurm</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -406,9 +399,11 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="analyse-des-taches">
-<h1>Analyse des tâches<a class="headerlink" href="#analyse-des-taches" title="Lien permanent vers ce titre">#</a></h1>
-<p>Le but de ce chapitre est d’approfondir <a class="reference external" href="https://docs.computecanada.ca/wiki/Running_jobs/fr#Suivi_des_t.C3.A2ches">l’analyse des tâches</a> en attente, en cours et les tâches terminées.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="maitriser-l-ordonnanceur-slurm">
+<h1>Maîtriser l’ordonnanceur Slurm<a class="headerlink" href="#maitriser-l-ordonnanceur-slurm" title="Lien permanent vers ce titre">#</a></h1>
+<p>Le but de ce chapitre est d’approfondir
+<a class="reference external" href="https://docs.alliancecan.ca/wiki/Running_jobs/fr#Suivi_des_t.C3.A2ches">l’analyse des tâches</a>
+en attente, en cours et les tâches terminées.</p>
 <p>Remplissons la liste de tâches gérées par l’ordonnanceur :</p>
 <div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>cat scripts/sleep-300s.sh
 sbatch scripts/sleep-300s.sh  <span class="c1"># Répéter au besoin</span>
@@ -421,8 +416,10 @@ sbatch scripts/sleep-300s.sh  <span class="c1"># Répéter au besoin</span>
 <li><p><a class="reference external" href="https://slurm.schedmd.com/squeue.html"><code class="docutils literal notranslate"><span class="pre">squeue</span> <span class="pre">-t</span> <span class="pre">pending</span></code></a> pour toutes les tâches en attente</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">squeue</span> <span class="pre">-t</span> <span class="pre">pending</span> <span class="pre">-u</span> <span class="pre">$USER</span></code> pour seulement <strong>vos</strong> tâches en attente</p></li>
 </ul>
-<p>La commande suivante affiche les tâches en attente triées par priorité descendante :</p>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>squeue -t pending --sort<span class="o">=</span>-p --format<span class="o">=</span><span class="s2">&quot;%.16i %.9p %.8u %.16a %.18P %.10l %.4C %.7m&quot;</span>
+<p>Slurm permet de trier les tâches en attente selon leur priorité et
+de spécifier un certain format d’affichage :</p>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>cat scripts/squeue-priorite.sh
+bash scripts/squeue-priorite.sh
 </pre></div>
 </div>
 <ul class="simple">
@@ -432,7 +429,7 @@ sbatch scripts/sleep-300s.sh  <span class="c1"># Répéter au besoin</span>
 <li><p><code class="docutils literal notranslate"><span class="pre">%p</span></code> : priorité de la tâche (entre 0.0 et 1.0)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">%u</span></code> : nom d’utilisateur</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">%a</span></code> : compte de calcul utilisé</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">%P</span></code> : <a class="reference external" href="https://docs.computecanada.ca/wiki/Job_scheduling_policies/fr#Pourcentages_des_n.C5.93uds_disponibles">partition de la grappe</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">%P</span></code> : <a class="reference external" href="https://docs.alliancecan.ca/wiki/Job_scheduling_policies/fr#Pourcentages_des_n.C5.93uds_disponibles">partition de la grappe</a></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">%l</span></code> : temps demandé</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">%C</span></code> : nombre de processeurs demandé</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">%m</span></code> : mémoire demandée</p></li>
@@ -447,7 +444,8 @@ alors il vaut mieux <strong>se limiter à un appel par minute</strong> sur les g
 </ul>
 <section id="partition-et-autres-specifications-d-une-tache">
 <h3>Partition et autres spécifications d’une tâche<a class="headerlink" href="#partition-et-autres-specifications-d-une-tache" title="Lien permanent vers ce titre">#</a></h3>
-<p>Une chose à savoir : vos tâches sont généralement en compétition avec des <a class="reference external" href="https://docs.computecanada.ca/wiki/Job_scheduling_policies/fr#Pourcentages_des_n.C5.93uds_disponibles">tâches de la même partition</a>.
+<p>Une chose à savoir : vos tâches sont généralement en compétition avec
+des <a class="reference external" href="https://docs.alliancecan.ca/wiki/Job_scheduling_policies/fr#Pourcentages_des_n.C5.93uds_disponibles">tâches de la même partition</a>.
 Ainsi, <strong>une tâche CPU n’a aucun impact sur le temps d’attente d’une tâche GPU</strong>.
 Vous pouvez utiliser la commande suivante pour obtenir le détail de votre tâche, incluant la partition à laquelle elle est assignée :</p>
 <div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>scontrol show job -dd &lt;jobid&gt;
@@ -456,12 +454,13 @@ Vous pouvez utiliser la commande suivante pour obtenir le détail de votre tâch
 </section>
 <section id="politique-d-ordonnancement">
 <h3>Politique d’ordonnancement<a class="headerlink" href="#politique-d-ordonnancement" title="Lien permanent vers ce titre">#</a></h3>
-<p>Ce qu’il faut aussi comprendre de la <a class="reference external" href="https://docs.computecanada.ca/wiki/Job_scheduling_policies/fr">politique d’ordonnancement</a> :</p>
+<p>Ce qu’il faut aussi comprendre de la <a class="reference external" href="https://docs.alliancecan.ca/wiki/Job_scheduling_policies/fr">politique d’ordonnancement</a> :</p>
 <ul class="simple">
 <li><p><strong>La priorité de votre tâche dépend majoritairement de l’utilisation récente</strong> de votre groupe de recherche</p></li>
 <li><p>Pour le reste, la priorité dépend aussi du temps d’attente, mais dans une très faible proportion</p></li>
 </ul>
-<p>L’information concernant <strong>l’utilisation récente du groupe</strong> est donnée par la commande <a class="reference external" href="https://docs.computecanada.ca/wiki/Job_scheduling_policies/fr#Priorisation_selon_la_juste_part"><code class="docutils literal notranslate"><span class="pre">sshare</span></code></a> :</p>
+<p>L’information concernant <strong>l’utilisation récente du groupe</strong> est
+donnée par la <a class="reference external" href="https://docs.alliancecan.ca/wiki/Job_scheduling_policies/fr#Priorisation_selon_la_juste_part">commande <code class="docutils literal notranslate"><span class="pre">sshare</span></code></a> :</p>
 <div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>sshare -l -A def-prof1_cpu -u prof1,grad2,postdoc3
 sshare -l  <span class="c1"># Tous les comptes</span>
 </pre></div>
@@ -490,8 +489,10 @@ sshare -l  <span class="c1"># Tous les comptes</span>
 <li><p><a class="reference external" href="https://slurm.schedmd.com/squeue.html"><code class="docutils literal notranslate"><span class="pre">squeue</span> <span class="pre">-t</span> <span class="pre">running</span></code></a> pour toutes les tâches actives</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">squeue</span> <span class="pre">-t</span> <span class="pre">running</span> <span class="pre">-u</span> <span class="pre">$USER</span></code> pour seulement <strong>vos</strong> tâches actives</p></li>
 </ul>
-<p>La commande suivante affiche les tâches actives triées selon le temps qui leur reste :</p>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>squeue -t running --sort<span class="o">=</span>+M --format<span class="o">=</span><span class="s2">&quot;%.14i %.18P %.10M %.4C %.7m %R&quot;</span>
+<p>Slurm permet de trier les tâches actives selon le temps qui leur reste
+et de spécifier un certain format d’affichage :</p>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>cat scripts/squeue-temps-restant.sh
+bash scripts/squeue-temps-restant.sh
 </pre></div>
 </div>
 <ul class="simple">
@@ -537,7 +538,8 @@ sshare -l  <span class="c1"># Tous les comptes</span>
 </section>
 <section id="taches-terminees">
 <h2>Tâches terminées<a class="headerlink" href="#taches-terminees" title="Lien permanent vers ce titre">#</a></h2>
-<p>Lorsqu’une <a class="reference external" href="https://docs.computecanada.ca/wiki/Running_jobs/fr#T.C3.A2ches_termin.C3.A9es">tâche est complétée</a>, la commande la plus simple pour obtenir des informations sur cette tâche est la commande :</p>
+<p>Lorsqu’une <a class="reference external" href="https://docs.alliancecan.ca/wiki/Running_jobs/fr#T.C3.A2ches_termin.C3.A9es">tâche est complétée</a>, la commande la plus
+simple pour obtenir des informations sur cette tâche est la commande :</p>
 <div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>seff &lt;jobid&gt;
 </pre></div>
 </div>
@@ -546,12 +548,14 @@ sshare -l  <span class="c1"># Tous les comptes</span>
 <div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>sacct -j &lt;jobid&gt; --format<span class="o">=</span>JobID,JobName,MaxRSS,Elapsed
 </pre></div>
 </div>
-<p>Encore une fois, ces informations permettent d’ajuster vos scripts et de mieux déterminer vos besoins en ressources.</p>
+<p>Encore une fois, ces informations permettent d’ajuster vos scripts
+et de mieux déterminer vos besoins en ressources.</p>
 <p>Ultimement, l’utilisation totale du groupe est disponible sur CCDB :</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://ccdb.computecanada.ca/me/group_usage">https://ccdb.computecanada.ca/me/group_usage</a></p></li>
 </ul>
-<p>En tenant compte de l’utilisation passée, il devient possible d’estimer ses besoins pour le <a class="reference external" href="https://www.computecanada.ca/page-daccueil-du-portail-de-recherche/acces-aux-ressources/concours-dallocation-des-ressources/?lang=fr">Concours d’allocation de ressources</a>.</p>
+<p>En tenant compte de l’utilisation passée, il devient possible
+d’estimer ses besoins pour le <a class="reference external" href="https://alliancecan.ca/fr/services/calcul-informatique-de-pointe/acces-aux-ressources/concours-pour-lallocation-de-ressources">Concours d’allocation de ressources</a>.</p>
 </section>
 <section id="points-a-retenir">
 <h2>Points à retenir<a class="headerlink" href="#points-a-retenir" title="Lien permanent vers ce titre">#</a></h2>
@@ -604,20 +608,6 @@ sshare -l  <span class="c1"># Tous les comptes</span>
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="1-introduction.html" title="précédent page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">précédent</p>
-            <p class="prev-next-title">Introduction</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="3-lots-taches.html" title="suivant page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">suivant</p>
-        <p class="prev-next-title">Lots de tâches</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
 </div>
             </footer>
         </div>

@@ -122,11 +122,6 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="2-analyse-taches.html">
-   Analyse des tâches
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="3-lots-taches.html">
    Lots de tâches
   </a>
@@ -570,7 +565,7 @@ première ligne. Par exemple : <code class="docutils literal notranslate"><span 
 <li><p>Les options <code class="docutils literal notranslate"><span class="pre">#SBATCH</span></code> en entête pour les besoins de la tâche. Les
 options en entête seront lues par la commande de soumission de tâche
 <a class="reference external" href="https://slurm.schedmd.com/sbatch.html"><code class="docutils literal notranslate"><span class="pre">sbatch</span></code></a></p></li>
-<li><p><a class="reference external" href="https://docs.computecanada.ca/wiki/Utiliser_des_modules">Chargement des modules</a> requis</p></li>
+<li><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Utiliser_des_modules">Chargement des modules</a> requis</p></li>
 <li><p>Les commandes Bash qui seront exécutées automatiquement sur des
 processeurs réservés pour la tâche</p></li>
 </ul>
@@ -587,7 +582,7 @@ processeurs réservés pour la tâche</p></li>
 </pre></div>
 </div>
 <p>Notre documentation à cet effet débute à la page :
-<a class="reference external" href="https://docs.computecanada.ca/wiki/Running_jobs/fr">Exécuter des tâches</a></p>
+<a class="reference external" href="https://docs.alliancecan.ca/wiki/Running_jobs/fr">Exécuter des tâches</a></p>
 </section>
 <section id="analyse-des-calculs-localement">
 <h2>Analyse des calculs localement<a class="headerlink" href="#analyse-des-calculs-localement" title="Lien permanent vers ce titre">#</a></h2>
@@ -647,7 +642,7 @@ cette application</p></li>
 </pre></div>
 </div>
 <p><strong>Note 1</strong> : pour accéder aux grappes de calcul en production,
-il vaut mieux utiliser <a class="reference external" href="https://docs.computecanada.ca/wiki/Using_SSH_keys_in_Linux/fr">une paire de clés SSH</a>.</p>
+il vaut mieux utiliser <a class="reference external" href="https://docs.alliancecan.ca/wiki/Using_SSH_keys_in_Linux/fr">une paire de clés SSH</a>.</p>
 <p><strong>Note 2</strong> : Avec votre accès par défaut, vous avez un compte de
 calcul <code class="docutils literal notranslate"><span class="pre">def-*</span></code> de base qui vous permet de lancer des tâches de test.</p>
 <p>Pour soumettre un script de tâche, on utilise la
@@ -668,7 +663,7 @@ depuis minuit :</p>
 <div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>sacct
 </pre></div>
 </div>
-<p>Avec la <a class="reference external" href="https://docs.computecanada.ca/wiki/Running_jobs/fr#T.C3.A2ches_termin.C3.A9es">commande <code class="docutils literal notranslate"><span class="pre">seff</span></code></a>,
+<p>Avec la <a class="reference external" href="https://docs.alliancecan.ca/wiki/Running_jobs/fr#T.C3.A2ches_termin.C3.A9es">commande <code class="docutils literal notranslate"><span class="pre">seff</span></code></a>,
 on peut obtenir un court rapport d’exécution d’une tâche.
 Ce rapport inclut une mesure du temps écoulé, une mesure du temps CPU
 et une mesure de consommation maximale de la mémoire-vive.
@@ -938,11 +933,11 @@ aléatoires et nombreux</p></li>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="text-align:right head"><p></p></th>
-<th class="text-align:center head"><p><a class="reference external" href="https://docs.computecanada.ca/wiki/B%C3%A9luga">Béluga</a></p></th>
-<th class="text-align:center head"><p><a class="reference external" href="https://docs.computecanada.ca/wiki/Cedar/fr">Cedar</a></p></th>
-<th class="text-align:center head"><p><a class="reference external" href="https://docs.computecanada.ca/wiki/Graham/fr">Graham</a></p></th>
-<th class="text-align:center head"><p><a class="reference external" href="https://docs.computecanada.ca/wiki/Narval">Narval</a></p></th>
-<th class="text-align:center head"><p><a class="reference external" href="https://docs.computecanada.ca/wiki/Niagara/fr">Niagara</a></p></th>
+<th class="text-align:center head"><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/B%C3%A9luga">Béluga</a></p></th>
+<th class="text-align:center head"><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Cedar/fr">Cedar</a></p></th>
+<th class="text-align:center head"><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Graham/fr">Graham</a></p></th>
+<th class="text-align:center head"><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Narval">Narval</a></p></th>
+<th class="text-align:center head"><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Niagara/fr">Niagara</a></p></th>
 </tr>
 </thead>
 <tbody>
@@ -975,11 +970,11 @@ aléatoires et nombreux</p></li>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="text-align:right head"><p>Processeur Intel/AMD</p></th>
-<th class="text-align:center head"><p><a class="reference external" href="https://docs.computecanada.ca/wiki/B%C3%A9luga">Béluga</a></p></th>
-<th class="text-align:center head"><p><a class="reference external" href="https://docs.computecanada.ca/wiki/Cedar/fr">Cedar</a></p></th>
-<th class="text-align:center head"><p><a class="reference external" href="https://docs.computecanada.ca/wiki/Graham/fr">Graham</a></p></th>
-<th class="text-align:center head"><p><a class="reference external" href="https://docs.computecanada.ca/wiki/Narval">Narval</a></p></th>
-<th class="text-align:center head"><p><a class="reference external" href="https://docs.computecanada.ca/wiki/Niagara/fr">Niagara</a></p></th>
+<th class="text-align:center head"><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/B%C3%A9luga">Béluga</a></p></th>
+<th class="text-align:center head"><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Cedar/fr">Cedar</a></p></th>
+<th class="text-align:center head"><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Graham/fr">Graham</a></p></th>
+<th class="text-align:center head"><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Narval">Narval</a></p></th>
+<th class="text-align:center head"><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Niagara/fr">Niagara</a></p></th>
 </tr>
 </thead>
 <tbody>
@@ -1016,11 +1011,11 @@ aléatoires et nombreux</p></li>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="text-align:right head"><p>Mémoire par proc.</p></th>
-<th class="text-align:center head"><p><a class="reference external" href="https://docs.computecanada.ca/wiki/B%C3%A9luga">Béluga</a></p></th>
-<th class="text-align:center head"><p><a class="reference external" href="https://docs.computecanada.ca/wiki/Cedar/fr">Cedar</a></p></th>
-<th class="text-align:center head"><p><a class="reference external" href="https://docs.computecanada.ca/wiki/Graham/fr">Graham</a></p></th>
-<th class="text-align:center head"><p><a class="reference external" href="https://docs.computecanada.ca/wiki/Narval">Narval</a></p></th>
-<th class="text-align:center head"><p><a class="reference external" href="https://docs.computecanada.ca/wiki/Niagara/fr">Niagara</a></p></th>
+<th class="text-align:center head"><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/B%C3%A9luga">Béluga</a></p></th>
+<th class="text-align:center head"><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Cedar/fr">Cedar</a></p></th>
+<th class="text-align:center head"><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Graham/fr">Graham</a></p></th>
+<th class="text-align:center head"><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Narval">Narval</a></p></th>
+<th class="text-align:center head"><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Niagara/fr">Niagara</a></p></th>
 </tr>
 </thead>
 <tbody>
@@ -1097,16 +1092,16 @@ aléatoires et nombreux</p></li>
 </tbody>
 </table>
 <ul class="simple">
-<li><p><a class="reference external" href="https://docs.computecanada.ca/wiki/Using_GPUs_with_Slurm/fr">Nombre de GPUs</a> selon le cas :</p></li>
+<li><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Using_GPUs_with_Slurm/fr">Nombre de GPUs</a> selon le cas :</p></li>
 </ul>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="text-align:right head"><p>Accélérateurs</p></th>
-<th class="text-align:center head"><p><a class="reference external" href="https://docs.computecanada.ca/wiki/B%C3%A9luga">Béluga</a></p></th>
-<th class="text-align:center head"><p><a class="reference external" href="https://docs.computecanada.ca/wiki/Cedar/fr">Cedar</a></p></th>
-<th class="text-align:center head"><p><a class="reference external" href="https://docs.computecanada.ca/wiki/Graham/fr">Graham</a></p></th>
+<th class="text-align:center head"><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/B%C3%A9luga">Béluga</a></p></th>
+<th class="text-align:center head"><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Cedar/fr">Cedar</a></p></th>
+<th class="text-align:center head"><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Graham/fr">Graham</a></p></th>
 <th class="text-align:center head"><p><a class="reference external" href="https://docs.scinet.utoronto.ca/index.php/Mist">Mist (Power9)</a></p></th>
-<th class="text-align:center head"><p><a class="reference external" href="https://docs.computecanada.ca/wiki/Narval">Narval</a></p></th>
+<th class="text-align:center head"><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Narval">Narval</a></p></th>
 </tr>
 </thead>
 <tbody>
@@ -1160,11 +1155,11 @@ aléatoires et nombreux</p></li>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="text-align:right head"><p></p></th>
-<th class="text-align:center head"><p><a class="reference external" href="https://docs.computecanada.ca/wiki/B%C3%A9luga">Béluga</a></p></th>
-<th class="text-align:center head"><p><a class="reference external" href="https://docs.computecanada.ca/wiki/Cedar/fr">Cedar</a></p></th>
-<th class="text-align:center head"><p><a class="reference external" href="https://docs.computecanada.ca/wiki/Graham/fr">Graham</a></p></th>
-<th class="text-align:center head"><p><a class="reference external" href="https://docs.computecanada.ca/wiki/Narval">Narval</a></p></th>
-<th class="text-align:center head"><p><a class="reference external" href="https://docs.computecanada.ca/wiki/Niagara/fr">Niagara</a></p></th>
+<th class="text-align:center head"><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/B%C3%A9luga">Béluga</a></p></th>
+<th class="text-align:center head"><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Cedar/fr">Cedar</a></p></th>
+<th class="text-align:center head"><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Graham/fr">Graham</a></p></th>
+<th class="text-align:center head"><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Narval">Narval</a></p></th>
+<th class="text-align:center head"><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Niagara/fr">Niagara</a></p></th>
 </tr>
 </thead>
 <tbody>
