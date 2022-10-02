@@ -18,4 +18,4 @@ mkdir -p res_array
 
 parallel blastn -db espece_{1} \
   -query chr_$INC_X.fa.split/chr_$INC_X.part_0{2}.fa \
-  '>' res_array/align_${INC_X}_{1}_{2} ::: A B ::: $(seq -w 9 10)
+  '>' res_array/align_${INC_X}_{1}_{2} ::: A B ::: {09..10}
