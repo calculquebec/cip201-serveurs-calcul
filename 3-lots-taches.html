@@ -505,9 +505,9 @@ en gérant des processus au lieu de scripts de tâche.</p>
 au total dans <code class="docutils literal notranslate"><span class="pre">squeue</span></code> (<em>pending</em> + <em>running</em>)</p></li>
 <li><p>Certains calculs sont tellement <strong>courts (&lt; 5 minutes)</strong> que le
 démarrage et la fin de la tâche compteraient pour un pourcentage
-significatif du temps réel utilisé</p></li>
+significatif du temps réel utilisé, ce qui diminue leur efficacité</p></li>
 <li><p>Ensuite, si toutes vos tâches envoient des <strong>notifications par
-courriel</strong>, imaginez recevoir ces centaines de courriels!</p></li>
+courriel</strong>, imaginez recevoir des centaines de courriels!</p></li>
 </ul>
 <p>Les avantages de GNU Parallel à considérer :</p>
 <ul class="simple">
@@ -546,20 +546,21 @@ parallel --citation  <span class="c1"># Il faut citer les développeurs</span>
 </div>
 <p>On peut réécrire la première commande en utilisant l’expansion des
 accolades Bash <code class="docutils literal notranslate"><span class="pre">{a..b}</span></code> :</p>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>parallel <span class="nb">echo</span> fichier<span class="o">{}</span>.txt ::: <span class="o">{</span><span class="m">01</span>..20<span class="o">}</span>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>parallel <span class="nb">echo</span> fichier<span class="o">{}</span>.txt ::: <span class="o">{</span><span class="m">01</span>..10<span class="o">}</span>
 </pre></div>
 </div>
 </section>
 <section id="combinaisons-de-parametres">
 <h4>Combinaisons de paramètres<a class="headerlink" href="#combinaisons-de-parametres" title="Lien permanent vers ce titre">#</a></h4>
-<p>Lorsqu’il y a <strong>plusieurs séquences de paramètres à combiner</strong>,
+<p><strong>a)</strong> Lorsqu’il y a <strong>plusieurs séquences de paramètres à combiner</strong>,
 on peut utiliser des paires d’accolades numérotées telles que
 <code class="docutils literal notranslate"><span class="pre">{1}</span></code>, <code class="docutils literal notranslate"><span class="pre">{2}</span></code>, etc. :</p>
 <div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>parallel <span class="nb">echo</span> fichier<span class="o">{}</span>.txt ::: <span class="o">{</span><span class="m">01</span>..10<span class="o">}</span> ::: a b
 parallel <span class="nb">echo</span> fichier<span class="o">{</span><span class="m">1</span><span class="o">}{</span><span class="m">2</span><span class="o">}</span>.txt ::: <span class="o">{</span><span class="m">01</span>..10<span class="o">}</span> ::: a b
 </pre></div>
 </div>
-<p>Dans le cas où on retrouve les <strong>combinaisons de paramètres dans un fichier texte</strong> :</p>
+<p><strong>b)</strong> Dans le cas où on retrouve les <strong>combinaisons de paramètres
+dans un fichier texte</strong> :</p>
 <div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># parallel echo {} ::: 3 5 7 ::: 4 6 8 &gt; param.txt</span>
 cat scripts/prll-creer-param.sh
 bash scripts/prll-creer-param.sh
@@ -573,7 +574,7 @@ cat scripts/prll-exec-param.sh
 sbatch scripts/prll-exec-param.sh
 </pre></div>
 </div>
-<p>Si on préfère valider la liste des commandes générées avant de
+<p><strong>c)</strong> Si on préfère valider la liste des commandes générées avant de
 soumettre une tâche Slurm, on peut générer une <strong>liste de commandes
 dans un fichier texte</strong> :</p>
 <div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># parallel -C &#39; &#39; echo &#39;echo {1}&quot;*&quot;{2} &quot;|&quot; bc &quot;&gt;&quot; prod_{1}x{2}&#39; :::: param.txt &gt; commandes.txt</span>
