@@ -21,6 +21,6 @@ fi
 
 cd ${DOSSIER}
 
-module load gcc cuda
+module load gcc/9.3.0 cuda/11.4
 export PROJECTS=Samples/matrixMul/Makefile
 make

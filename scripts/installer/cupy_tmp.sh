@@ -1,6 +1,6 @@
 #!/bin/bash
 
-module load gcc cuda python
+module load gcc/9.3.0 cuda/11.4 python/3.8.10
 
 cd $SLURM_TMPDIR
 virtualenv --no-download venv_cupy
