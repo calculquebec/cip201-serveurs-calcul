@@ -10,7 +10,7 @@ if [ "$(basename $PWD)" = "scripts" ]; then
 fi
 cd donnees
 
-module load gcc blast+ seqkit
+module load gcc/9.3.0 blast+/2.12.0 seqkit/0.15.0
 export BLAST_USAGE_REPORT=false  # Éviter les communications
 
 INCONNUS=(M N O P Q R)

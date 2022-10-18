@@ -4,7 +4,7 @@
 #SBATCH --time=0:9:0
 #SBATCH --gres=gpu:1
 
-module load gcc cuda python
+module load gcc/9.3.0 cuda/11.4 python/3.8.10
 
 virtualenv --no-download $SLURM_TMPDIR/venv_cupy
 source $SLURM_TMPDIR/venv_cupy/bin/activate

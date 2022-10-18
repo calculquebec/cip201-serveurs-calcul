@@ -2,7 +2,7 @@
 #SBATCH --mem-per-cpu=2000M
 #SBATCH --time=0-00:10
 
-module load gcc python scipy-stack
+module load gcc/9.3.0 python/3.8.10 scipy-stack/2022a
 
 cd $SLURM_SUBMIT_DIR
 if [ "$(basename $PWD)" = "scripts" ]; then
