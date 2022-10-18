@@ -10,6 +10,7 @@ fi
 cd donnees
 
 module load gcc python blast+ seqkit
+export BLAST_USAGE_REPORT=false  # Éviter les communications
 
 make clean
 make -j 2

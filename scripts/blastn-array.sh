@@ -11,6 +11,7 @@ fi
 cd donnees
 
 module load gcc blast+ seqkit
+export BLAST_USAGE_REPORT=false  # Éviter les communications
 
 INCONNUS=(M N O P Q R)
 INC_X="${INCONNUS[$SLURM_ARRAY_TASK_ID]}"

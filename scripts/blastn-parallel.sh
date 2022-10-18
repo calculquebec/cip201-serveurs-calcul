@@ -10,6 +10,7 @@ fi
 cd donnees
 
 module load gcc blast+ seqkit
+export BLAST_USAGE_REPORT=false  # Éviter les communications
 
 mkdir -p res_prll
 
