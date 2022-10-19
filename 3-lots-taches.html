@@ -492,6 +492,7 @@ calcul, et ce, en gérant l’exécution d’une <strong>longue liste de tâches
 de <em>petite</em> taille</strong>.
 C’est un peu comme l’ordonnanceur Slurm, mais à plus petite échelle et
 en gérant des processus au lieu de scripts de tâche.</p>
+<p><img alt="Fonctionnement de GNU Parallel" src="_images/gnu-parallel.svg" /></p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.gnu.org/software/parallel/parallel.html">Documentation officielle</a></p></li>
 <li><p><a class="reference external" href="https://www.gnu.org/software/parallel/parallel_tutorial.html">Tutoriel</a></p></li>
@@ -661,7 +662,9 @@ différentes combinaisons de paramètres, il y a moyen de soumettre un seul
 <a class="reference external" href="https://docs.alliancecan.ca/wiki/Job_arrays/fr">vecteur de tâches</a>
 et de coder le script de tâche de telle sorte que les paramètres
 seront déterminés <strong>en fonction d’un indice unique</strong> du vecteur de tâches.</p>
-<p><strong>Pour soumettre un vecteur de tâches</strong> à l’ordonnanceur Slurm, à la ligne de commande <code class="docutils literal notranslate"><span class="pre">sbatch</span></code> ou dans l’entête <code class="docutils literal notranslate"><span class="pre">#SBATCH</span></code> du script de tâche, <strong>on doit ajouter l’option</strong> <code class="docutils literal notranslate"><span class="pre">--array=&lt;indices&gt;</span></code>.
+<p><strong>Pour soumettre un vecteur de tâches</strong> à l’ordonnanceur Slurm, que ce
+soit à la ligne de commande <code class="docutils literal notranslate"><span class="pre">sbatch</span></code> ou dans l’entête <code class="docutils literal notranslate"><span class="pre">#SBATCH</span></code>
+du script de tâche, <strong>on doit ajouter l’option</strong> <code class="docutils literal notranslate"><span class="pre">--array=&lt;indices&gt;</span></code>.
 Voir <a class="reference external" href="https://docs.alliancecan.ca/wiki/Job_arrays/fr">ici quelques exemples</a>.</p>
 <p>L’identifiant d’une tâche Slurm dans un vecteur de tâches contient :</p>
 <ul class="simple">
@@ -688,7 +691,7 @@ Il s’agit d’un <strong>entier parmis</strong> les <code class="docutils lite
 <span class="nv">PARAM_C</span><span class="o">=</span><span class="k">$((</span>PARAM <span class="o">%</span> <span class="m">12</span><span class="k">))</span>  <span class="c1"># Modulo (reste de division)</span>
 <span class="nb">echo</span> <span class="nv">$PARAM_R</span> <span class="nv">$PARAM_C</span>
 
-<span class="nb">echo</span> <span class="k">$(</span>sed -n <span class="s2">&quot;</span><span class="si">${</span><span class="nv">PARAM_R</span><span class="si">}</span><span class="s2">p&quot;</span> param.txt<span class="k">)</span>
+head -n <span class="nv">$PARAM_R</span> param.txt <span class="p">|</span> tail -1
 </pre></div>
 </div>
 <section id="exercice-vecteur-de-taches">
@@ -705,6 +708,9 @@ squeue -u <span class="nv">$USER</span>
 ls -l donnees/res_array/
 </pre></div>
 </div>
+<p><strong>Corrigez le script de tâche</strong> pour que les <strong>six</strong> inconnus soient
+traités, avec une limite de <strong>trois</strong> tâches à la fois.
+Relancez le vecteur de tâches pour tester la correction.</p>
 </section>
 </section>
 <section id="le-greedy-launcher-of-small-tasks-ou-glost">
@@ -724,7 +730,10 @@ avec une architecture de type <strong>gestionnaire-travailleur</strong></p>
 (pour quitter)</p></li>
 </ul>
 </li>
-<li><p>On doit définir <strong>une ligne de commande par tâche</strong> :</p>
+</ul>
+<p><img alt="Fonctionnement GLOST" src="_images/glost-communications.svg" /></p>
+<ul class="simple">
+<li><p>On doit donc définir <strong>une ligne de commande par tâche</strong> :</p>
 <ul>
 <li><p>Toutes les lignes de commande sont <strong><a class="reference external" href="https://docs.alliancecan.ca/wiki/GLOST/fr#Liste_de_t.C3.A2ches_situ.C3.A9es_dans_le_m.C3.AAme_r.C3.A9pertoire">listées dans un même fichier</a></strong></p></li>
 <li><p>Les sous-commandes peuvent être séparées par l’opérateur <code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code>. Par exemple :</p></li>
@@ -770,7 +779,7 @@ top -u <span class="nv">$USER</span>  <span class="c1"># q pour quitter</span>
 <div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>parallel <span class="s1">&#39;gabarit_cmd({1})&#39;</span> ::: valeurs1
 parallel <span class="s1">&#39;gabarit_cmd({1}, {2})&#39;</span> ::: valeurs1 ::: valeurs2
 parallel -C &lt;sep&gt; <span class="s1">&#39;gabarit_cmd({1}, {2})&#39;</span> :::: paires_param.txt
-parallel --jobs <span class="s1">&#39;tâches_par_noeud&#39;</span> &lt; liste_commandes.txt
+parallel --jobs <span class="s1">&#39;N_tâches_par_noeud&#39;</span> &lt; liste_commandes.txt
 </pre></div>
 </div>
 <ul class="simple">
