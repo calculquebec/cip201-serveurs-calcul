@@ -701,13 +701,15 @@ less scripts/installer/numpy_tmp.sh  <span class="c1"># q pour quitter</span>
 bash scripts/installer/numpy_tmp.sh
 </pre></div>
 </div>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exécution avec un processeur</span>
-less scripts/crunch-1cpu.sh  <span class="c1"># q pour quitter</span>
-bash scripts/crunch-1cpu.sh  <span class="c1"># q pour quitter</span>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>less scripts/crunch.sh  <span class="c1"># q pour quitter</span>
+
+<span class="c1"># Exécution avec un processeur</span>
+bash scripts/crunch.sh --cpu <span class="m">1</span>
+top -u <span class="nv">$USER</span>  <span class="c1"># q pour quitter</span>
 
 <span class="c1"># Exécution avec 4 processeurs</span>
-less scripts/crunch-4cpu.sh  <span class="c1"># q pour quitter</span>
-bash scripts/crunch-4cpu.sh  <span class="c1"># q pour quitter</span>
+bash scripts/crunch.sh --cpu <span class="m">4</span>
+htop -u <span class="nv">$USER</span>  <span class="c1"># q pour quitter</span>
 
 <span class="c1"># Comparer les résultats</span>
 grep sec *.log
@@ -760,19 +762,22 @@ pour les détails</p></li>
 </div>
 <p><img alt="Capture nvidia-smi" src="_images/nvidia-smi.png" /></p>
 <ul class="simple">
-<li><p>Il existe aussi un projet <a class="reference external" href="https://github.com/Syllo/nvtop"><code class="docutils literal notranslate"><span class="pre">nvtop</span></code></a> permettant de visualiser l’utilisation d’un ou plusieurs GPUs dans un terminal</p></li>
+<li><p>Il existe aussi un projet <a class="reference external" href="https://github.com/Syllo/nvtop"><code class="docutils literal notranslate"><span class="pre">nvtop</span></code></a>
+permettant de visualiser l’utilisation d’un ou plusieurs GPUs dans
+un terminal :</p></li>
 </ul>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exécution avec 1 GPU</span>
-less scripts/crunch-1gpu.sh  <span class="c1"># q pour quitter</span>
-bash scripts/crunch-1gpu.sh  <span class="c1"># q pour quitter</span>
-
-<span class="c1"># Regarder le résultat</span>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exécution avec un GPU</span>
+bash scripts/crunch.sh --gpu
+nvtop  <span class="c1"># q pour quitter</span>
+</pre></div>
+</div>
+<p><img alt="Capture nvtop" src="https://raw.githubusercontent.com/Syllo/nvtop/master/screenshot/NVTOP_ex1.png" /></p>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Regarder le résultat</span>
 less tg.log    <span class="c1"># q pour quitter</span>
 
 <span class="nb">exit</span>  <span class="c1"># Pour revenir à login1</span>
 </pre></div>
 </div>
-<p><img alt="Capture nvtop" src="https://raw.githubusercontent.com/Syllo/nvtop/master/screenshot/NVTOP_ex1.png" /></p>
 <section id="exercice-tester-crunch-avec-un-gpu">
 <h4>Exercice - Tester Crunch avec un GPU<a class="headerlink" href="#exercice-tester-crunch-avec-un-gpu" title="Lien permanent vers ce titre">#</a></h4>
 <div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>less   scripts/crunch-sbatch-1gpu.sh
