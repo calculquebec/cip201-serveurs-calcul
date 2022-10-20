@@ -28,7 +28,7 @@ for n in ${valeurs_n[@]}; do
   done
 
   temps_par_appel=$(echo $temps_total / $nb_appels | bc -l)
-  echo "$temps_par_appel,$n" >> $FIC_CSV
+  echo "$temps_par_appel,$n" > $FIC_CSV
 done
 
 echo Terminé.
