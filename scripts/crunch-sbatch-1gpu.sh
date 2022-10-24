@@ -10,7 +10,7 @@ virtualenv --no-download $SLURM_TMPDIR/venv_cupy
 source $SLURM_TMPDIR/venv_cupy/bin/activate
 pip install --no-index numpy cupy
 
-python scripts/crunch.py -n 672 --gpu > tg.log &
+time -p python scripts/crunch.py -n 672 --gpu > tg.log &
 sleep 2
 nvidia-smi
 wait
