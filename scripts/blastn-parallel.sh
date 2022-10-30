@@ -15,4 +15,4 @@ export BLAST_USAGE_REPORT=false  # Éviter les communications
 mkdir -p res_prll
 
 parallel 'blastn -db espece_{1} -query chr_{2}.fa > res_prll/align_{2}_{1}' \
-  ::: A B ::: M N O P Q R
+  ::: A B C D ::: K L M N O P Q R S T U V W X Y Z
