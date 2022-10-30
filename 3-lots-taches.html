@@ -620,15 +620,17 @@ qui ont été créés au premier chapitre via le script de tâche
 </div>
 <p>On devrait y retrouver :</p>
 <ul class="simple">
-<li><p>pour chaque espèce fictive A et B, un fichier de séquences d’ADN « connues »</p>
+<li><p>pour chaque espèce fictive A, B, C et D,
+un fichier de séquences d’ADN « connues »</p>
 <ul>
 <li><p>Ces fichiers sont convertis en bases de données Blast</p></li>
 </ul>
 </li>
-<li><p>pour 6 espèces « inconnues » M à R, des séquences d’ADN à aligner sur les séquences « connues » des espèces A et B</p></li>
+<li><p>pour 16 espèces « inconnues » K à Z, des séquences d’ADN à aligner
+sur les séquences « connues » des espèces A, B, C et D</p></li>
 </ul>
 <p>On cherche donc à calculer l’alignement de toutes les combinaisons
-<code class="docutils literal notranslate"><span class="pre">{A,B}x[M,R]</span></code>, ce qui donne 12 combinaisons.
+<code class="docutils literal notranslate"><span class="pre">[A,D]x[K,Z]</span></code>, ce qui donne 64 combinaisons.
 Le script de tâche suivant utilise GNU Parallel pour calculer les
 différents cas avec 4 processeurs :</p>
 <div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>cat scripts/blastn-parallel.sh
@@ -708,9 +710,12 @@ squeue -u <span class="nv">$USER</span>
 ls -l donnees/res_array/
 </pre></div>
 </div>
-<p><strong>Corrigez le script de tâche</strong> pour que les <strong>six</strong> inconnus soient
-traités, avec une limite de <strong>trois</strong> tâches à la fois.
-Relancez le vecteur de tâches pour tester la correction.</p>
+<ul class="simple">
+<li><p><strong>Corrigez le script de tâche</strong> pour que les 16 inconnues K à Z
+soient traitées, avec une limite de <strong>quatre</strong> tâches à la fois.</p></li>
+<li><p>Relancez le vecteur de tâches pour tester la correction.</p></li>
+<li><p>Utilisez la commande <code class="docutils literal notranslate"><span class="pre">seff</span></code> pour étudier une des 16 tâches.</p></li>
+</ul>
 </section>
 </section>
 <section id="le-greedy-launcher-of-small-tasks-ou-glost">
@@ -752,7 +757,8 @@ bash scripts/blastn-cas.sh
 cat <span class="nv">$SCRATCH</span>/cas-blastn.txt
 </pre></div>
 </div>
-<p>Pour lancer une tâche de 4 processeurs utilisant GLOST pour tester les <span class="math notranslate nohighlight">\(3*2*2\)</span> combinaisons de paramètres :</p>
+<p>Pour lancer une tâche de 4 processeurs utilisant GLOST pour tester les
+<span class="math notranslate nohighlight">\(8*4*10\)</span> combinaisons de paramètres :</p>
 <div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>cat scripts/blastn-glost.sh
 sbatch scripts/blastn-glost.sh
 
