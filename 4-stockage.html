@@ -603,13 +603,13 @@ title="Print to PDF"
 <p>Le but de ce chapitre est de pouvoir considérer tous les aspects nécessaires à la gestion des données actives sur les différents espaces de stockage disponibles.</p>
 <section id="description-de-vos-donnees">
 <h2>Description de vos données<a class="headerlink" href="#description-de-vos-donnees" title="Lien permanent vers ce titre">#</a></h2>
-<p>Au premier chapitre, nous avons vu comment obtenir le nombre de
+<p>Au second chapitre, nous avons vu comment obtenir le nombre de
 fichiers de nos données locales, de même que la taille totale.</p>
 <p>Sur une grappe de calcul, un <strong>système de fichiers parallel</strong>
-<a class="reference external" href="https://docs.computecanada.ca/wiki/Tuning_Lustre/fr"><em>Lustre</em></a> ou <em>GPFS</em>
+<a class="reference external" href="https://docs.alliancecan.ca/wiki/Tuning_Lustre/fr"><em>Lustre</em></a> ou <em>GPFS</em>
 est surtout optimisé pour des fichiers de plus de 10 Mo,
 c’est-à-dire pour des accès à large bande-passante. Ainsi, à l’échelle des
-<a class="reference external" href="https://docs.computecanada.ca/wiki/B%C3%A9luga#Stockage">grappes de calcul</a> :</p>
+<a class="reference external" href="https://docs.alliancecan.ca/wiki/B%C3%A9luga#Stockage">grappes de calcul</a> :</p>
 <ul class="simple">
 <li><p>1 Ko - 100 Ko : très petit fichier</p></li>
 <li><p>1 Mo - 10 Mo : petit fichier</p></li>
@@ -628,7 +628,7 @@ de grands fichiers. Ainsi, du point de vue du système de stockage :</p>
 <li><p>10k fichiers et plus : il faut classer les fichiers dans des sous-dossiers</p></li>
 </ul>
 </li>
-<li><p>Par espace <a class="reference external" href="https://docs.computecanada.ca/wiki/Storage_and_file_management/fr#Quotas_et_politiques">limité par un quota</a> :</p>
+<li><p>Par espace <a class="reference external" href="https://docs.alliancecan.ca/wiki/Storage_and_file_management/fr#Quotas_et_politiques">limité par un quota</a> :</p>
 <ul>
 <li><p>1 à 500k fichiers : sauvegarde facilement à jour</p></li>
 <li><p>1M à 5M fichiers : sauvegarde potentiellement plus longue que 24h</p></li>
@@ -641,10 +641,10 @@ de grands fichiers. Ainsi, du point de vue du système de stockage :</p>
 <section id="regroupement-dans-un-fichier-archive">
 <h4>Regroupement dans un fichier archive<a class="headerlink" href="#regroupement-dans-un-fichier-archive" title="Lien permanent vers ce titre">#</a></h4>
 <p>Étant donné que le transfert ou la synchronisation de
-<a class="reference external" href="https://docs.computecanada.ca/wiki/Handling_large_collections_of_files/fr">plusieurs petits fichiers</a>
+<a class="reference external" href="https://docs.alliancecan.ca/wiki/Handling_large_collections_of_files/fr">plusieurs petits fichiers</a>
 implique un accès fréquent aux métadonnées du système de stockage
 <em>Lustre</em>, il est donc préférable de
-<a class="reference external" href="https://docs.computecanada.ca/wiki/Archiving_and_compressing_files/fr">regrouper les fichiers</a>
+<a class="reference external" href="https://docs.alliancecan.ca/wiki/Archiving_and_compressing_files/fr">regrouper les fichiers</a>
 d’un jeu de données avant tout transfert. Pour ce faire, il existe
 plusieurs formats décodables sur les différentes grappes :</p>
 <p><strong>WinZip</strong> ou <strong>Zip</strong> (<code class="docutils literal notranslate"><span class="pre">.zip</span></code>) - compressé</p>
@@ -655,18 +655,18 @@ plusieurs formats décodables sur les différentes grappes :</p>
 <div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>man 7z  <span class="c1"># q pour quitter</span>
 </pre></div>
 </div>
-<p><strong>Tape ARchive</strong> ou <a class="reference external" href="https://docs.computecanada.ca/wiki/A_tutorial_on_%27tar%27/fr"><strong>TAR</strong></a> (<code class="docutils literal notranslate"><span class="pre">.tar</span></code>) - non compressé, sauf si utilisé avec Gzip ou autre</p>
+<p><strong>Tape ARchive</strong> ou <a class="reference external" href="https://docs.alliancecan.ca/wiki/A_tutorial_on_%27tar%27/fr"><strong>TAR</strong></a> (<code class="docutils literal notranslate"><span class="pre">.tar</span></code>) - non compressé, sauf si utilisé avec Gzip ou autre</p>
 <div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>man tar  <span class="c1"># q pour quitter</span>
 </pre></div>
 </div>
-<p><strong>Disk ARchive</strong> ou <a class="reference external" href="https://docs.computecanada.ca/wiki/Dar/fr"><strong>DAR</strong></a> (<code class="docutils literal notranslate"><span class="pre">.dar</span></code>) - compression configurable</p>
+<p><strong>Disk ARchive</strong> ou <a class="reference external" href="https://docs.alliancecan.ca/wiki/Dar/fr"><strong>DAR</strong></a> (<code class="docutils literal notranslate"><span class="pre">.dar</span></code>) - compression configurable</p>
 <div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>man dar  <span class="c1"># q pour quitter</span>
 </pre></div>
 </div>
 </section>
 <section id="compression">
 <h4>Compression<a class="headerlink" href="#compression" title="Lien permanent vers ce titre">#</a></h4>
-<p>La <a class="reference external" href="https://docs.computecanada.ca/wiki/Archiving_and_compressing_files/fr">compression des fichiers</a>
+<p>La <a class="reference external" href="https://docs.alliancecan.ca/wiki/Archiving_and_compressing_files/fr">compression des fichiers</a>
 a un <strong>coût en temps CPU</strong> à chaque fois que nous voulons lire ou écrire
 les données. Ainsi, il vaut mieux utiliser la compression <strong>lorsque
 c’est « avantageux »</strong> en espace et/ou en temps. Par exemple :</p>
@@ -737,7 +737,7 @@ données avant de les écrire sur le système de stockage :</p>
 <li><p>Lorsque le format du fichier de données inclut une compression des
 données. Voici quelques exemples :</p>
 <ul>
-<li><p><a class="reference external" href="https://docs.computecanada.ca/wiki/HDF5/fr">Hierarchical Data Format - HDF5</a> - format standard pour données scientifiques</p></li>
+<li><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/HDF5/fr">Hierarchical Data Format - HDF5</a> - format standard pour données scientifiques</p></li>
 <li><p><a class="reference external" href="https://parquet.apache.org/documentation/latest/">Apache Parquet</a> - stockage compressé de données tabulaires</p>
 <ul>
 <li><p>Note: l’autre format, <a class="reference external" href="https://arrow.apache.org/docs/python/feather.html">Apache Feather</a>, ne compresse pas vraiment les données, sauf si on considère que c’est un format binaire prenant moins de place</p></li>
@@ -834,7 +834,7 @@ Sans précaution, les données que vous laissez sur les grappes de
 calcul risquent de ne pas être accessibles aux membres d’un
 laboratoire qui poursuivent leur recherche.</p>
 <p>Dès que possible, mettez en place les accès nécessaires pour le
-<a class="reference external" href="https://docs.computecanada.ca/wiki/Sharing_data/fr">partage de vos données</a>.</p>
+<a class="reference external" href="https://docs.alliancecan.ca/wiki/Sharing_data/fr">partage de vos données</a>.</p>
 </section>
 </section>
 </section>
@@ -877,7 +877,7 @@ noeud de <strong>calcul</strong> (CPU ou GPU) :</p>
 </tr>
 </tbody>
 </table>
-<p>À propos des <a class="reference external" href="https://docs.computecanada.ca/wiki/Storage_and_file_management/fr#Types_de_stockage">différents espaces de stockage</a>.</p>
+<p>À propos des <a class="reference external" href="https://docs.alliancecan.ca/wiki/Storage_and_file_management/fr#Types_de_stockage">différents espaces de stockage</a>.</p>
 <section id="votre-dossier-personnel-home">
 <h3>Votre dossier personnel (<code class="docutils literal notranslate"><span class="pre">$HOME</span></code>)<a class="headerlink" href="#votre-dossier-personnel-home" title="Lien permanent vers ce titre">#</a></h3>
 <div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>ls -a
@@ -887,9 +887,9 @@ ls -ld <span class="nv">$HOME</span>
 </div>
 <ul class="simple">
 <li><p><strong>Point d’entrée</strong> par défaut lors d’une connexion à une grappe de calcul</p></li>
-<li><p><a class="reference external" href="https://docs.computecanada.ca/wiki/Storage_and_file_management/fr#Quotas_et_politiques">Quota d’espace relativement petit</a>, mais accepte un nombre de fichiers relativement grand</p>
+<li><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Storage_and_file_management/fr#Quotas_et_politiques">Quota d’espace relativement petit</a>, mais accepte un nombre de fichiers relativement grand</p>
 <ul>
-<li><p>Idéal pour la <a class="reference external" href="https://docs.computecanada.ca/wiki/Installing_software_in_your_home_directory/fr">compilation et l’installation de logiciels</a></p></li>
+<li><p>Idéal pour la <a class="reference external" href="https://docs.alliancecan.ca/wiki/Installing_software_in_your_home_directory/fr">compilation et l’installation de logiciels</a></p></li>
 </ul>
 </li>
 </ul>
@@ -905,7 +905,7 @@ df -h <span class="nv">$SLURM_TMPDIR</span>
 </pre></div>
 </div>
 <ul class="simple">
-<li><p><a class="reference external" href="https://docs.computecanada.ca/wiki/Using_node-local_storage/fr">Stockage local très rapide</a>, mais limité à la durée de la tâche de calcul</p>
+<li><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Using_node-local_storage/fr">Stockage local très rapide</a>, mais limité à la durée de la tâche de calcul</p>
 <ul>
 <li><p>Faible latence à comparé <em>Lustre</em></p></li>
 <li><p>Grande bande-passante, en particulier pour les petits fichiers</p></li>
@@ -953,10 +953,10 @@ ls -l
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>Espace de stockage réseau de <a class="reference external" href="https://docs.computecanada.ca/wiki/Storage_and_file_management/fr#Quotas_et_politiques">grande capacité</a> pour des <strong>données temporaires</strong></p>
+<li><p>Espace de stockage réseau de <a class="reference external" href="https://docs.alliancecan.ca/wiki/Storage_and_file_management/fr#Quotas_et_politiques">grande capacité</a> pour des <strong>données temporaires</strong></p>
 <ul>
 <li><p><strong>Pas</strong> sauvegardé</p></li>
-<li><p><a class="reference external" href="https://docs.computecanada.ca/wiki/Scratch_purging_policy/fr">Purge mensuelle</a> pour les données âgées de plus de 60 jours</p></li>
+<li><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Scratch_purging_policy/fr">Purge mensuelle</a> pour les données âgées de plus de 60 jours</p></li>
 </ul>
 </li>
 <li><p>Performance variable selon l’utilisation de l’ensemble des utilisateurs</p></li>
@@ -977,12 +977,12 @@ ls -l /project/def-sponsor00
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>Espace de stockage réseau de <a class="reference external" href="https://docs.computecanada.ca/wiki/Storage_and_file_management/fr#Quotas_et_politiques">petite à grande capacité</a> pour des <strong>données de projet</strong></p>
+<li><p>Espace de stockage réseau de <a class="reference external" href="https://docs.alliancecan.ca/wiki/Storage_and_file_management/fr#Quotas_et_politiques">petite à grande capacité</a> pour des <strong>données de projet</strong></p>
 <ul>
 <li><p>Un espace projet par défaut par groupe de recherche (sauf sur Niagara)</p>
 <ul>
 <li><p>Petite augmentation d’espace projet <strong>sur simple demande (jusqu’à 10 To)</strong></p></li>
-<li><p>Quota plus élevé si <a class="reference external" href="https://www.computecanada.ca/page-daccueil-du-portail-de-recherche/acces-aux-ressources/concours-dallocation-des-ressources/ressources-pour-les-groupes-de-recherche-crgr/?lang=fr">allocation spéciale</a></p></li>
+<li><p>Quota plus élevé si <a class="reference external" href="https://www.alliancecan.ca/page-daccueil-du-portail-de-recherche/acces-aux-ressources/concours-dallocation-des-ressources/ressources-pour-les-groupes-de-recherche-crgr/?lang=fr">allocation spéciale</a></p></li>
 </ul>
 </li>
 <li><p>Sauvegardé <strong>quotidiennement</strong></p>
@@ -994,7 +994,7 @@ ls -l /project/def-sponsor00
 </li>
 <li><p>Données de projet :</p>
 <ul>
-<li><p>Potentiellement <strong>partagées</strong> - <a class="reference external" href="https://docs.computecanada.ca/wiki/Sharing_data/fr">configuration des ACLs</a></p></li>
+<li><p>Potentiellement <strong>partagées</strong> - <a class="reference external" href="https://docs.alliancecan.ca/wiki/Sharing_data/fr">configuration des ACLs</a></p></li>
 <li><p>Durée de vie en fonction de la durée d’un projet</p></li>
 <li><p>Typiquement plus importantes que les données temporaires</p></li>
 </ul>
@@ -1013,9 +1013,9 @@ ls -l /project/def-sponsor00
 <ul class="simple">
 <li><p>On peut voir les fichiers avec la commande <code class="docutils literal notranslate"><span class="pre">ls</span></code></p></li>
 <li><p>Les données les plus anciennes dans
-<a class="reference external" href="https://docs.computecanada.ca/wiki/Using_nearline_storage/fr"><code class="docutils literal notranslate"><span class="pre">/nearline</span></code> sont probablement sur ruban</a></p>
+<a class="reference external" href="https://docs.alliancecan.ca/wiki/Using_nearline_storage/fr"><code class="docutils literal notranslate"><span class="pre">/nearline</span></code> sont probablement sur ruban</a></p>
 <ul>
-<li><p>Voir les commandes pour <a class="reference external" href="https://docs.computecanada.ca/wiki/Using_nearline_storage/fr#Transf.C3.A9rer_des_donn.C3.A9es_.C3.A0_partir_de_.2Fnearline">diagnostiquer l’état des fichiers</a> dans <code class="docutils literal notranslate"><span class="pre">/nearline</span></code></p></li>
+<li><p>Voir les commandes pour <a class="reference external" href="https://docs.alliancecan.ca/wiki/Using_nearline_storage/fr#Transf.C3.A9rer_des_donn.C3.A9es_.C3.A0_partir_de_.2Fnearline">diagnostiquer l’état des fichiers</a> dans <code class="docutils literal notranslate"><span class="pre">/nearline</span></code></p></li>
 </ul>
 </li>
 </ul>
@@ -1111,7 +1111,7 @@ pendant plusieurs mois</strong></p></li>
 </pre></div>
 </div>
 <ul class="simple">
-<li><p><a class="reference external" href="https://docs.computecanada.ca/wiki/Storage_and_file_management/fr#Introduction">La commande <code class="docutils literal notranslate"><span class="pre">diskusage_report</span></code></a> permet de générer un court rapport sur l’espace utilisé et le nombre de fichiers de chacun des espaces de stockage auxquels vous avez accès</p></li>
+<li><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Storage_and_file_management/fr#Introduction">La commande <code class="docutils literal notranslate"><span class="pre">diskusage_report</span></code></a> permet de générer un court rapport sur l’espace utilisé et le nombre de fichiers de chacun des espaces de stockage auxquels vous avez accès</p></li>
 <li><p>À chaque jour, un rapport de consommation de l’espace <code class="docutils literal notranslate"><span class="pre">/project</span></code> par utilisateur est produit :</p>
 <ul>
 <li><p>Sur Béluga : dans <code class="docutils literal notranslate"><span class="pre">/project/.stats/&lt;nom-allocation&gt;</span></code></p></li>
@@ -1120,7 +1120,7 @@ pendant plusieurs mois</strong></p></li>
 </ul>
 </li>
 <li><p>Sur Béluga et Narval, il existe aussi un outil plus avancé :
-<a class="reference external" href="https://docs.computecanada.ca/wiki/Diskusage_Explorer/fr"><code class="docutils literal notranslate"><span class="pre">diskusage_explorer</span></code></a></p>
+<a class="reference external" href="https://docs.alliancecan.ca/wiki/Diskusage_Explorer/fr"><code class="docutils literal notranslate"><span class="pre">diskusage_explorer</span></code></a></p>
 <ul>
 <li><p>Utilise les données en format SQLite générées quotidiennement dans <code class="docutils literal notranslate"><span class="pre">/project/.duc_databases/</span></code></p></li>
 <li><p>Permet d’avoir des statistiques de consommation du stockage par répertoire, ce qui évite d’utiliser la commande <code class="docutils literal notranslate"><span class="pre">du</span> <span class="pre">-sh</span> <span class="pre">*</span></code></p></li>
