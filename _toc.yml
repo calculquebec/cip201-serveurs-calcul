@@ -5,8 +5,7 @@ format: jb-book
 root: 0-a_propos
 chapters:
 - file: 1-introduction
-- file: 1-ressources
-- file: 2-analyse-taches
+- file: 2-ressources
 - file: 3-lots-taches
 - file: 4-stockage
 - file: 99-references
