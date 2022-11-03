@@ -299,11 +299,13 @@ title="Print to PDF"
 <ul class="simple">
 <li><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Getting_started/fr#Quelles_sont_les_ressources_disponibles.3F">Ressources disponibles</a></p>
 <ul>
-<li><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Using_SSH_keys_in_Linux/fr">Utiliser des clés SSH sous Linux</a></p></li>
-<li><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Storage_and_file_management/fr">Stockage et gestion des fichiers</a></p></li>
-<li><p>Grappes :</p>
+<li><p>Grappes nationales :</p>
 <ul>
-<li><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/B%C3%A9luga">Béluga</a> (CPU/GPU)</p></li>
+<li><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/B%C3%A9luga">Béluga</a> (CPU/GPU)</p>
+<ul>
+<li><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/B%c3%a9luga#Stockage">Stockage</a></p></li>
+</ul>
+</li>
 <li><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Cedar/fr">Cedar</a> (CPU/GPU)</p></li>
 <li><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Graham/fr">Graham</a> (CPU/GPU)</p></li>
 <li><p><a class="reference external" href="https://docs.scinet.utoronto.ca/index.php/Mist">Mist</a> (Power9/GPU)</p></li>
@@ -311,6 +313,44 @@ title="Print to PDF"
 <li><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Niagara/fr">Niagara</a> (CPU)</p></li>
 </ul>
 </li>
+<li><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Storage_and_file_management/fr">Stockage et gestion des fichiers</a></p>
+<ul>
+<li><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Archiving_and_compressing_files/fr">Archivage et compression de fichiers</a></p>
+<ul>
+<li><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Dar/fr">Disk ARchive ou DAR</a></p></li>
+<li><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/A_tutorial_on_%27tar%27/fr">Tape ARchive ou TAR</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/HDF5/fr">Hierarchical Data Format - HDF5</a></p></li>
+<li><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Tuning_Lustre/fr"><em>Lustre</em></a>, un système de fichiers parallèle</p></li>
+<li><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Sharing_data/fr">Partage de données</a></p></li>
+<li><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Storage_and_file_management/fr#Quotas_et_politiques">Quotas et politiques</a></p>
+<ul>
+<li><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Storage_and_file_management/fr#Introduction">Commande <code class="docutils literal notranslate"><span class="pre">diskusage_report</span></code></a></p></li>
+<li><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Scratch_purging_policy/fr">Espace <code class="docutils literal notranslate"><span class="pre">/scratch</span></code></a> - purge automatique</p></li>
+<li><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Diskusage_Explorer/fr">Espace <code class="docutils literal notranslate"><span class="pre">/project</span></code></a> - commande <code class="docutils literal notranslate"><span class="pre">diskusage_explorer</span></code></p></li>
+<li><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Using_nearline_storage/fr#Transf.C3.A9rer_des_donn.C3.A9es_.C3.A0_partir_de_.2Fnearline">Espace <code class="docutils literal notranslate"><span class="pre">/nearline</span></code></a> -
+état des fichiers</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Storage_and_file_management/fr#Types_de_stockage">Types de stockage</a></p>
+<ul>
+<li><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Using_node-local_storage/fr">Espace local sur les nœuds de calcul</a> - <code class="docutils literal notranslate"><span class="pre">$SLURM_TMPDIR</span></code></p></li>
+<li><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Project_layout/fr">Espace <code class="docutils literal notranslate"><span class="pre">/project</span></code></a> -
+stockage à moyen terme</p></li>
+<li><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Using_nearline_storage/fr">Espace <code class="docutils literal notranslate"><span class="pre">/nearline</span></code></a> -
+stockage long terme</p></li>
+</ul>
+</li>
+<li><p>Transfert de données :</p>
+<ul>
+<li><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Transferring_data/fr#rsync">Commande <code class="docutils literal notranslate"><span class="pre">rsync</span></code></a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Handling_large_collections_of_files/fr">Travailler avec un grand nombre de fichiers</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Using_SSH_keys_in_Linux/fr">Utiliser des clés SSH sous Linux</a></p></li>
 </ul>
 </li>
 </ul>
@@ -318,6 +358,7 @@ title="Print to PDF"
 <li><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Running_jobs/fr">Exécuter des tâches</a></p>
 <ul>
 <li><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Utiliser_des_modules">Chargement des modules</a></p></li>
+<li><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Installing_software_in_your_home_directory/fr">Installation de logiciels dans votre répertoire <code class="docutils literal notranslate"><span class="pre">/home</span></code></a></p></li>
 <li><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Job_scheduling_policies/fr">Politique d’ordonnancement des tâches</a></p>
 <ul>
 <li><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Job_scheduling_policies/fr#Pourcentages_des_n.C5.93uds_disponibles">Partitionnement des grappes</a></p></li>
@@ -355,6 +396,7 @@ title="Print to PDF"
 <ul class="simple">
 <li><p><a class="reference external" href="https://ccdb.computecanada.ca/me/group_usage">CCDB</a></p></li>
 <li><p><a class="reference external" href="https://alliancecan.ca/fr/services/calcul-informatique-de-pointe/acces-aux-ressources/concours-pour-lallocation-de-ressources">Concours pour l’allocation de ressources</a></p></li>
+<li><p><a class="reference external" href="https://www.frdr-dfdr.ca/repo/">Dépôt fédéré de données de recherche</a> (DFDR)</p></li>
 <li><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Cloud/fr">Service infonuagique de l’Alliance</a></p>
 <ul>
 <li><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Cloud_resources/fr">Ressources infonuagiques</a></p></li>
@@ -399,6 +441,8 @@ title="Print to PDF"
 </li>
 </ul>
 <ul class="simple">
+<li><p><a class="reference external" href="https://parquet.apache.org/docs/">Apache Parquet</a></p></li>
+<li><p><a class="reference external" href="https://arrow.apache.org/docs/python/feather.html">Apache Feather</a></p></li>
 <li><p><a class="reference external" href="https://www.gnu.org/software/parallel/parallel.html">GNU Parallel - Documentation officielle</a></p></li>
 <li><p><a class="reference external" href="https://fr.wikipedia.org/wiki/Shebang">Shebang</a></p></li>
 </ul>

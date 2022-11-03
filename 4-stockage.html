@@ -293,8 +293,8 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#description-de-vos-donnees">
-   Description de vos données
+  <a class="reference internal nav-link" href="#caracteristiques-de-vos-donnees">
+   Caractéristiques de vos données
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -308,30 +308,13 @@ title="Print to PDF"
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#compression">
-       Compression
+      <a class="reference internal nav-link" href="#compression-des-fichiers">
+       Compression des fichiers
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#fichiers-epars-sparse-files">
-       Fichiers épars (sparse files)
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#plan-de-gestion-des-donnees-actives">
-     Plan de gestion des données actives
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#vie-des-donnees">
-       Vie des données
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#niveaux-d-acces">
-       Niveaux d’accès
+      <a class="reference internal nav-link" href="#les-deux-2-types-de-compression">
+       Les deux (2) types de compression
       </a>
      </li>
     </ul>
@@ -416,6 +399,13 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#gestion-du-stockage">
    Gestion du stockage
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#en-cas-de-donnees-inaccessibles">
+     En cas de données inaccessibles
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#points-a-retenir">
@@ -442,8 +432,8 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#description-de-vos-donnees">
-   Description de vos données
+  <a class="reference internal nav-link" href="#caracteristiques-de-vos-donnees">
+   Caractéristiques de vos données
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -457,30 +447,13 @@ title="Print to PDF"
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#compression">
-       Compression
+      <a class="reference internal nav-link" href="#compression-des-fichiers">
+       Compression des fichiers
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#fichiers-epars-sparse-files">
-       Fichiers épars (sparse files)
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#plan-de-gestion-des-donnees-actives">
-     Plan de gestion des données actives
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#vie-des-donnees">
-       Vie des données
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#niveaux-d-acces">
-       Niveaux d’accès
+      <a class="reference internal nav-link" href="#les-deux-2-types-de-compression">
+       Les deux (2) types de compression
       </a>
      </li>
     </ul>
@@ -565,6 +538,13 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#gestion-du-stockage">
    Gestion du stockage
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#en-cas-de-donnees-inaccessibles">
+     En cas de données inaccessibles
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#points-a-retenir">
@@ -601,8 +581,8 @@ title="Print to PDF"
 <li><p><strong>Niveau d’accès</strong> : données confidentielles, partagées, publiées</p></li>
 </ul>
 <p>Le but de ce chapitre est de pouvoir considérer tous les aspects nécessaires à la gestion des données actives sur les différents espaces de stockage disponibles.</p>
-<section id="description-de-vos-donnees">
-<h2>Description de vos données<a class="headerlink" href="#description-de-vos-donnees" title="Lien permanent vers ce titre">#</a></h2>
+<section id="caracteristiques-de-vos-donnees">
+<h2>Caractéristiques de vos données<a class="headerlink" href="#caracteristiques-de-vos-donnees" title="Lien permanent vers ce titre">#</a></h2>
 <p>Au second chapitre, nous avons vu comment obtenir le nombre de
 fichiers de nos données locales, de même que la taille totale.</p>
 <p>Sur une grappe de calcul, un <strong>système de fichiers parallel</strong>
@@ -664,8 +644,8 @@ plusieurs formats décodables sur les différentes grappes :</p>
 </pre></div>
 </div>
 </section>
-<section id="compression">
-<h4>Compression<a class="headerlink" href="#compression" title="Lien permanent vers ce titre">#</a></h4>
+<section id="compression-des-fichiers">
+<h4>Compression des fichiers<a class="headerlink" href="#compression-des-fichiers" title="Lien permanent vers ce titre">#</a></h4>
 <p>La <a class="reference external" href="https://docs.alliancecan.ca/wiki/Archiving_and_compressing_files/fr">compression des fichiers</a>
 a un <strong>coût en temps CPU</strong> à chaque fois que nous voulons lire ou écrire
 les données. Ainsi, il vaut mieux utiliser la compression <strong>lorsque
@@ -712,20 +692,23 @@ dar -l arch
 <li><p><code class="docutils literal notranslate"><span class="pre">-Z</span> <span class="pre">'*.png'</span></code> : pour exclure les fichiers PNG</p></li>
 <li><p>Voir le résultat avec <code class="docutils literal notranslate"><span class="pre">dar</span> <span class="pre">-l</span> <span class="pre">arch</span></code></p></li>
 </ul>
-<p><strong>Les deux (2) types de compression</strong> :</p>
-<p>a) Compression explicite :</p>
+</section>
+<section id="les-deux-2-types-de-compression">
+<h4>Les deux (2) types de compression<a class="headerlink" href="#les-deux-2-types-de-compression" title="Lien permanent vers ce titre">#</a></h4>
+<p>Compression explicite :</p>
 <ul class="simple">
 <li><p>Lorsque vous utilisez un outil de compression (<code class="docutils literal notranslate"><span class="pre">gzip</span></code>, <code class="docutils literal notranslate"><span class="pre">zip</span></code>, etc.)</p></li>
 <li><p>Lorsque l’encodage permet de compresser les données
 (<code class="docutils literal notranslate"><span class="pre">dar</span></code>, bibliothèque <code class="docutils literal notranslate"><span class="pre">zlib</span></code>, etc.)</p></li>
-<li><p>Lors d’un transfert avec <code class="docutils literal notranslate"><span class="pre">rsync</span></code>, il existe des options permettant
-de compresser automatiquement les données lors du transfert.
-Cela étant dit, le transfert risque d’être limité par la vitesse du processeur…</p></li>
+<li><p>Lors d’un transfert avec la <a class="reference external" href="https://docs.alliancecan.ca/wiki/Transferring_data/fr#rsync">commande <code class="docutils literal notranslate"><span class="pre">rsync</span></code></a>,
+il existe des options permettant de compresser automatiquement
+les données lors du transfert. Cela étant dit, le transfert
+risque d’être limité par la vitesse du processeur…</p></li>
 </ul>
 <div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>man rsync  <span class="c1"># Chercher: /compress + n, Quitter: q</span>
 </pre></div>
 </div>
-<p>b) Compression implicite :</p>
+<p>Compression implicite :</p>
 <ul class="simple">
 <li><p>Lorsque le <strong>système de fichiers compresse automatiquement</strong> vos
 données avant de les écrire sur le système de stockage :</p>
@@ -738,7 +721,7 @@ données avant de les écrire sur le système de stockage :</p>
 données. Voici quelques exemples :</p>
 <ul>
 <li><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/HDF5/fr">Hierarchical Data Format - HDF5</a> - format standard pour données scientifiques</p></li>
-<li><p><a class="reference external" href="https://parquet.apache.org/documentation/latest/">Apache Parquet</a> - stockage compressé de données tabulaires</p>
+<li><p><a class="reference external" href="https://parquet.apache.org/docs/">Apache Parquet</a> - stockage compressé de données tabulaires</p>
 <ul>
 <li><p>Note: l’autre format, <a class="reference external" href="https://arrow.apache.org/docs/python/feather.html">Apache Feather</a>, ne compresse pas vraiment les données, sauf si on considère que c’est un format binaire prenant moins de place</p></li>
 </ul>
@@ -758,83 +741,10 @@ du -s --apparent-size ~
 stockage; le survol récursif des fichiers constitue un grand nombre
 d’accès aux métadonnées de <em>Lustre</em></p></li>
 </ul>
-<p>En pratique, les grappes de calcul offrent des outils efficaces pour
-mesurer l’espace utilisé en fonction de l’espace alloué.
+<p>En pratique, les grappes de calcul offrent des
+<a class="reference external" href="https://docs.alliancecan.ca/wiki/Diskusage_Explorer">outils efficaces</a>
+pour mesurer l’espace utilisé en fonction de l’espace alloué.
 Nous verrons cela à la fin du chapitre.</p>
-</section>
-<section id="fichiers-epars-sparse-files">
-<h4>Fichiers épars (sparse files)<a class="headerlink" href="#fichiers-epars-sparse-files" title="Lien permanent vers ce titre">#</a></h4>
-<p>Restez à l’affût des fichiers épars dont la faible taille sur le disque n’est pas représentative de la taille normale du fichier :</p>
-<ul class="simple">
-<li><p>Une certaine taille <code class="docutils literal notranslate"><span class="pre">T</span></code> est allouée pour le fichier.
-Par exemple : 1 To</p></li>
-<li><p>Seulement <code class="docutils literal notranslate"><span class="pre">t</span></code> octets sont réellement écrits dans le fichier
-(où <code class="docutils literal notranslate"><span class="pre">t</span> <span class="pre">&lt;&lt;</span> <span class="pre">T</span></code>). Par exemple : 1 Go</p></li>
-<li><p>Ce type de fichiers est typiquement utilisé pour des volumes de
-stockage de machines virtuelles, ce qui économise de l’espace sur le
-serveur hôte</p></li>
-<li><p>Problème : lors d’un transfert ou d’une sauvegarde (<em>backup</em>),
-ce sont les <code class="docutils literal notranslate"><span class="pre">T</span></code> octets qui sont lus, ce qui peut être catastrophique
-si <code class="docutils literal notranslate"><span class="pre">T</span></code> est vraiment très grand</p></li>
-<li><p><strong>Solution</strong> : les fichiers <code class="docutils literal notranslate"><span class="pre">.dar</span></code> permettent d’optimiser
-l’encapsulation de fichiers épars avant un transfert ou une copie</p></li>
-</ul>
-</section>
-</section>
-<section id="plan-de-gestion-des-donnees-actives">
-<h3>Plan de gestion des données actives<a class="headerlink" href="#plan-de-gestion-des-donnees-actives" title="Lien permanent vers ce titre">#</a></h3>
-<p>Les données sur les grappes de calcul sont généralement présentes en attente d’être traitées, manipulées ou publiées, d’où la notion de <em>données actives</em>. Or, il y a une planification à faire et des questions à se poser.</p>
-<section id="vie-des-donnees">
-<h4>Vie des données<a class="headerlink" href="#vie-des-donnees" title="Lien permanent vers ce titre">#</a></h4>
-<ul class="simple">
-<li><p><strong>Durée de vie variable</strong> - avons-nous affaire à des données temporaires ou à des données persistantes?</p>
-<ul>
-<li><p>Utilisées (à répétition ou non) pendant une seule tâche de calcul?</p></li>
-<li><p>Utilisées entre deux tâches de calcul?</p></li>
-<li><p>Utilisées pour plusieurs calculs par plusieurs personnes?</p></li>
-<li><p>Peut-on importer à nouveau les données en cas de perte?</p></li>
-<li><p>Peut-on recalculer les données en cas de perte? Si oui, à quel coût?</p></li>
-</ul>
-</li>
-<li><p><strong>Fréquence d’accès</strong> - combien de temps sépare les différents accès?</p>
-<ul>
-<li><p>Utilisation courante (à chaque jour, semaine ou mois)?</p></li>
-<li><p>Données à garder pour plus tard, par exemple pour reproduire les résultats?</p></li>
-<li><p>Données à publier sur des dépôts de données de recherche?</p></li>
-</ul>
-</li>
-<li><p><strong>Urgence d’accès</strong> - à propos de données critiques ou importantes :</p>
-<ul>
-<li><p>Combien y a-t-il de copies?</p></li>
-<li><p>Doivent-elles être accessibles en tout temps?</p></li>
-</ul>
-</li>
-</ul>
-<p>Si aucune planification n’est faite, les données temporaires s’accumulent et prennent de la place dans l’espace alloué qui est de taille limitée. Si les données sont mal décrites, leur identification, leur compréhension et leur publication deviennent des tâches laborieuses pour les personnes qui en héritent.</p>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>cat .gitignore  <span class="c1"># Fichiers à ignorer, car temporaires</span>
-cat README.md   <span class="c1"># Description du projet</span>
-</pre></div>
-</div>
-</section>
-<section id="niveaux-d-acces">
-<h4>Niveaux d’accès<a class="headerlink" href="#niveaux-d-acces" title="Lien permanent vers ce titre">#</a></h4>
-<ul class="simple">
-<li><p>Quel est le <strong>niveau de confidentialité</strong> de vos données?</p>
-<ul>
-<li><p><strong>Qui</strong> devrait avoir accès à quelles données?</p></li>
-<li><p><strong>Où</strong> pouvez-vous héberger vos données?</p></li>
-<li><p><strong>Quand</strong> : qui devrait avoir accès à vos données à votre départ?
-Et à partir de quand peut-on publier les données?</p></li>
-</ul>
-</li>
-</ul>
-<p>Référez-vous aux <strong>politiques de votre université</strong> concernant la gestion
-des données de recherche.
-Sans précaution, les données que vous laissez sur les grappes de
-calcul risquent de ne pas être accessibles aux membres d’un
-laboratoire qui poursuivent leur recherche.</p>
-<p>Dès que possible, mettez en place les accès nécessaires pour le
-<a class="reference external" href="https://docs.alliancecan.ca/wiki/Sharing_data/fr">partage de vos données</a>.</p>
 </section>
 </section>
 </section>
@@ -907,16 +817,19 @@ df -h <span class="nv">$SLURM_TMPDIR</span>
 <ul class="simple">
 <li><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Using_node-local_storage/fr">Stockage local très rapide</a>, mais limité à la durée de la tâche de calcul</p>
 <ul>
-<li><p>Faible latence à comparé <em>Lustre</em></p></li>
+<li><p><strong>Faible latence</strong> à comparé <em>Lustre</em></p></li>
 <li><p>Grande bande-passante, en particulier pour les petits fichiers</p></li>
 <li><p><strong>Données supprimées à la fin</strong> de la tâche de calcul</p></li>
-<li><p>Si plusieurs noeuds travaillent sur un même calcul parallèle, <strong>chaque noeud a son propre dossier</strong> <code class="docutils literal notranslate"><span class="pre">$SLURM_TMPDIR</span></code></p></li>
+<li><p>Si plusieurs noeuds travaillent sur un même calcul parallèle,
+<strong>chaque noeud a son propre dossier</strong> <code class="docutils literal notranslate"><span class="pre">$SLURM_TMPDIR</span></code></p></li>
 </ul>
 </li>
 <li><p>Cas d’utilisation :</p>
 <ul>
-<li><p><strong>Importation</strong> de plusieurs <strong>petits fichiers</strong> qui seront utilisés à répétition lors d’un calcul</p></li>
-<li><p><strong>Sauvegarde</strong> de fichiers qui sont <strong>constamment modifiés</strong> - à exporter vers Lustre à la fin du calcul</p></li>
+<li><p><strong>Importation</strong> de plusieurs <strong>petits fichiers</strong> qui seront
+utilisés à répétition lors d’un calcul</p></li>
+<li><p><strong>Sauvegarde</strong> de fichiers qui sont <strong>constamment modifiés</strong> -
+à exporter vers <em>Lustre</em> à la fin du calcul</p></li>
 </ul>
 </li>
 </ul>
@@ -964,7 +877,8 @@ ls -l
 <ul>
 <li><p>Utilisation de données <strong>pendant quelques jours</strong> seulement</p></li>
 <li><p>Stocker temporairement des <strong>résultats en grand nombre</strong> de fichiers</p></li>
-<li><p>Stocket des résultats <strong>intermédiaires</strong> qui sont <strong>trop gros</strong> pour <code class="docutils literal notranslate"><span class="pre">/project</span></code></p></li>
+<li><p>Stocker des résultats <strong>intermédiaires</strong> qui sont <strong>trop gros</strong>
+pour <code class="docutils literal notranslate"><span class="pre">/project</span></code></p></li>
 </ul>
 </li>
 </ul>
@@ -982,7 +896,7 @@ ls -l /project/def-sponsor00
 <li><p>Un espace projet par défaut par groupe de recherche (sauf sur Niagara)</p>
 <ul>
 <li><p>Petite augmentation d’espace projet <strong>sur simple demande (jusqu’à 10 To)</strong></p></li>
-<li><p>Quota plus élevé si <a class="reference external" href="https://www.alliancecan.ca/page-daccueil-du-portail-de-recherche/acces-aux-ressources/concours-dallocation-des-ressources/ressources-pour-les-groupes-de-recherche-crgr/?lang=fr">allocation spéciale</a></p></li>
+<li><p>Quota plus élevé si <a class="reference external" href="https://alliancecan.ca/fr/services/calcul-informatique-de-pointe/acces-aux-ressources/concours-pour-lallocation-de-ressources">allocation spéciale</a></p></li>
 </ul>
 </li>
 <li><p>Sauvegardé <strong>quotidiennement</strong></p>
@@ -1073,32 +987,32 @@ pendant plusieurs mois</strong></p></li>
 <section id="exercice-execution-d-un-pipeline">
 <h4>Exercice - Exécution d’un pipeline<a class="headerlink" href="#exercice-execution-d-un-pipeline" title="Lien permanent vers ce titre">#</a></h4>
 <ul class="simple">
-<li><p>Étudier les scripts :</p>
+<li><p>Étudiez les scripts :</p>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">scripts/blastn-pipeline.sh</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">scripts/blastn-traitement.sh</span></code></p></li>
 </ul>
 </li>
-<li><p>Lancer le pipeline avec la commande :</p></li>
+<li><p>Lancez le pipeline avec la commande :</p></li>
 </ul>
 <div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>bash scripts/blastn-pipeline.sh
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>Surveiller les tâches avec <code class="docutils literal notranslate"><span class="pre">squeue</span> <span class="pre">-u</span> <span class="pre">$USER</span></code></p></li>
+<li><p>Surveillez les tâches avec <code class="docutils literal notranslate"><span class="pre">squeue</span> <span class="pre">-u</span> <span class="pre">$USER</span></code></p></li>
 <li><p>Trouver les fichiers créés dans :</p>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">$SCRATCH/donnees</span></code> et</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">$SCRATCH/donnees/res_prll</span></code></p></li>
 </ul>
 </li>
-<li><p>Lancer le post-traitement avec la commande :</p></li>
+<li><p>Lancez le post-traitement avec la commande :</p></li>
 </ul>
 <div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>bash scripts/blastn-traitement.sh
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>Trouver le fichier TSV dans l’espace projet</p></li>
+<li><p>Trouvez le fichier TSV dans l’espace projet</p></li>
 </ul>
 </section>
 </section>
@@ -1115,19 +1029,20 @@ pendant plusieurs mois</strong></p></li>
 <li><p>À chaque jour, un rapport de consommation de l’espace <code class="docutils literal notranslate"><span class="pre">/project</span></code> par utilisateur est produit :</p>
 <ul>
 <li><p>Sur Béluga : dans <code class="docutils literal notranslate"><span class="pre">/project/.stats/&lt;nom-allocation&gt;</span></code></p></li>
-<li><p>Sur Cedar : dans <code class="docutils literal notranslate"><span class="pre">/project/.stats/&lt;nom-allocation&gt;.json</span></code></p></li>
+<li><p>Sur Cedar et Narval : dans <code class="docutils literal notranslate"><span class="pre">/project/.stats/&lt;nom-allocation&gt;.json</span></code></p></li>
 <li><p>Disponible sur demande pour Graham et Niagara</p></li>
 </ul>
 </li>
 <li><p>Sur Béluga et Narval, il existe aussi un outil plus avancé :
-<a class="reference external" href="https://docs.alliancecan.ca/wiki/Diskusage_Explorer/fr"><code class="docutils literal notranslate"><span class="pre">diskusage_explorer</span></code></a></p>
+<a class="reference external" href="https://docs.alliancecan.ca/wiki/Diskusage_Explorer/fr">la commande <code class="docutils literal notranslate"><span class="pre">diskusage_explorer</span></code></a></p>
 <ul>
 <li><p>Utilise les données en format SQLite générées quotidiennement dans <code class="docutils literal notranslate"><span class="pre">/project/.duc_databases/</span></code></p></li>
 <li><p>Permet d’avoir des statistiques de consommation du stockage par répertoire, ce qui évite d’utiliser la commande <code class="docutils literal notranslate"><span class="pre">du</span> <span class="pre">-sh</span> <span class="pre">*</span></code></p></li>
 </ul>
 </li>
 </ul>
-<p><strong>En cas de données inaccessibles</strong> :</p>
+<section id="en-cas-de-donnees-inaccessibles">
+<h3>En cas de données inaccessibles<a class="headerlink" href="#en-cas-de-donnees-inaccessibles" title="Lien permanent vers ce titre">#</a></h3>
 <ul class="simple">
 <li><p>Une professeure ou un professeur peut demander à ce que les données soient supprimées</p></li>
 <li><p>Par contre, pour obtenir l’accès aux données, il faut avoir le consentement de la personne qui les a isolées (probablement involontairement)</p>
@@ -1136,7 +1051,9 @@ pendant plusieurs mois</strong></p></li>
 </ul>
 </li>
 </ul>
-<p>Dans tous les cas, il vaut mieux prévenir, et ce, dès l’importation de données sur les grappes de calcul.</p>
+<p>Dans tous les cas, il vaut mieux planifier, et ce,
+dès l’importation de données sur les grappes de calcul.</p>
+</section>
 </section>
 <section id="points-a-retenir">
 <h2>Points à retenir<a class="headerlink" href="#points-a-retenir" title="Lien permanent vers ce titre">#</a></h2>
