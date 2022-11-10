@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Introduction &#8212; CIP201 - Maîtriser l’utilisation des serveurs de calcul</title>
+    <title>Exercices supplémentaires &#8212; CIP201 - Maîtriser l’utilisation des serveurs de calcul</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -51,11 +51,13 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="shortcut icon" href="_static/logo.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
-    <link rel="next" title="Bien choisir les ressources" href="2-ressources.html" />
-    <link rel="prev" title="À propos" href="0-a_propos.html" />
+    <link rel="next" title="Références" href="99-references.html" />
+    <link rel="prev" title="Les espaces de stockage" href="4-stockage.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="fr">
     
@@ -116,8 +118,8 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="1-introduction.html">
    Introduction
   </a>
  </li>
@@ -136,8 +138,8 @@ const thebe_selector_output = ".output, .cell_output"
    Les espaces de stockage
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="90-exercices.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Exercices supplémentaires
   </a>
  </li>
@@ -243,7 +245,7 @@ title="Source repository"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="_sources/1-introduction.ipynb"
+        <a href="_sources/90-exercices.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -303,26 +305,34 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#rappel-le-calcul-haute-performance">
-   Rappel - le calcul haute performance
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#differents-types-de-taches">
-   Différents types de tâches
+  <a class="reference internal nav-link" href="#installation-de-benchmark-5d">
+   Installation de
+   <em>
+    Benchmark 5D
+   </em>
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#parallelisme-de-donnees">
-     Parallélisme de données
+    <a class="reference internal nav-link" href="#utiliser-glost">
+     Utiliser GLOST
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#utiliser-gnu-parallel">
+     Utiliser GNU Parallel
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#analyse-des-ressources-utilisees">
+     Analyse des ressources utilisées
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#probleme-plus-grand">
+     Problème plus grand
     </a>
    </li>
   </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#des-questions-a-se-poser">
-   Des questions à se poser
-  </a>
  </li>
 </ul>
 
@@ -333,7 +343,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Introduction</h1>
+                <h1>Exercices supplémentaires</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -344,26 +354,34 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#rappel-le-calcul-haute-performance">
-   Rappel - le calcul haute performance
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#differents-types-de-taches">
-   Différents types de tâches
+  <a class="reference internal nav-link" href="#installation-de-benchmark-5d">
+   Installation de
+   <em>
+    Benchmark 5D
+   </em>
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#parallelisme-de-donnees">
-     Parallélisme de données
+    <a class="reference internal nav-link" href="#utiliser-glost">
+     Utiliser GLOST
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#utiliser-gnu-parallel">
+     Utiliser GNU Parallel
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#analyse-des-ressources-utilisees">
+     Analyse des ressources utilisées
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#probleme-plus-grand">
+     Problème plus grand
     </a>
    </li>
   </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#des-questions-a-se-poser">
-   Des questions à se poser
-  </a>
  </li>
 </ul>
 
@@ -375,110 +393,103 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="introduction">
-<h1>Introduction<a class="headerlink" href="#introduction" title="Lien permanent vers ce titre">#</a></h1>
-<section id="rappel-le-calcul-haute-performance">
-<h2>Rappel - le calcul haute performance<a class="headerlink" href="#rappel-le-calcul-haute-performance" title="Lien permanent vers ce titre">#</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="exercices-supplementaires">
+<h1>Exercices supplémentaires<a class="headerlink" href="#exercices-supplementaires" title="Lien permanent vers ce titre">#</a></h1>
+<section id="installation-de-benchmark-5d">
+<h2>Installation de <em>Benchmark 5D</em><a class="headerlink" href="#installation-de-benchmark-5d" title="Lien permanent vers ce titre">#</a></h2>
+<p>Il s’agit d’un code effectuant des multiplications matricielles.
+Pour une quantité de données d’ordre <span class="math notranslate nohighlight">\(O(n^3)\)</span>, le code effectue
+un nombre de multiplications et d’additions d’ordre <span class="math notranslate nohighlight">\(O(n^5)\)</span>.</p>
+<p>Pour l’installer dans le dossier <code class="docutils literal notranslate"><span class="pre">$HOME</span></code>:</p>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>cat scripts/installer/b5D.sh
+bash scripts/installer/b5D.sh
+</pre></div>
+</div>
+<p>Afin de tirer profit des différents niveaux de cache-mémoire dans un
+ordinateur, le code de <em>Benchmark 5D</em> permet de découper les cubes de
+données en <em>blocs</em> de taille <code class="docutils literal notranslate"><span class="pre">b1*b2*b3</span></code>, et de découper les <em>blocs</em> de
+données en <em>prismes</em> de taille <code class="docutils literal notranslate"><span class="pre">p1*p2*p3</span></code>.
+Il est donc requis que <code class="docutils literal notranslate"><span class="pre">b1&gt;p1</span></code>, <code class="docutils literal notranslate"><span class="pre">b2&gt;p2</span></code> et <code class="docutils literal notranslate"><span class="pre">b3&gt;p3</span></code>.
+Toutes ces dimensions peuvent être fournies en argument à l’exécutable
+<code class="docutils literal notranslate"><span class="pre">b5D.omp</span></code> (compilé avec OpenMP).</p>
+<p>La question : quelle combinaison de <code class="docutils literal notranslate"><span class="pre">{b,p}*{1,2,3}</span></code> permet
+d’obtenir la meilleure performance lorsque <code class="docutils literal notranslate"><span class="pre">n=96</span></code>?
+Pour simplifier le problème : <code class="docutils literal notranslate"><span class="pre">b1=b2=b3</span></code> et <code class="docutils literal notranslate"><span class="pre">p1=p2=p3</span></code>.</p>
+<section id="utiliser-glost">
+<h3>Utiliser GLOST<a class="headerlink" href="#utiliser-glost" title="Lien permanent vers ce titre">#</a></h3>
+<p>On se rappelle que GLOST fonctionne avec une liste de commandes
+indépendantes. Pour générer et valider cette liste :</p>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>cat scripts/extra/b5D-gen-cas.sh
+bash scripts/extra/b5D-gen-cas.sh
+
+cat <span class="nv">$SCRATCH</span>/cas-b5D.txt
+</pre></div>
+</div>
+<p>Éditez le fichier <code class="docutils literal notranslate"><span class="pre">scripts/extra/b5D-glost.sh</span></code> dans le but
+d’utiliser GLOST :</p>
+<ol class="simple">
+<li><p>Demandez 4 tâches Slurm par noeud</p></li>
+<li><p>Faites charger le module <code class="docutils literal notranslate"><span class="pre">glost/0.3.1</span></code> après le module GCC</p></li>
+<li><p>Construisez la commande de démarrage de GLOST avec <code class="docutils literal notranslate"><span class="pre">srun</span></code>
+et <code class="docutils literal notranslate"><span class="pre">$SCRATCH/cas-b5D.txt</span></code> pour le fichier de commandes.</p></li>
+</ol>
+<p>Une fois que ce script de tâche est complété, vous pouvez le soumettre
+à l’ordonnanceur :</p>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>sbatch scripts/extra/b5D-glost.sh
+</pre></div>
+</div>
+<p>Dans le fichier de sortie Slurm, vous devriez pouvoir identifier la
+combinaison optimale pour <code class="docutils literal notranslate"><span class="pre">b</span></code> et <code class="docutils literal notranslate"><span class="pre">p</span></code> en considérant les vitesses.</p>
+</section>
+<section id="utiliser-gnu-parallel">
+<h3>Utiliser GNU Parallel<a class="headerlink" href="#utiliser-gnu-parallel" title="Lien permanent vers ce titre">#</a></h3>
+<p>Éditez le fichier <code class="docutils literal notranslate"><span class="pre">scripts/extra/b5D-parallel.sh</span></code> dans le but
+d’utiliser GPU Parallel :</p>
+<ol class="simple">
+<li><p>Demandez 4 processeurs pour une et une seule tâche Slurm</p></li>
+<li><p>Demandez 2000M de mémoire-vive par processeur</p></li>
+<li><p>Faites en sorte que <code class="docutils literal notranslate"><span class="pre">./b5D.omp</span></code> soit appelé par GNU Parallel</p></li>
+<li><p>Tous les paramètres <code class="docutils literal notranslate"><span class="pre">-b*</span></code> auront la même valeur, mais les
+différentes valeurs à tester sont : <code class="docutils literal notranslate"><span class="pre">48</span> <span class="pre">32</span> <span class="pre">24</span></code></p></li>
+<li><p>Tous les paramètres <code class="docutils literal notranslate"><span class="pre">-p*</span></code> auront la même valeur, mais les
+différentes valeurs à tester sont : <code class="docutils literal notranslate"><span class="pre">16</span> <span class="pre">12</span> <span class="pre">8</span> <span class="pre">6</span></code></p></li>
+</ol>
+<p>Une fois que ce script de tâche est complété, vous pouvez le soumettre
+à l’ordonnanceur :</p>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>sbatch scripts/extra/b5D-parallel.sh
+</pre></div>
+</div>
+<p>Dans le fichier de sortie Slurm, vous devriez pouvoir identifier la
+combinaison optimale pour <code class="docutils literal notranslate"><span class="pre">b</span></code> et <code class="docutils literal notranslate"><span class="pre">p</span></code> en considérant les vitesses.</p>
+</section>
+<section id="analyse-des-ressources-utilisees">
+<h3>Analyse des ressources utilisées<a class="headerlink" href="#analyse-des-ressources-utilisees" title="Lien permanent vers ce titre">#</a></h3>
 <ul class="simple">
-<li><p>Lorsqu’il est question de lancer une <strong>grande quantité de calculs</strong>
-(séquentiels ou parallèles) ou de <strong>traitements de données</strong>,
-l’utilisation d’une grappe de calcul haute performance devient nécessaire.</p></li>
-<li><p>Puisque les <strong>ressources sont partagées</strong> et en grande demande,
-chaque tâche doit être soumise à un ordonnanceur de tâches.</p></li>
-<li><p>Il devient donc nécessaire <strong>d’estimer à l’avance les ressources</strong>
-qui seront réservées lors de l’exécution d’un calcul.</p></li>
+<li><p>Utilisez la commande <code class="docutils literal notranslate"><span class="pre">sacct</span></code> pour obtenir le détail de vos dernières
+tâches.</p></li>
+<li><p>Utilisez la commande <code class="docutils literal notranslate"><span class="pre">seff</span></code> avec un numéro de tâche pour obtenir ses
+ressources consommées : temps CPU, quantité de mémoire-vive et
+pourcentages d’efficacité.</p></li>
 </ul>
 </section>
-<section id="differents-types-de-taches">
-<h2>Différents types de tâches<a class="headerlink" href="#differents-types-de-taches" title="Lien permanent vers ce titre">#</a></h2>
-<p>Deux grandes catégories de tâches qui travaillent sur un même problème :
-<img alt="Séquentiel vs parallel" src="_images/serial-vs-parallel.svg" /></p>
-<table class="colwidths-auto table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Type :</p></th>
-<th class="text-align:center head"><p>Séquentielles /</p></th>
-<th class="text-align:center head"><p>Parallèles ////</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Description :</p></td>
-<td class="text-align:center"><p>Une opération à la fois</p></td>
-<td class="text-align:center"><p>Plusieurs opérations en simultané</p></td>
-</tr>
-<tr class="row-odd"><td><p></p></td>
-<td class="text-align:center"><p>Un processus</p></td>
-<td class="text-align:center"><p>Plusieurs processus</p></td>
-</tr>
-<tr class="row-even"><td><p>Via :</p></td>
-<td class="text-align:center"><p>AVEC</p></td>
-<td class="text-align:center"><p>ET/OU</p></td>
-</tr>
-<tr class="row-odd"><td><p></p></td>
-<td class="text-align:center"><p>un seul fil d’exécution (<em>thread</em>)</p></td>
-<td class="text-align:center"><p>plusieurs fils d’exécution</p></td>
-</tr>
-<tr class="row-even"><td><p>Ressources :</p></td>
-<td class="text-align:center"><p>Un processeur</p></td>
-<td class="text-align:center"><p>Plusieurs processeurs ou noeuds de calcul</p></td>
-</tr>
-</tbody>
-</table>
-<p>Avec le calcul parallèle, il y a <strong>deux modèles de mémoire</strong> :</p>
+<section id="probleme-plus-grand">
+<h3>Problème plus grand<a class="headerlink" href="#probleme-plus-grand" title="Lien permanent vers ce titre">#</a></h3>
+<p>Sachant quelles sont les meilleurs paramètres pour <code class="docutils literal notranslate"><span class="pre">b</span></code> et <code class="docutils literal notranslate"><span class="pre">p</span></code>,
+construisez un nouveau script de tâche pour tester trois (3)
+lancements successifs de la commande <code class="docutils literal notranslate"><span class="pre">./b5D.omp</span></code> avec <code class="docutils literal notranslate"><span class="pre">-n</span> <span class="pre">144</span></code> :</p>
 <ul class="simple">
-<li><p><strong>Partagée</strong> : un seul processus de plusieurs fils d’exécution</p></li>
-<li><p><strong>Distribuée</strong> : plusieurs processus sur un ou plusieurs noeuds</p></li>
+<li><p>Réservez une tâche Slurm de un processeur</p></li>
+<li><p>Réservez suffisamment de mémoire-vive, mais pas trop</p></li>
+<li><p>Réservez suffisamment de temps de calcul</p></li>
+<li><p>Utilisez la commande <code class="docutils literal notranslate"><span class="pre">time</span> <span class="pre">-p</span></code> pour mesurer le temps de chacune des
+trois exécutions.</p></li>
 </ul>
-<p><img alt="Mémoire partagée ou distribuée" src="_images/memory-models.svg" /></p>
-<p>Enfin, un sous-type parmi les tâches séquentielles : le calcul vectoriel.</p>
-<ul class="simple">
-<li><p>Description : <strong>une même opération</strong> sur des vecteurs de données</p></li>
-<li><p>Ressources : un processeur moderne ou un <strong>accélérateur</strong> (GPU)</p></li>
-</ul>
-<p><img alt="Calcul vectoriel" src="_images/calcul-vectoriel.svg" /></p>
-<section id="parallelisme-de-donnees">
-<h3>Parallélisme de données<a class="headerlink" href="#parallelisme-de-donnees" title="Lien permanent vers ce titre">#</a></h3>
-<ul class="simple">
-<li><p>Beaucoup de données à traiter de manière indépendante</p></li>
-<li><p><strong>Plusieurs tâches séquentielles en simultané</strong></p>
-<ul>
-<li><p>Utilisation de <strong>lots de tâches</strong></p></li>
-<li><p>Ou une tâche parallèle qui partitionne les données en différents problèmes à traiter sur des processeurs différents</p></li>
-</ul>
-</li>
-</ul>
-<p><img alt="Parallélisme de données" src="_images/data-parallelism.svg" /></p>
+<ol class="simple">
+<li><p>Une fois le script complété, soumettez-le et vérifiez les résultats.
+En cas d’erreur, faites les corrections et essayez à nouveau</p></li>
+<li><p>Vérifiez les ressources utilisées (temps CPU, mémoire, etc.)</p></li>
+</ol>
 </section>
-</section>
-<section id="des-questions-a-se-poser">
-<h2>Des questions à se poser<a class="headerlink" href="#des-questions-a-se-poser" title="Lien permanent vers ce titre">#</a></h2>
-<ul class="simple">
-<li><p>Quel <strong>type de calculs</strong> effectuez-vous?</p>
-<ul>
-<li><p>Séquentiel ou parallel?</p></li>
-<li><p>Traiter beaucoup de petits fichiers ou quelques grands fichiers?</p></li>
-<li><p>Algorithme vectorisé?</p></li>
-</ul>
-</li>
-<li><p>Quelles <strong>ressources</strong> vont être consommées?</p>
-<ul>
-<li><p>Quelles ressources choisir?</p></li>
-<li><p>Quelle quantité de ressources?</p></li>
-</ul>
-</li>
-<li><p>Comment <strong>planifier le stockage</strong> nécessaire?</p>
-<ul>
-<li><p>Avez-vous un plan de gestion des données?</p></li>
-<li><p>Quels espaces de stockage utiliser?</p></li>
-<li><p>Qui devrait accéder à quoi?</p></li>
-<li><p>Quand devriez-vous archiver certaines données?</p></li>
-</ul>
-</li>
-<li><p>Comment <strong>lancer des tâches</strong>?</p>
-<ul>
-<li><p>Comment en faire le suivi?</p></li>
-</ul>
-</li>
-</ul>
 </section>
 </section>
 
@@ -509,17 +520,17 @@ qui seront réservées lors de l’exécution d’un calcul.</p></li>
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="0-a_propos.html" title="précédent page">
+    <a class='left-prev' id="prev-link" href="4-stockage.html" title="précédent page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">précédent</p>
-            <p class="prev-next-title">À propos</p>
+            <p class="prev-next-title">Les espaces de stockage</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="2-ressources.html" title="suivant page">
+    <a class='right-next' id="next-link" href="99-references.html" title="suivant page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">suivant</p>
-        <p class="prev-next-title">Bien choisir les ressources</p>
+        <p class="prev-next-title">Références</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
