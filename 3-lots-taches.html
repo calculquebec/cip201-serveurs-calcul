@@ -1,49 +1,60 @@
 
+
 <!DOCTYPE html>
 
-<html lang="fr">
+
+<html lang="fr" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Lots de tâches &#8212; CIP201 - Maîtriser l’utilisation des serveurs de calcul</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
     <script src="_static/translations.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -53,62 +64,94 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '3-lots-taches';</script>
     <link rel="shortcut icon" href="_static/logo.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
     <link rel="next" title="Les espaces de stockage" href="4-stockage.html" />
     <link rel="prev" title="Bien choisir les ressources" href="2-ressources.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="fr">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="fr"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
-
-    
-
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
+  
+  
+  <a class="skip-link" href="#main-content">Passer au contenu principal</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="0-a_propos.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="_static/logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">CIP201 - Maîtriser l’utilisation des serveurs de calcul</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -118,383 +161,213 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="1-introduction.html">
-   Introduction
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="2-ressources.html">
-   Bien choisir les ressources
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Lots de tâches
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="4-stockage.html">
-   Les espaces de stockage
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="90-exercices.html">
-   Exercices supplémentaires
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="99-references.html">
-   Références
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="1-introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2-ressources.html">Bien choisir les ressources</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Lots de tâches</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4-stockage.html">Les espaces de stockage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="90-exercices.html">Exercices supplémentaires</a></li>
+<li class="toctree-l1"><a class="reference internal" href="99-references.html">Références</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
-
-
-          
-
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
-
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-    </ul>
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
   </div>
-</div>
+  
+  <div id="rtd-footer-container"></div>
 
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/calculquebec/utilisation-serveurs-calcul" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Dépôt source"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
-  <i class="fas fa-expand"></i>
-  </span>
-
-</button>
-<a href="https://github.com/calculquebec/utilisation-serveurs-calcul"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="bottom"
-title="Source repository"
->
-  
-
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fab fa-github"></i>
   </span>
 
 </a>
 
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Téléchargez cette page">
+    <i class="fas fa-download"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="_sources/3-lots-taches.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/3-lots-taches.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Télécharger le fichier source"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="headerbtn__text-container">.ipynb</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
-
-      </li>
+</li>
+      
+      
+      
       
       <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Imprimer au format PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-file-pdf"></i>
   </span>
-<span class="headerbtn__text-container">.pdf</span>
+<span class="btn__text-container">.pdf</span>
 </button>
-
-      </li>
+</li>
       
-    </ul>
-  </div>
+  </ul>
 </div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Mode plein écran"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
   </span>
 
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="clair/sombre" aria-label="clair/sombre" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Recherche" aria-label="Recherche" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#gnu-parallel">
-   GNU Parallel
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#pourquoi-pas-slurm">
-     Pourquoi pas Slurm?
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#syntaxe-de-la-commande-gnu-parallel">
-     Syntaxe de la commande GNU Parallel
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#cas-d-utilisation">
-     Cas d’utilisation
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#une-seule-sequence-de-parametres">
-       Une seule séquence de paramètres
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#combinaisons-de-parametres">
-       Combinaisons de paramètres
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#nombre-limite-de-taches-paralleles">
-       Nombre limité de tâches parallèles
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercice-aligner-des-sequences-d-adn">
-     Exercice - Aligner des séquences d’ADN
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#vecteurs-de-taches">
-   Vecteurs de tâches
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercice-vecteur-de-taches">
-     Exercice - Vecteur de tâches
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#le-greedy-launcher-of-small-tasks-ou-glost">
-   Le
-   <em>
-    Greedy Launcher Of Small Tasks
-   </em>
-   , ou GLOST
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercice-liste-de-taches-blastn-avec-glost">
-     Exercice - Liste de tâches Blastn avec GLOST
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#points-a-retenir">
-   Points à retenir
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Lots de tâches</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#gnu-parallel">
-   GNU Parallel
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#pourquoi-pas-slurm">
-     Pourquoi pas Slurm?
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#syntaxe-de-la-commande-gnu-parallel">
-     Syntaxe de la commande GNU Parallel
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#cas-d-utilisation">
-     Cas d’utilisation
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#une-seule-sequence-de-parametres">
-       Une seule séquence de paramètres
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#combinaisons-de-parametres">
-       Combinaisons de paramètres
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#nombre-limite-de-taches-paralleles">
-       Nombre limité de tâches parallèles
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercice-aligner-des-sequences-d-adn">
-     Exercice - Aligner des séquences d’ADN
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#vecteurs-de-taches">
-   Vecteurs de tâches
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercice-vecteur-de-taches">
-     Exercice - Vecteur de tâches
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#le-greedy-launcher-of-small-tasks-ou-glost">
-   Le
-   <em>
-    Greedy Launcher Of Small Tasks
-   </em>
-   , ou GLOST
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercice-liste-de-taches-blastn-avec-glost">
-     Exercice - Liste de tâches Blastn avec GLOST
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#points-a-retenir">
-   Points à retenir
-  </a>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Lots de tâches</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenu </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gnu-parallel">GNU Parallel</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pourquoi-pas-slurm">Pourquoi pas Slurm?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#syntaxe-de-la-commande-gnu-parallel">Syntaxe de la commande GNU Parallel</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cas-d-utilisation">Cas d’utilisation</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#une-seule-sequence-de-parametres">Une seule séquence de paramètres</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#combinaisons-de-parametres">Combinaisons de paramètres</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#nombre-limite-de-taches-paralleles">Nombre limité de tâches parallèles</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-aligner-des-sequences-d-adn">Exercice - Aligner des séquences d’ADN</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vecteurs-de-taches">Vecteurs de tâches</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-vecteur-de-taches">Exercice - Vecteur de tâches</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#le-greedy-launcher-of-small-tasks-ou-glost">Le <em>Greedy Launcher Of Small Tasks</em>, ou GLOST</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-liste-de-taches-blastn-avec-glost">Exercice - Liste de tâches Blastn avec GLOST</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#points-a-retenir">Points à retenir</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <section class="tex2jax_ignore mathjax_ignore" id="lots-de-taches">
-<h1>Lots de tâches<a class="headerlink" href="#lots-de-taches" title="Lien permanent vers ce titre">#</a></h1>
+<h1>Lots de tâches<a class="headerlink" href="#lots-de-taches" title="Lien permanent vers cette rubrique">#</a></h1>
 <p>Le calcul haute-performance consiste non seulement au calcul parallèle par tâche (<em><strong>parallélisme des tâches</strong></em>),
 mais aussi au calcul de données en parallèle dans plusieurs tâches et/ou processus en simultané (<em><strong>parallélisme de données</strong></em>).
 Ce chapitre vous donnera les outils nécessaires pour gérer un grand nombre de tâches
 lorsque le projet de recherche requiert plusieurs centaines de résultats.</p>
 <section id="gnu-parallel">
-<h2>GNU Parallel<a class="headerlink" href="#gnu-parallel" title="Lien permanent vers ce titre">#</a></h2>
+<h2>GNU Parallel<a class="headerlink" href="#gnu-parallel" title="Lien permanent vers cette rubrique">#</a></h2>
 <p>La commande <code class="docutils literal notranslate"><span class="pre">parallel</span></code> de
 <a class="reference external" href="https://docs.alliancecan.ca/wiki/GNU_Parallel/fr">GNU Parallel</a>
 permet d’utiliser pleinement les ressources locales d’un noeud de
@@ -508,7 +381,7 @@ en gérant des processus au lieu de scripts de tâche.</p>
 <li><p><a class="reference external" href="https://www.gnu.org/software/parallel/parallel_tutorial.html">Tutoriel</a></p></li>
 </ul>
 <section id="pourquoi-pas-slurm">
-<h3>Pourquoi pas Slurm?<a class="headerlink" href="#pourquoi-pas-slurm" title="Lien permanent vers ce titre">#</a></h3>
+<h3>Pourquoi pas Slurm?<a class="headerlink" href="#pourquoi-pas-slurm" title="Lien permanent vers cette rubrique">#</a></h3>
 <p>OK, mais pourquoi ne pas tout simplement soumettre
 <strong>des centaines de tâches à Slurm</strong>?</p>
 <ul class="simple">
@@ -536,76 +409,76 @@ le nombre de tâches en simultané</p></li>
 </ul>
 </section>
 <section id="syntaxe-de-la-commande-gnu-parallel">
-<h3>Syntaxe de la commande GNU Parallel<a class="headerlink" href="#syntaxe-de-la-commande-gnu-parallel" title="Lien permanent vers ce titre">#</a></h3>
+<h3>Syntaxe de la commande GNU Parallel<a class="headerlink" href="#syntaxe-de-la-commande-gnu-parallel" title="Lien permanent vers cette rubrique">#</a></h3>
 <p>Les éléments de base de la commande <code class="docutils literal notranslate"><span class="pre">parallel</span></code> :</p>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>parallel options gabarit_de_commande ::: liste de valeurs
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>parallel<span class="w"> </span>options<span class="w"> </span>gabarit_de_commande<span class="w"> </span>:::<span class="w"> </span>liste<span class="w"> </span>de<span class="w"> </span>valeurs
 </pre></div>
 </div>
 <p>Voir :</p>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>man parallel  <span class="c1"># q pour quitter</span>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>man<span class="w"> </span>parallel<span class="w">  </span><span class="c1"># q pour quitter</span>
 </pre></div>
 </div>
 </section>
 <section id="cas-d-utilisation">
-<h3>Cas d’utilisation<a class="headerlink" href="#cas-d-utilisation" title="Lien permanent vers ce titre">#</a></h3>
+<h3>Cas d’utilisation<a class="headerlink" href="#cas-d-utilisation" title="Lien permanent vers cette rubrique">#</a></h3>
 <section id="une-seule-sequence-de-parametres">
-<h4>Une seule séquence de paramètres<a class="headerlink" href="#une-seule-sequence-de-parametres" title="Lien permanent vers ce titre">#</a></h4>
+<h4>Une seule séquence de paramètres<a class="headerlink" href="#une-seule-sequence-de-parametres" title="Lien permanent vers cette rubrique">#</a></h4>
 <p>Le paramètre changeant est donné via une paire d”<code class="docutils literal notranslate"><span class="pre">{}</span></code> :</p>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>parallel <span class="nb">echo</span> fichier<span class="o">{}</span>.txt ::: <span class="m">1</span> <span class="m">2</span> <span class="m">3</span> <span class="m">4</span>
-parallel --citation  <span class="c1"># Il faut citer les développeurs</span>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>parallel<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>fichier<span class="o">{}</span>.txt<span class="w"> </span>:::<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">4</span>
+parallel<span class="w"> </span>--citation<span class="w">  </span><span class="c1"># Il faut citer les développeurs</span>
 </pre></div>
 </div>
 <p>On peut réécrire la première commande en utilisant l’expansion des
 accolades Bash <code class="docutils literal notranslate"><span class="pre">{a..b}</span></code> :</p>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>parallel <span class="nb">echo</span> fichier<span class="o">{}</span>.txt ::: <span class="o">{</span><span class="m">01</span>..10<span class="o">}</span>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>parallel<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>fichier<span class="o">{}</span>.txt<span class="w"> </span>:::<span class="w"> </span><span class="o">{</span><span class="m">01</span>..10<span class="o">}</span>
 </pre></div>
 </div>
 </section>
 <section id="combinaisons-de-parametres">
-<h4>Combinaisons de paramètres<a class="headerlink" href="#combinaisons-de-parametres" title="Lien permanent vers ce titre">#</a></h4>
+<h4>Combinaisons de paramètres<a class="headerlink" href="#combinaisons-de-parametres" title="Lien permanent vers cette rubrique">#</a></h4>
 <p><strong>a)</strong> Lorsqu’il y a <strong>plusieurs séquences de paramètres à combiner</strong>,
 on peut utiliser des paires d’accolades numérotées telles que
 <code class="docutils literal notranslate"><span class="pre">{1}</span></code>, <code class="docutils literal notranslate"><span class="pre">{2}</span></code>, etc. :</p>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>parallel <span class="nb">echo</span> fichier<span class="o">{}</span>.txt ::: <span class="o">{</span><span class="m">01</span>..10<span class="o">}</span> ::: a b
-parallel <span class="nb">echo</span> fichier<span class="o">{</span><span class="m">1</span><span class="o">}{</span><span class="m">2</span><span class="o">}</span>.txt ::: <span class="o">{</span><span class="m">01</span>..10<span class="o">}</span> ::: a b
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>parallel<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>fichier<span class="o">{}</span>.txt<span class="w"> </span>:::<span class="w"> </span><span class="o">{</span><span class="m">01</span>..10<span class="o">}</span><span class="w"> </span>:::<span class="w"> </span>a<span class="w"> </span>b
+parallel<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>fichier<span class="o">{</span><span class="m">1</span><span class="o">}{</span><span class="m">2</span><span class="o">}</span>.txt<span class="w"> </span>:::<span class="w"> </span><span class="o">{</span><span class="m">01</span>..10<span class="o">}</span><span class="w"> </span>:::<span class="w"> </span>a<span class="w"> </span>b
 </pre></div>
 </div>
 <p><strong>b)</strong> Dans le cas où on retrouve les <strong>combinaisons de paramètres
 dans un fichier texte</strong> :</p>
 <div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># parallel echo {} ::: 3 5 7 ::: 4 6 8 &gt; param.txt</span>
-cat scripts/prll-creer-param.sh
-bash scripts/prll-creer-param.sh
+cat<span class="w"> </span>scripts/prll-creer-param.sh
+bash<span class="w"> </span>scripts/prll-creer-param.sh
 </pre></div>
 </div>
 <p>La commande <code class="docutils literal notranslate"><span class="pre">parallel</span></code> aura <code class="docutils literal notranslate"><span class="pre">-C</span> <span class="pre">'</span> <span class="pre">'</span></code> pour spécifier le séparateur de
 paramètres dans <code class="docutils literal notranslate"><span class="pre">param.txt</span></code>, ainsi que l’argument <code class="docutils literal notranslate"><span class="pre">::::</span></code> pour
 spécifier ensuite ce nom de fichier :</p>
 <div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># parallel -C &#39; &#39; echo &#39;{1}*{2} | bc &gt; prod_{1}x{2}&#39; :::: param.txt</span>
-cat scripts/prll-exec-param.sh
-sbatch scripts/prll-exec-param.sh
+cat<span class="w"> </span>scripts/prll-exec-param.sh
+sbatch<span class="w"> </span>scripts/prll-exec-param.sh
 </pre></div>
 </div>
 <p><strong>c)</strong> Si on préfère valider la liste des commandes générées avant de
 soumettre une tâche Slurm, on peut générer une <strong>liste de commandes
 dans un fichier texte</strong> :</p>
 <div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># parallel -C &#39; &#39; echo &#39;echo {1}&quot;*&quot;{2} &quot;|&quot; bc &quot;&gt;&quot; prod_{1}x{2}&#39; :::: param.txt &gt; commandes.txt</span>
-cat scripts/prll-creer-cmd.sh
-bash scripts/prll-creer-cmd.sh
+cat<span class="w"> </span>scripts/prll-creer-cmd.sh
+bash<span class="w"> </span>scripts/prll-creer-cmd.sh
 </pre></div>
 </div>
 <p>Et dans la tâche Slurm :</p>
 <div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># parallel &lt; commandes.txt</span>
-cat scripts/prll-exec-cmd.sh
-sbatch scripts/prll-exec-cmd.sh
+cat<span class="w"> </span>scripts/prll-exec-cmd.sh
+sbatch<span class="w"> </span>scripts/prll-exec-cmd.sh
 </pre></div>
 </div>
 </section>
 <section id="nombre-limite-de-taches-paralleles">
-<h4>Nombre limité de tâches parallèles<a class="headerlink" href="#nombre-limite-de-taches-paralleles" title="Lien permanent vers ce titre">#</a></h4>
+<h4>Nombre limité de tâches parallèles<a class="headerlink" href="#nombre-limite-de-taches-paralleles" title="Lien permanent vers cette rubrique">#</a></h4>
 <p>Le paramètre <code class="docutils literal notranslate"><span class="pre">--jobs</span></code> permet de forcer une limite sur le nombre de
 processus lancés à la fois. Par exemple, 8 exécutions avec 2 processus
 en simultané :</p>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>parallel --jobs <span class="m">2</span> <span class="s1">&#39;echo {} &amp;&amp; sleep 3&#39;</span> ::: <span class="o">{</span><span class="m">1</span>..8<span class="o">}</span>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>parallel<span class="w"> </span>--jobs<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="s1">&#39;echo {} &amp;&amp; sleep 3&#39;</span><span class="w"> </span>:::<span class="w"> </span><span class="o">{</span><span class="m">1</span>..8<span class="o">}</span>
 </pre></div>
 </div>
 <p>Si jamais un noeud n’est pas suffisant pour répondre au besoin de centaines de tâches parallèles, GNU Parallel peut distribuer des tâches sur plusieurs noeuds</p>
@@ -613,19 +486,19 @@ en simultané :</p>
 <span class="c1">#    --jobs $SLURM_NTASKS_PER_NODE \</span>
 <span class="c1">#    --sshloginfile noeuds.txt \</span>
 <span class="c1">#   &#39;echo -n {}: &amp;&amp; hostname&#39; ::: $(seq 1 $SLURM_NTASKS)</span>
-cat scripts/prll-multi-noeud.sh
-sbatch scripts/prll-multi-noeud.sh
+cat<span class="w"> </span>scripts/prll-multi-noeud.sh
+sbatch<span class="w"> </span>scripts/prll-multi-noeud.sh
 </pre></div>
 </div>
 </section>
 </section>
 <section id="exercice-aligner-des-sequences-d-adn">
-<h3>Exercice - Aligner des séquences d’ADN<a class="headerlink" href="#exercice-aligner-des-sequences-d-adn" title="Lien permanent vers ce titre">#</a></h3>
+<h3>Exercice - Aligner des séquences d’ADN<a class="headerlink" href="#exercice-aligner-des-sequences-d-adn" title="Lien permanent vers cette rubrique">#</a></h3>
 <p>Dans le dossier <code class="docutils literal notranslate"><span class="pre">donnees/</span></code>, vous devriez avoir plusieurs fichiers Fasta (<code class="docutils literal notranslate"><span class="pre">*.fa</span></code>)
 qui ont été créés au premier chapitre via le script de tâche
 <code class="docutils literal notranslate"><span class="pre">scripts/blastn-gen-seq.sh</span></code> et le Makefile <code class="docutils literal notranslate"><span class="pre">donnees/makefile</span></code>.
 <strong>Si ce n’est pas le cas</strong>, faites :</p>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>sbatch scripts/blastn-gen-seq.sh
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>sbatch<span class="w"> </span>scripts/blastn-gen-seq.sh
 </pre></div>
 </div>
 <p>On devrait y retrouver :</p>
@@ -643,13 +516,13 @@ sur les séquences « connues » des espèces A, B, C et D</p></li>
 <code class="docutils literal notranslate"><span class="pre">[A,D]x[K,Z]</span></code>, ce qui donne 64 combinaisons.
 Le script de tâche suivant utilise GNU Parallel pour calculer les
 différents cas avec 4 processeurs :</p>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>cat scripts/blastn-parallel.sh
-sbatch scripts/blastn-parallel.sh
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>scripts/blastn-parallel.sh
+sbatch<span class="w"> </span>scripts/blastn-parallel.sh
 </pre></div>
 </div>
 <p>Pour surveiller l’état de la tâche :</p>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>squeue -u <span class="nv">$USER</span>
-ls donnees/res_prll/
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>squeue<span class="w"> </span>-u<span class="w"> </span><span class="nv">$USER</span>
+ls<span class="w"> </span>donnees/res_prll/
 </pre></div>
 </div>
 <p>À la fin de la tâche, on peut analyser les ressources utilisées :</p>
@@ -659,7 +532,7 @@ ls donnees/res_prll/
 </section>
 </section>
 <section id="vecteurs-de-taches">
-<h2>Vecteurs de tâches<a class="headerlink" href="#vecteurs-de-taches" title="Lien permanent vers ce titre">#</a></h2>
+<h2>Vecteurs de tâches<a class="headerlink" href="#vecteurs-de-taches" title="Lien permanent vers cette rubrique">#</a></h2>
 <p>Alors que GNU Parallel s’utilise bien avec un lot de calculs séquentiels
 ou parallèles de petite taille (16 processeurs ou moins),
 <strong>GNU Parallel n’est pas</strong> vraiment l’outil <strong>approprié pour</strong>
@@ -689,35 +562,35 @@ Voir <a class="reference external" href="https://docs.alliancecan.ca/wiki/Job_ar
 <code class="docutils literal notranslate"><span class="pre">$SLURM_ARRAY_TASK_ID</span></code> peut être utilisée pour retrouver la valeur
 actuelle de l’indice unique associé à la tâche en cours d’exécution.
 Il s’agit d’un <strong>entier parmis</strong> les <code class="docutils literal notranslate"><span class="pre">&lt;indices&gt;</span></code>.</p>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">SLURM_ARRAY_TASK_ID</span><span class="o">=</span><span class="m">71</span>  <span class="c1"># Pour émuler la variable</span>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">SLURM_ARRAY_TASK_ID</span><span class="o">=</span><span class="m">71</span><span class="w">  </span><span class="c1"># Pour émuler la variable</span>
 </pre></div>
 </div>
 <p>La variable <code class="docutils literal notranslate"><span class="pre">$SLURM_ARRAY_TASK_ID</span></code> peut être utilisée de différentes façons :</p>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> nom_fichier.<span class="nv">$SLURM_ARRAY_TASK_ID</span>
-<span class="nb">echo</span> nom_dossier-<span class="nv">$SLURM_ARRAY_TASK_ID</span>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span>nom_fichier.<span class="nv">$SLURM_ARRAY_TASK_ID</span>
+<span class="nb">echo</span><span class="w"> </span>nom_dossier-<span class="nv">$SLURM_ARRAY_TASK_ID</span>
 
 <span class="nv">PARAM</span><span class="o">=</span><span class="nv">$SLURM_ARRAY_TASK_ID</span>
-<span class="nb">echo</span> <span class="nv">$PARAM</span>
+<span class="nb">echo</span><span class="w"> </span><span class="nv">$PARAM</span>
 
-<span class="nv">PARAM_R</span><span class="o">=</span><span class="k">$((</span>PARAM <span class="o">/</span> <span class="m">12</span><span class="k">))</span>  <span class="c1"># Division entière</span>
-<span class="nv">PARAM_C</span><span class="o">=</span><span class="k">$((</span>PARAM <span class="o">%</span> <span class="m">12</span><span class="k">))</span>  <span class="c1"># Modulo (reste de division)</span>
-<span class="nb">echo</span> <span class="nv">$PARAM_R</span> <span class="nv">$PARAM_C</span>
+<span class="nv">PARAM_R</span><span class="o">=</span><span class="k">$((</span>PARAM<span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="m">12</span><span class="k">))</span><span class="w">  </span><span class="c1"># Division entière</span>
+<span class="nv">PARAM_C</span><span class="o">=</span><span class="k">$((</span>PARAM<span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="m">12</span><span class="k">))</span><span class="w">  </span><span class="c1"># Modulo (reste de division)</span>
+<span class="nb">echo</span><span class="w"> </span><span class="nv">$PARAM_R</span><span class="w"> </span><span class="nv">$PARAM_C</span>
 
-head -n <span class="nv">$PARAM_R</span> param.txt <span class="p">|</span> tail -1
+head<span class="w"> </span>-n<span class="w"> </span><span class="nv">$PARAM_R</span><span class="w"> </span>param.txt<span class="w"> </span><span class="p">|</span><span class="w"> </span>tail<span class="w"> </span>-1
 </pre></div>
 </div>
 <section id="exercice-vecteur-de-taches">
-<h3>Exercice - Vecteur de tâches<a class="headerlink" href="#exercice-vecteur-de-taches" title="Lien permanent vers ce titre">#</a></h3>
+<h3>Exercice - Vecteur de tâches<a class="headerlink" href="#exercice-vecteur-de-taches" title="Lien permanent vers cette rubrique">#</a></h3>
 <p>Pour lancer le vecteur de tâches :</p>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>cat scripts/blastn-array.sh
-sbatch scripts/blastn-array.sh
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>scripts/blastn-array.sh
+sbatch<span class="w"> </span>scripts/blastn-array.sh
 
-squeue -u <span class="nv">$USER</span>
+squeue<span class="w"> </span>-u<span class="w"> </span><span class="nv">$USER</span>
 </pre></div>
 </div>
 <p>Après l’exécution des quatre tâches, on peut inspecter les résultats :</p>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>ls slurm-*_*.out
-ls -l donnees/res_array/
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>ls<span class="w"> </span>slurm-*_*.out
+ls<span class="w"> </span>-l<span class="w"> </span>donnees/res_array/
 </pre></div>
 </div>
 <ul class="simple">
@@ -729,7 +602,7 @@ soient traitées, avec une limite de <strong>quatre</strong> tâches à la fois.
 </section>
 </section>
 <section id="le-greedy-launcher-of-small-tasks-ou-glost">
-<h2>Le <em>Greedy Launcher Of Small Tasks</em>, ou GLOST<a class="headerlink" href="#le-greedy-launcher-of-small-tasks-ou-glost" title="Lien permanent vers ce titre">#</a></h2>
+<h2>Le <em>Greedy Launcher Of Small Tasks</em>, ou GLOST<a class="headerlink" href="#le-greedy-launcher-of-small-tasks-ou-glost" title="Lien permanent vers cette rubrique">#</a></h2>
 <p>Le <em>Greedy Launcher Of Small Tasks</em>, ou
 <a class="reference external" href="https://docs.alliancecan.ca/wiki/GLOST/fr">GLOST</a>, fonctionne
 un peu <strong>comme GNU Parallel, mais avec quelques différences</strong> :</p>
@@ -755,58 +628,58 @@ avec une architecture de type <strong>gestionnaire-travailleur</strong></p>
 </ul>
 </li>
 </ul>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> -n <span class="s1">&#39;Bonjour &#39;</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> le monde
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span>-n<span class="w"> </span><span class="s1">&#39;Bonjour &#39;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span>le<span class="w"> </span>monde
 </pre></div>
 </div>
 <section id="exercice-liste-de-taches-blastn-avec-glost">
-<h3>Exercice - Liste de tâches Blastn avec GLOST<a class="headerlink" href="#exercice-liste-de-taches-blastn-avec-glost" title="Lien permanent vers ce titre">#</a></h3>
+<h3>Exercice - Liste de tâches Blastn avec GLOST<a class="headerlink" href="#exercice-liste-de-taches-blastn-avec-glost" title="Lien permanent vers cette rubrique">#</a></h3>
 <p>Pour générer la liste de tâches dans le fichier <code class="docutils literal notranslate"><span class="pre">$SCRATCH/cas-blastn.txt</span></code> :</p>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>cat scripts/blastn-cas.sh
-bash scripts/blastn-cas.sh
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>scripts/blastn-cas.sh
+bash<span class="w"> </span>scripts/blastn-cas.sh
 
-less <span class="nv">$SCRATCH</span>/cas-blastn.txt
-wc -l <span class="nv">$SCRATCH</span>/cas-blastn.txt
+less<span class="w"> </span><span class="nv">$SCRATCH</span>/cas-blastn.txt
+wc<span class="w"> </span>-l<span class="w"> </span><span class="nv">$SCRATCH</span>/cas-blastn.txt
 </pre></div>
 </div>
 <p>Pour lancer une tâche de 4 processeurs utilisant GLOST pour tester les
 <span class="math notranslate nohighlight">\(8*4*10\)</span> combinaisons de paramètres :</p>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>cat scripts/blastn-glost.sh
-sbatch scripts/blastn-glost.sh
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>scripts/blastn-glost.sh
+sbatch<span class="w"> </span>scripts/blastn-glost.sh
 
-squeue -u <span class="nv">$USER</span>
+squeue<span class="w"> </span>-u<span class="w"> </span><span class="nv">$USER</span>
 </pre></div>
 </div>
 <p>On peut aller voir les processus en exécution :</p>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>ssh &lt;nom_noeud&gt;  <span class="c1"># srun --jobid &lt;No_Tache&gt; --pty &lt;commande&gt;</span>
-top -u <span class="nv">$USER</span>  <span class="c1"># q pour quitter</span>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>ssh<span class="w"> </span>&lt;nom_noeud&gt;<span class="w">  </span><span class="c1"># srun --jobid &lt;No_Tache&gt; --pty &lt;commande&gt;</span>
+top<span class="w"> </span>-u<span class="w"> </span><span class="nv">$USER</span><span class="w">  </span><span class="c1"># q pour quitter</span>
 <span class="nb">exit</span>
 </pre></div>
 </div>
 <p>Les résultats seront dans le dossier <code class="docutils literal notranslate"><span class="pre">$SCRATCH/res_glost</span></code></p>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>ls -l <span class="nv">$SCRATCH</span>/res_glost
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>ls<span class="w"> </span>-l<span class="w"> </span><span class="nv">$SCRATCH</span>/res_glost
 </pre></div>
 </div>
 </section>
 </section>
 <section id="points-a-retenir">
-<h2>Points à retenir<a class="headerlink" href="#points-a-retenir" title="Lien permanent vers ce titre">#</a></h2>
+<h2>Points à retenir<a class="headerlink" href="#points-a-retenir" title="Lien permanent vers cette rubrique">#</a></h2>
 <ul class="simple">
 <li><p><strong>GNU Parallel</strong> pour lancer de multiples combinaisons de paramètres</p></li>
 </ul>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>parallel <span class="s1">&#39;gabarit_cmd({1})&#39;</span> ::: valeurs1
-parallel <span class="s1">&#39;gabarit_cmd({1}, {2})&#39;</span> ::: valeurs1 ::: valeurs2
-parallel -C &lt;sep&gt; <span class="s1">&#39;gabarit_cmd({1}, {2})&#39;</span> :::: paires_param.txt
-parallel --jobs <span class="s1">&#39;N_tâches_par_noeud&#39;</span> &lt; liste_commandes.txt
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>parallel<span class="w"> </span><span class="s1">&#39;gabarit_cmd({1})&#39;</span><span class="w"> </span>:::<span class="w"> </span>valeurs1
+parallel<span class="w"> </span><span class="s1">&#39;gabarit_cmd({1}, {2})&#39;</span><span class="w"> </span>:::<span class="w"> </span>valeurs1<span class="w"> </span>:::<span class="w"> </span>valeurs2
+parallel<span class="w"> </span>-C<span class="w"> </span>&lt;sep&gt;<span class="w"> </span><span class="s1">&#39;gabarit_cmd({1}, {2})&#39;</span><span class="w"> </span>::::<span class="w"> </span>paires_param.txt
+parallel<span class="w"> </span>--jobs<span class="w"> </span><span class="s1">&#39;N_tâches_par_noeud&#39;</span><span class="w"> </span>&lt;<span class="w"> </span>liste_commandes.txt
 </pre></div>
 </div>
 <ul class="simple">
 <li><p><strong>Vecteurs de tâches</strong> pour lancer une série de longues ou de larges tâches</p></li>
 </ul>
 <div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># $SLURM_ARRAY_TASK_ID aura une seule valeur dans ...</span>
-sbatch --array<span class="o">=</span><span class="m">0</span>-7      <span class="c1"># [0, 7]</span>
-sbatch --array<span class="o">=</span><span class="m">1</span>,3,5,7  <span class="c1"># {1,3,5,7}</span>
-sbatch --array<span class="o">=</span><span class="m">1</span>-7:3    <span class="c1"># {1,4,7}</span>
-sbatch --array<span class="o">=</span><span class="m">0</span>-99%10  <span class="c1"># [0, 99], mais 10 tâches à la fois</span>
+sbatch<span class="w"> </span>--array<span class="o">=</span><span class="m">0</span>-7<span class="w">      </span><span class="c1"># [0, 7]</span>
+sbatch<span class="w"> </span>--array<span class="o">=</span><span class="m">1</span>,3,5,7<span class="w">  </span><span class="c1"># {1,3,5,7}</span>
+sbatch<span class="w"> </span>--array<span class="o">=</span><span class="m">1</span>-7:3<span class="w">    </span><span class="c1"># {1,4,7}</span>
+sbatch<span class="w"> </span>--array<span class="o">=</span><span class="m">0</span>-99%10<span class="w">  </span><span class="c1"># [0, 99], mais 10 tâches à la fois</span>
 </pre></div>
 </div>
 <ul class="simple">
@@ -814,7 +687,7 @@ sbatch --array<span class="o">=</span><span class="m">0</span>-99%10  <span clas
 </ul>
 <div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># commande1a &amp;&amp; commande1b &gt; fichier1.txt</span>
 <span class="c1"># commande2a &amp;&amp; commande2b &gt; fichier2.txt</span>
-srun glost_launch liste_commandes.txt
+srun<span class="w"> </span>glost_launch<span class="w"> </span>liste_commandes.txt
 </pre></div>
 </div>
 <ul class="simple">
@@ -835,7 +708,7 @@ srun glost_launch liste_commandes.txt
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./."
         },
         predefinedOutput: true
@@ -843,50 +716,119 @@ srun glost_launch liste_commandes.txt
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="2-ressources.html" title="précédent page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">précédent</p>
-            <p class="prev-next-title">Bien choisir les ressources</p>
-        </div>
+
+              
+              
+                <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="2-ressources.html"
+       title="page précédente">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">précédent</p>
+        <p class="prev-next-title">Bien choisir les ressources</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="4-stockage.html" title="suivant page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="4-stockage.html"
+       title="page suivante">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">suivant</p>
         <p class="prev-next-title">Les espaces de stockage</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenu
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gnu-parallel">GNU Parallel</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pourquoi-pas-slurm">Pourquoi pas Slurm?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#syntaxe-de-la-commande-gnu-parallel">Syntaxe de la commande GNU Parallel</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cas-d-utilisation">Cas d’utilisation</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#une-seule-sequence-de-parametres">Une seule séquence de paramètres</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#combinaisons-de-parametres">Combinaisons de paramètres</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#nombre-limite-de-taches-paralleles">Nombre limité de tâches parallèles</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-aligner-des-sequences-d-adn">Exercice - Aligner des séquences d’ADN</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vecteurs-de-taches">Vecteurs de tâches</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-vecteur-de-taches">Exercice - Vecteur de tâches</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#le-greedy-launcher-of-small-tasks-ou-glost">Le <em>Greedy Launcher Of Small Tasks</em>, ou GLOST</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-liste-de-taches-blastn-avec-glost">Exercice - Liste de tâches Blastn avec GLOST</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#points-a-retenir">Points à retenir</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner">
+<div class="bd-footer-content__inner container">
   
-    By Équipe Calcul Québec<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
+  <div class="footer-item">
     
-</div>
+<p class="component-author">
+Par Équipe Calcul Québec
+</p>
 
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
 
-      </div>
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div></div>
+          </footer>
+        
+
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

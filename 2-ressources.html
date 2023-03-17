@@ -1,49 +1,60 @@
 
+
 <!DOCTYPE html>
 
-<html lang="fr">
+
+<html lang="fr" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Bien choisir les ressources &#8212; CIP201 - Maîtriser l’utilisation des serveurs de calcul</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
     <script src="_static/translations.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -53,62 +64,94 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '2-ressources';</script>
     <link rel="shortcut icon" href="_static/logo.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
     <link rel="next" title="Lots de tâches" href="3-lots-taches.html" />
     <link rel="prev" title="Introduction" href="1-introduction.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="fr">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="fr"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
-
-    
-
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
+  
+  
+  <a class="skip-link" href="#main-content">Passer au contenu principal</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="0-a_propos.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="_static/logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">CIP201 - Maîtriser l’utilisation des serveurs de calcul</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -118,451 +161,220 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="1-introduction.html">
-   Introduction
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Bien choisir les ressources
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="3-lots-taches.html">
-   Lots de tâches
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="4-stockage.html">
-   Les espaces de stockage
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="90-exercices.html">
-   Exercices supplémentaires
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="99-references.html">
-   Références
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="1-introduction.html">Introduction</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Bien choisir les ressources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3-lots-taches.html">Lots de tâches</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4-stockage.html">Les espaces de stockage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="90-exercices.html">Exercices supplémentaires</a></li>
+<li class="toctree-l1"><a class="reference internal" href="99-references.html">Références</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
-
-
-          
-
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
-
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-    </ul>
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
   </div>
-</div>
+  
+  <div id="rtd-footer-container"></div>
 
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/calculquebec/utilisation-serveurs-calcul" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Dépôt source"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
-  <i class="fas fa-expand"></i>
-  </span>
-
-</button>
-<a href="https://github.com/calculquebec/utilisation-serveurs-calcul"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="bottom"
-title="Source repository"
->
-  
-
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fab fa-github"></i>
   </span>
 
 </a>
 
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Téléchargez cette page">
+    <i class="fas fa-download"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="_sources/2-ressources.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/2-ressources.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Télécharger le fichier source"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="headerbtn__text-container">.ipynb</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
-
-      </li>
+</li>
+      
+      
+      
       
       <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Imprimer au format PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-file-pdf"></i>
   </span>
-<span class="headerbtn__text-container">.pdf</span>
+<span class="btn__text-container">.pdf</span>
 </button>
-
-      </li>
+</li>
       
-    </ul>
-  </div>
+  </ul>
 </div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Mode plein écran"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
   </span>
 
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="clair/sombre" aria-label="clair/sombre" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Recherche" aria-label="Recherche" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#objectif-construction-d-un-script-de-tache-slurm">
-   Objectif - construction d’un script de tâche Slurm
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#analyse-des-calculs-localement">
-   Analyse des calculs localement
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sous-windows">
-     Sous Windows
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sous-mac-os">
-     Sous Mac OS
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sous-linux">
-     Sous Linux
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#analyse-des-taches-sur-la-grappe-de-calcul">
-   Analyse des tâches sur la grappe de calcul
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ressources-utilisees-d-une-tache-terminee">
-     Ressources utilisées d’une tâche terminée
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ressources-utilisees-par-une-tache-cpu-en-cours">
-     Ressources utilisées par une tâche CPU en cours
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#exercice-valider-le-comportement-d-une-tache-active">
-       Exercice - Valider le comportement d’une tâche active
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#demo-ressources-utilisees-par-une-tache-gpu-en-cours">
-     (Démo) Ressources utilisées par une tâche GPU en cours
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#exercice-tester-crunch-avec-un-gpu">
-       Exercice - Tester Crunch avec un GPU
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#comparer-la-vitesse-cpu-vs-gpu">
-       Comparer la vitesse CPU vs GPU
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#estimer-les-ressources-necessaires">
-   Estimer les ressources nécessaires
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#efficacite-cible-d-une-tache">
-     Efficacité cible d’une tâche
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#exercice-efficacite-des-taches">
-       Exercice - Efficacité des tâches
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#la-complexite-des-algorithmes">
-     La complexité des algorithmes
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#exercice-complexite-de-l-algorithme">
-       Exercice - Complexité de l’algorithme
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taille-des-donnees-et-nombre-de-fichiers-a-traiter">
-     Taille des données et nombre de fichiers à traiter
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#principales-differences-entre-les-grappes-de-calcul">
-   Principales différences entre les grappes de calcul
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#points-a-retenir">
-   Points à retenir
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Bien choisir les ressources</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#objectif-construction-d-un-script-de-tache-slurm">
-   Objectif - construction d’un script de tâche Slurm
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#analyse-des-calculs-localement">
-   Analyse des calculs localement
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sous-windows">
-     Sous Windows
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sous-mac-os">
-     Sous Mac OS
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sous-linux">
-     Sous Linux
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#analyse-des-taches-sur-la-grappe-de-calcul">
-   Analyse des tâches sur la grappe de calcul
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ressources-utilisees-d-une-tache-terminee">
-     Ressources utilisées d’une tâche terminée
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ressources-utilisees-par-une-tache-cpu-en-cours">
-     Ressources utilisées par une tâche CPU en cours
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#exercice-valider-le-comportement-d-une-tache-active">
-       Exercice - Valider le comportement d’une tâche active
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#demo-ressources-utilisees-par-une-tache-gpu-en-cours">
-     (Démo) Ressources utilisées par une tâche GPU en cours
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#exercice-tester-crunch-avec-un-gpu">
-       Exercice - Tester Crunch avec un GPU
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#comparer-la-vitesse-cpu-vs-gpu">
-       Comparer la vitesse CPU vs GPU
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#estimer-les-ressources-necessaires">
-   Estimer les ressources nécessaires
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#efficacite-cible-d-une-tache">
-     Efficacité cible d’une tâche
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#exercice-efficacite-des-taches">
-       Exercice - Efficacité des tâches
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#la-complexite-des-algorithmes">
-     La complexité des algorithmes
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#exercice-complexite-de-l-algorithme">
-       Exercice - Complexité de l’algorithme
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#taille-des-donnees-et-nombre-de-fichiers-a-traiter">
-     Taille des données et nombre de fichiers à traiter
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#principales-differences-entre-les-grappes-de-calcul">
-   Principales différences entre les grappes de calcul
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#points-a-retenir">
-   Points à retenir
-  </a>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Bien choisir les ressources</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenu </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectif-construction-d-un-script-de-tache-slurm">Objectif - construction d’un script de tâche Slurm</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analyse-des-calculs-localement">Analyse des calculs localement</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sous-windows">Sous Windows</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sous-mac-os">Sous Mac OS</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sous-linux">Sous Linux</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analyse-des-taches-sur-la-grappe-de-calcul">Analyse des tâches sur la grappe de calcul</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ressources-utilisees-d-une-tache-terminee">Ressources utilisées d’une tâche terminée</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ressources-utilisees-par-une-tache-cpu-en-cours">Ressources utilisées par une tâche CPU en cours</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-valider-le-comportement-d-une-tache-active">Exercice - Valider le comportement d’une tâche active</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#demo-ressources-utilisees-par-une-tache-gpu-en-cours">(Démo) Ressources utilisées par une tâche GPU en cours</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-tester-crunch-avec-un-gpu">Exercice - Tester Crunch avec un GPU</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#comparer-la-vitesse-cpu-vs-gpu">Comparer la vitesse CPU vs GPU</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estimer-les-ressources-necessaires">Estimer les ressources nécessaires</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#efficacite-cible-d-une-tache">Efficacité cible d’une tâche</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-efficacite-des-taches">Exercice - Efficacité des tâches</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-complexite-des-algorithmes">La complexité des algorithmes</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-complexite-de-l-algorithme">Exercice - Complexité de l’algorithme</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#taille-des-donnees-et-nombre-de-fichiers-a-traiter">Taille des données et nombre de fichiers à traiter</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#principales-differences-entre-les-grappes-de-calcul">Principales différences entre les grappes de calcul</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#points-a-retenir">Points à retenir</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <section class="tex2jax_ignore mathjax_ignore" id="bien-choisir-les-ressources">
-<h1>Bien choisir les ressources<a class="headerlink" href="#bien-choisir-les-ressources" title="Lien permanent vers ce titre">#</a></h1>
+<h1>Bien choisir les ressources<a class="headerlink" href="#bien-choisir-les-ressources" title="Lien permanent vers cette rubrique">#</a></h1>
 <p>Il y a plusieurs <strong>ressources de calcul haute performance</strong> qui vous
 sont disponibles à l’Alliance de recherche numérique du Canada :</p>
 <ul class="simple">
@@ -578,7 +390,7 @@ sont disponibles à l’Alliance de recherche numérique du Canada :</p>
 </li>
 </ul>
 <section id="objectif-construction-d-un-script-de-tache-slurm">
-<h2>Objectif - construction d’un script de tâche Slurm<a class="headerlink" href="#objectif-construction-d-un-script-de-tache-slurm" title="Lien permanent vers ce titre">#</a></h2>
+<h2>Objectif - construction d’un script de tâche Slurm<a class="headerlink" href="#objectif-construction-d-un-script-de-tache-slurm" title="Lien permanent vers cette rubrique">#</a></h2>
 <p>Le principal objectif de ce chapitre est de vous permettre d’analyser
 vos besoins dans le but de <strong>déterminer les ressources nécessaires</strong>
 pour vos tâches de calcul.
@@ -596,7 +408,7 @@ options en entête seront lues par la commande de soumission de tâche
 processeurs réservés pour la tâche</p></li>
 </ul>
 <p>Par exemple : <a class="reference external" href="https://github.com/calculquebec/cip201-serveurs-calcul/blob/main/scripts/mpi-allo.sh"><code class="docutils literal notranslate"><span class="pre">scripts/mpi-allo.sh</span></code></a></p>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>nano scripts/mpi-allo.sh  <span class="c1"># Ctrl+Q pour quitter</span>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>nano<span class="w"> </span>scripts/mpi-allo.sh<span class="w">  </span><span class="c1"># Ctrl+Q pour quitter</span>
 </pre></div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
@@ -611,7 +423,7 @@ processeurs réservés pour la tâche</p></li>
 <a class="reference external" href="https://docs.alliancecan.ca/wiki/Running_jobs/fr">Exécuter des tâches</a></p>
 </section>
 <section id="analyse-des-calculs-localement">
-<h2>Analyse des calculs localement<a class="headerlink" href="#analyse-des-calculs-localement" title="Lien permanent vers ce titre">#</a></h2>
+<h2>Analyse des calculs localement<a class="headerlink" href="#analyse-des-calculs-localement" title="Lien permanent vers cette rubrique">#</a></h2>
 <p>Lorsqu’une tâche est en cours d’exécution sur votre ordinateur,
 vous pouvez surveiller différentes métriques :</p>
 <ul class="simple">
@@ -620,7 +432,7 @@ vous pouvez surveiller différentes métriques :</p>
 <li><p>Les accès au stockage</p></li>
 </ul>
 <section id="sous-windows">
-<h3>Sous Windows<a class="headerlink" href="#sous-windows" title="Lien permanent vers ce titre">#</a></h3>
+<h3>Sous Windows<a class="headerlink" href="#sous-windows" title="Lien permanent vers cette rubrique">#</a></h3>
 <ul class="simple">
 <li><p><a class="reference external" href="https://fr.wikipedia.org/wiki/Gestionnaire_des_t%C3%A2ches_Windows">Gestionnaire des tâches Windows</a></p></li>
 <li><p>Pour le faire afficher :</p>
@@ -633,7 +445,7 @@ vous pouvez surveiller différentes métriques :</p>
 <p><img alt="Aperçu du gestionnaire des tâches Windows" src="_images/win-task-manager.png" /></p>
 </section>
 <section id="sous-mac-os">
-<h3>Sous Mac OS<a class="headerlink" href="#sous-mac-os" title="Lien permanent vers ce titre">#</a></h3>
+<h3>Sous Mac OS<a class="headerlink" href="#sous-mac-os" title="Lien permanent vers cette rubrique">#</a></h3>
 <ul class="simple">
 <li><p><a class="reference external" href="https://support.apple.com/fr-ca/guide/activity-monitor/actmntr1001/mac">Moniteur d’activité</a></p></li>
 <li><p>Pour le faire afficher :</p>
@@ -648,7 +460,7 @@ cette application</p></li>
 <p><img alt="Aperçu du moniteur d'activité Mac OS" src="https://help.apple.com/assets/5FDCF1894EB74318147EC0CF/5FDCF18A4EB74318147EC0D6/fr_CA/ad6337d66061aa27122e75521960fc5a.png" /></p>
 </section>
 <section id="sous-linux">
-<h3>Sous Linux<a class="headerlink" href="#sous-linux" title="Lien permanent vers ce titre">#</a></h3>
+<h3>Sous Linux<a class="headerlink" href="#sous-linux" title="Lien permanent vers cette rubrique">#</a></h3>
 <p>Dans un terminal Unix, on peut utiliser :</p>
 <ul class="simple">
 <li><p>La <a class="reference external" href="https://man7.org/linux/man-pages/man1/top.1.html">commande <code class="docutils literal notranslate"><span class="pre">top</span></code></a> (<code class="docutils literal notranslate"><span class="pre">q</span></code> pour quitter)</p></li>
@@ -661,9 +473,9 @@ cette application</p></li>
 </section>
 </section>
 <section id="analyse-des-taches-sur-la-grappe-de-calcul">
-<h2>Analyse des tâches sur la grappe de calcul<a class="headerlink" href="#analyse-des-taches-sur-la-grappe-de-calcul" title="Lien permanent vers ce titre">#</a></h2>
+<h2>Analyse des tâches sur la grappe de calcul<a class="headerlink" href="#analyse-des-taches-sur-la-grappe-de-calcul" title="Lien permanent vers cette rubrique">#</a></h2>
 <p>On commence par <strong>se connecter au noeud frontal</strong> de la grappe :</p>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>ssh login1
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>ssh<span class="w"> </span>login1
 ...
 </pre></div>
 </div>
@@ -673,16 +485,16 @@ il vaut mieux utiliser <a class="reference external" href="https://docs.alliance
 calcul <code class="docutils literal notranslate"><span class="pre">def-*</span></code> de base qui vous permet de lancer des tâches de test.</p>
 <p>Pour soumettre un script de tâche, on utilise la
 <a class="reference external" href="https://slurm.schedmd.com/sbatch.html">commande <code class="docutils literal notranslate"><span class="pre">sbatch</span></code></a> :</p>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>sbatch scripts/blastn-gen-seq.sh
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>sbatch<span class="w"> </span>scripts/blastn-gen-seq.sh
 </pre></div>
 </div>
 <p>Et pour voir l’état de la tâche, on utilise la
 <a class="reference external" href="https://slurm.schedmd.com/squeue.html">commande <code class="docutils literal notranslate"><span class="pre">squeue</span></code></a> :</p>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>squeue -u <span class="nv">$USER</span>  <span class="c1"># ou &#39;sq&#39;</span>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>squeue<span class="w"> </span>-u<span class="w"> </span><span class="nv">$USER</span><span class="w">  </span><span class="c1"># ou &#39;sq&#39;</span>
 </pre></div>
 </div>
 <section id="ressources-utilisees-d-une-tache-terminee">
-<h3>Ressources utilisées d’une tâche terminée<a class="headerlink" href="#ressources-utilisees-d-une-tache-terminee" title="Lien permanent vers ce titre">#</a></h3>
+<h3>Ressources utilisées d’une tâche terminée<a class="headerlink" href="#ressources-utilisees-d-une-tache-terminee" title="Lien permanent vers cette rubrique">#</a></h3>
 <p>Avec la <a class="reference external" href="https://slurm.schedmd.com/sacct.html">commande <code class="docutils literal notranslate"><span class="pre">sacct</span></code></a>,
 on peut obtenir un tableau détaillé de nos tâches exécutées
 depuis minuit :</p>
@@ -695,46 +507,46 @@ Ce rapport inclut une mesure du temps écoulé, une mesure du temps CPU
 et une mesure de consommation maximale de la mémoire-vive.
 Des valeurs d’efficacité en pourcentages sont données pour les cycles CPU
 et la mémoire-vives en fonction des quantités réservées.</p>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>seff &lt;No_tâche&gt;
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>seff<span class="w"> </span>&lt;No_tâche&gt;
 </pre></div>
 </div>
 </section>
 <section id="ressources-utilisees-par-une-tache-cpu-en-cours">
-<h3>Ressources utilisées par une tâche CPU en cours<a class="headerlink" href="#ressources-utilisees-par-une-tache-cpu-en-cours" title="Lien permanent vers ce titre">#</a></h3>
+<h3>Ressources utilisées par une tâche CPU en cours<a class="headerlink" href="#ressources-utilisees-par-une-tache-cpu-en-cours" title="Lien permanent vers cette rubrique">#</a></h3>
 <p>Étant donné un certain calcul matriciel dans le script Python
 <a class="reference external" href="https://github.com/calculquebec/cip201-serveurs-calcul/blob/main/scripts/crunch.py"><code class="docutils literal notranslate"><span class="pre">scripts/crunch.py</span></code></a> :</p>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>less scripts/crunch.py   <span class="c1"># q pour quitter</span>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>less<span class="w"> </span>scripts/crunch.py<span class="w">   </span><span class="c1"># q pour quitter</span>
 </pre></div>
 </div>
 <p>Lors d’une tâche interactive, on peut utiliser <code class="docutils literal notranslate"><span class="pre">top</span></code> et <code class="docutils literal notranslate"><span class="pre">htop</span></code> pour surveiller les ressources utilisées :</p>
 <div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tâche interactive et installation de modules Python</span>
-salloc --ntasks-per-node<span class="o">=</span><span class="m">4</span> --mem<span class="o">=</span>8000M --time<span class="o">=</span><span class="m">0</span>:9:0
-less scripts/installer/numpy_tmp.sh  <span class="c1"># q pour quitter</span>
-bash scripts/installer/numpy_tmp.sh
+salloc<span class="w"> </span>--ntasks-per-node<span class="o">=</span><span class="m">4</span><span class="w"> </span>--mem<span class="o">=</span>8000M<span class="w"> </span>--time<span class="o">=</span><span class="m">0</span>:9:0
+less<span class="w"> </span>scripts/installer/numpy_tmp.sh<span class="w">  </span><span class="c1"># q pour quitter</span>
+bash<span class="w"> </span>scripts/installer/numpy_tmp.sh
 </pre></div>
 </div>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>less scripts/crunch.sh  <span class="c1"># q pour quitter</span>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>less<span class="w"> </span>scripts/crunch.sh<span class="w">  </span><span class="c1"># q pour quitter</span>
 
 <span class="c1"># Exécution avec un processeur</span>
-bash scripts/crunch.sh --cpu <span class="m">1</span>
-top -u <span class="nv">$USER</span>  <span class="c1"># q pour quitter</span>
+bash<span class="w"> </span>scripts/crunch.sh<span class="w"> </span>--cpu<span class="w"> </span><span class="m">1</span>
+top<span class="w"> </span>-u<span class="w"> </span><span class="nv">$USER</span><span class="w">  </span><span class="c1"># q pour quitter</span>
 
 <span class="c1"># Exécution avec 4 processeurs</span>
-bash scripts/crunch.sh --cpu <span class="m">4</span>
-htop -u <span class="nv">$USER</span>  <span class="c1"># q pour quitter</span>
+bash<span class="w"> </span>scripts/crunch.sh<span class="w"> </span>--cpu<span class="w"> </span><span class="m">4</span>
+htop<span class="w"> </span>-u<span class="w"> </span><span class="nv">$USER</span><span class="w">  </span><span class="c1"># q pour quitter</span>
 
 <span class="c1"># Comparer les résultats</span>
-grep sec *.log
+grep<span class="w"> </span>sec<span class="w"> </span>*.log
 
-<span class="nb">exit</span>  <span class="c1"># Pour revenir à login1</span>
+<span class="nb">exit</span><span class="w">  </span><span class="c1"># Pour revenir à login1</span>
 </pre></div>
 </div>
 <section id="exercice-valider-le-comportement-d-une-tache-active">
-<h4>Exercice - Valider le comportement d’une tâche active<a class="headerlink" href="#exercice-valider-le-comportement-d-une-tache-active" title="Lien permanent vers ce titre">#</a></h4>
+<h4>Exercice - Valider le comportement d’une tâche active<a class="headerlink" href="#exercice-valider-le-comportement-d-une-tache-active" title="Lien permanent vers cette rubrique">#</a></h4>
 <p>Pendant que vos tâches sont actives, vous pouvez vous connecter par
 SSH aux noeuds de calcul correspondants afin de valider que
 l’exécution se passe bien :</p>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>sbatch scripts/inv-mat.sh
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>sbatch<span class="w"> </span>scripts/inv-mat.sh
 </pre></div>
 </div>
 <p>Voici les étapes de validation (à adapter pour l’exercice) :</p>
@@ -762,10 +574,10 @@ paramètres de la tâche de calcul</p></li>
 </section>
 </section>
 <section id="demo-ressources-utilisees-par-une-tache-gpu-en-cours">
-<h3>(Démo) Ressources utilisées par une tâche GPU en cours<a class="headerlink" href="#demo-ressources-utilisees-par-une-tache-gpu-en-cours" title="Lien permanent vers ce titre">#</a></h3>
+<h3>(Démo) Ressources utilisées par une tâche GPU en cours<a class="headerlink" href="#demo-ressources-utilisees-par-une-tache-gpu-en-cours" title="Lien permanent vers cette rubrique">#</a></h3>
 <div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tâche interactive et installation de modules Python</span>
-salloc --ntasks-per-node<span class="o">=</span><span class="m">4</span> --mem<span class="o">=</span>8000M --time<span class="o">=</span><span class="m">0</span>:9:0 --gres<span class="o">=</span>gpu:1
-bash scripts/installer/cupy_tmp.sh
+salloc<span class="w"> </span>--ntasks-per-node<span class="o">=</span><span class="m">4</span><span class="w"> </span>--mem<span class="o">=</span>8000M<span class="w"> </span>--time<span class="o">=</span><span class="m">0</span>:9:0<span class="w"> </span>--gres<span class="o">=</span>gpu:1
+bash<span class="w"> </span>scripts/installer/cupy_tmp.sh
 </pre></div>
 </div>
 <ul class="simple">
@@ -786,29 +598,29 @@ permettant de visualiser l’utilisation d’un ou plusieurs GPUs dans
 un terminal :</p></li>
 </ul>
 <div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exécution avec un GPU</span>
-bash scripts/crunch.sh --gpu
-nvtop  <span class="c1"># q pour quitter</span>
+bash<span class="w"> </span>scripts/crunch.sh<span class="w"> </span>--gpu
+nvtop<span class="w">  </span><span class="c1"># q pour quitter</span>
 </pre></div>
 </div>
 <p><img alt="Capture nvtop" src="https://raw.githubusercontent.com/Syllo/nvtop/master/screenshot/NVTOP_ex1.png" /></p>
 <div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Regarder le résultat</span>
-less tg.log    <span class="c1"># q pour quitter</span>
+less<span class="w"> </span>tg.log<span class="w">    </span><span class="c1"># q pour quitter</span>
 
-<span class="nb">exit</span>  <span class="c1"># Pour revenir à login1</span>
+<span class="nb">exit</span><span class="w">  </span><span class="c1"># Pour revenir à login1</span>
 </pre></div>
 </div>
 <section id="exercice-tester-crunch-avec-un-gpu">
-<h4>Exercice - Tester Crunch avec un GPU<a class="headerlink" href="#exercice-tester-crunch-avec-un-gpu" title="Lien permanent vers ce titre">#</a></h4>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>less   scripts/crunch-sbatch-1gpu.sh
-sbatch scripts/crunch-sbatch-1gpu.sh
+<h4>Exercice - Tester Crunch avec un GPU<a class="headerlink" href="#exercice-tester-crunch-avec-un-gpu" title="Lien permanent vers cette rubrique">#</a></h4>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>less<span class="w">   </span>scripts/crunch-sbatch-1gpu.sh
+sbatch<span class="w"> </span>scripts/crunch-sbatch-1gpu.sh
 
-squeue -u <span class="nv">$USER</span>  <span class="c1"># Pour vérifier l&#39;état de la tâche</span>
-tail -24 <span class="k">$(</span>ls slurm-* <span class="p">|</span> tail -1<span class="k">)</span>
+squeue<span class="w"> </span>-u<span class="w"> </span><span class="nv">$USER</span><span class="w">  </span><span class="c1"># Pour vérifier l&#39;état de la tâche</span>
+tail<span class="w"> </span>-24<span class="w"> </span><span class="k">$(</span>ls<span class="w"> </span>slurm-*<span class="w"> </span><span class="p">|</span><span class="w"> </span>tail<span class="w"> </span>-1<span class="k">)</span>
 </pre></div>
 </div>
 </section>
 <section id="comparer-la-vitesse-cpu-vs-gpu">
-<h4>Comparer la vitesse CPU vs GPU<a class="headerlink" href="#comparer-la-vitesse-cpu-vs-gpu" title="Lien permanent vers ce titre">#</a></h4>
+<h4>Comparer la vitesse CPU vs GPU<a class="headerlink" href="#comparer-la-vitesse-cpu-vs-gpu" title="Lien permanent vers cette rubrique">#</a></h4>
 <p>Avant d’utiliser massivement les GPUs d’une grappe de calcul, il faut
 tout d’abord que l’application ou l’algorithme puisse démontrer une
 « bonne performance » en utilisant plusieurs processeurs en parallèle.</p>
@@ -828,9 +640,9 @@ d’au moins cinq fois (5x) la vitesse de huit (8) à douze (12) processeurs.</p
 </section>
 </section>
 <section id="estimer-les-ressources-necessaires">
-<h2>Estimer les ressources nécessaires<a class="headerlink" href="#estimer-les-ressources-necessaires" title="Lien permanent vers ce titre">#</a></h2>
+<h2>Estimer les ressources nécessaires<a class="headerlink" href="#estimer-les-ressources-necessaires" title="Lien permanent vers cette rubrique">#</a></h2>
 <section id="efficacite-cible-d-une-tache">
-<h3>Efficacité cible d’une tâche<a class="headerlink" href="#efficacite-cible-d-une-tache" title="Lien permanent vers ce titre">#</a></h3>
+<h3>Efficacité cible d’une tâche<a class="headerlink" href="#efficacite-cible-d-une-tache" title="Lien permanent vers cette rubrique">#</a></h3>
 <p>À coût d’essais et erreurs avec une <strong>tâche de petite taille</strong>,
 la cible pour :</p>
 <ul class="simple">
@@ -859,19 +671,19 @@ de ce qui est demandé à l’ordonnanceur Slurm</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Memory</span> <span class="pre">Utilized</span></code> et <code class="docutils literal notranslate"><span class="pre">Memory</span> <span class="pre">Efficiency</span></code></p></li>
 </ul>
 <section id="exercice-efficacite-des-taches">
-<h4>Exercice - Efficacité des tâches<a class="headerlink" href="#exercice-efficacite-des-taches" title="Lien permanent vers ce titre">#</a></h4>
+<h4>Exercice - Efficacité des tâches<a class="headerlink" href="#exercice-efficacite-des-taches" title="Lien permanent vers cette rubrique">#</a></h4>
 <p>Pour chacune de vos tâches listées par la commande suivante :</p>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>sacct -X
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>sacct<span class="w"> </span>-X
 </pre></div>
 </div>
 <p>Obtenez le <code class="docutils literal notranslate"><span class="pre">CPU</span> <span class="pre">Efficiency</span></code> et le <code class="docutils literal notranslate"><span class="pre">Memory</span> <span class="pre">Efficiency</span></code> via la commande :</p>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>seff &lt;No_tâche&gt;
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>seff<span class="w"> </span>&lt;No_tâche&gt;
 </pre></div>
 </div>
 </section>
 </section>
 <section id="la-complexite-des-algorithmes">
-<h3>La complexité des algorithmes<a class="headerlink" href="#la-complexite-des-algorithmes" title="Lien permanent vers ce titre">#</a></h3>
+<h3>La complexité des algorithmes<a class="headerlink" href="#la-complexite-des-algorithmes" title="Lien permanent vers cette rubrique">#</a></h3>
 <p>La question qui se pose :
 <strong>en augmentant la ou les dimensions du problème</strong>,
 quelles devraient être la durée du calcul et la consommation en mémoire-vive?
@@ -896,12 +708,12 @@ taille du problème. En extrapolant les résultats, il serait possible
 de prévoir le comportement du programme sur une grappe de calcul.</p></li>
 </ul>
 <section id="exercice-complexite-de-l-algorithme">
-<h4>Exercice - Complexité de l’algorithme<a class="headerlink" href="#exercice-complexite-de-l-algorithme" title="Lien permanent vers ce titre">#</a></h4>
+<h4>Exercice - Complexité de l’algorithme<a class="headerlink" href="#exercice-complexite-de-l-algorithme" title="Lien permanent vers cette rubrique">#</a></h4>
 <p>Dans cet exercice, il est question d’inverser une matrice de valeurs aléatoires de taille <span class="math notranslate nohighlight">\(n*n\)</span> :</p>
 <ul class="simple">
 <li><p>Soumettre le script <a class="reference external" href="https://github.com/calculquebec/cip201-serveurs-calcul/blob/main/scripts/inv-mat.sh"><code class="docutils literal notranslate"><span class="pre">scripts/inv-mat.sh</span></code></a> avec la commande <code class="docutils literal notranslate"><span class="pre">sbatch</span></code> :</p></li>
 </ul>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>sbatch scripts/inv-mat.sh
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>sbatch<span class="w"> </span>scripts/inv-mat.sh
 </pre></div>
 </div>
 <ul class="simple">
@@ -909,8 +721,8 @@ de prévoir le comportement du programme sur une grappe de calcul.</p></li>
 <a class="reference external" href="https://github.com/calculquebec/cip201-serveurs-calcul/blob/main/scripts/inv-mat.py"><code class="docutils literal notranslate"><span class="pre">scripts/inv-mat.py</span></code></a> et
 <a class="reference external" href="https://github.com/calculquebec/cip201-serveurs-calcul/blob/main/scripts/inv-mat.sh"><code class="docutils literal notranslate"><span class="pre">scripts/inv-mat.sh</span></code></a> :</p></li>
 </ul>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>cat scripts/inv-mat.py
-cat scripts/inv-mat.sh
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>scripts/inv-mat.py
+cat<span class="w"> </span>scripts/inv-mat.sh
 </pre></div>
 </div>
 <ul class="simple">
@@ -918,10 +730,10 @@ cat scripts/inv-mat.sh
 <li><p>Les mesures seront sauvegardées dans le fichier <code class="docutils literal notranslate"><span class="pre">temps_inv.csv</span></code></p></li>
 <li><p>Analyse avec Python, Pandas et Numpy dans le script <a class="reference external" href="https://github.com/calculquebec/cip201-serveurs-calcul/blob/main/scripts/inv-mat-pred.py"><code class="docutils literal notranslate"><span class="pre">scripts/inv-mat-pred.py</span></code></a> :</p></li>
 </ul>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>module load gcc python scipy-stack
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>module<span class="w"> </span>load<span class="w"> </span>gcc<span class="w"> </span>python<span class="w"> </span>scipy-stack
 
-cat scripts/inv-mat-pred.py
-python scripts/inv-mat-pred.py temps_inv.csv
+cat<span class="w"> </span>scripts/inv-mat-pred.py
+python<span class="w"> </span>scripts/inv-mat-pred.py<span class="w"> </span>temps_inv.csv
 </pre></div>
 </div>
 <ul class="simple">
@@ -930,10 +742,10 @@ python scripts/inv-mat-pred.py temps_inv.csv
 </section>
 </section>
 <section id="taille-des-donnees-et-nombre-de-fichiers-a-traiter">
-<h3>Taille des données et nombre de fichiers à traiter<a class="headerlink" href="#taille-des-donnees-et-nombre-de-fichiers-a-traiter" title="Lien permanent vers ce titre">#</a></h3>
+<h3>Taille des données et nombre de fichiers à traiter<a class="headerlink" href="#taille-des-donnees-et-nombre-de-fichiers-a-traiter" title="Lien permanent vers cette rubrique">#</a></h3>
 <p>En plus du temps de calcul et de l’espace mémoire, il faut aussi
 considérer l’utilisation du stockage. Les valeurs à tenir compte :</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>La <strong>quantité</strong> en octets (ou Go)</p>
 <ul class="simple">
 <li><p>Peut servir à <strong>estimer</strong> l’utilisation de la mémoire-vive</p></li>
@@ -988,284 +800,284 @@ aléatoires et nombreux</p></li>
 </section>
 </section>
 <section id="principales-differences-entre-les-grappes-de-calcul">
-<h2>Principales différences entre les grappes de calcul<a class="headerlink" href="#principales-differences-entre-les-grappes-de-calcul" title="Lien permanent vers ce titre">#</a></h2>
+<h2>Principales différences entre les grappes de calcul<a class="headerlink" href="#principales-differences-entre-les-grappes-de-calcul" title="Lien permanent vers cette rubrique">#</a></h2>
 <ul class="simple">
 <li><p>À propos des grappes :</p></li>
 </ul>
-<table class="colwidths-auto table">
+<table class="table">
 <thead>
-<tr class="row-odd"><th class="text-align:right head"><p></p></th>
-<th class="text-align:center head"><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/B%C3%A9luga">Béluga</a></p></th>
-<th class="text-align:center head"><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Cedar/fr">Cedar</a></p></th>
-<th class="text-align:center head"><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Graham/fr">Graham</a></p></th>
-<th class="text-align:center head"><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Narval">Narval</a></p></th>
-<th class="text-align:center head"><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Niagara/fr">Niagara</a></p></th>
+<tr class="row-odd"><th class="head text-right"><p></p></th>
+<th class="head text-center"><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/B%C3%A9luga">Béluga</a></p></th>
+<th class="head text-center"><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Cedar/fr">Cedar</a></p></th>
+<th class="head text-center"><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Graham/fr">Graham</a></p></th>
+<th class="head text-center"><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Narval">Narval</a></p></th>
+<th class="head text-center"><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Niagara/fr">Niagara</a></p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-align:right"><p><strong>Mise en production</strong></p></td>
-<td class="text-align:center"><p>Mars 2019</p></td>
-<td class="text-align:center"><p>Juin 2017</p></td>
-<td class="text-align:center"><p>Juin 2017</p></td>
-<td class="text-align:center"><p>Octobre 2021</p></td>
-<td class="text-align:center"><p>Avril 2018</p></td>
+<tr class="row-even"><td class="text-right"><p><strong>Mise en production</strong></p></td>
+<td class="text-center"><p>Mars 2019</p></td>
+<td class="text-center"><p>Juin 2017</p></td>
+<td class="text-center"><p>Juin 2017</p></td>
+<td class="text-center"><p>Octobre 2021</p></td>
+<td class="text-center"><p>Avril 2018</p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:right"><p><strong>Ville</strong></p></td>
-<td class="text-align:center"><p>Montréal</p></td>
-<td class="text-align:center"><p>Burnaby</p></td>
-<td class="text-align:center"><p>Waterloo</p></td>
-<td class="text-align:center"><p>Montréal</p></td>
-<td class="text-align:center"><p>Toronto</p></td>
+<tr class="row-odd"><td class="text-right"><p><strong>Ville</strong></p></td>
+<td class="text-center"><p>Montréal</p></td>
+<td class="text-center"><p>Burnaby</p></td>
+<td class="text-center"><p>Waterloo</p></td>
+<td class="text-center"><p>Montréal</p></td>
+<td class="text-center"><p>Toronto</p></td>
 </tr>
-<tr class="row-even"><td class="text-align:right"><p><strong>Province</strong></p></td>
-<td class="text-align:center"><p>Québec</p></td>
-<td class="text-align:center"><p>C.-B.</p></td>
-<td class="text-align:center"><p>Ontario</p></td>
-<td class="text-align:center"><p>Québec</p></td>
-<td class="text-align:center"><p>Ontario</p></td>
+<tr class="row-even"><td class="text-right"><p><strong>Province</strong></p></td>
+<td class="text-center"><p>Québec</p></td>
+<td class="text-center"><p>C.-B.</p></td>
+<td class="text-center"><p>Ontario</p></td>
+<td class="text-center"><p>Québec</p></td>
+<td class="text-center"><p>Ontario</p></td>
 </tr>
 </tbody>
 </table>
 <ul class="simple">
 <li><p>Nombre de processeurs (coeurs CPU) selon le cas :</p></li>
 </ul>
-<table class="colwidths-auto table">
+<table class="table">
 <thead>
-<tr class="row-odd"><th class="text-align:right head"><p>Processeur Intel/AMD</p></th>
-<th class="text-align:center head"><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/B%C3%A9luga">Béluga</a></p></th>
-<th class="text-align:center head"><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Cedar/fr">Cedar</a></p></th>
-<th class="text-align:center head"><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Graham/fr">Graham</a></p></th>
-<th class="text-align:center head"><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Narval">Narval</a></p></th>
-<th class="text-align:center head"><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Niagara/fr">Niagara</a></p></th>
+<tr class="row-odd"><th class="head text-right"><p>Processeur Intel/AMD</p></th>
+<th class="head text-center"><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/B%C3%A9luga">Béluga</a></p></th>
+<th class="head text-center"><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Cedar/fr">Cedar</a></p></th>
+<th class="head text-center"><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Graham/fr">Graham</a></p></th>
+<th class="head text-center"><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Narval">Narval</a></p></th>
+<th class="head text-center"><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Niagara/fr">Niagara</a></p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-align:right"><p>Broadwell (avx2)</p></td>
-<td class="text-align:center"><p></p></td>
-<td class="text-align:center"><p>724 * 32</p></td>
-<td class="text-align:center"><p>983 * 32</p></td>
-<td class="text-align:center"><p></p></td>
-<td class="text-align:center"><p></p></td>
+<tr class="row-even"><td class="text-right"><p>Broadwell (avx2)</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>724 * 32</p></td>
+<td class="text-center"><p>983 * 32</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:right"><p>Skylake (avx512)</p></td>
-<td class="text-align:center"><p>802 * 40</p></td>
-<td class="text-align:center"><p>640 * 48</p></td>
-<td class="text-align:center"><p></p></td>
-<td class="text-align:center"><p></p></td>
-<td class="text-align:center"><p>1548 * 40</p></td>
+<tr class="row-odd"><td class="text-right"><p>Skylake (avx512)</p></td>
+<td class="text-center"><p>802 * 40</p></td>
+<td class="text-center"><p>640 * 48</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>1548 * 40</p></td>
 </tr>
-<tr class="row-even"><td class="text-align:right"><p>Cascade Lake (avx512)</p></td>
-<td class="text-align:center"><p></p></td>
-<td class="text-align:center"><p>768 * 48</p></td>
-<td class="text-align:center"><p>72 * 44</p></td>
-<td class="text-align:center"><p></p></td>
-<td class="text-align:center"><p>468 * 40</p></td>
+<tr class="row-even"><td class="text-right"><p>Cascade Lake (avx512)</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>768 * 48</p></td>
+<td class="text-center"><p>72 * 44</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>468 * 40</p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:right"><p>EPYC Rome (avx2)</p></td>
-<td class="text-align:center"><p></p></td>
-<td class="text-align:center"><p></p></td>
-<td class="text-align:center"><p></p></td>
-<td class="text-align:center"><p>1181 * 64</p></td>
-<td class="text-align:center"><p></p></td>
+<tr class="row-odd"><td class="text-right"><p>EPYC Rome (avx2)</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>1181 * 64</p></td>
+<td class="text-center"><p></p></td>
 </tr>
 </tbody>
 </table>
-<table class="colwidths-auto table">
+<table class="table">
 <thead>
-<tr class="row-odd"><th class="text-align:right head"><p>Mémoire par proc.</p></th>
-<th class="text-align:center head"><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/B%C3%A9luga">Béluga</a></p></th>
-<th class="text-align:center head"><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Cedar/fr">Cedar</a></p></th>
-<th class="text-align:center head"><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Graham/fr">Graham</a></p></th>
-<th class="text-align:center head"><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Narval">Narval</a></p></th>
-<th class="text-align:center head"><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Niagara/fr">Niagara</a></p></th>
+<tr class="row-odd"><th class="head text-right"><p>Mémoire par proc.</p></th>
+<th class="head text-center"><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/B%C3%A9luga">Béluga</a></p></th>
+<th class="head text-center"><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Cedar/fr">Cedar</a></p></th>
+<th class="head text-center"><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Graham/fr">Graham</a></p></th>
+<th class="head text-center"><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Narval">Narval</a></p></th>
+<th class="head text-center"><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Niagara/fr">Niagara</a></p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-align:right"><p>2400M</p></td>
-<td class="text-align:center"><p>6400</p></td>
-<td class="text-align:center"><p></p></td>
-<td class="text-align:center"><p></p></td>
-<td class="text-align:center"><p></p></td>
-<td class="text-align:center"><p></p></td>
+<tr class="row-even"><td class="text-right"><p>2400M</p></td>
+<td class="text-center"><p>6400</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:right"><p>4000M</p></td>
-<td class="text-align:center"><p></p></td>
-<td class="text-align:center"><p>86016</p></td>
-<td class="text-align:center"><p>28896</p></td>
-<td class="text-align:center"><p>73280</p></td>
-<td class="text-align:center"><p></p></td>
+<tr class="row-odd"><td class="text-right"><p>4000M</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>86016</p></td>
+<td class="text-center"><p>28896</p></td>
+<td class="text-center"><p>73280</p></td>
+<td class="text-center"><p></p></td>
 </tr>
-<tr class="row-even"><td class="text-align:right"><p>4400M</p></td>
-<td class="text-align:center"><p></p></td>
-<td class="text-align:center"><p></p></td>
-<td class="text-align:center"><p>3168</p></td>
-<td class="text-align:center"><p></p></td>
-<td class="text-align:center"><p></p></td>
+<tr class="row-even"><td class="text-right"><p>4400M</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>3168</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:right"><p>4800M</p></td>
-<td class="text-align:center"><p>23560</p></td>
-<td class="text-align:center"><p></p></td>
-<td class="text-align:center"><p></p></td>
-<td class="text-align:center"><p></p></td>
-<td class="text-align:center"><p>80960</p></td>
+<tr class="row-odd"><td class="text-right"><p>4800M</p></td>
+<td class="text-center"><p>23560</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>80960</p></td>
 </tr>
-<tr class="row-even"><td class="text-align:right"><p>8000M</p></td>
-<td class="text-align:center"><p></p></td>
-<td class="text-align:center"><p>3072</p></td>
-<td class="text-align:center"><p>1792</p></td>
-<td class="text-align:center"><p></p></td>
-<td class="text-align:center"><p></p></td>
+<tr class="row-even"><td class="text-right"><p>8000M</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>3072</p></td>
+<td class="text-center"><p>1792</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:right"><p>16000M</p></td>
-<td class="text-align:center"><p></p></td>
-<td class="text-align:center"><p>768</p></td>
-<td class="text-align:center"><p>768</p></td>
-<td class="text-align:center"><p></p></td>
-<td class="text-align:center"><p></p></td>
+<tr class="row-odd"><td class="text-right"><p>16000M</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>768</p></td>
+<td class="text-center"><p>768</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
 </tr>
-<tr class="row-even"><td class="text-align:right"><p>19200M</p></td>
-<td class="text-align:center"><p>2120</p></td>
-<td class="text-align:center"><p></p></td>
-<td class="text-align:center"><p></p></td>
-<td class="text-align:center"><p></p></td>
-<td class="text-align:center"><p></p></td>
+<tr class="row-even"><td class="text-right"><p>19200M</p></td>
+<td class="text-center"><p>2120</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:right"><p>32000M</p></td>
-<td class="text-align:center"><p></p></td>
-<td class="text-align:center"><p></p></td>
-<td class="text-align:center"><p></p></td>
-<td class="text-align:center"><p>2304</p></td>
-<td class="text-align:center"><p></p></td>
+<tr class="row-odd"><td class="text-right"><p>32000M</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>2304</p></td>
+<td class="text-center"><p></p></td>
 </tr>
-<tr class="row-even"><td class="text-align:right"><p>48000M</p></td>
-<td class="text-align:center"><p></p></td>
-<td class="text-align:center"><p>768</p></td>
-<td class="text-align:center"><p>192</p></td>
-<td class="text-align:center"><p></p></td>
-<td class="text-align:center"><p></p></td>
+<tr class="row-even"><td class="text-right"><p>48000M</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>768</p></td>
+<td class="text-center"><p>192</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:right"><p>96000M</p></td>
-<td class="text-align:center"><p></p></td>
-<td class="text-align:center"><p>128</p></td>
-<td class="text-align:center"><p></p></td>
-<td class="text-align:center"><p></p></td>
-<td class="text-align:center"><p></p></td>
+<tr class="row-odd"><td class="text-right"><p>96000M</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>128</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
 </tr>
 </tbody>
 </table>
 <ul class="simple">
 <li><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Using_GPUs_with_Slurm/fr">Nombre de GPUs</a> selon le cas :</p></li>
 </ul>
-<table class="colwidths-auto table">
+<table class="table">
 <thead>
-<tr class="row-odd"><th class="text-align:right head"><p>Accélérateurs</p></th>
-<th class="text-align:center head"><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/B%C3%A9luga">Béluga</a></p></th>
-<th class="text-align:center head"><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Cedar/fr">Cedar</a></p></th>
-<th class="text-align:center head"><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Graham/fr">Graham</a></p></th>
-<th class="text-align:center head"><p><a class="reference external" href="https://docs.scinet.utoronto.ca/index.php/Mist">Mist (Power9)</a></p></th>
-<th class="text-align:center head"><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Narval">Narval</a></p></th>
+<tr class="row-odd"><th class="head text-right"><p>Accélérateurs</p></th>
+<th class="head text-center"><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/B%C3%A9luga">Béluga</a></p></th>
+<th class="head text-center"><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Cedar/fr">Cedar</a></p></th>
+<th class="head text-center"><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Graham/fr">Graham</a></p></th>
+<th class="head text-center"><p><a class="reference external" href="https://docs.scinet.utoronto.ca/index.php/Mist">Mist (Power9)</a></p></th>
+<th class="head text-center"><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Narval">Narval</a></p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-align:right"><p>NVIDIA P100 12G</p></td>
-<td class="text-align:center"><p></p></td>
-<td class="text-align:center"><p>456</p></td>
-<td class="text-align:center"><p>320</p></td>
-<td class="text-align:center"><p></p></td>
-<td class="text-align:center"><p></p></td>
+<tr class="row-even"><td class="text-right"><p>NVIDIA P100 12G</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>456</p></td>
+<td class="text-center"><p>320</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:right"><p>NVIDIA P100 16G</p></td>
-<td class="text-align:center"><p></p></td>
-<td class="text-align:center"><p>128</p></td>
-<td class="text-align:center"><p></p></td>
-<td class="text-align:center"><p></p></td>
-<td class="text-align:center"><p></p></td>
+<tr class="row-odd"><td class="text-right"><p>NVIDIA P100 16G</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>128</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
 </tr>
-<tr class="row-even"><td class="text-align:right"><p>NVIDIA T4 16G</p></td>
-<td class="text-align:center"><p></p></td>
-<td class="text-align:center"><p></p></td>
-<td class="text-align:center"><p>144</p></td>
-<td class="text-align:center"><p></p></td>
-<td class="text-align:center"><p></p></td>
+<tr class="row-even"><td class="text-right"><p>NVIDIA T4 16G</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>144</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:right"><p>NVIDIA V100 16G</p></td>
-<td class="text-align:center"><p>688</p></td>
-<td class="text-align:center"><p></p></td>
-<td class="text-align:center"><p>54</p></td>
-<td class="text-align:center"><p></p></td>
-<td class="text-align:center"><p></p></td>
+<tr class="row-odd"><td class="text-right"><p>NVIDIA V100 16G</p></td>
+<td class="text-center"><p>688</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>54</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
 </tr>
-<tr class="row-even"><td class="text-align:right"><p>NVIDIA V100 32G</p></td>
-<td class="text-align:center"><p></p></td>
-<td class="text-align:center"><p>768</p></td>
-<td class="text-align:center"><p>16</p></td>
-<td class="text-align:center"><p>216</p></td>
-<td class="text-align:center"><p></p></td>
+<tr class="row-even"><td class="text-right"><p>NVIDIA V100 32G</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>768</p></td>
+<td class="text-center"><p>16</p></td>
+<td class="text-center"><p>216</p></td>
+<td class="text-center"><p></p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:right"><p>NVIDIA A100 40G</p></td>
-<td class="text-align:center"><p></p></td>
-<td class="text-align:center"><p></p></td>
-<td class="text-align:center"><p></p></td>
-<td class="text-align:center"><p></p></td>
-<td class="text-align:center"><p>636</p></td>
+<tr class="row-odd"><td class="text-right"><p>NVIDIA A100 40G</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>636</p></td>
 </tr>
 </tbody>
 </table>
 <ul class="simple">
 <li><p>Réseau haute-performance et ordonnancement :</p></li>
 </ul>
-<table class="colwidths-auto table">
+<table class="table">
 <thead>
-<tr class="row-odd"><th class="text-align:right head"><p></p></th>
-<th class="text-align:center head"><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/B%C3%A9luga">Béluga</a></p></th>
-<th class="text-align:center head"><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Cedar/fr">Cedar</a></p></th>
-<th class="text-align:center head"><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Graham/fr">Graham</a></p></th>
-<th class="text-align:center head"><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Narval">Narval</a></p></th>
-<th class="text-align:center head"><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Niagara/fr">Niagara</a></p></th>
+<tr class="row-odd"><th class="head text-right"><p></p></th>
+<th class="head text-center"><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/B%C3%A9luga">Béluga</a></p></th>
+<th class="head text-center"><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Cedar/fr">Cedar</a></p></th>
+<th class="head text-center"><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Graham/fr">Graham</a></p></th>
+<th class="head text-center"><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Narval">Narval</a></p></th>
+<th class="head text-center"><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Niagara/fr">Niagara</a></p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-align:right"><p>Connexion rapide</p></td>
-<td class="text-align:center"><p>InfiniBand</p></td>
-<td class="text-align:center"><p>OmniPath</p></td>
-<td class="text-align:center"><p>InfiniBand</p></td>
-<td class="text-align:center"><p>InfiniBand</p></td>
-<td class="text-align:center"><p>InfiniBand</p></td>
+<tr class="row-even"><td class="text-right"><p>Connexion rapide</p></td>
+<td class="text-center"><p>InfiniBand</p></td>
+<td class="text-center"><p>OmniPath</p></td>
+<td class="text-center"><p>InfiniBand</p></td>
+<td class="text-center"><p>InfiniBand</p></td>
+<td class="text-center"><p>InfiniBand</p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:right"><p>Topologie</p></td>
-<td class="text-align:center"><p>En arbre</p></td>
-<td class="text-align:center"><p>En arbre</p></td>
-<td class="text-align:center"><p>En arbre</p></td>
-<td class="text-align:center"><p>En arbre</p></td>
-<td class="text-align:center"><p>DragonFly+</p></td>
+<tr class="row-odd"><td class="text-right"><p>Topologie</p></td>
+<td class="text-center"><p>En arbre</p></td>
+<td class="text-center"><p>En arbre</p></td>
+<td class="text-center"><p>En arbre</p></td>
+<td class="text-center"><p>En arbre</p></td>
+<td class="text-center"><p>DragonFly+</p></td>
 </tr>
-<tr class="row-even"><td class="text-align:right"><p>Taille îlots (proc)</p></td>
-<td class="text-align:center"><p>640 à 1200</p></td>
-<td class="text-align:center"><p>1024 à 1536</p></td>
-<td class="text-align:center"><p>1024</p></td>
-<td class="text-align:center"><p>3072 à 3584</p></td>
-<td class="text-align:center"><p>17280</p></td>
+<tr class="row-even"><td class="text-right"><p>Taille îlots (proc)</p></td>
+<td class="text-center"><p>640 à 1200</p></td>
+<td class="text-center"><p>1024 à 1536</p></td>
+<td class="text-center"><p>1024</p></td>
+<td class="text-center"><p>3072 à 3584</p></td>
+<td class="text-center"><p>17280</p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:right"><p>Facteur de blockage</p></td>
-<td class="text-align:center"><p>max 5:1</p></td>
-<td class="text-align:center"><p>max 2:1</p></td>
-<td class="text-align:center"><p>max 8:1</p></td>
-<td class="text-align:center"><p>max 4.7:1</p></td>
-<td class="text-align:center"><p>max 2:1</p></td>
+<tr class="row-odd"><td class="text-right"><p>Facteur de blockage</p></td>
+<td class="text-center"><p>max 5:1</p></td>
+<td class="text-center"><p>max 2:1</p></td>
+<td class="text-center"><p>max 8:1</p></td>
+<td class="text-center"><p>max 4.7:1</p></td>
+<td class="text-center"><p>max 2:1</p></td>
 </tr>
-<tr class="row-even"><td class="text-align:right"><p>Granularité des tâches</p></td>
-<td class="text-align:center"><p>/proc /GPU</p></td>
-<td class="text-align:center"><p>/proc /GPU</p></td>
-<td class="text-align:center"><p>/proc /GPU</p></td>
-<td class="text-align:center"><p>/proc /GPU</p></td>
-<td class="text-align:center"><p>/noeud</p></td>
+<tr class="row-even"><td class="text-right"><p>Granularité des tâches</p></td>
+<td class="text-center"><p>/proc /GPU</p></td>
+<td class="text-center"><p>/proc /GPU</p></td>
+<td class="text-center"><p>/proc /GPU</p></td>
+<td class="text-center"><p>/proc /GPU</p></td>
+<td class="text-center"><p>/noeud</p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:right"><p>Durée maximale</p></td>
-<td class="text-align:center"><p>7 jours</p></td>
-<td class="text-align:center"><p>28 jours</p></td>
-<td class="text-align:center"><p>7 jours</p></td>
-<td class="text-align:center"><p>7 jours</p></td>
-<td class="text-align:center"><p>1 jour</p></td>
+<tr class="row-odd"><td class="text-right"><p>Durée maximale</p></td>
+<td class="text-center"><p>7 jours</p></td>
+<td class="text-center"><p>28 jours</p></td>
+<td class="text-center"><p>7 jours</p></td>
+<td class="text-center"><p>7 jours</p></td>
+<td class="text-center"><p>1 jour</p></td>
 </tr>
 </tbody>
 </table>
@@ -1274,7 +1086,7 @@ aléatoires et nombreux</p></li>
 </ul>
 </section>
 <section id="points-a-retenir">
-<h2>Points à retenir<a class="headerlink" href="#points-a-retenir" title="Lien permanent vers ce titre">#</a></h2>
+<h2>Points à retenir<a class="headerlink" href="#points-a-retenir" title="Lien permanent vers cette rubrique">#</a></h2>
 <ul class="simple">
 <li><p>Prévoir les <strong>paramètres d’une tâche Slurm</strong></p>
 <ul>
@@ -1314,7 +1126,7 @@ aléatoires et nombreux</p></li>
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./."
         },
         predefinedOutput: true
@@ -1322,50 +1134,132 @@ aléatoires et nombreux</p></li>
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="1-introduction.html" title="précédent page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">précédent</p>
-            <p class="prev-next-title">Introduction</p>
-        </div>
+
+              
+              
+                <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="1-introduction.html"
+       title="page précédente">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">précédent</p>
+        <p class="prev-next-title">Introduction</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="3-lots-taches.html" title="suivant page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="3-lots-taches.html"
+       title="page suivante">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">suivant</p>
         <p class="prev-next-title">Lots de tâches</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenu
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectif-construction-d-un-script-de-tache-slurm">Objectif - construction d’un script de tâche Slurm</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analyse-des-calculs-localement">Analyse des calculs localement</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sous-windows">Sous Windows</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sous-mac-os">Sous Mac OS</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sous-linux">Sous Linux</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analyse-des-taches-sur-la-grappe-de-calcul">Analyse des tâches sur la grappe de calcul</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ressources-utilisees-d-une-tache-terminee">Ressources utilisées d’une tâche terminée</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ressources-utilisees-par-une-tache-cpu-en-cours">Ressources utilisées par une tâche CPU en cours</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-valider-le-comportement-d-une-tache-active">Exercice - Valider le comportement d’une tâche active</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#demo-ressources-utilisees-par-une-tache-gpu-en-cours">(Démo) Ressources utilisées par une tâche GPU en cours</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-tester-crunch-avec-un-gpu">Exercice - Tester Crunch avec un GPU</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#comparer-la-vitesse-cpu-vs-gpu">Comparer la vitesse CPU vs GPU</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estimer-les-ressources-necessaires">Estimer les ressources nécessaires</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#efficacite-cible-d-une-tache">Efficacité cible d’une tâche</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-efficacite-des-taches">Exercice - Efficacité des tâches</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-complexite-des-algorithmes">La complexité des algorithmes</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-complexite-de-l-algorithme">Exercice - Complexité de l’algorithme</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#taille-des-donnees-et-nombre-de-fichiers-a-traiter">Taille des données et nombre de fichiers à traiter</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#principales-differences-entre-les-grappes-de-calcul">Principales différences entre les grappes de calcul</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#points-a-retenir">Points à retenir</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner">
+<div class="bd-footer-content__inner container">
   
-    By Équipe Calcul Québec<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
+  <div class="footer-item">
     
-</div>
+<p class="component-author">
+Par Équipe Calcul Québec
+</p>
 
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
 
-      </div>
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div></div>
+          </footer>
+        
+
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>
