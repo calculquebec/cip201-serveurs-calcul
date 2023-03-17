@@ -15,6 +15,13 @@ if [ "$1" = '--cpu' ]; then
   fi
 
   module load gcc/9.3.0 python/3.8.10 &> /dev/null
+
+  cd $SLURM_TMPDIR
+  virtualenv --no-download venv_numpy
+  source venv_numpy/bin/activate
+  pip install --no-index numpy
+
+  cd -
   source $SLURM_TMPDIR/venv_numpy/bin/activate
 
   export OMP_NUM_THREADS=$2
@@ -23,6 +30,13 @@ if [ "$1" = '--cpu' ]; then
 
 elif  [ "$1" = '--gpu' ]; then
   module load gcc/9.3.0 cuda/11.4 python/3.8.10 &> /dev/null
+
+  cd $SLURM_TMPDIR
+  virtualenv --no-download venv_cupy
+  source venv_cupy/bin/activate
+  pip install --no-index numpy cupy
+
+  cd -
   source $SLURM_TMPDIR/venv_cupy/bin/activate
 
   time -p python $(dirname $0)/crunch.py -n 672 --gpu > tg.log &
