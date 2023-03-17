@@ -353,10 +353,7 @@ document.write(`
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-efficacite-des-taches">Exercice - Efficacité des tâches</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-complexite-des-algorithmes">La complexité des algorithmes</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-complexite-de-l-algorithme">Exercice - Complexité de l’algorithme</a></li>
-</ul>
-</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-complexite-des-algorithmes">La complexité des algorithmes</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#taille-des-donnees-et-nombre-de-fichiers-a-traiter">Taille des données et nombre de fichiers à traiter</a></li>
 </ul>
 </li>
@@ -416,6 +413,8 @@ processeurs réservés pour la tâche</p></li>
 <span class="c1">#SBATCH --mem-per-cpu=1000M</span>
 <span class="c1">#SBATCH --time=0-00:10</span>
 
+<span class="n">module</span> <span class="n">load</span> <span class="n">gcc</span><span class="o">/</span><span class="mf">9.3.0</span> <span class="o">&amp;&gt;</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">null</span>
+
 <span class="n">mpirun</span> <span class="n">printenv</span> <span class="n">HOSTNAME</span> <span class="n">OMPI_COMM_WORLD_RANK</span> <span class="n">OMPI_COMM_WORLD_SIZE</span>
 </pre></div>
 </div>
@@ -429,16 +428,16 @@ vous pouvez surveiller différentes métriques :</p>
 <ul class="simple">
 <li><p>Utilisation CPU (et GPU, s’il y a lieu)</p></li>
 <li><p>Mémoire-vive utilisée</p></li>
-<li><p>Les accès au stockage</p></li>
+<li><p>Accès au stockage</p></li>
 </ul>
 <section id="sous-windows">
 <h3>Sous Windows<a class="headerlink" href="#sous-windows" title="Lien permanent vers cette rubrique">#</a></h3>
 <ul class="simple">
 <li><p><a class="reference external" href="https://fr.wikipedia.org/wiki/Gestionnaire_des_t%C3%A2ches_Windows">Gestionnaire des tâches Windows</a></p></li>
-<li><p>Pour le faire afficher :</p>
+<li><p>Pour le faire afficher, on le trouve de deux manières :</p>
 <ul>
-<li><p>Raccourcis clavier Ctrl+Alt+Suppr ou cliquer sur la barre des tâches avec le bouton droit</p></li>
-<li><p>Cliquer sur l’option <em>Gestionnaire des tâches</em></p></li>
+<li><p>Chercher <em>Gestionnaire des tâches</em> dans le menu Démarrer</p></li>
+<li><p>Raccourcis clavier Ctrl+Alt+Suppr</p></li>
 </ul>
 </li>
 </ul>
@@ -482,7 +481,7 @@ cette application</p></li>
 <p><strong>Note 1</strong> : pour accéder aux grappes de calcul en production,
 il vaut mieux utiliser <a class="reference external" href="https://docs.alliancecan.ca/wiki/Using_SSH_keys_in_Linux/fr">une paire de clés SSH</a>.</p>
 <p><strong>Note 2</strong> : Avec votre accès par défaut, vous avez un compte de
-calcul <code class="docutils literal notranslate"><span class="pre">def-*</span></code> de base qui vous permet de lancer des tâches de test.</p>
+calcul <code class="docutils literal notranslate"><span class="pre">def-*</span></code> de base qui vous permet de lancer des tâches.</p>
 <p>Pour soumettre un script de tâche, on utilise la
 <a class="reference external" href="https://slurm.schedmd.com/sbatch.html">commande <code class="docutils literal notranslate"><span class="pre">sbatch</span></code></a> :</p>
 <div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>sbatch<span class="w"> </span>scripts/blastn-gen-seq.sh
@@ -519,13 +518,10 @@ et la mémoire-vives en fonction des quantités réservées.</p>
 </pre></div>
 </div>
 <p>Lors d’une tâche interactive, on peut utiliser <code class="docutils literal notranslate"><span class="pre">top</span></code> et <code class="docutils literal notranslate"><span class="pre">htop</span></code> pour surveiller les ressources utilisées :</p>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tâche interactive et installation de modules Python</span>
-salloc<span class="w"> </span>--ntasks-per-node<span class="o">=</span><span class="m">4</span><span class="w"> </span>--mem<span class="o">=</span>8000M<span class="w"> </span>--time<span class="o">=</span><span class="m">0</span>:9:0
-less<span class="w"> </span>scripts/installer/numpy_tmp.sh<span class="w">  </span><span class="c1"># q pour quitter</span>
-bash<span class="w"> </span>scripts/installer/numpy_tmp.sh
-</pre></div>
-</div>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>less<span class="w"> </span>scripts/crunch.sh<span class="w">  </span><span class="c1"># q pour quitter</span>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tâche interactive</span>
+salloc<span class="w"> </span>--ntasks-per-node<span class="o">=</span><span class="m">4</span><span class="w"> </span>--mem<span class="o">=</span>8000M<span class="w"> </span>--time<span class="o">=</span><span class="m">0</span>:15:0
+
+less<span class="w"> </span>scripts/crunch.sh<span class="w">  </span><span class="c1"># q pour quitter</span>
 
 <span class="c1"># Exécution avec un processeur</span>
 bash<span class="w"> </span>scripts/crunch.sh<span class="w"> </span>--cpu<span class="w"> </span><span class="m">1</span>
@@ -546,7 +542,8 @@ grep<span class="w"> </span>sec<span class="w"> </span>*.log
 <p>Pendant que vos tâches sont actives, vous pouvez vous connecter par
 SSH aux noeuds de calcul correspondants afin de valider que
 l’exécution se passe bien :</p>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>sbatch<span class="w"> </span>scripts/inv-mat.sh
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>scripts/inv-mat.sh
+sbatch<span class="w"> </span>scripts/inv-mat.sh
 </pre></div>
 </div>
 <p>Voici les étapes de validation (à adapter pour l’exercice) :</p>
@@ -562,7 +559,7 @@ par tâche Slurm?</p></li>
 <li><p>Est-ce que le <strong>noeud de calcul</strong> semble pleinement utilisé?</p></li>
 </ul>
 </li>
-<li><p>Inspection des résultats</p>
+<li><p><strong>Inspection des résultats</strong></p>
 <ul>
 <li><p>Identifier tout problème, s’il y a lieu; trouver la cause</p></li>
 <li><p>Corriger le code source, la compilation, le script ou les
@@ -575,9 +572,8 @@ paramètres de la tâche de calcul</p></li>
 </section>
 <section id="demo-ressources-utilisees-par-une-tache-gpu-en-cours">
 <h3>(Démo) Ressources utilisées par une tâche GPU en cours<a class="headerlink" href="#demo-ressources-utilisees-par-une-tache-gpu-en-cours" title="Lien permanent vers cette rubrique">#</a></h3>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tâche interactive et installation de modules Python</span>
-salloc<span class="w"> </span>--ntasks-per-node<span class="o">=</span><span class="m">4</span><span class="w"> </span>--mem<span class="o">=</span>8000M<span class="w"> </span>--time<span class="o">=</span><span class="m">0</span>:9:0<span class="w"> </span>--gres<span class="o">=</span>gpu:1
-bash<span class="w"> </span>scripts/installer/cupy_tmp.sh
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tâche interactive</span>
+salloc<span class="w"> </span>--ntasks-per-node<span class="o">=</span><span class="m">4</span><span class="w"> </span>--mem<span class="o">=</span>8000M<span class="w"> </span>--time<span class="o">=</span><span class="m">0</span>:15:0<span class="w"> </span>--gres<span class="o">=</span>gpu:1
 </pre></div>
 </div>
 <ul class="simple">
@@ -672,7 +668,7 @@ de ce qui est demandé à l’ordonnanceur Slurm</p></li>
 </ul>
 <section id="exercice-efficacite-des-taches">
 <h4>Exercice - Efficacité des tâches<a class="headerlink" href="#exercice-efficacite-des-taches" title="Lien permanent vers cette rubrique">#</a></h4>
-<p>Pour chacune de vos tâches listées par la commande suivante :</p>
+<p>Pour quelques-unes de vos tâches listées par la commande suivante :</p>
 <div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>sacct<span class="w"> </span>-X
 </pre></div>
 </div>
@@ -707,39 +703,6 @@ deviner l’ordre du calcul principal.</p></li>
 taille du problème. En extrapolant les résultats, il serait possible
 de prévoir le comportement du programme sur une grappe de calcul.</p></li>
 </ul>
-<section id="exercice-complexite-de-l-algorithme">
-<h4>Exercice - Complexité de l’algorithme<a class="headerlink" href="#exercice-complexite-de-l-algorithme" title="Lien permanent vers cette rubrique">#</a></h4>
-<p>Dans cet exercice, il est question d’inverser une matrice de valeurs aléatoires de taille <span class="math notranslate nohighlight">\(n*n\)</span> :</p>
-<ul class="simple">
-<li><p>Soumettre le script <a class="reference external" href="https://github.com/calculquebec/cip201-serveurs-calcul/blob/main/scripts/inv-mat.sh"><code class="docutils literal notranslate"><span class="pre">scripts/inv-mat.sh</span></code></a> avec la commande <code class="docutils literal notranslate"><span class="pre">sbatch</span></code> :</p></li>
-</ul>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>sbatch<span class="w"> </span>scripts/inv-mat.sh
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>Explorer les scripts Python
-<a class="reference external" href="https://github.com/calculquebec/cip201-serveurs-calcul/blob/main/scripts/inv-mat.py"><code class="docutils literal notranslate"><span class="pre">scripts/inv-mat.py</span></code></a> et
-<a class="reference external" href="https://github.com/calculquebec/cip201-serveurs-calcul/blob/main/scripts/inv-mat.sh"><code class="docutils literal notranslate"><span class="pre">scripts/inv-mat.sh</span></code></a> :</p></li>
-</ul>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>scripts/inv-mat.py
-cat<span class="w"> </span>scripts/inv-mat.sh
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>Suivre l’évolution du calcul avec <code class="docutils literal notranslate"><span class="pre">squeue</span> <span class="pre">-u</span> <span class="pre">$USER</span></code>, environ aux 30 secondes</p></li>
-<li><p>Les mesures seront sauvegardées dans le fichier <code class="docutils literal notranslate"><span class="pre">temps_inv.csv</span></code></p></li>
-<li><p>Analyse avec Python, Pandas et Numpy dans le script <a class="reference external" href="https://github.com/calculquebec/cip201-serveurs-calcul/blob/main/scripts/inv-mat-pred.py"><code class="docutils literal notranslate"><span class="pre">scripts/inv-mat-pred.py</span></code></a> :</p></li>
-</ul>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>module<span class="w"> </span>load<span class="w"> </span>gcc<span class="w"> </span>python<span class="w"> </span>scipy-stack
-
-cat<span class="w"> </span>scripts/inv-mat-pred.py
-python<span class="w"> </span>scripts/inv-mat-pred.py<span class="w"> </span>temps_inv.csv
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>Quelle a été la consommation maximale en mémoire-vive?</p></li>
-</ul>
-</section>
 </section>
 <section id="taille-des-donnees-et-nombre-de-fichiers-a-traiter">
 <h3>Taille des données et nombre de fichiers à traiter<a class="headerlink" href="#taille-des-donnees-et-nombre-de-fichiers-a-traiter" title="Lien permanent vers cette rubrique">#</a></h3>
@@ -757,9 +720,9 @@ optimiser les accès aux fichiers</p></li>
 <ul class="simple">
 <li><p>Considérer le <strong>parallélisme de données</strong></p></li>
 <li><p><strong>Multiplier la durée moyenne</strong> du traitement d’un fichier par
-le nombre de fichiers à traiter par chaque tâche</p></li>
+le nombre de fichiers pour estimer la durée d’une tâche</p></li>
 <li><p><strong>Multiplier la taille moyenne</strong> des fichiers par leur nombre
-pour estimer l’espace en mémoire-vive</p></li>
+pour estimer l’espace en mémoire-vive (par exemple : des images)</p></li>
 <li><p>Utiliser le stockage rapide pour <strong>optimiser les accès</strong>
 aléatoires et nombreux</p></li>
 </ul>
@@ -797,6 +760,10 @@ aléatoires et nombreux</p></li>
 </ul>
 </li>
 </ul>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>du<span class="w"> </span>-bs<span class="w"> </span>donnees
+find<span class="w"> </span>donnees<span class="w"> </span><span class="p">|</span><span class="w"> </span>wc<span class="w"> </span>-l
+</pre></div>
+</div>
 </section>
 </section>
 <section id="principales-differences-entre-les-grappes-de-calcul">
@@ -1200,10 +1167,7 @@ aléatoires et nombreux</p></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-efficacite-des-taches">Exercice - Efficacité des tâches</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-complexite-des-algorithmes">La complexité des algorithmes</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-complexite-de-l-algorithme">Exercice - Complexité de l’algorithme</a></li>
-</ul>
-</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-complexite-des-algorithmes">La complexité des algorithmes</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#taille-des-donnees-et-nombre-de-fichiers-a-traiter">Taille des données et nombre de fichiers à traiter</a></li>
 </ul>
 </li>

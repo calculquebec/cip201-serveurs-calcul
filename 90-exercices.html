@@ -328,6 +328,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complexite-de-l-algorithme">Complexité de l’algorithme</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation-de-benchmark-5d">Installation de <em>Benchmark 5D</em></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#utiliser-glost">Utiliser GLOST</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#utiliser-gnu-parallel">Utiliser GNU Parallel</a></li>
@@ -348,6 +349,39 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="exercices-supplementaires">
 <h1>Exercices supplémentaires<a class="headerlink" href="#exercices-supplementaires" title="Lien permanent vers cette rubrique">#</a></h1>
+<section id="complexite-de-l-algorithme">
+<h2>Complexité de l’algorithme<a class="headerlink" href="#complexite-de-l-algorithme" title="Lien permanent vers cette rubrique">#</a></h2>
+<p>Dans cet exercice, il est question d’inverser une matrice de valeurs aléatoires de taille <span class="math notranslate nohighlight">\(n*n\)</span> :</p>
+<ul class="simple">
+<li><p>Soumettre le script <a class="reference external" href="https://github.com/calculquebec/cip201-serveurs-calcul/blob/main/scripts/inv-mat.sh"><code class="docutils literal notranslate"><span class="pre">scripts/inv-mat.sh</span></code></a> avec la commande <code class="docutils literal notranslate"><span class="pre">sbatch</span></code> :</p></li>
+</ul>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>sbatch<span class="w"> </span>scripts/inv-mat.sh
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Explorer les scripts Python
+<a class="reference external" href="https://github.com/calculquebec/cip201-serveurs-calcul/blob/main/scripts/inv-mat.py"><code class="docutils literal notranslate"><span class="pre">scripts/inv-mat.py</span></code></a> et
+<a class="reference external" href="https://github.com/calculquebec/cip201-serveurs-calcul/blob/main/scripts/inv-mat.sh"><code class="docutils literal notranslate"><span class="pre">scripts/inv-mat.sh</span></code></a> :</p></li>
+</ul>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>scripts/inv-mat.py
+cat<span class="w"> </span>scripts/inv-mat.sh
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Suivre l’évolution du calcul avec <code class="docutils literal notranslate"><span class="pre">squeue</span> <span class="pre">-u</span> <span class="pre">$USER</span></code>, environ aux 30 secondes</p></li>
+<li><p>Les mesures seront sauvegardées dans le fichier <code class="docutils literal notranslate"><span class="pre">temps_inv.csv</span></code></p></li>
+<li><p>Analyse avec Python, Pandas et Numpy dans le script <a class="reference external" href="https://github.com/calculquebec/cip201-serveurs-calcul/blob/main/scripts/inv-mat-pred.py"><code class="docutils literal notranslate"><span class="pre">scripts/inv-mat-pred.py</span></code></a> :</p></li>
+</ul>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>module<span class="w"> </span>load<span class="w"> </span>gcc<span class="w"> </span>python<span class="w"> </span>scipy-stack
+
+cat<span class="w"> </span>scripts/inv-mat-pred.py
+python<span class="w"> </span>scripts/inv-mat-pred.py<span class="w"> </span>temps_inv.csv
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Quelle a été la consommation maximale en mémoire-vive?</p></li>
+</ul>
+</section>
 <section id="installation-de-benchmark-5d">
 <h2>Installation de <em>Benchmark 5D</em><a class="headerlink" href="#installation-de-benchmark-5d" title="Lien permanent vers cette rubrique">#</a></h2>
 <p>Il s’agit d’un code effectuant des multiplications matricielles.
@@ -507,6 +541,7 @@ En cas d’erreur, faites les corrections et essayez à nouveau</p></li>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complexite-de-l-algorithme">Complexité de l’algorithme</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation-de-benchmark-5d">Installation de <em>Benchmark 5D</em></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#utiliser-glost">Utiliser GLOST</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#utiliser-gnu-parallel">Utiliser GNU Parallel</a></li>
