@@ -340,12 +340,13 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-aligner-des-sequences-d-adn">Exercice - Aligner des séquences d’ADN</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vecteurs-de-taches">Vecteurs de tâches</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-vecteur-de-taches">Exercice - Vecteur de tâches</a></li>
-</ul>
-</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#le-greedy-launcher-of-small-tasks-ou-glost">Le <em>Greedy Launcher Of Small Tasks</em>, ou GLOST</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-liste-de-taches-blastn-avec-glost">Exercice - Liste de tâches Blastn avec GLOST</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#meta-le-meilleur-de-gnu-parallel-et-glost">META - Le meilleur de GNU Parallel et GLOST</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vecteurs-de-taches">Vecteurs de tâches</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-vecteur-de-taches">Exercice - Vecteur de tâches</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#points-a-retenir">Points à retenir</a></li>
@@ -402,7 +403,7 @@ l’exécution de centaines de tâches de calcul semblables</p></li>
 nombre de tâches de calcul exécutées en simultané</p>
 <ul>
 <li><p>Dans le cas de calculs parallèles, c’est possible de spécifier
-le nombre de tâches en simultané</p></li>
+le nombre de cas en simultané</p></li>
 </ul>
 </li>
 <li><p>GNU Parallel peut <a class="reference external" href="https://docs.alliancecan.ca/wiki/GNU_Parallel/fr#Suivi_des_commandes_ex.C3.A9cut.C3.A9es_ou_des_commandes_ayant_.C3.A9chou.C3.A9.3B_fonctionnalit.C3.A9s_de_red.C3.A9marrage">reprendre la séquence des tâches de calcul</a> en cas de fin hâtive de la tâche Slurm</p></li>
@@ -425,12 +426,13 @@ le nombre de tâches en simultané</p></li>
 <h4>Une seule séquence de paramètres<a class="headerlink" href="#une-seule-sequence-de-parametres" title="Lien permanent vers cette rubrique">#</a></h4>
 <p>Le paramètre changeant est donné via une paire d”<code class="docutils literal notranslate"><span class="pre">{}</span></code> :</p>
 <div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>parallel<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>fichier<span class="o">{}</span>.txt<span class="w"> </span>:::<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">4</span>
-parallel<span class="w"> </span>--citation<span class="w">  </span><span class="c1"># Il faut citer les développeurs</span>
+<span class="c1"># parallel --citation  # S&#39;engager à citer les développeurs</span>
 </pre></div>
 </div>
 <p>On peut réécrire la première commande en utilisant l’expansion des
 accolades Bash <code class="docutils literal notranslate"><span class="pre">{a..b}</span></code> :</p>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>parallel<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>fichier<span class="o">{}</span>.txt<span class="w"> </span>:::<span class="w"> </span><span class="o">{</span><span class="m">01</span>..10<span class="o">}</span>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>parallel<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>fichier<span class="o">{}</span>.txt<span class="w"> </span>:::<span class="w"> </span><span class="o">{</span><span class="m">1</span>..4<span class="o">}</span>
+parallel<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>fichier<span class="o">{}</span>.txt<span class="w"> </span>:::<span class="w"> </span><span class="o">{</span><span class="m">01</span>..10<span class="o">}</span>
 </pre></div>
 </div>
 </section>
@@ -531,6 +533,69 @@ ls<span class="w"> </span>donnees/res_prll/
 </div>
 </section>
 </section>
+<section id="le-greedy-launcher-of-small-tasks-ou-glost">
+<h2>Le <em>Greedy Launcher Of Small Tasks</em>, ou GLOST<a class="headerlink" href="#le-greedy-launcher-of-small-tasks-ou-glost" title="Lien permanent vers cette rubrique">#</a></h2>
+<p>Le <em>Greedy Launcher Of Small Tasks</em>, ou
+<a class="reference external" href="https://docs.alliancecan.ca/wiki/GLOST/fr">GLOST</a>, fonctionne
+un peu <strong>comme GNU Parallel, mais avec quelques différences</strong> :</p>
+<ul class="simple">
+<li><p>Fonctionne qu’avec des <strong>tâches séquentielles (un processeur par tâche)</strong></p></li>
+<li><p>L’ordonnancement des processus se fait via
+<strong><a class="reference external" href="https://docs.alliancecan.ca/wiki/MPI/fr">MPI</a></strong>
+avec une architecture de type <strong>gestionnaire-travailleur</strong></p>
+<ul>
+<li><p>Le gestionnaire envoie à chaque travailleur une tâche séquentielle à exécuter</p></li>
+<li><p>Le travailleur signale au gestionnaire quand le travail est complété</p></li>
+<li><p>Le gestionnaire informe les travailleurs lorsqu’il n’y a plus de tâche
+(pour quitter)</p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="Fonctionnement GLOST" src="_images/glost-communications.svg" /></p>
+<ul class="simple">
+<li><p>On doit donc définir <strong>une ligne de commande par tâche</strong> :</p>
+<ul>
+<li><p>Toutes les lignes de commande sont <strong><a class="reference external" href="https://docs.alliancecan.ca/wiki/GLOST/fr#Liste_de_t.C3.A2ches_situ.C3.A9es_dans_le_m.C3.AAme_r.C3.A9pertoire">listées dans un même fichier</a></strong></p></li>
+<li><p>Les sous-commandes peuvent être séparées par l’opérateur <code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code>. Par exemple :</p></li>
+</ul>
+</li>
+</ul>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span>-n<span class="w"> </span><span class="s1">&#39;Bonjour &#39;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span>le<span class="w"> </span>monde
+</pre></div>
+</div>
+<section id="exercice-liste-de-taches-blastn-avec-glost">
+<h3>Exercice - Liste de tâches Blastn avec GLOST<a class="headerlink" href="#exercice-liste-de-taches-blastn-avec-glost" title="Lien permanent vers cette rubrique">#</a></h3>
+<p>Pour générer la liste de tâches dans le fichier <code class="docutils literal notranslate"><span class="pre">$SCRATCH/cas-blastn.txt</span></code> :</p>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>scripts/blastn-cas.sh
+bash<span class="w"> </span>scripts/blastn-cas.sh
+
+less<span class="w"> </span><span class="nv">$SCRATCH</span>/cas-blastn.txt
+wc<span class="w"> </span>-l<span class="w"> </span><span class="nv">$SCRATCH</span>/cas-blastn.txt
+</pre></div>
+</div>
+<p>Pour lancer une tâche de 4 processeurs utilisant GLOST pour tester les
+<span class="math notranslate nohighlight">\(8*4*10\)</span> combinaisons de paramètres :</p>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>scripts/blastn-glost.sh
+sbatch<span class="w"> </span>scripts/blastn-glost.sh
+
+squeue<span class="w"> </span>-u<span class="w"> </span><span class="nv">$USER</span>
+</pre></div>
+</div>
+<p>On peut aller voir les processus en exécution :</p>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>ssh<span class="w"> </span>&lt;nom_noeud&gt;<span class="w">  </span><span class="c1"># srun --jobid &lt;No_Tache&gt; --pty &lt;commande&gt;</span>
+top<span class="w"> </span>-u<span class="w"> </span><span class="nv">$USER</span><span class="w">  </span><span class="c1"># q pour quitter</span>
+<span class="nb">exit</span>
+</pre></div>
+</div>
+<p>Les résultats seront dans le dossier <code class="docutils literal notranslate"><span class="pre">$SCRATCH/res_glost</span></code></p>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>ls<span class="w"> </span>-l<span class="w"> </span><span class="nv">$SCRATCH</span>/res_glost
+</pre></div>
+</div>
+</section>
+</section>
+<section id="meta-le-meilleur-de-gnu-parallel-et-glost">
+<h2>META - Le meilleur de GNU Parallel et GLOST<a class="headerlink" href="#meta-le-meilleur-de-gnu-parallel-et-glost" title="Lien permanent vers cette rubrique">#</a></h2>
+</section>
 <section id="vecteurs-de-taches">
 <h2>Vecteurs de tâches<a class="headerlink" href="#vecteurs-de-taches" title="Lien permanent vers cette rubrique">#</a></h2>
 <p>Alors que GNU Parallel s’utilise bien avec un lot de calculs séquentiels
@@ -601,66 +666,6 @@ soient traitées, avec une limite de <strong>quatre</strong> tâches à la fois.
 </ul>
 </section>
 </section>
-<section id="le-greedy-launcher-of-small-tasks-ou-glost">
-<h2>Le <em>Greedy Launcher Of Small Tasks</em>, ou GLOST<a class="headerlink" href="#le-greedy-launcher-of-small-tasks-ou-glost" title="Lien permanent vers cette rubrique">#</a></h2>
-<p>Le <em>Greedy Launcher Of Small Tasks</em>, ou
-<a class="reference external" href="https://docs.alliancecan.ca/wiki/GLOST/fr">GLOST</a>, fonctionne
-un peu <strong>comme GNU Parallel, mais avec quelques différences</strong> :</p>
-<ul class="simple">
-<li><p>Fonctionne qu’avec des <strong>tâches séquentielles (un processeur par tâche)</strong></p></li>
-<li><p>L’ordonnancement des processus se fait via
-<strong><a class="reference external" href="https://docs.alliancecan.ca/wiki/MPI/fr">MPI</a></strong>
-avec une architecture de type <strong>gestionnaire-travailleur</strong></p>
-<ul>
-<li><p>Le gestionnaire envoie à chaque travailleur une tâche séquentielle à exécuter</p></li>
-<li><p>Le travailleur signale au gestionnaire quand le travail est complété</p></li>
-<li><p>Le gestionnaire informe les travailleurs lorsqu’il n’y a plus de tâche
-(pour quitter)</p></li>
-</ul>
-</li>
-</ul>
-<p><img alt="Fonctionnement GLOST" src="_images/glost-communications.svg" /></p>
-<ul class="simple">
-<li><p>On doit donc définir <strong>une ligne de commande par tâche</strong> :</p>
-<ul>
-<li><p>Toutes les lignes de commande sont <strong><a class="reference external" href="https://docs.alliancecan.ca/wiki/GLOST/fr#Liste_de_t.C3.A2ches_situ.C3.A9es_dans_le_m.C3.AAme_r.C3.A9pertoire">listées dans un même fichier</a></strong></p></li>
-<li><p>Les sous-commandes peuvent être séparées par l’opérateur <code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code>. Par exemple :</p></li>
-</ul>
-</li>
-</ul>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span>-n<span class="w"> </span><span class="s1">&#39;Bonjour &#39;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span>le<span class="w"> </span>monde
-</pre></div>
-</div>
-<section id="exercice-liste-de-taches-blastn-avec-glost">
-<h3>Exercice - Liste de tâches Blastn avec GLOST<a class="headerlink" href="#exercice-liste-de-taches-blastn-avec-glost" title="Lien permanent vers cette rubrique">#</a></h3>
-<p>Pour générer la liste de tâches dans le fichier <code class="docutils literal notranslate"><span class="pre">$SCRATCH/cas-blastn.txt</span></code> :</p>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>scripts/blastn-cas.sh
-bash<span class="w"> </span>scripts/blastn-cas.sh
-
-less<span class="w"> </span><span class="nv">$SCRATCH</span>/cas-blastn.txt
-wc<span class="w"> </span>-l<span class="w"> </span><span class="nv">$SCRATCH</span>/cas-blastn.txt
-</pre></div>
-</div>
-<p>Pour lancer une tâche de 4 processeurs utilisant GLOST pour tester les
-<span class="math notranslate nohighlight">\(8*4*10\)</span> combinaisons de paramètres :</p>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>scripts/blastn-glost.sh
-sbatch<span class="w"> </span>scripts/blastn-glost.sh
-
-squeue<span class="w"> </span>-u<span class="w"> </span><span class="nv">$USER</span>
-</pre></div>
-</div>
-<p>On peut aller voir les processus en exécution :</p>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>ssh<span class="w"> </span>&lt;nom_noeud&gt;<span class="w">  </span><span class="c1"># srun --jobid &lt;No_Tache&gt; --pty &lt;commande&gt;</span>
-top<span class="w"> </span>-u<span class="w"> </span><span class="nv">$USER</span><span class="w">  </span><span class="c1"># q pour quitter</span>
-<span class="nb">exit</span>
-</pre></div>
-</div>
-<p>Les résultats seront dans le dossier <code class="docutils literal notranslate"><span class="pre">$SCRATCH/res_glost</span></code></p>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>ls<span class="w"> </span>-l<span class="w"> </span><span class="nv">$SCRATCH</span>/res_glost
-</pre></div>
-</div>
-</section>
-</section>
 <section id="points-a-retenir">
 <h2>Points à retenir<a class="headerlink" href="#points-a-retenir" title="Lien permanent vers cette rubrique">#</a></h2>
 <ul class="simple">
@@ -673,6 +678,15 @@ parallel<span class="w"> </span>--jobs<span class="w"> </span><span class="s1">&
 </pre></div>
 </div>
 <ul class="simple">
+<li><p><strong>GLOST</strong> pour des tâches séquentielles seulement</p></li>
+</ul>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># commande1a &amp;&amp; commande1b &gt; fichier1.txt</span>
+<span class="c1"># commande2a &amp;&amp; commande2b &gt; fichier2.txt</span>
+srun<span class="w"> </span>glost_launch<span class="w"> </span>liste_commandes.txt
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>META</strong> <a class="reference external" href="https://docs.alliancecan.ca/wiki/META:_A_package_for_job_farming">pour le meilleur de GNU Parallel et GLOST</a></p></li>
 <li><p><strong>Vecteurs de tâches</strong> pour lancer une série de longues ou de larges tâches</p></li>
 </ul>
 <div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># $SLURM_ARRAY_TASK_ID aura une seule valeur dans ...</span>
@@ -682,17 +696,6 @@ sbatch<span class="w"> </span>--array<span class="o">=</span><span class="m">1</
 sbatch<span class="w"> </span>--array<span class="o">=</span><span class="m">0</span>-99%10<span class="w">  </span><span class="c1"># [0, 99], mais 10 tâches à la fois</span>
 </pre></div>
 </div>
-<ul class="simple">
-<li><p><strong>GLOST</strong> pour des tâches séquentielles seulement</p></li>
-</ul>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># commande1a &amp;&amp; commande1b &gt; fichier1.txt</span>
-<span class="c1"># commande2a &amp;&amp; commande2b &gt; fichier2.txt</span>
-srun<span class="w"> </span>glost_launch<span class="w"> </span>liste_commandes.txt
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>À découvrir : <a class="reference external" href="https://docs.alliancecan.ca/wiki/META:_A_package_for_job_farming">META</a></p></li>
-</ul>
 </section>
 </section>
 
@@ -769,12 +772,13 @@ srun<span class="w"> </span>glost_launch<span class="w"> </span>liste_commandes.
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-aligner-des-sequences-d-adn">Exercice - Aligner des séquences d’ADN</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vecteurs-de-taches">Vecteurs de tâches</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-vecteur-de-taches">Exercice - Vecteur de tâches</a></li>
-</ul>
-</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#le-greedy-launcher-of-small-tasks-ou-glost">Le <em>Greedy Launcher Of Small Tasks</em>, ou GLOST</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-liste-de-taches-blastn-avec-glost">Exercice - Liste de tâches Blastn avec GLOST</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#meta-le-meilleur-de-gnu-parallel-et-glost">META - Le meilleur de GNU Parallel et GLOST</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vecteurs-de-taches">Vecteurs de tâches</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-vecteur-de-taches">Exercice - Vecteur de tâches</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#points-a-retenir">Points à retenir</a></li>
