@@ -344,7 +344,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-liste-de-cas-blastn-avec-glost">Exercice - Liste de cas Blastn avec GLOST</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#meta-le-meilleur-de-gnu-parallel-et-glost">META - Le meilleur de GNU Parallel et GLOST</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#meta-farm-le-meilleur-de-gnu-parallel-et-glost">META-Farm - Le meilleur de GNU Parallel et GLOST</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vecteurs-de-taches">Vecteurs de tâches</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-vecteur-de-taches">Exercice - Vecteur de tâches</a></li>
 </ul>
@@ -589,8 +589,74 @@ top<span class="w"> </span>-u<span class="w"> </span><span class="nv">$USER</spa
 </div>
 </section>
 </section>
-<section id="meta-le-meilleur-de-gnu-parallel-et-glost">
-<h2>META - Le meilleur de GNU Parallel et GLOST<a class="headerlink" href="#meta-le-meilleur-de-gnu-parallel-et-glost" title="Lien permanent vers cette rubrique">#</a></h2>
+<section id="meta-farm-le-meilleur-de-gnu-parallel-et-glost">
+<h2>META-Farm - Le meilleur de GNU Parallel et GLOST<a class="headerlink" href="#meta-farm-le-meilleur-de-gnu-parallel-et-glost" title="Lien permanent vers cette rubrique">#</a></h2>
+<p><a class="reference external" href="https://docs.alliancecan.ca/wiki/META-Farm/fr">META-Farm</a>
+est un autre outil très puissant qui reprend l’utilisation
+d’un fichier de cas à calculer.</p>
+<p>Alors que GLOST utilise une tâche parallèle MPI pour effectuer
+des calculs séquentiels, META-Farm utilise uniquement des tâches
+séquentielles pour effectuer zéro, un ou plusieurs calculs :</p>
+<ul class="simple">
+<li><p>le mode SIMPLE implique un et un seul calcul par tâche et</p></li>
+<li><p>le mode META permet de zéro à plusieurs calculs,
+selon les cas restants.</p></li>
+</ul>
+<p><strong>Chaque tâche consulte la liste des cas et prend le prochain cas
+disponible.</strong> Alors que le mode SIMPLE n’en prend qu’un seul, le mode
+META peut en prendre plusieurs. Une tâche se termine donc lorsqu’elle
+atteint sa limite de temps ou lorsqu’il ne reste plus de cas à
+calculer. Lorsque des cas ont échoué, il est possible de relancer
+le groupe de cas avec les cas restants.</p>
+<p><img alt="META-Farm - Mode META" src="https://docs.alliancecan.ca/mediawiki/images/7/78/DWB_META.png" /></p>
+<p>Pour utiliser META-Farm, il faut tout d’abord <strong>créer
+un groupe de cas</strong> dans un nouveau dossier de travail :</p>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>module<span class="w"> </span>load<span class="w"> </span>meta-farm/1.0.2
+
+farm_init.run<span class="w"> </span>aligner-ADxKR
+<span class="nb">cd</span><span class="w"> </span>aligner-ADxKR
+ls
+</pre></div>
+</div>
+<p>Le fichier <code class="docutils literal notranslate"><span class="pre">table.dat</span></code> peut contenir une liste de combinaisons
+de paramètres ou bien <strong>une liste de commandes</strong>.
+La liste de commandes pour GLOST peut être recyclée :</p>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>cp<span class="w"> </span><span class="nv">$SCRATCH</span>/cas-blastn.txt<span class="w"> </span>table.dat
+sed<span class="w"> </span>-i<span class="w"> </span><span class="s1">&#39;s/_glost/_meta/g&#39;</span><span class="w"> </span>table.dat
+less<span class="w"> </span>table.dat
+</pre></div>
+</div>
+<p>Pendant une tâche, chaque cas sera traité individuellement par le
+script <a class="reference external" href="https://docs.alliancecan.ca/wiki/META-Farm/fr#single_case.sh"><code class="docutils literal notranslate"><span class="pre">single_case.sh</span></code></a>
+et <code class="docutils literal notranslate"><span class="pre">$COMM</span></code> est la commande en cours.</p>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>nano<span class="w"> </span>single_case.sh
+
+<span class="w">  </span><span class="c1">#mkdir -p RUN$ID</span>
+<span class="w">  </span><span class="nb">cd</span><span class="w"> </span>../donnees<span class="w">  </span><span class="c1"># Aller dans le bon dossier</span>
+
+<span class="w">  </span><span class="c1"># ...</span>
+
+<span class="w">  </span><span class="nb">cd</span><span class="w"> </span>-<span class="w">  </span><span class="c1"># Revenir où nous étions</span>
+</pre></div>
+</div>
+<p>Pour nos très courts cas de calcul, il faut réduire la variable
+<code class="docutils literal notranslate"><span class="pre">dt_failed</span></code> à 0 seconde :</p>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>nano<span class="w"> </span>config.h
+
+<span class="w">  </span><span class="nv">dt_failed</span><span class="o">=</span><span class="m">0</span>
+</pre></div>
+</div>
+<p>Le script de tâche doit s’appeler
+<a class="reference external" href="https://docs.alliancecan.ca/wiki/META-Farm/fr#job_script.sh"><code class="docutils literal notranslate"><span class="pre">job_script.sh</span></code></a> :</p>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>cp<span class="w"> </span>../scripts/blastn-meta.sh<span class="w"> </span>job_script.sh
+less<span class="w"> </span>job_script.sh
+</pre></div>
+</div>
+<p>Et la soumission se fait via la commande <a class="reference external" href="https://docs.alliancecan.ca/wiki/META-Farm/fr#submit.run"><code class="docutils literal notranslate"><span class="pre">submit.run</span></code></a> :</p>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>submit.run<span class="w"> </span><span class="m">4</span>
+</pre></div>
+</div>
+<p>Où <code class="docutils literal notranslate"><span class="pre">4</span></code> est le nombre de tâches Slurm.</p>
 </section>
 <section id="vecteurs-de-taches">
 <h2>Vecteurs de tâches<a class="headerlink" href="#vecteurs-de-taches" title="Lien permanent vers cette rubrique">#</a></h2>
@@ -772,7 +838,7 @@ sbatch<span class="w"> </span>--array<span class="o">=</span><span class="m">0</
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-liste-de-cas-blastn-avec-glost">Exercice - Liste de cas Blastn avec GLOST</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#meta-le-meilleur-de-gnu-parallel-et-glost">META - Le meilleur de GNU Parallel et GLOST</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#meta-farm-le-meilleur-de-gnu-parallel-et-glost">META-Farm - Le meilleur de GNU Parallel et GLOST</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vecteurs-de-taches">Vecteurs de tâches</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-vecteur-de-taches">Exercice - Vecteur de tâches</a></li>
 </ul>
