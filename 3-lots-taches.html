@@ -336,6 +336,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-aligner-des-sequences-d-adn">Exercice - Aligner des séquences d’ADN</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autres-outils">Autres outils</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vecteurs-de-taches">Vecteurs de tâches</a><ul class="nav section-nav flex-column">
@@ -520,6 +521,15 @@ ls<span class="w"> </span>donnees/res_prll/
 </pre></div>
 </div>
 </section>
+<section id="autres-outils">
+<h3>Autres outils<a class="headerlink" href="#autres-outils" title="Lien permanent vers cette rubrique">#</a></h3>
+<ul class="simple">
+<li><p>GLOST
+<a class="reference external" href="https://docs.alliancecan.ca/wiki/GLOST/fr">pour des calculs séquentiels seulement</a></p></li>
+<li><p>META-Farm
+<a class="reference external" href="https://docs.alliancecan.ca/wiki/META-Farm/fr">pour le meilleur de GNU Parallel et GLOST</a></p></li>
+</ul>
+</section>
 </section>
 <section id="vecteurs-de-taches">
 <h2>Vecteurs de tâches<a class="headerlink" href="#vecteurs-de-taches" title="Lien permanent vers cette rubrique">#</a></h2>
@@ -604,17 +614,6 @@ parallel<span class="w"> </span>--jobs<span class="w"> </span><span class="s1">&
 </pre></div>
 </div>
 <ul class="simple">
-<li><p><strong>GLOST</strong>
-<a class="reference external" href="https://docs.alliancecan.ca/wiki/GLOST/fr">pour des calculs séquentiels seulement</a></p></li>
-</ul>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># commande1a &amp;&amp; commande1b &gt; fichier1.txt</span>
-<span class="c1"># commande2a &amp;&amp; commande2b &gt; fichier2.txt</span>
-srun<span class="w"> </span>glost_launch<span class="w"> </span>liste_commandes.txt
-</pre></div>
-</div>
-<ul class="simple">
-<li><p><strong>META-Farm</strong>
-<a class="reference external" href="https://docs.alliancecan.ca/wiki/META-Farm/fr">pour le meilleur de GNU Parallel et GLOST</a></p></li>
 <li><p><strong>Vecteurs de tâches</strong> pour lancer une série de longues ou de larges tâches</p></li>
 </ul>
 <div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># $SLURM_ARRAY_TASK_ID aura une seule valeur dans ...</span>
@@ -698,6 +697,7 @@ sbatch<span class="w"> </span>--array<span class="o">=</span><span class="m">0</
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-aligner-des-sequences-d-adn">Exercice - Aligner des séquences d’ADN</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autres-outils">Autres outils</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vecteurs-de-taches">Vecteurs de tâches</a><ul class="nav section-nav flex-column">
