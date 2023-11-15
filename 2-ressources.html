@@ -338,22 +338,23 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analyse-des-taches-sur-la-grappe-de-calcul">Analyse des tâches sur la grappe de calcul</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ressources-utilisees-d-une-tache-terminee">Ressources utilisées d’une tâche terminée</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ressources-utilisees-par-une-tache-cpu-en-cours">Ressources utilisées par une tâche CPU en cours</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-valider-le-comportement-d-une-tache-active">Exercice - Valider le comportement d’une tâche active</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-valider-le-comportement-d-une-tache-active"><strong>Exercice</strong> - Valider le comportement d’une tâche active</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#demo-ressources-utilisees-par-une-tache-gpu-en-cours">(Démo) Ressources utilisées par une tâche GPU en cours</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-tester-crunch-avec-un-gpu">Exercice - Tester Crunch avec un GPU</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-tester-crunch-avec-un-gpu"><strong>Exercice</strong> - Tester Crunch avec un GPU</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#comparer-la-vitesse-cpu-vs-gpu">Comparer la vitesse CPU vs GPU</a></li>
 </ul>
 </li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analyse-des-taches-via-les-portails">Analyse des tâches via les portails</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estimer-les-ressources-necessaires">Estimer les ressources nécessaires</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#efficacite-cible-d-une-tache">Efficacité cible d’une tâche</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-efficacite-des-taches">Exercice - Efficacité des tâches</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-efficacite-des-taches"><strong>Exercice</strong> - Efficacité des tâches</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-complexite-des-algorithmes">La complexité des algorithmes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#extrapoler-les-ressources-necessaires">Extrapoler les ressources nécessaires</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#taille-des-donnees-et-nombre-de-fichiers-a-traiter">Taille des données et nombre de fichiers à traiter</a></li>
 </ul>
 </li>
@@ -478,10 +479,16 @@ cette application</p></li>
 ...
 </pre></div>
 </div>
-<p><strong>Note 1</strong> : pour accéder aux grappes de calcul en production,
-il vaut mieux utiliser <a class="reference external" href="https://docs.alliancecan.ca/wiki/Using_SSH_keys_in_Linux/fr">une paire de clés SSH</a>.</p>
-<p><strong>Note 2</strong> : Avec votre accès par défaut, vous avez un compte de
-calcul <code class="docutils literal notranslate"><span class="pre">def-*</span></code> de base qui vous permet de lancer des tâches.</p>
+<p><strong>Notes</strong> :</p>
+<ul class="simple">
+<li><p>Pour accéder aux grappes de calcul en production, il vaut mieux
+utiliser <a class="reference external" href="https://docs.alliancecan.ca/wiki/Using_SSH_keys_in_Linux/fr">une paire de clés SSH</a>.</p></li>
+<li><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Multifactor_authentication/fr">L’authentification multifacteur</a>
+est maintenant offerte sur les grappes nationales.
+<a class="reference external" href="https://www.youtube.com/watch?v=ciycOUbchl8">Vidéo d’introduction ici</a>.</p></li>
+<li><p>Avec votre accès par défaut, vous avez un compte de calcul
+<code class="docutils literal notranslate"><span class="pre">def-*</span></code> de base qui vous permet de lancer des tâches.</p></li>
+</ul>
 <p>Pour soumettre un script de tâche, on utilise la
 <a class="reference external" href="https://slurm.schedmd.com/sbatch.html">commande <code class="docutils literal notranslate"><span class="pre">sbatch</span></code></a> :</p>
 <div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>sbatch<span class="w"> </span>scripts/blastn-gen-seq.sh
@@ -538,7 +545,7 @@ grep<span class="w"> </span>sec<span class="w"> </span>*.log
 </pre></div>
 </div>
 <section id="exercice-valider-le-comportement-d-une-tache-active">
-<h4>Exercice - Valider le comportement d’une tâche active<a class="headerlink" href="#exercice-valider-le-comportement-d-une-tache-active" title="Lien permanent vers cette rubrique">#</a></h4>
+<h4><strong>Exercice</strong> - Valider le comportement d’une tâche active<a class="headerlink" href="#exercice-valider-le-comportement-d-une-tache-active" title="Lien permanent vers cette rubrique">#</a></h4>
 <p>Pendant que vos tâches sont actives, vous pouvez vous connecter par
 SSH aux noeuds de calcul correspondants afin de valider que
 l’exécution se passe bien :</p>
@@ -606,7 +613,7 @@ less<span class="w"> </span>tg.log<span class="w">    </span><span class="c1"># 
 </pre></div>
 </div>
 <section id="exercice-tester-crunch-avec-un-gpu">
-<h4>Exercice - Tester Crunch avec un GPU<a class="headerlink" href="#exercice-tester-crunch-avec-un-gpu" title="Lien permanent vers cette rubrique">#</a></h4>
+<h4><strong>Exercice</strong> - Tester Crunch avec un GPU<a class="headerlink" href="#exercice-tester-crunch-avec-un-gpu" title="Lien permanent vers cette rubrique">#</a></h4>
 <div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>less<span class="w">   </span>scripts/crunch-sbatch-1gpu.sh
 sbatch<span class="w"> </span>scripts/crunch-sbatch-1gpu.sh
 
@@ -634,6 +641,14 @@ d’au moins cinq fois (5x) la vitesse de huit (8) à douze (12) processeurs.</p
 </ul>
 </section>
 </section>
+<section id="analyse-des-taches-via-les-portails">
+<h3>Analyse des tâches via les portails<a class="headerlink" href="#analyse-des-taches-via-les-portails" title="Lien permanent vers cette rubrique">#</a></h3>
+<p>Béluga et Narval ont chacun un portail pour l’analyse des tâches :</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://portail.beluga.calculquebec.ca/">https://portail.beluga.calculquebec.ca/</a></p></li>
+<li><p><a class="reference external" href="https://portail.narval.calculquebec.ca/">https://portail.narval.calculquebec.ca/</a></p></li>
+</ul>
+</section>
 </section>
 <section id="estimer-les-ressources-necessaires">
 <h2>Estimer les ressources nécessaires<a class="headerlink" href="#estimer-les-ressources-necessaires" title="Lien permanent vers cette rubrique">#</a></h2>
@@ -652,8 +667,8 @@ la cible pour :</p>
 <li><p>Tâches parallèles : il existe un <strong>nombre maximal de processeurs</strong>
 à utiliser pour respecter ce seuil :</p>
 <ul>
-<li><p>Voir la figure dans la page
-<a class="reference external" href="https://fr.wikipedia.org/wiki/Loi_d%27Amdahl">loi d’Amdahl</a></p></li>
+<li><p>Principe de <a class="reference external" href="https://docs.alliancecan.ca/wiki/Scalability/fr">scalabilité</a>
+et <a class="reference external" href="https://fr.wikipedia.org/wiki/Loi_d%27Amdahl">Loi d’Amdahl</a></p></li>
 </ul>
 </li>
 </ul>
@@ -661,13 +676,15 @@ la cible pour :</p>
 <li><p><strong>La mémoire-vive</strong> est une consommation <strong>de l’ordre de 80%</strong>
 de ce qui est demandé à l’ordonnanceur Slurm</p></li>
 </ul>
-<p>Rappel - vous pouvez obtenir ces pourcentages via les commandes <code class="docutils literal notranslate"><span class="pre">sacct</span> <span class="pre">-X</span></code> (surtout pour obtenir les numéros de tâches) et <code class="docutils literal notranslate"><span class="pre">seff</span></code>. Les valeurs à considérer sont :</p>
+<p><strong>Rappel</strong> - vous pouvez obtenir ces pourcentages via les commandes
+<code class="docutils literal notranslate"><span class="pre">sacct</span> <span class="pre">-X</span></code> (surtout pour obtenir les numéros de tâches) et <code class="docutils literal notranslate"><span class="pre">seff</span></code>.
+Les valeurs à considérer sont :</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">CPU</span> <span class="pre">Utilized</span></code> et <code class="docutils literal notranslate"><span class="pre">CPU</span> <span class="pre">Efficiency</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Memory</span> <span class="pre">Utilized</span></code> et <code class="docutils literal notranslate"><span class="pre">Memory</span> <span class="pre">Efficiency</span></code></p></li>
 </ul>
 <section id="exercice-efficacite-des-taches">
-<h4>Exercice - Efficacité des tâches<a class="headerlink" href="#exercice-efficacite-des-taches" title="Lien permanent vers cette rubrique">#</a></h4>
+<h4><strong>Exercice</strong> - Efficacité des tâches<a class="headerlink" href="#exercice-efficacite-des-taches" title="Lien permanent vers cette rubrique">#</a></h4>
 <p>Pour quelques-unes de vos tâches listées par la commande suivante :</p>
 <div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>sacct<span class="w"> </span>-X
 </pre></div>
@@ -678,36 +695,31 @@ de ce qui est demandé à l’ordonnanceur Slurm</p></li>
 </div>
 </section>
 </section>
-<section id="la-complexite-des-algorithmes">
-<h3>La complexité des algorithmes<a class="headerlink" href="#la-complexite-des-algorithmes" title="Lien permanent vers cette rubrique">#</a></h3>
+<section id="extrapoler-les-ressources-necessaires">
+<h3>Extrapoler les ressources nécessaires<a class="headerlink" href="#extrapoler-les-ressources-necessaires" title="Lien permanent vers cette rubrique">#</a></h3>
 <p>La question qui se pose :
-<strong>en augmentant la ou les dimensions du problème</strong>,
-quelles devraient être la durée du calcul et la consommation en mémoire-vive?
-Une <a class="reference external" href="https://fr.wikipedia.org/wiki/Analyse_de_la_complexit%C3%A9_des_algorithmes">analyse de la complexité de l’algorithme principal</a>
-permettrait de connaître l’ordre <span class="math notranslate nohighlight">\(O\)</span> du calcul en fonction de la taille <span class="math notranslate nohighlight">\(n\)</span> des données :</p>
+<strong>en augmentant la ou les dimensions du problème</strong>, quelles devraient
+être la durée du calcul et la consommation en mémoire-vive?
+<a class="reference external" href="https://fr.wikipedia.org/wiki/Analyse_de_la_complexit%C3%A9_des_algorithmes">Une analyse détaillée du code</a>
+n’est pas nécessaire pour déterminer le type de calcul qui est fait :</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(O(n)\)</span>: proportionnel à <span class="math notranslate nohighlight">\(n\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(O(n*m)\)</span>: représente un calcul à deux (2) dimensions indépendantes</p></li>
-<li><p><span class="math notranslate nohighlight">\(O(n^3)\)</span>: calcul d’ordre cubique</p></li>
-<li><p><span class="math notranslate nohighlight">\(O(n*m*k^2)\)</span>: par exemple, un filtre de taille <span class="math notranslate nohighlight">\(k*k\)</span> sur une image <span class="math notranslate nohighlight">\(n*m\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(O(n*log(n))\)</span>: typique de certains
-<a class="reference external" href="https://fr.wikipedia.org/wiki/Algorithme_de_tri#Comparaison_des_algorithmes">algorithmes de tri</a>
-où il y a <span class="math notranslate nohighlight">\(n\)</span> éléments à trier en <span class="math notranslate nohighlight">\(log_2(n)\)</span> étapes.</p></li>
+<li><p>Vous pouvez <strong>mesurer le temps d’exécution</strong> (avec la
+commande <code class="docutils literal notranslate"><span class="pre">time</span></code>) en fonction de la taille du problème.
+En extrapolant les résultats, il serait possible de prévoir
+le comportement du programme sur une grappe de calcul.</p></li>
 </ul>
-<p>Une analyse détaillée du code n’est pas nécessaire pour déterminer
-le type de calcul qui est fait :</p>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span><span class="nb">time</span><span class="w"> </span>-p<span class="w"> </span>sleep<span class="w"> </span><span class="m">2</span>
+</pre></div>
+</div>
 <ul class="simple">
 <li><p>Vous pouvez considérer le <strong>format des données en entrées</strong> pour
 deviner l’ordre du calcul principal.</p></li>
-<li><p>Vous pouvez <strong>mesurer le temps d’exécution</strong> en fonction de la
-taille du problème. En extrapolant les résultats, il serait possible
-de prévoir le comportement du programme sur une grappe de calcul.</p></li>
 </ul>
 </section>
 <section id="taille-des-donnees-et-nombre-de-fichiers-a-traiter">
 <h3>Taille des données et nombre de fichiers à traiter<a class="headerlink" href="#taille-des-donnees-et-nombre-de-fichiers-a-traiter" title="Lien permanent vers cette rubrique">#</a></h3>
 <p>En plus du temps de calcul et de l’espace mémoire, il faut aussi
-considérer l’utilisation du stockage. Les valeurs à tenir compte :</p>
+considérer <strong>l’utilisation du stockage</strong>. Les valeurs à tenir compte :</p>
 <ol class="arabic simple">
 <li><p>La <strong>quantité</strong> en octets (ou Go)</p>
 <ul class="simple">
@@ -1158,22 +1170,23 @@ find<span class="w"> </span>donnees<span class="w"> </span><span class="p">|</sp
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analyse-des-taches-sur-la-grappe-de-calcul">Analyse des tâches sur la grappe de calcul</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ressources-utilisees-d-une-tache-terminee">Ressources utilisées d’une tâche terminée</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ressources-utilisees-par-une-tache-cpu-en-cours">Ressources utilisées par une tâche CPU en cours</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-valider-le-comportement-d-une-tache-active">Exercice - Valider le comportement d’une tâche active</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-valider-le-comportement-d-une-tache-active"><strong>Exercice</strong> - Valider le comportement d’une tâche active</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#demo-ressources-utilisees-par-une-tache-gpu-en-cours">(Démo) Ressources utilisées par une tâche GPU en cours</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-tester-crunch-avec-un-gpu">Exercice - Tester Crunch avec un GPU</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-tester-crunch-avec-un-gpu"><strong>Exercice</strong> - Tester Crunch avec un GPU</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#comparer-la-vitesse-cpu-vs-gpu">Comparer la vitesse CPU vs GPU</a></li>
 </ul>
 </li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analyse-des-taches-via-les-portails">Analyse des tâches via les portails</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estimer-les-ressources-necessaires">Estimer les ressources nécessaires</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#efficacite-cible-d-une-tache">Efficacité cible d’une tâche</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-efficacite-des-taches">Exercice - Efficacité des tâches</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-efficacite-des-taches"><strong>Exercice</strong> - Efficacité des tâches</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-complexite-des-algorithmes">La complexité des algorithmes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#extrapoler-les-ressources-necessaires">Extrapoler les ressources nécessaires</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#taille-des-donnees-et-nombre-de-fichiers-a-traiter">Taille des données et nombre de fichiers à traiter</a></li>
 </ul>
 </li>
