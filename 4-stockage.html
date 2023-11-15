@@ -344,7 +344,7 @@ document.write(`
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vie">Vie</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exemple-de-cycle-de-vie-des-donnees">Exemple de cycle de vie des données</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-execution-d-un-pipeline">Exercice - Exécution d’un pipeline</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-execution-d-un-pipeline"><strong>Exercice</strong> - Exécution d’un pipeline</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#en-cas-de-donnees-inaccessibles">En cas de données inaccessibles</a></li>
@@ -388,9 +388,9 @@ noeud de <strong>connexion</strong> (ou interactif) ou
 noeud de <strong>calcul</strong> (CPU ou GPU) :</p>
 <table class="table">
 <thead>
-<tr class="row-odd"><th class="head"><p>Stockage</p></th>
-<th class="head text-center"><p>Connexion</p></th>
-<th class="head text-center"><p>Calcul</p></th>
+<tr class="row-odd"><th class="head"><p>Stockage accessible</p></th>
+<th class="head text-center"><p>Noeud de connexion</p></th>
+<th class="head text-center"><p>Noeud de calcul</p></th>
 </tr>
 </thead>
 <tbody>
@@ -468,31 +468,6 @@ utilisés à répétition lors d’un calcul</p></li>
 <h3><code class="docutils literal notranslate"><span class="pre">$SCRATCH</span></code> - Votre espace réseau temporaire<a class="headerlink" href="#scratch-votre-espace-reseau-temporaire" title="Lien permanent vers cette rubrique">#</a></h3>
 <div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>df<span class="w"> </span>-h<span class="w"> </span>/scratch
 ls<span class="w"> </span>-ld<span class="w"> </span><span class="nv">$SCRATCH</span>
-
-<span class="c1"># Enlever l&#39;accès en lecture</span>
-chmod<span class="w"> </span>g-r<span class="w"> </span><span class="nv">$SCRATCH</span>
-ls<span class="w"> </span>-ld<span class="w"> </span><span class="nv">$SCRATCH</span>
-
-<span class="c1"># Modifier le GID du répertoire</span>
-id
-chgrp<span class="w"> </span>def-sponsor00<span class="w"> </span><span class="nv">$SCRATCH</span>
-ls<span class="w"> </span>-ld<span class="w"> </span><span class="nv">$SCRATCH</span>
-</pre></div>
-</div>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Création d&#39;un dossier de résultats partagés</span>
-mkdir<span class="w"> </span>-p<span class="w"> </span><span class="nv">$SCRATCH</span>/partage/resultats
-ls<span class="w"> </span>-lR<span class="w"> </span><span class="nv">$SCRATCH</span>
-
-<span class="c1"># Ajouter les permissions r (et x, s&#39;il y a lieu) récursivement</span>
-chmod<span class="w"> </span>-R<span class="w"> </span>o+rX<span class="w"> </span><span class="nv">$SCRATCH</span>/partage
-ls<span class="w"> </span>-lR<span class="w"> </span><span class="nv">$SCRATCH</span>
-</pre></div>
-</div>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Visiter le dossier partagé de quelqu&#39;un d&#39;autre</span>
-<span class="nb">cd</span><span class="w"> </span>/scratch/userXY/partage
-<span class="nb">pwd</span>
-ls<span class="w"> </span>-l
-<span class="nb">cd</span>
 </pre></div>
 </div>
 <ul class="simple">
@@ -645,7 +620,7 @@ plusieurs formats décodables sur les différentes grappes :</p>
 <li><p><strong>Tape ARchive</strong> ou <a class="reference external" href="https://docs.alliancecan.ca/wiki/A_tutorial_on_%27tar%27/fr"><strong>TAR</strong></a> (<code class="docutils literal notranslate"><span class="pre">.tar</span></code>) - non compressé, sauf si utilisé avec Gzip ou autre</p></li>
 <li><p><strong>Disk ARchive</strong> ou <a class="reference external" href="https://docs.alliancecan.ca/wiki/Dar/fr"><strong>DAR</strong></a> (<code class="docutils literal notranslate"><span class="pre">.dar</span></code>) - compression configurable</p></li>
 </ul>
-<p><strong>Exercice - DAR</strong></p>
+<p><strong>Démonstration</strong> - Création d’une archive DAR</p>
 <p>Dans un terminal :</p>
 <div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>dar<span class="w"> </span>-w<span class="w"> </span>-c<span class="w"> </span>arch<span class="w"> </span>-g<span class="w"> </span>donnees<span class="w"> </span>-g<span class="w"> </span>images
 </pre></div>
@@ -694,16 +669,16 @@ vos données avant de les écrire sur le système de stockage :</p>
 <li><p>La commande <code class="docutils literal notranslate"><span class="pre">du</span></code> montre l’espace réellement utilisée sur le disque</p></li>
 <li><p>La commande <code class="docutils literal notranslate"><span class="pre">du</span> <span class="pre">--apparent-size</span></code> montre la taille normale du fichier</p></li>
 </ul>
-<p><strong>Exercice - Espace utilisé</strong></p>
-<p>Dans un terminal Jupyter, essayez les commandes :</p>
+<p><strong>Démonstration</strong> - Espace utilisé</p>
+<p>Dans un terminal :</p>
 <div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>du<span class="w"> </span>-s<span class="w"> </span>~
 du<span class="w"> </span>-s<span class="w"> </span>--apparent-size<span class="w"> </span>~
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>Notez les différences, s’il y en a</p></li>
-<li><p>Notez à quel point cette commande peut surcharger le système de
-stockage; le survol récursif des fichiers constitue un grand nombre
+<li><p>Noter les différences, s’il y en a</p></li>
+<li><p>Cette commande peut surcharger le système de stockage;
+le survol récursif des fichiers constitue un grand nombre
 d’accès aux métadonnées de <em>Lustre</em></p></li>
 </ul>
 <p>En pratique, les grappes de calcul offrent des
@@ -762,7 +737,7 @@ faciliter le ménage (suppression ou archivage de fichiers).</p>
 </ul>
 </section>
 <section id="exercice-execution-d-un-pipeline">
-<h4>Exercice - Exécution d’un pipeline<a class="headerlink" href="#exercice-execution-d-un-pipeline" title="Lien permanent vers cette rubrique">#</a></h4>
+<h4><strong>Exercice</strong> - Exécution d’un pipeline<a class="headerlink" href="#exercice-execution-d-un-pipeline" title="Lien permanent vers cette rubrique">#</a></h4>
 <ul class="simple">
 <li><p>Étudiez les scripts :</p>
 <ul>
@@ -918,7 +893,7 @@ il vaut mieux regrouper les données dans un fichier archive
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vie">Vie</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exemple-de-cycle-de-vie-des-donnees">Exemple de cycle de vie des données</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-execution-d-un-pipeline">Exercice - Exécution d’un pipeline</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-execution-d-un-pipeline"><strong>Exercice</strong> - Exécution d’un pipeline</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#en-cas-de-donnees-inaccessibles">En cas de données inaccessibles</a></li>

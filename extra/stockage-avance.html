@@ -328,6 +328,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plan-de-gestion-des-donnees-actives">Plan de gestion des données actives</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vie-des-donnees">Vie des données</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#niveaux-d-acces">Niveaux d’accès</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exemple-de-partage-de-dossier">Exemple de partage de dossier:</a></li>
 </ul>
 </li>
 </ul>
@@ -416,6 +417,33 @@ laboratoire qui poursuivent leur recherche.</p>
 <p>Dès que possible, mettez en place les accès nécessaires pour le
 <a class="reference external" href="https://docs.alliancecan.ca/wiki/Sharing_data/fr">partage de vos données</a>.</p>
 </section>
+<section id="exemple-de-partage-de-dossier">
+<h3>Exemple de partage de dossier:<a class="headerlink" href="#exemple-de-partage-de-dossier" title="Lien permanent vers cette rubrique">#</a></h3>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Enlever l&#39;accès en lecture</span>
+chmod<span class="w"> </span>g-r<span class="w"> </span><span class="nv">$SCRATCH</span>
+ls<span class="w"> </span>-ld<span class="w"> </span><span class="nv">$SCRATCH</span>
+
+<span class="c1"># Modifier le GID du répertoire</span>
+id
+chgrp<span class="w"> </span>def-sponsor00<span class="w"> </span><span class="nv">$SCRATCH</span>
+ls<span class="w"> </span>-ld<span class="w"> </span><span class="nv">$SCRATCH</span>
+
+<span class="c1"># Création d&#39;un dossier de résultats partagés</span>
+mkdir<span class="w"> </span>-p<span class="w"> </span><span class="nv">$SCRATCH</span>/partage/resultats
+ls<span class="w"> </span>-lR<span class="w"> </span><span class="nv">$SCRATCH</span>
+
+<span class="c1"># Ajouter les permissions r (et x, s&#39;il y a lieu) récursivement</span>
+chmod<span class="w"> </span>-R<span class="w"> </span>o+rX<span class="w"> </span><span class="nv">$SCRATCH</span>/partage
+ls<span class="w"> </span>-lR<span class="w"> </span><span class="nv">$SCRATCH</span>
+
+<span class="c1"># Visiter le dossier partagé de quelqu&#39;un d&#39;autre</span>
+<span class="nb">cd</span><span class="w"> </span>/scratch/userXY/partage
+<span class="nb">pwd</span>
+ls<span class="w"> </span>-l
+<span class="nb">cd</span>
+</pre></div>
+</div>
+</section>
 </section>
 </section>
 
@@ -472,6 +500,7 @@ laboratoire qui poursuivent leur recherche.</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plan-de-gestion-des-donnees-actives">Plan de gestion des données actives</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vie-des-donnees">Vie des données</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#niveaux-d-acces">Niveaux d’accès</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exemple-de-partage-de-dossier">Exemple de partage de dossier:</a></li>
 </ul>
 </li>
 </ul>
