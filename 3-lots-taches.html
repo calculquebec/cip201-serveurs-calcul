@@ -335,12 +335,12 @@ document.write(`
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#nombre-limite-de-cas-en-paralleles">Nombre limité de cas en parallèles</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-aligner-des-sequences-d-adn">Exercice - Aligner des séquences d’ADN</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-aligner-des-sequences-d-adn"><strong>Exercice</strong> - Aligner des séquences d’ADN</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autres-outils">Autres outils</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vecteurs-de-taches">Vecteurs de tâches</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-vecteur-de-taches">Exercice - Vecteur de tâches</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-vecteur-de-taches"><strong>Exercice</strong> - Vecteur de tâches</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#points-a-retenir">Points à retenir</a></li>
@@ -385,8 +385,6 @@ au total dans <code class="docutils literal notranslate"><span class="pre">squeu
 <li><p>Certains calculs sont tellement <strong>courts (&lt; 5 minutes)</strong> que le
 démarrage et la fin de la tâche compteraient pour un pourcentage
 significatif du temps réel utilisé, ce qui diminue leur efficacité</p></li>
-<li><p>Ensuite, si toutes vos tâches envoient des <strong>notifications par
-courriel</strong>, imaginez recevoir des centaines de courriels!</p></li>
 </ul>
 <p>Les avantages de GNU Parallel à considérer :</p>
 <ul class="simple">
@@ -483,7 +481,7 @@ en simultané :</p>
 </section>
 </section>
 <section id="exercice-aligner-des-sequences-d-adn">
-<h3>Exercice - Aligner des séquences d’ADN<a class="headerlink" href="#exercice-aligner-des-sequences-d-adn" title="Lien permanent vers cette rubrique">#</a></h3>
+<h3><strong>Exercice</strong> - Aligner des séquences d’ADN<a class="headerlink" href="#exercice-aligner-des-sequences-d-adn" title="Lien permanent vers cette rubrique">#</a></h3>
 <p>Dans le dossier <code class="docutils literal notranslate"><span class="pre">donnees/</span></code>, vous devriez avoir plusieurs fichiers Fasta (<code class="docutils literal notranslate"><span class="pre">*.fa</span></code>)
 qui ont été créés au premier chapitre via le script de tâche
 <code class="docutils literal notranslate"><span class="pre">scripts/blastn-gen-seq.sh</span></code> et le Makefile <code class="docutils literal notranslate"><span class="pre">donnees/makefile</span></code>.
@@ -547,6 +545,7 @@ différentes combinaisons de paramètres, il y a moyen de soumettre un seul
 <a class="reference external" href="https://docs.alliancecan.ca/wiki/Job_arrays/fr">vecteur de tâches</a>
 et de coder le script de tâche de telle sorte que les paramètres
 seront déterminés <strong>en fonction d’un indice unique</strong> du vecteur de tâches.</p>
+<p><img alt="Fonctionnement des vecteurs de tâches" src="_images/vecteur-taches.svg" /></p>
 <p><strong>Pour soumettre un vecteur de tâches</strong> à l’ordonnanceur Slurm, que ce
 soit à la ligne de commande <code class="docutils literal notranslate"><span class="pre">sbatch</span></code> ou dans l’entête <code class="docutils literal notranslate"><span class="pre">#SBATCH</span></code>
 du script de tâche, <strong>on doit ajouter l’option</strong> <code class="docutils literal notranslate"><span class="pre">--array=&lt;indices&gt;</span></code>.
@@ -562,25 +561,23 @@ Voir <a class="reference external" href="https://docs.alliancecan.ca/wiki/Job_ar
 <code class="docutils literal notranslate"><span class="pre">$SLURM_ARRAY_TASK_ID</span></code> peut être utilisée pour retrouver la valeur
 actuelle de l’indice unique associé à la tâche en cours d’exécution.
 Il s’agit d’un <strong>entier parmi</strong> les <code class="docutils literal notranslate"><span class="pre">&lt;indices&gt;</span></code>.</p>
+<p>La variable <code class="docutils literal notranslate"><span class="pre">$SLURM_ARRAY_TASK_ID</span></code> peut être utilisée de différentes façons :</p>
 <div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">SLURM_ARRAY_TASK_ID</span><span class="o">=</span><span class="m">71</span><span class="w">  </span><span class="c1"># Pour émuler la variable</span>
+
+<span class="nb">echo</span><span class="w"> </span>nom_fichier.<span class="nv">$SLURM_ARRAY_TASK_ID</span>
+<span class="nb">echo</span><span class="w"> </span>nom_dossier-<span class="nv">$SLURM_ARRAY_TASK_ID</span>
 </pre></div>
 </div>
-<p>La variable <code class="docutils literal notranslate"><span class="pre">$SLURM_ARRAY_TASK_ID</span></code> peut être utilisée de différentes façons :</p>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span>nom_fichier.<span class="nv">$SLURM_ARRAY_TASK_ID</span>
-<span class="nb">echo</span><span class="w"> </span>nom_dossier-<span class="nv">$SLURM_ARRAY_TASK_ID</span>
-
-<span class="nv">PARAM</span><span class="o">=</span><span class="nv">$SLURM_ARRAY_TASK_ID</span>
-<span class="nb">echo</span><span class="w"> </span><span class="nv">$PARAM</span>
-
-<span class="nv">PARAM_R</span><span class="o">=</span><span class="k">$((</span><span class="nv">PARAM</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="m">12</span><span class="k">))</span><span class="w">  </span><span class="c1"># Division entière</span>
-<span class="nv">PARAM_C</span><span class="o">=</span><span class="k">$((</span><span class="nv">PARAM</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="m">12</span><span class="k">))</span><span class="w">  </span><span class="c1"># Modulo (reste de division)</span>
+<p><img alt="Entier à coordonnées 2D" src="_images/n2r_c.svg" /></p>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span><span class="nv">PARAM_R</span><span class="o">=</span><span class="k">$((</span><span class="nv">SLURM_ARRAY_TASK_ID</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="m">12</span><span class="k">))</span><span class="w">  </span><span class="c1"># Division entière</span>
+<span class="nv">PARAM_C</span><span class="o">=</span><span class="k">$((</span><span class="nv">SLURM_ARRAY_TASK_ID</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="m">12</span><span class="k">))</span><span class="w">  </span><span class="c1"># Modulo (reste de division)</span>
 <span class="nb">echo</span><span class="w"> </span><span class="nv">$PARAM_R</span><span class="w"> </span><span class="nv">$PARAM_C</span>
 
-head<span class="w"> </span>-n<span class="w"> </span><span class="nv">$PARAM_R</span><span class="w"> </span>param.txt<span class="w"> </span><span class="p">|</span><span class="w"> </span>tail<span class="w"> </span>-1
+head<span class="w"> </span>-n<span class="w"> </span><span class="k">$((</span><span class="nv">PARAM_R</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">1</span><span class="k">))</span><span class="w"> </span>param.txt<span class="w"> </span><span class="p">|</span><span class="w"> </span>tail<span class="w"> </span>-1
 </pre></div>
 </div>
 <section id="exercice-vecteur-de-taches">
-<h3>Exercice - Vecteur de tâches<a class="headerlink" href="#exercice-vecteur-de-taches" title="Lien permanent vers cette rubrique">#</a></h3>
+<h3><strong>Exercice</strong> - Vecteur de tâches<a class="headerlink" href="#exercice-vecteur-de-taches" title="Lien permanent vers cette rubrique">#</a></h3>
 <p>Lancez le vecteur de tâches :</p>
 <div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>scripts/blastn-array.sh
 sbatch<span class="w"> </span>scripts/blastn-array.sh
@@ -702,12 +699,12 @@ sbatch<span class="w"> </span>--array<span class="o">=</span><span class="m">0</
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#nombre-limite-de-cas-en-paralleles">Nombre limité de cas en parallèles</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-aligner-des-sequences-d-adn">Exercice - Aligner des séquences d’ADN</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-aligner-des-sequences-d-adn"><strong>Exercice</strong> - Aligner des séquences d’ADN</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autres-outils">Autres outils</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vecteurs-de-taches">Vecteurs de tâches</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-vecteur-de-taches">Exercice - Vecteur de tâches</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-vecteur-de-taches"><strong>Exercice</strong> - Vecteur de tâches</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#points-a-retenir">Points à retenir</a></li>
