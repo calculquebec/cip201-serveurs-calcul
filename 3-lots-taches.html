@@ -527,10 +527,6 @@ ls<span class="w"> </span>donnees/res_prll/
 <li><p>META-Farm
 <a class="reference external" href="https://docs.alliancecan.ca/wiki/META-Farm/fr">pour le meilleur de GNU Parallel et GLOST</a></p></li>
 </ul>
-</section>
-</section>
-<section id="vecteurs-de-taches">
-<h2>Vecteurs de tâches<a class="headerlink" href="#vecteurs-de-taches" title="Lien permanent vers cette rubrique">#</a></h2>
 <p>Alors que les précédents outils s’utilisent bien avec un lot de
 calculs séquentiels ou parallèles de petite taille (16 processeurs
 ou moins), <strong>ils ne sont pas</strong> vraiment <strong>appropriés pour</strong>
@@ -540,8 +536,14 @@ un lot de <strong>longs calculs parallèles de plus grande taille</strong>
 <li><p>on veut éviter les longues tâches qui dépassent trois (3) jours et</p></li>
 <li><p>on veut réduire le risque de subir une défaillance matérielle.</p></li>
 </ul>
-<p>Dans le cas où un même programme parallèle doit être exécuté avec
-différentes combinaisons de paramètres, il y a moyen de soumettre un seul
+<p>C’est pourquoi, dans certains cas, il vaut
+mieux utiliser les vecteurs de tâches.</p>
+</section>
+</section>
+<section id="vecteurs-de-taches">
+<h2>Vecteurs de tâches<a class="headerlink" href="#vecteurs-de-taches" title="Lien permanent vers cette rubrique">#</a></h2>
+<p>Dans le cas où un même programme doit être exécuté avec différentes
+combinaisons de paramètres, il y a moyen de soumettre un seul
 <a class="reference external" href="https://docs.alliancecan.ca/wiki/Job_arrays/fr">vecteur de tâches</a>
 et de coder le script de tâche de telle sorte que les paramètres
 seront déterminés <strong>en fonction d’un indice unique</strong> du vecteur de tâches.</p>
