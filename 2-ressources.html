@@ -766,13 +766,18 @@ aléatoires et nombreux</p></li>
 <ul class="simple">
 <li><p><strong>Sous Linux</strong> et sur les <strong>grappes de calcul</strong> :</p>
 <ul>
-<li><p>L’environnement graphique peut offrir le même genre d’outils, mais tout dépend de la distribution et du bureau.</p></li>
-<li><p>La commande <code class="docutils literal notranslate"><span class="pre">du</span> <span class="pre">-bs</span> <span class="pre">DOSSIER</span></code> (<code class="docutils literal notranslate"><span class="pre">b</span></code> : taille apparente en octets, <code class="docutils literal notranslate"><span class="pre">s</span></code> : somme totale) calcule récursivement et affiche la taille totale en octets. La taille apparente est celle qui importe lors d’un transfert ou d’une sauvegarde de données.</p></li>
-<li><p>La commande <code class="docutils literal notranslate"><span class="pre">find</span> <span class="pre">DOSSIER</span> <span class="pre">|</span> <span class="pre">wc</span> <span class="pre">-l</span></code> compte récursivement et affiche le nombre de fichiers et de sous-dossiers.</p></li>
+<li><p>L’environnement graphique peut offrir le même genre d’outils,
+mais tout dépend de la distribution et du bureau.</p></li>
+<li><p>La commande <code class="docutils literal notranslate"><span class="pre">du</span> <span class="pre">-sb</span> <span class="pre">DOSSIER</span></code> (<code class="docutils literal notranslate"><span class="pre">s</span></code> : somme totale, <code class="docutils literal notranslate"><span class="pre">b</span></code> : taille
+apparente en octets) calcule récursivement et affiche la
+taille totale en octets. La taille apparente est celle qui
+importe lors d’un transfert ou d’une sauvegarde de données.</p></li>
+<li><p>La commande <code class="docutils literal notranslate"><span class="pre">find</span> <span class="pre">DOSSIER</span> <span class="pre">|</span> <span class="pre">wc</span> <span class="pre">-l</span></code> compte récursivement
+et affiche le nombre de fichiers et de sous-dossiers.</p></li>
 </ul>
 </li>
 </ul>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>du<span class="w"> </span>-bs<span class="w"> </span>donnees
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>du<span class="w"> </span>-sb<span class="w"> </span>donnees
 find<span class="w"> </span>donnees<span class="w"> </span><span class="p">|</span><span class="w"> </span>wc<span class="w"> </span>-l
 </pre></div>
 </div>
@@ -1080,7 +1085,7 @@ find<span class="w"> </span>donnees<span class="w"> </span><span class="p">|</sp
 <li><p><code class="docutils literal notranslate"><span class="pre">time</span></code> et autres bibliothèques de mesure du temps écoulé</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">top</span></code>, <code class="docutils literal notranslate"><span class="pre">htop</span></code>, <code class="docutils literal notranslate"><span class="pre">nvtop</span></code>, <code class="docutils literal notranslate"><span class="pre">nvidia-smi</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">sacct</span></code>, <code class="docutils literal notranslate"><span class="pre">seff</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">du</span> <span class="pre">-bs</span></code>, <code class="docutils literal notranslate"><span class="pre">find</span> <span class="pre">|</span> <span class="pre">wc</span> <span class="pre">-l</span></code> et autres outils du système d’exploitation</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">du</span> <span class="pre">-sb</span></code>, <code class="docutils literal notranslate"><span class="pre">find</span> <span class="pre">|</span> <span class="pre">wc</span> <span class="pre">-l</span></code> et autres outils du système d’exploitation</p></li>
 </ul>
 </li>
 <li><p>On vise une <strong>efficacité de 90%</strong> et plus pour les tâches CPU</p>
