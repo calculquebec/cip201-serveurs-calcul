@@ -335,13 +335,6 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#caracteristiques-de-vos-donnees">Caractéristiques de vos données</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#taille">Taille</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nombre">Nombre</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transferabilite">Transférabilité</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#regroupement-dans-un-fichier-archive">Regroupement dans un fichier archive</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#compression-des-fichiers">Compression des fichiers</a></li>
-</ul>
-</li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vie">Vie</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exemple-de-cycle-de-vie-des-donnees">Exemple de cycle de vie des données</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-execution-d-un-pipeline"><strong>Exercice</strong> - Exécution d’un pipeline</a></li>
@@ -380,7 +373,9 @@ document.write(`
 <li><p><strong>Vie</strong> : pendant une tâche, entre des tâches, d’un projet à l’autre, à archiver</p></li>
 <li><p><strong>Niveau d’accès</strong> : données confidentielles, partagées, publiées</p></li>
 </ul>
-<p>Le but de ce chapitre est de pouvoir considérer tous les aspects nécessaires à la gestion des données actives sur les différents espaces de stockage disponibles.</p>
+<p>Le but de ce chapitre est de considérer les principaux
+aspects nécessaires à la gestion des données actives
+sur les différents espaces de stockage disponibles.</p>
 <section id="les-differents-types-de-stockage">
 <h2>Les différents types de stockage<a class="headerlink" href="#les-differents-types-de-stockage" title="Lien permanent vers cette rubrique">#</a></h2>
 <p>Stockage accessible selon le type de noeud :
@@ -564,132 +559,13 @@ pendant plusieurs mois</strong></p></li>
 </section>
 <section id="caracteristiques-de-vos-donnees">
 <h2>Caractéristiques de vos données<a class="headerlink" href="#caracteristiques-de-vos-donnees" title="Lien permanent vers cette rubrique">#</a></h2>
-<section id="taille">
-<h3>Taille<a class="headerlink" href="#taille" title="Lien permanent vers cette rubrique">#</a></h3>
-<p>Au second chapitre, nous avons vu comment obtenir le nombre de
-fichiers de nos données locales, de même que la taille totale.</p>
-<p>Sur une grappe de calcul, un <strong>système de fichiers parallel</strong>
-<a class="reference external" href="https://docs.alliancecan.ca/wiki/Tuning_Lustre/fr"><em>Lustre</em></a> ou <em>GPFS</em>
-est surtout optimisé pour des fichiers de plus de 10 Mo,
-c’est-à-dire pour des accès à large bande-passante. Ainsi, à l’échelle des
-<a class="reference external" href="https://docs.alliancecan.ca/wiki/B%C3%A9luga#Stockage">grappes de calcul</a> :</p>
-<ul class="simple">
-<li><p>1 Ko - 100 Ko : très petit fichier</p></li>
-<li><p>1 Mo - 10 Mo : petit fichier</p></li>
-<li><p><strong>100 Mo - 1 Go : taille idéale</strong></p></li>
-<li><p>10 Go - 100 Go : gros fichier</p></li>
-<li><p>1 To - 10 To : très gros fichier</p></li>
-</ul>
-</section>
-<section id="nombre">
-<h3>Nombre<a class="headerlink" href="#nombre" title="Lien permanent vers cette rubrique">#</a></h3>
-<p>À quantité totale égale d’octets, il est plus <strong>difficile pour <em>Lustre</em>
-de gérer un grand nombre</strong> de petits fichiers qu’un plus petit nombre
-de grands fichiers. Ainsi, du point de vue du système de stockage :</p>
-<ul class="simple">
-<li><p>Par dossier :</p>
-<ul>
-<li><p><strong>1 à 100 fichiers par dossier : c’est raisonnable</strong></p></li>
-<li><p>300 à 3k fichiers par dossier : une lourdeur se fait sentir</p></li>
-<li><p>10k fichiers et plus : il faut classer les fichiers dans des sous-dossiers</p></li>
-</ul>
-</li>
-<li><p>Par espace <a class="reference external" href="https://docs.alliancecan.ca/wiki/Storage_and_file_management/fr#Quotas_et_politiques">limité par un quota</a> :</p>
-<ul>
-<li><p><strong>1 à 500k fichiers : sauvegarde facilement à jour</strong></p></li>
-<li><p>1M à 5M fichiers : sauvegarde potentiellement plus longue que 24h</p></li>
-<li><p>10M fichiers et plus : sauvegarde plus longue que 24h</p></li>
-</ul>
-</li>
-</ul>
-</section>
-<section id="transferabilite">
-<h3>Transférabilité<a class="headerlink" href="#transferabilite" title="Lien permanent vers cette rubrique">#</a></h3>
-<section id="regroupement-dans-un-fichier-archive">
-<h4>Regroupement dans un fichier archive<a class="headerlink" href="#regroupement-dans-un-fichier-archive" title="Lien permanent vers cette rubrique">#</a></h4>
-<p>Étant donné que le transfert ou la synchronisation de
-<a class="reference external" href="https://docs.alliancecan.ca/wiki/Handling_large_collections_of_files/fr">plusieurs petits fichiers</a>
-implique un accès fréquent aux métadonnées du système de stockage
-<em>Lustre</em>, il est donc préférable de
-<a class="reference external" href="https://docs.alliancecan.ca/wiki/Archiving_and_compressing_files/fr">regrouper les fichiers</a>
-d’un jeu de données avant tout transfert. Pour ce faire, il existe
-plusieurs formats décodables sur les différentes grappes :</p>
-<ul class="simple">
-<li><p><strong>WinZip</strong> ou <strong>Zip</strong> (<code class="docutils literal notranslate"><span class="pre">.zip</span></code>) - compressé</p></li>
-<li><p><strong>7-Zip</strong> (<code class="docutils literal notranslate"><span class="pre">.7z</span></code>) - compressé</p></li>
-<li><p><strong>Tape ARchive</strong> ou <a class="reference external" href="https://docs.alliancecan.ca/wiki/A_tutorial_on_%27tar%27/fr"><strong>TAR</strong></a> (<code class="docutils literal notranslate"><span class="pre">.tar</span></code>) - non compressé, sauf si utilisé avec Gzip ou autre</p></li>
-<li><p><strong>Disk ARchive</strong> ou <a class="reference external" href="https://docs.alliancecan.ca/wiki/Dar/fr"><strong>DAR</strong></a> (<code class="docutils literal notranslate"><span class="pre">.dar</span></code>) - compression configurable</p></li>
-</ul>
-<p><strong>Démonstration</strong> - Création d’une archive DAR</p>
-<p>Dans un terminal :</p>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>dar<span class="w"> </span>-w<span class="w"> </span>-c<span class="w"> </span>arch<span class="w"> </span>-g<span class="w"> </span>donnees<span class="w"> </span>-g<span class="w"> </span>images
-</pre></div>
-</div>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">-w</span></code> : pour taire un avertissement d’écrasement d’archive existante</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">-c</span></code> : pour créer l’archive <code class="docutils literal notranslate"><span class="pre">arch</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">-g</span></code> : pour spécifier un fichier ou dossier à la fois</p></li>
-</ul>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>ls<span class="w"> </span>arch*
-dar<span class="w"> </span>-l<span class="w"> </span>arch
-</pre></div>
-</div>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">-l</span></code> : pour lister les fichiers dans l’archive DAR <code class="docutils literal notranslate"><span class="pre">arch</span></code></p></li>
-<li><p>Note : <strong>ne pas</strong> fournir le nom d’une découpe avec l’extension <code class="docutils literal notranslate"><span class="pre">.1.dar</span></code></p></li>
-</ul>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>dar<span class="w"> </span>-w<span class="w"> </span>-z<span class="w"> </span>-c<span class="w"> </span>arch<span class="w"> </span>-g<span class="w"> </span>donnees<span class="w"> </span>-g<span class="w"> </span>images
-</pre></div>
-</div>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">-z</span></code> : pour activer la compression pour tous les fichiers</p></li>
-<li><p>Voir le résultat avec <code class="docutils literal notranslate"><span class="pre">dar</span> <span class="pre">-l</span> <span class="pre">arch</span></code></p></li>
-</ul>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>dar<span class="w"> </span>-w<span class="w"> </span>-z<span class="w"> </span>-Z<span class="w"> </span><span class="s1">&#39;*.png&#39;</span><span class="w"> </span>-c<span class="w"> </span>arch<span class="w"> </span>-g<span class="w"> </span>donnees<span class="w"> </span>-g<span class="w"> </span>images
-</pre></div>
-</div>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">-Z</span> <span class="pre">'*.png'</span></code> : pour exclure les fichiers PNG</p></li>
-<li><p>Voir le résultat avec <code class="docutils literal notranslate"><span class="pre">dar</span> <span class="pre">-l</span> <span class="pre">arch</span></code></p></li>
-</ul>
-</section>
-<section id="compression-des-fichiers">
-<h4>Compression des fichiers<a class="headerlink" href="#compression-des-fichiers" title="Lien permanent vers cette rubrique">#</a></h4>
-<p>La <a class="reference external" href="https://docs.alliancecan.ca/wiki/Archiving_and_compressing_files/fr">compression des fichiers</a>
-a un <strong>coût en temps CPU</strong> à chaque fois que nous voulons lire ou écrire
-les données. Ainsi, il vaut mieux utiliser la compression <strong>lorsque
-c’est « avantageux »</strong> en espace et/ou en temps. Par exemple :</p>
-<ul class="simple">
-<li><p><strong>Décompresser de nombreux fichiers sur le noeud de calcul</strong>
-plutôt que de lire chaque petit fichier de <em>Lustre</em>.</p></li>
-</ul>
-<p>Lorsque le <strong>système de fichiers compresse automatiquement</strong>
-vos données avant de les écrire sur le système de stockage :</p>
-<ul class="simple">
-<li><p>La commande <code class="docutils literal notranslate"><span class="pre">du</span></code> montre l’espace réellement utilisée sur le disque</p></li>
-<li><p>La commande <code class="docutils literal notranslate"><span class="pre">du</span> <span class="pre">--apparent-size</span></code> montre la taille normale du fichier</p></li>
-</ul>
-<p><strong>Démonstration</strong> - Espace utilisé</p>
-<p>Dans un terminal :</p>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>du<span class="w"> </span>-s<span class="w"> </span>~
-du<span class="w"> </span>-s<span class="w"> </span>--apparent-size<span class="w"> </span>~
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>Noter les différences, s’il y en a</p></li>
-<li><p>Cette commande peut surcharger le système de stockage;
-le survol récursif des fichiers constitue un grand nombre
-d’accès aux métadonnées de <em>Lustre</em></p></li>
-</ul>
-<p>En pratique, les grappes de calcul offrent des
-<a class="reference external" href="https://docs.alliancecan.ca/wiki/Diskusage_Explorer">outils efficaces</a>
-pour mesurer l’espace utilisé en fonction de l’espace alloué.</p>
-</section>
-</section>
 <section id="vie">
 <h3>Vie<a class="headerlink" href="#vie" title="Lien permanent vers cette rubrique">#</a></h3>
 <p>Avec le temps, les données s’accumulent. Il devient alors nécessaire de surveiller l’espace utilisé, de même que le nombre de fichiers qui s’y trouvent.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">-</span><span class="n">h</span> <span class="o">/</span><span class="n">project</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">du</span> <span class="o">-</span><span class="n">s</span> <span class="o">~</span>
+<span class="n">find</span> <span class="o">.</span> <span class="o">|</span> <span class="n">wc</span> <span class="o">-</span><span class="n">l</span>
+
+<span class="n">df</span> <span class="o">-</span><span class="n">h</span> <span class="o">/</span><span class="n">project</span>
 <span class="n">df</span> <span class="o">-</span><span class="n">hi</span> <span class="o">/</span><span class="n">project</span>
 </pre></div>
 </div>
@@ -701,7 +577,10 @@ de fichiers de chacun des espaces de stockage auxquels vous avez accès</p></li>
 <ul>
 <li><p>Sur Béluga : dans <code class="docutils literal notranslate"><span class="pre">/project/.stats/&lt;nom-allocation&gt;</span></code></p></li>
 <li><p>Sur Cedar et Narval : dans <code class="docutils literal notranslate"><span class="pre">/project/.stats/&lt;nom-allocation&gt;.json</span></code></p></li>
-<li><p>Disponible sur demande pour Graham et Niagara</p></li>
+<li><p><strong><a class="reference external" href="https://docs.alliancecan.ca/wiki/Diskusage_Explorer/fr">La commande <code class="docutils literal notranslate"><span class="pre">diskusage_explorer</span></code></a></strong>
+affiche un sommaire d’utilisation et permet de naviguer vers
+des sous-répertoires pour mieux analyser l’espace utilisé.</p></li>
+<li><p>Information disponible sur demande pour Graham et Niagara</p></li>
 </ul>
 </li>
 </ul>
@@ -883,13 +762,6 @@ il vaut mieux regrouper les données dans un fichier archive
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#caracteristiques-de-vos-donnees">Caractéristiques de vos données</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#taille">Taille</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nombre">Nombre</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transferabilite">Transférabilité</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#regroupement-dans-un-fichier-archive">Regroupement dans un fichier archive</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#compression-des-fichiers">Compression des fichiers</a></li>
-</ul>
-</li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vie">Vie</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exemple-de-cycle-de-vie-des-donnees">Exemple de cycle de vie des données</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-execution-d-un-pipeline"><strong>Exercice</strong> - Exécution d’un pipeline</a></li>
