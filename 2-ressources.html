@@ -521,14 +521,14 @@ et la mémoire-vives en fonction des quantités réservées.</p>
 <h3>Ressources utilisées par une tâche CPU en cours<a class="headerlink" href="#ressources-utilisees-par-une-tache-cpu-en-cours" title="Lien permanent vers cette rubrique">#</a></h3>
 <p>Étant donné un certain calcul matriciel dans le script Python
 <a class="reference external" href="https://github.com/calculquebec/cip201-serveurs-calcul/blob/main/scripts/crunch.py"><code class="docutils literal notranslate"><span class="pre">scripts/crunch.py</span></code></a> :</p>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>less<span class="w"> </span>scripts/crunch.py<span class="w">   </span><span class="c1"># q pour quitter</span>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>scripts/crunch.py
 </pre></div>
 </div>
 <p>Lors d’une tâche interactive, on peut utiliser <code class="docutils literal notranslate"><span class="pre">top</span></code> et <code class="docutils literal notranslate"><span class="pre">htop</span></code> pour surveiller les ressources utilisées :</p>
 <div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tâche interactive</span>
 salloc<span class="w"> </span>--ntasks-per-node<span class="o">=</span><span class="m">4</span><span class="w"> </span>--mem<span class="o">=</span>8000M<span class="w"> </span>--time<span class="o">=</span><span class="m">0</span>:15:0
 
-less<span class="w"> </span>scripts/crunch.sh<span class="w">  </span><span class="c1"># q pour quitter</span>
+cat<span class="w"> </span>scripts/crunch.sh
 
 <span class="c1"># Exécution avec un processeur</span>
 bash<span class="w"> </span>scripts/crunch.sh<span class="w"> </span>--cpu<span class="w"> </span><span class="m">1</span>
@@ -612,7 +612,7 @@ nvtop<span class="w">  </span><span class="c1"># q pour quitter</span>
 </div>
 <p><img alt="Capture nvtop" src="https://raw.githubusercontent.com/Syllo/nvtop/master/screenshot/NVTOP_ex1.png" /></p>
 <div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Regarder le résultat</span>
-less<span class="w"> </span>tg.log<span class="w">    </span><span class="c1"># q pour quitter</span>
+grep<span class="w"> </span>sec<span class="w"> </span>tg.log
 
 <span class="nb">exit</span><span class="w">  </span><span class="c1"># Pour revenir à login1</span>
 </pre></div>
@@ -624,7 +624,7 @@ réel la consommation de ressources dans l’onglet NV Dashboard:</p>
 <p><img alt="NV Dashboard GPU" src="_images/nv-dashboard_gpu.png" /></p>
 <section id="exercice-tester-crunch-avec-un-gpu">
 <h4><strong>Exercice</strong> - Tester Crunch avec un GPU<a class="headerlink" href="#exercice-tester-crunch-avec-un-gpu" title="Lien permanent vers cette rubrique">#</a></h4>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>less<span class="w">   </span>scripts/crunch-sbatch-1gpu.sh
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w">    </span>scripts/crunch-sbatch-1gpu.sh
 sbatch<span class="w"> </span>scripts/crunch-sbatch-1gpu.sh
 
 squeue<span class="w"> </span>-u<span class="w"> </span><span class="nv">$USER</span><span class="w">  </span><span class="c1"># Pour vérifier l&#39;état de la tâche</span>
