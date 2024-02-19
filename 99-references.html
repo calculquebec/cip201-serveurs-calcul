@@ -365,6 +365,7 @@ document.write(`
 <li><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Diskusage_Explorer/fr">Espace <code class="docutils literal notranslate"><span class="pre">/project</span></code></a> - commande <code class="docutils literal notranslate"><span class="pre">diskusage_explorer</span></code></p></li>
 <li><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Using_nearline_storage/fr#Transf.C3.A9rer_des_donn.C3.A9es_.C3.A0_partir_de_.2Fnearline">Espace <code class="docutils literal notranslate"><span class="pre">/nearline</span></code></a> -
 état des fichiers</p></li>
+<li><p>Foire aux questions : <em><a class="reference external" href="https://docs.alliancecan.ca/wiki/Frequently_Asked_Questions/fr#Message_Disk_quota_exceeded">Disk quota exceeded</a></em></p></li>
 </ul>
 </li>
 <li><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Storage_and_file_management/fr#Types_de_stockage">Types de stockage</a></p>
@@ -390,6 +391,7 @@ stockage long terme</p></li>
 <ul class="simple">
 <li><p>Connexion par <a class="reference external" href="https://docs.alliancecan.ca/wiki/SSH/fr">SSH</a></p>
 <ul>
+<li><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/SSH_host_keys">SSH host keys</a></p></li>
 <li><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Using_SSH_keys_in_Linux/fr">Utiliser des clés SSH sous Linux</a></p></li>
 <li><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Multifactor_authentication/fr">Authentification multifacteur</a></p></li>
 </ul>
@@ -398,6 +400,7 @@ stockage long terme</p></li>
 <ul class="simple">
 <li><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Running_jobs/fr">Exécuter des tâches</a></p>
 <ul>
+<li><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Using_GPUs_with_Slurm/fr">Avec GPU</a></p></li>
 <li><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Utiliser_des_modules">Chargement des modules</a></p></li>
 <li><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Installing_software_in_your_home_directory/fr">Installation de logiciels dans votre répertoire <code class="docutils literal notranslate"><span class="pre">/home</span></code></a></p></li>
 <li><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Job_scheduling_policies/fr">Politique d’ordonnancement des tâches</a></p>
@@ -405,13 +408,16 @@ stockage long terme</p></li>
 <li><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Job_scheduling_policies/fr#Pourcentages_des_n.C5.93uds_disponibles">Partitionnement des grappes</a></p></li>
 </ul>
 </li>
-<li><p>Profilage des tâches via <a class="reference external" href="https://docs.alliancecan.ca/wiki/JupyterHub/fr">JupyterHub</a></p></li>
-<li><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Using_GPUs_with_Slurm/fr">Tâches exécutées avec GPU</a></p></li>
-<li><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Scalability/fr">Scalabilité</a></p></li>
 <li><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Running_jobs/fr#Suivi_des_t.C3.A2ches">Suivi des tâches</a></p>
 <ul>
 <li><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Running_jobs/fr#T.C3.A2ches_termin.C3.A9es">Commande <code class="docutils literal notranslate"><span class="pre">seff</span></code></a>
 : pour analyser une tâche terminée</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Debugging_and_profiling/fr">Débogage et profilage</a></p>
+<ul>
+<li><p>Avec <a class="reference external" href="https://docs.alliancecan.ca/wiki/JupyterHub/fr">JupyterHub</a></p></li>
+<li><p><a class="reference external" href="https://docs.alliancecan.ca/wiki/Scalability/fr">Scalabilité</a></p></li>
 </ul>
 </li>
 </ul>
@@ -467,8 +473,12 @@ stockage long terme</p></li>
 <ul>
 <li><p><a class="reference external" href="https://fr.wikipedia.org/wiki/Gestionnaire_des_t%C3%A2ches_Windows">Gestionnaire des tâches Windows</a></p></li>
 <li><p><a class="reference external" href="https://support.apple.com/fr-ca/guide/activity-monitor/actmntr1001/mac">Moniteur d’activité de macOS</a></p></li>
-<li><p><a class="reference external" href="https://man7.org/linux/man-pages/man1/top.1.html">Commande <code class="docutils literal notranslate"><span class="pre">top</span></code></a></p></li>
 <li><p><a class="reference external" href="https://man7.org/linux/man-pages/man1/htop.1.html">Commande <code class="docutils literal notranslate"><span class="pre">htop</span></code></a></p></li>
+<li><p><a class="reference external" href="https://man7.org/linux/man-pages/man1/top.1.html">Commande <code class="docutils literal notranslate"><span class="pre">top</span></code></a></p>
+<ul>
+<li><p><a class="reference external" href="https://fr.wikipedia.org/wiki/Resident_set_size">Mémoire RSS</a></p></li>
+</ul>
+</li>
 <li><p><a class="reference external" href="https://developer.nvidia.com/nvidia-system-management-interface">Commande <code class="docutils literal notranslate"><span class="pre">nvidia-smi</span></code></a></p></li>
 <li><p><a class="reference external" href="https://github.com/Syllo/nvtop">Commande <code class="docutils literal notranslate"><span class="pre">nvtop</span></code></a></p></li>
 </ul>
@@ -488,6 +498,8 @@ stockage long terme</p></li>
 <li><p><a class="reference external" href="https://arrow.apache.org/docs/python/feather.html">Apache Feather</a></p></li>
 <li><p><a class="reference external" href="https://www.gnu.org/software/parallel/parallel.html">GNU Parallel - Documentation officielle</a></p></li>
 <li><p><a class="reference external" href="https://fr.wikipedia.org/wiki/Shebang">Shebang</a></p></li>
+<li><p><a class="reference external" href="https://learn.microsoft.com/en-us/windows/wsl/install">Windows Subsystem for Linux</a>
+(WSL)</p></li>
 </ul>
 <p><strong>Outils d’édition de codes Python</strong> ou autre :</p>
 <ul class="simple">
