@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="fr" >
+<html lang="fr" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Les espaces de stockage &#8212; CIP201 - Maîtriser l’utilisation des serveurs de calcul</title>
   
@@ -19,51 +18,48 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/documentation_options.js?v=72dce1d2"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
-    <script src="_static/translations.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="_static/translations.js?v=d99ca74e"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = '4-stockage';</script>
-    <link rel="shortcut icon" href="_static/logo.png"/>
+    <link rel="icon" href="_static/logo.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
     <link rel="next" title="Exercices supplémentaires" href="90-exercices.html" />
@@ -77,7 +73,15 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Passer au contenu principal</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Passer au contenu principal</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Haut de page
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -112,11 +116,14 @@ const thebe_selector_output = ".output, .cell_output"
 </form></div>
   </div>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -131,9 +138,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="0-a_propos.html">
+  
   
   
   
@@ -143,12 +152,23 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="_static/logo.png" class="logo__image only-light" alt="CIP201 - Maîtriser l’utilisation des serveurs de calcul - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="CIP201 - Maîtriser l’utilisation des serveurs de calcul - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Recherche" aria-label="Recherche" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Recherche</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -208,7 +228,7 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="article-header-buttons">
 
 
-<a href="https://github.com/calculquebec/utilisation-serveurs-calcul" target="_blank"
+<a href="https://github.com/calculquebec/cip201-serveurs-calcul" target="_blank"
    class="btn btn-sm btn-source-repository-button"
    title="Dépôt source"
    data-bs-placement="bottom" data-bs-toggle="tooltip"
@@ -286,20 +306,22 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="clair/sombre" aria-label="clair/sombre" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="clair/sombre" aria-label="clair/sombre" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Recherche" aria-label="Recherche" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -353,10 +375,10 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="les-espaces-de-stockage">
-<h1>Les espaces de stockage<a class="headerlink" href="#les-espaces-de-stockage" title="Lien permanent vers cette rubrique">#</a></h1>
+<h1>Les espaces de stockage<a class="headerlink" href="#les-espaces-de-stockage" title="Link to this heading">#</a></h1>
 <p>Il y a plusieurs types de stockage sur les grappes nationales :</p>
 <ul class="simple">
 <li><p>Personnel (<code class="docutils literal notranslate"><span class="pre">/home</span></code>)</p></li>
@@ -377,7 +399,7 @@ document.write(`
 aspects nécessaires à la gestion des données actives
 sur les différents espaces de stockage disponibles.</p>
 <section id="les-differents-types-de-stockage">
-<h2>Les différents types de stockage<a class="headerlink" href="#les-differents-types-de-stockage" title="Lien permanent vers cette rubrique">#</a></h2>
+<h2>Les différents types de stockage<a class="headerlink" href="#les-differents-types-de-stockage" title="Link to this heading">#</a></h2>
 <p>Stockage accessible selon le type de noeud :
 noeud de <strong>connexion</strong> (ou interactif) ou
 noeud de <strong>calcul</strong> (CPU ou GPU) :</p>
@@ -413,7 +435,7 @@ noeud de <strong>calcul</strong> (CPU ou GPU) :</p>
 </table>
 <p>À propos des <a class="reference external" href="https://docs.alliancecan.ca/wiki/Storage_and_file_management/fr#Types_de_stockage">différents espaces de stockage</a>.</p>
 <section id="home-votre-dossier-personnel">
-<h3><code class="docutils literal notranslate"><span class="pre">$HOME</span></code> - Votre dossier personnel<a class="headerlink" href="#home-votre-dossier-personnel" title="Lien permanent vers cette rubrique">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">$HOME</span></code> - Votre dossier personnel<a class="headerlink" href="#home-votre-dossier-personnel" title="Link to this heading">#</a></h3>
 <div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w">  </span><span class="c1"># $HOME par défaut</span>
 ls<span class="w"> </span>-a
 ls<span class="w"> </span>-la
@@ -430,7 +452,7 @@ ls<span class="w"> </span>-ld<span class="w"> </span><span class="nv">$HOME</spa
 </ul>
 </section>
 <section id="slurm-tmpdir-votre-dossier-temporaire-local">
-<h3><code class="docutils literal notranslate"><span class="pre">$SLURM_TMPDIR</span></code> - Votre dossier temporaire local<a class="headerlink" href="#slurm-tmpdir-votre-dossier-temporaire-local" title="Lien permanent vers cette rubrique">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">$SLURM_TMPDIR</span></code> - Votre dossier temporaire local<a class="headerlink" href="#slurm-tmpdir-votre-dossier-temporaire-local" title="Link to this heading">#</a></h3>
 <div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>ls<span class="w"> </span>-ld<span class="w"> </span><span class="nv">$SLURM_TMPDIR</span>
 salloc<span class="w">  </span><span class="c1"># À partir de login1</span>
 
@@ -460,7 +482,7 @@ utilisés à répétition lors d’un calcul</p></li>
 </ul>
 </section>
 <section id="scratch-votre-espace-reseau-temporaire">
-<h3><code class="docutils literal notranslate"><span class="pre">$SCRATCH</span></code> - Votre espace réseau temporaire<a class="headerlink" href="#scratch-votre-espace-reseau-temporaire" title="Lien permanent vers cette rubrique">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">$SCRATCH</span></code> - Votre espace réseau temporaire<a class="headerlink" href="#scratch-votre-espace-reseau-temporaire" title="Link to this heading">#</a></h3>
 <div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>df<span class="w"> </span>-h<span class="w"> </span>/scratch
 ls<span class="w"> </span>-ld<span class="w"> </span><span class="nv">$SCRATCH</span>
 </pre></div>
@@ -484,7 +506,7 @@ pour <code class="docutils literal notranslate"><span class="pre">/project</span
 </ul>
 </section>
 <section id="project-espace-projet-partage">
-<h3><code class="docutils literal notranslate"><span class="pre">/project</span></code> - Espace projet partagé<a class="headerlink" href="#project-espace-projet-partage" title="Lien permanent vers cette rubrique">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">/project</span></code> - Espace projet partagé<a class="headerlink" href="#project-espace-projet-partage" title="Link to this heading">#</a></h3>
 <div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>ls<span class="w"> </span>-ld<span class="w"> </span>/project
 ls<span class="w"> </span>-ld<span class="w"> </span>/project/def-sponsor00
 ls<span class="w"> </span>-l<span class="w"> </span>/project/def-sponsor00
@@ -522,7 +544,7 @@ ls<span class="w"> </span>-l<span class="w"> </span>/project/def-sponsor00
 </ul>
 </section>
 <section id="nearline-stockage-tres-longue-duree">
-<h3><code class="docutils literal notranslate"><span class="pre">/nearline</span></code> - Stockage très longue durée<a class="headerlink" href="#nearline-stockage-tres-longue-duree" title="Lien permanent vers cette rubrique">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">/nearline</span></code> - Stockage très longue durée<a class="headerlink" href="#nearline-stockage-tres-longue-duree" title="Link to this heading">#</a></h3>
 <p>Interface de stockage sur disque :</p>
 <ul class="simple">
 <li><p>On peut voir les fichiers avec la commande <code class="docutils literal notranslate"><span class="pre">ls</span></code></p></li>
@@ -558,9 +580,9 @@ pendant plusieurs mois</strong></p></li>
 </section>
 </section>
 <section id="gestion-du-stockage">
-<h2>Gestion du stockage<a class="headerlink" href="#gestion-du-stockage" title="Lien permanent vers cette rubrique">#</a></h2>
+<h2>Gestion du stockage<a class="headerlink" href="#gestion-du-stockage" title="Link to this heading">#</a></h2>
 <section id="cycle-de-vie-des-donnees-actives">
-<h3>Cycle de vie des données actives<a class="headerlink" href="#cycle-de-vie-des-donnees-actives" title="Lien permanent vers cette rubrique">#</a></h3>
+<h3>Cycle de vie des données actives<a class="headerlink" href="#cycle-de-vie-des-donnees-actives" title="Link to this heading">#</a></h3>
 <p>Avec le temps, les données s’accumulent. Il devient alors nécessaire de surveiller l’espace utilisé, de même que le nombre de fichiers qui s’y trouvent.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">du</span> <span class="o">-</span><span class="n">s</span> <span class="o">~</span>
 <span class="n">find</span> <span class="o">.</span> <span class="o">|</span> <span class="n">wc</span> <span class="o">-</span><span class="n">l</span>
@@ -587,7 +609,7 @@ des sous-répertoires pour mieux analyser l’espace utilisé.</p></li>
 <p>Avoir un bon plan de gestion des données actives permet de
 faciliter le ménage (suppression ou archivage de fichiers).</p>
 <section id="exemple-de-cycle-de-vie-des-donnees">
-<h4>Exemple de cycle de vie des données<a class="headerlink" href="#exemple-de-cycle-de-vie-des-donnees" title="Lien permanent vers cette rubrique">#</a></h4>
+<h4>Exemple de cycle de vie des données<a class="headerlink" href="#exemple-de-cycle-de-vie-des-donnees" title="Link to this heading">#</a></h4>
 <p><img alt="Pipeline 1" src="_images/data-flow-1.png" /></p>
 <p>Description des différentes étapes :</p>
 <ul class="simple">
@@ -615,7 +637,7 @@ faciliter le ménage (suppression ou archivage de fichiers).</p>
 </ul>
 </section>
 <section id="exercice-execution-d-un-pipeline">
-<h4><strong>Exercice</strong> - Exécution d’un pipeline<a class="headerlink" href="#exercice-execution-d-un-pipeline" title="Lien permanent vers cette rubrique">#</a></h4>
+<h4><strong>Exercice</strong> - Exécution d’un pipeline<a class="headerlink" href="#exercice-execution-d-un-pipeline" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Étudiez les scripts :</p>
 <ul>
@@ -647,7 +669,7 @@ faciliter le ménage (suppression ou archivage de fichiers).</p>
 </section>
 </section>
 <section id="en-cas-de-donnees-inaccessibles">
-<h3>En cas de données inaccessibles<a class="headerlink" href="#en-cas-de-donnees-inaccessibles" title="Lien permanent vers cette rubrique">#</a></h3>
+<h3>En cas de données inaccessibles<a class="headerlink" href="#en-cas-de-donnees-inaccessibles" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Une professeure ou un professeur peut demander à ce que les données soient supprimées</p></li>
 <li><p>Par contre, pour obtenir l’accès aux données, il faut avoir le consentement de la personne qui les a isolées (probablement involontairement)</p>
@@ -661,7 +683,7 @@ dès l’importation de données sur les grappes de calcul.</p>
 </section>
 </section>
 <section id="points-a-retenir">
-<h2>Points à retenir<a class="headerlink" href="#points-a-retenir" title="Lien permanent vers cette rubrique">#</a></h2>
+<h2>Points à retenir<a class="headerlink" href="#points-a-retenir" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Le système de fichiers <em>Lustre</em> est optimisé pour des gros fichiers
 (+10 Mo)</p>
@@ -711,11 +733,10 @@ il vaut mieux regrouper les données dans un fichier archive
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="3-lots-taches.html"
@@ -735,10 +756,7 @@ il vaut mieux regrouper les données dans un fichier archive
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -746,6 +764,7 @@ il vaut mieux regrouper les données dans un fichier archive
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -792,9 +811,10 @@ Par Équipe Calcul Québec
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2024.
       <br/>
     
   </p>
@@ -818,8 +838,8 @@ Par Équipe Calcul Québec
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>
