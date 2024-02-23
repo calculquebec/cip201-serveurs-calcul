@@ -364,7 +364,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#demo-ressources-utilisees-par-une-tache-gpu-en-cours">(Démo) Ressources utilisées par une tâche GPU en cours</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-tester-crunch-avec-un-gpu"><strong>Exercice</strong> - Tester Crunch avec un GPU</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-tester-crunch-py-avec-un-gpu"><strong>Exercice</strong> - Tester <code class="docutils literal notranslate"><span class="pre">crunch.py</span></code> avec un GPU</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#comparer-la-vitesse-cpu-vs-gpu">Comparer la vitesse CPU vs GPU</a></li>
 </ul>
 </li>
@@ -380,7 +380,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#taille-des-donnees-et-nombre-de-fichiers-a-traiter">Taille des données et nombre de fichiers à traiter</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#principales-differences-entre-les-grappes-de-calcul">Principales différences entre les grappes de calcul</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparaison-entre-les-grappes-de-calcul">Comparaison entre les grappes de calcul</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#points-a-retenir">Points à retenir</a></li>
 </ul>
             </nav>
@@ -405,10 +405,14 @@ sont disponibles à l’Alliance de recherche numérique du Canada :</p>
 </li>
 <li><p>Stockage :</p>
 <ul>
-<li><p>Temporaire, projet, <em>nearline</em>, dépôt de données de recherche</p></li>
+<li><p>Temporaire, projet, <em>nearline</em></p></li>
 </ul>
 </li>
 </ul>
+<p>Malgré qu’elles soient grandes, tout en ayant une taille limitée,
+ces ressources devraient être utilisées parcimonieusement par
+chaque personne afin de maximiser la quantité de résultats
+scientifiques produits pour soi-même et pour les autres.</p>
 <section id="objectif-construction-d-un-script-de-tache-slurm">
 <h2>Objectif - construction d’un script de tâche Slurm<a class="headerlink" href="#objectif-construction-d-un-script-de-tache-slurm" title="Link to this heading">#</a></h2>
 <p>Le principal objectif de ce chapitre est de vous permettre d’analyser
@@ -428,7 +432,7 @@ options en entête seront lues par la commande de soumission de tâche
 processeurs réservés pour la tâche</p></li>
 </ul>
 <p>Par exemple : <a class="reference external" href="https://github.com/calculquebec/cip201-serveurs-calcul/blob/main/scripts/mpi-allo.sh"><code class="docutils literal notranslate"><span class="pre">scripts/mpi-allo.sh</span></code></a></p>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>nano<span class="w"> </span>scripts/mpi-allo.sh<span class="w">  </span><span class="c1"># Ctrl+X pour quitter</span>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>scripts/mpi-allo.sh
 </pre></div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
@@ -644,8 +648,8 @@ grep<span class="w"> </span>sec<span class="w"> </span>tg.log
 pour profiler votre programme GPU, vous pouvez visualiser en temps
 réel la consommation de ressources dans l’onglet NV Dashboard:</p>
 <p><img alt="NV Dashboard GPU" src="_images/nv-dashboard_gpu.png" /></p>
-<section id="exercice-tester-crunch-avec-un-gpu">
-<h4><strong>Exercice</strong> - Tester Crunch avec un GPU<a class="headerlink" href="#exercice-tester-crunch-avec-un-gpu" title="Link to this heading">#</a></h4>
+<section id="exercice-tester-crunch-py-avec-un-gpu">
+<h4><strong>Exercice</strong> - Tester <code class="docutils literal notranslate"><span class="pre">crunch.py</span></code> avec un GPU<a class="headerlink" href="#exercice-tester-crunch-py-avec-un-gpu" title="Link to this heading">#</a></h4>
 <div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w">    </span>scripts/crunch-sbatch-1gpu.sh
 sbatch<span class="w"> </span>scripts/crunch-sbatch-1gpu.sh
 
@@ -815,8 +819,8 @@ find<span class="w"> </span>donnees<span class="w"> </span><span class="p">|</sp
 </div>
 </section>
 </section>
-<section id="principales-differences-entre-les-grappes-de-calcul">
-<h2>Principales différences entre les grappes de calcul<a class="headerlink" href="#principales-differences-entre-les-grappes-de-calcul" title="Link to this heading">#</a></h2>
+<section id="comparaison-entre-les-grappes-de-calcul">
+<h2>Comparaison entre les grappes de calcul<a class="headerlink" href="#comparaison-entre-les-grappes-de-calcul" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>À propos des grappes :</p></li>
 </ul>
@@ -885,9 +889,9 @@ find<span class="w"> </span>donnees<span class="w"> </span><span class="p">|</sp
 <tr class="row-even"><td class="text-right"><p>Cascade Lake (avx512)</p></td>
 <td class="text-center"><p></p></td>
 <td class="text-center"><p>768 * 48</p></td>
-<td class="text-center"><p>72 * 44</p></td>
+<td class="text-center"><p>136 * 44</p></td>
 <td class="text-center"><p></p></td>
-<td class="text-center"><p>468 * 40</p></td>
+<td class="text-center"><p>476 * 40</p></td>
 </tr>
 <tr class="row-odd"><td class="text-right"><p>EPYC Rome (avx2)</p></td>
 <td class="text-center"><p></p></td>
@@ -910,7 +914,7 @@ find<span class="w"> </span>donnees<span class="w"> </span><span class="p">|</sp
 </thead>
 <tbody>
 <tr class="row-even"><td class="text-right"><p>2400M</p></td>
-<td class="text-center"><p>6400</p></td>
+<td class="text-center"><p>160 * 40</p></td>
 <td class="text-center"><p></p></td>
 <td class="text-center"><p></p></td>
 <td class="text-center"><p></p></td>
@@ -918,63 +922,70 @@ find<span class="w"> </span>donnees<span class="w"> </span><span class="p">|</sp
 </tr>
 <tr class="row-odd"><td class="text-right"><p>4000M</p></td>
 <td class="text-center"><p></p></td>
-<td class="text-center"><p>86016</p></td>
-<td class="text-center"><p>28896</p></td>
-<td class="text-center"><p>73280</p></td>
+<td class="text-center"><p>1408 * 48</p></td>
+<td class="text-center"><p>903 * 32</p></td>
+<td class="text-center"><p>1145 * 64</p></td>
 <td class="text-center"><p></p></td>
 </tr>
-<tr class="row-even"><td class="text-right"><p>4400M</p></td>
+<tr class="row-even"><td class="text-right"><p>4000M</p></td>
 <td class="text-center"><p></p></td>
-<td class="text-center"><p></p></td>
-<td class="text-center"><p>3168</p></td>
-<td class="text-center"><p></p></td>
-<td class="text-center"><p></p></td>
-</tr>
-<tr class="row-odd"><td class="text-right"><p>4800M</p></td>
-<td class="text-center"><p>23560</p></td>
-<td class="text-center"><p></p></td>
-<td class="text-center"><p></p></td>
-<td class="text-center"><p></p></td>
-<td class="text-center"><p>80960</p></td>
-</tr>
-<tr class="row-even"><td class="text-right"><p>8000M</p></td>
-<td class="text-center"><p></p></td>
-<td class="text-center"><p>3072</p></td>
-<td class="text-center"><p>1792</p></td>
-<td class="text-center"><p></p></td>
-<td class="text-center"><p></p></td>
-</tr>
-<tr class="row-odd"><td class="text-right"><p>16000M</p></td>
-<td class="text-center"><p></p></td>
-<td class="text-center"><p>768</p></td>
-<td class="text-center"><p>768</p></td>
-<td class="text-center"><p></p></td>
-<td class="text-center"><p></p></td>
-</tr>
-<tr class="row-even"><td class="text-right"><p>19200M</p></td>
-<td class="text-center"><p>2120</p></td>
-<td class="text-center"><p></p></td>
+<td class="text-center"><p>576 * 32</p></td>
 <td class="text-center"><p></p></td>
 <td class="text-center"><p></p></td>
 <td class="text-center"><p></p></td>
 </tr>
-<tr class="row-odd"><td class="text-right"><p>32000M</p></td>
+<tr class="row-odd"><td class="text-right"><p>4400M</p></td>
 <td class="text-center"><p></p></td>
 <td class="text-center"><p></p></td>
-<td class="text-center"><p></p></td>
-<td class="text-center"><p>2304</p></td>
-<td class="text-center"><p></p></td>
-</tr>
-<tr class="row-even"><td class="text-right"><p>48000M</p></td>
-<td class="text-center"><p></p></td>
-<td class="text-center"><p>768</p></td>
-<td class="text-center"><p>192</p></td>
+<td class="text-center"><p>136 * 44</p></td>
 <td class="text-center"><p></p></td>
 <td class="text-center"><p></p></td>
 </tr>
-<tr class="row-odd"><td class="text-right"><p>96000M</p></td>
+<tr class="row-even"><td class="text-right"><p>4800M</p></td>
+<td class="text-center"><p>589 * 40</p></td>
 <td class="text-center"><p></p></td>
-<td class="text-center"><p>128</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>2024 * 40</p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>8000M</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>96 * 32</p></td>
+<td class="text-center"><p>56 * 32</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>16000M</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>24 * 32</p></td>
+<td class="text-center"><p>24 * 32</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>19200M</p></td>
+<td class="text-center"><p>53 * 40</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>32000M</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>36 * 64</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>48000M</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>24 * 32</p></td>
+<td class="text-center"><p>3 * 64</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>96000M</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>4 * 32</p></td>
 <td class="text-center"><p></p></td>
 <td class="text-center"><p></p></td>
 <td class="text-center"><p></p></td>
@@ -1208,7 +1219,7 @@ find<span class="w"> </span>donnees<span class="w"> </span><span class="p">|</sp
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#demo-ressources-utilisees-par-une-tache-gpu-en-cours">(Démo) Ressources utilisées par une tâche GPU en cours</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-tester-crunch-avec-un-gpu"><strong>Exercice</strong> - Tester Crunch avec un GPU</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-tester-crunch-py-avec-un-gpu"><strong>Exercice</strong> - Tester <code class="docutils literal notranslate"><span class="pre">crunch.py</span></code> avec un GPU</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#comparer-la-vitesse-cpu-vs-gpu">Comparer la vitesse CPU vs GPU</a></li>
 </ul>
 </li>
@@ -1224,7 +1235,7 @@ find<span class="w"> </span>donnees<span class="w"> </span><span class="p">|</sp
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#taille-des-donnees-et-nombre-de-fichiers-a-traiter">Taille des données et nombre de fichiers à traiter</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#principales-differences-entre-les-grappes-de-calcul">Principales différences entre les grappes de calcul</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparaison-entre-les-grappes-de-calcul">Comparaison entre les grappes de calcul</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#points-a-retenir">Points à retenir</a></li>
 </ul>
   </nav></div>
