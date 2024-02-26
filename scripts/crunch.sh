@@ -1,5 +1,11 @@
 #!/bin/bash
 
+if [ -z "$SLURM_TMPDIR" ]; then
+  echo "Erreur: ce script doit être utilisé à partir d'un noeud de calcul."
+  echo "Vous devez d'abord lancer la commande salloc avant $0"
+  exit
+fi
+
 SYNTAXE="Syntaxe: bash $0 --cpu|--gpu [1|4]"
 
 if [ "$#" -lt 1 ]; then
