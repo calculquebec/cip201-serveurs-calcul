@@ -552,7 +552,7 @@ et la mémoire-vives en fonction des quantités réservées.</p>
 </div>
 <p>Lors d’une tâche interactive, on peut utiliser <code class="docutils literal notranslate"><span class="pre">top</span></code> et <code class="docutils literal notranslate"><span class="pre">htop</span></code> pour surveiller les ressources utilisées :</p>
 <div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tâche interactive</span>
-salloc<span class="w"> </span>--ntasks-per-node<span class="o">=</span><span class="m">4</span><span class="w"> </span>--mem<span class="o">=</span>8000M<span class="w"> </span>--time<span class="o">=</span><span class="m">0</span>:15:0
+salloc<span class="w"> </span>--cpus-per-task<span class="o">=</span><span class="m">4</span><span class="w"> </span>--mem<span class="o">=</span>8000M<span class="w"> </span>--time<span class="o">=</span><span class="m">0</span>:15:0
 
 cat<span class="w"> </span>scripts/crunch.sh
 
@@ -611,7 +611,7 @@ paramètres de la tâche de calcul</p></li>
 <section id="demo-ressources-utilisees-par-une-tache-gpu-en-cours">
 <h3>(Démo) Ressources utilisées par une tâche GPU en cours<a class="headerlink" href="#demo-ressources-utilisees-par-une-tache-gpu-en-cours" title="Link to this heading">#</a></h3>
 <div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tâche interactive</span>
-salloc<span class="w"> </span>--ntasks-per-node<span class="o">=</span><span class="m">4</span><span class="w"> </span>--mem<span class="o">=</span>8000M<span class="w"> </span>--time<span class="o">=</span><span class="m">0</span>:15:0<span class="w"> </span>--gres<span class="o">=</span>gpu:1
+salloc<span class="w"> </span>--cpus-per-task<span class="o">=</span><span class="m">4</span><span class="w"> </span>--mem<span class="o">=</span>8000M<span class="w"> </span>--time<span class="o">=</span><span class="m">0</span>:15:0<span class="w"> </span>--gres<span class="o">=</span>gpu:1
 </pre></div>
 </div>
 <ul class="simple">
