@@ -3,5 +3,5 @@
 #SBATCH --mem=1000M
 #SBATCH --time=0:5:0
 
-parallel < commandes.txt
+parallel < scripts/cmd.txt
 grep -E '[0-9]+' prod_*
