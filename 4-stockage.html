@@ -16,17 +16,19 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-
-  
-  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
@@ -36,10 +38,11 @@
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
 
     <script src="_static/documentation_options.js?v=72dce1d2"></script>
     <script src="_static/doctools.js?v=9a2dae69"></script>
@@ -66,6 +69,7 @@
     <link rel="prev" title="Lots de tâches" href="3-lots-taches.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="fr"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -73,27 +77,16 @@
 
   
   
-  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Passer au contenu principal</a></div>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>Haut de page</button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="search.html"
       method="get">
@@ -101,7 +94,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -109,8 +101,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -126,7 +118,8 @@
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -156,21 +149,17 @@
     
     
     <img src="_static/logo.png" class="logo__image only-light" alt="CIP201 - Maîtriser l’utilisation des serveurs de calcul - Home"/>
-    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="CIP201 - Maîtriser l’utilisation des serveurs de calcul - Home"/>`);</script>
+    <img src="_static/logo.png" class="logo__image only-dark pst-js-only" alt="CIP201 - Maîtriser l’utilisation des serveurs de calcul - Home"/>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Recherche" aria-label="Recherche" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Recherche</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Recherche" aria-label="Recherche" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Recherche</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -310,24 +299,16 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="clair/sombre" aria-label="clair/sombre" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Recherche" aria-label="Recherche" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Recherche" aria-label="Recherche" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
+</button>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -360,6 +341,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gestion-du-stockage">Gestion du stockage</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enjeux-autour-des-donnees-actives">Enjeux autour des données actives</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cycle-de-vie-des-donnees-actives">Cycle de vie des données actives</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exemple-de-cycle-de-vie-des-donnees">Exemple de cycle de vie des données</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-execution-d-un-pipeline"><strong>Exercice</strong> - Exécution d’un pipeline</a></li>
@@ -585,6 +567,62 @@ pendant plusieurs mois</strong></p></li>
 </section>
 <section id="gestion-du-stockage">
 <h2>Gestion du stockage<a class="headerlink" href="#gestion-du-stockage" title="Lien vers cette rubrique">#</a></h2>
+<section id="enjeux-autour-des-donnees-actives">
+<h3>Enjeux autour des données actives<a class="headerlink" href="#enjeux-autour-des-donnees-actives" title="Lien vers cette rubrique">#</a></h3>
+<p>La gestion des données de recherche comprend les étapes suivantes :</p>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://dmp-pgd.ca/">Plan de gestion des données</a></p></li>
+<li><p><strong>Gestion des données actives</strong></p></li>
+<li><p><a class="reference external" href="https://www.lunaris.ca/fr">Dépôt des données</a></p></li>
+</ol>
+<p>Les enjeux (ou problèmes communs) des données actives sont :</p>
+<ul class="simple">
+<li><p><strong>Absence de structure commune</strong> pour les données
+au sein des équipes de recherche</p>
+<ul>
+<li><p>Perte d’efficacité</p></li>
+<li><p>Réduction de la capacité à travailler en équipe</p></li>
+<li><p>Difficulté à créer les métadonnées une fois
+le projet de recherche terminé</p></li>
+</ul>
+</li>
+<li><p>Étudiants terminant ou <strong>quittant le projet</strong></p>
+<ul>
+<li><p>Sans transfert de la propriété intellectuelles
+au chercheur principal</p></li>
+<li><p>Sans partage des données elles-mêmes</p></li>
+</ul>
+</li>
+<li><p>Absence de hiérarchisation dans <strong>l’importance des données</strong></p>
+<ul>
+<li><p>Données temporaires (qui pourront être effacées)</p></li>
+<li><p>Création des métadonnées tout de suite</p></li>
+<li><p>Données importées (copiées) ou non (à sauvegarder)</p></li>
+<li><p>Données brutes vs nettoyées</p></li>
+<li><p>Résultats intermédiaires vs finaux vs à archiver</p></li>
+</ul>
+</li>
+<li><p>Absence de planification sur des <strong>utilisations futures</strong>
+lors de la rédaction du consentement des participants</p>
+<ul>
+<li><p>Données devront être détruites à la fin
+de la période initialement prévue</p></li>
+</ul>
+</li>
+</ul>
+<p>Les conséquences sur le plan technique :</p>
+<ul class="simple">
+<li><p>Grands systèmes de <strong>stockage remplis</strong> de :</p>
+<ul>
+<li><p>Données temporaires inutiles qui n’ont pas été supprimées</p></li>
+<li><p>Jeux de données en plusieurs copies,
+plutôt qu’un accès via un dépôt central</p></li>
+</ul>
+</li>
+<li><p>Systèmes de fichiers parallèles inefficaces
+pour <strong>un grand nombre de petits fichiers</strong></p></li>
+</ul>
+</section>
 <section id="cycle-de-vie-des-donnees-actives">
 <h3>Cycle de vie des données actives<a class="headerlink" href="#cycle-de-vie-des-donnees-actives" title="Lien vers cette rubrique">#</a></h3>
 <p>Avec le temps, les données s’accumulent. Il devient alors nécessaire de surveiller l’espace utilisé, de même que le nombre de fichiers qui s’y trouvent.</p>
@@ -744,7 +782,7 @@ il vaut mieux regrouper les données dans un fichier archive
 <div class="prev-next-area">
     <a class="left-prev"
        href="3-lots-taches.html"
-       title="page précédente">
+       title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">précédent</p>
@@ -753,7 +791,7 @@ il vaut mieux regrouper les données dans un fichier archive
     </a>
     <a class="right-next"
        href="90-exercices.html"
-       title="page suivante">
+       title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">suivant</p>
         <p class="prev-next-title">Exercices supplémentaires</p>
@@ -767,7 +805,8 @@ il vaut mieux regrouper les données dans un fichier archive
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -785,6 +824,7 @@ il vaut mieux regrouper les données dans un fichier archive
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gestion-du-stockage">Gestion du stockage</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enjeux-autour-des-donnees-actives">Enjeux autour des données actives</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cycle-de-vie-des-donnees-actives">Cycle de vie des données actives</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exemple-de-cycle-de-vie-des-donnees">Exemple de cycle de vie des données</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exercice-execution-d-un-pipeline"><strong>Exercice</strong> - Exécution d’un pipeline</a></li>
@@ -842,8 +882,8 @@ Par Équipe Calcul Québec
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
 
   <footer class="bd-footer">
   </footer>
