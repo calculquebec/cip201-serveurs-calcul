@@ -2,7 +2,7 @@
 
 cd $HOME
 
-VERSION="11.0"
+VERSION="12.1"
 TAR_GZ="v${VERSION}.tar.gz"
 DOSSIER="cuda-samples-${VERSION}"
 
@@ -21,6 +21,6 @@ fi
 
 cd ${DOSSIER}
 
-module load gcc/9.3.0 cuda/11.4
+module load gcc/12.3 cuda/12.2
 export PROJECTS=Samples/matrixMul/Makefile
 make

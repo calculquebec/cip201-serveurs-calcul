@@ -9,7 +9,7 @@ if [ "$(basename $PWD)" = "scripts" ]; then
 fi
 cd donnees
 
-module load gcc/9.3.0 blast+/2.12.0 seqkit/0.15.0 glost/0.3.1
+module load gcc/12.3 blast+/2.14.1 seqkit/2.5.1 glost/0.3.1
 
 mkdir -p $SCRATCH/res_glost
 

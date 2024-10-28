@@ -3,7 +3,7 @@
 #SBATCH --mem-per-cpu=2000M
 #SBATCH --time=0-00:20
 
-module load gcc/9.3.0  &> /dev/null
+module load gcc/12.3 &> /dev/null
 
 cd $SLURM_TMPDIR
 cp $HOME/cq-formation-benchmark5D/solutions/b5D.omp ./

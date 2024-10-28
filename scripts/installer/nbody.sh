@@ -7,6 +7,6 @@ if [ ! -d cq-formation-nbody ]; then
 fi
 cd cq-formation-nbody/solutions/openmp
 
-module load gcc/9.3.0
+module load gcc/12.3
 sed -i 's/ -march=native//g' Makefile
 make

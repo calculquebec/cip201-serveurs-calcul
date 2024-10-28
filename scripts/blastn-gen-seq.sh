@@ -3,7 +3,7 @@
 #SBATCH --mem-per-cpu=1000M
 #SBATCH --time=0-00:10
 
-module load gcc/9.3.0 python/3.8.10 blast+/2.12.0 seqkit/0.15.0
+module load gcc/12.3 python/3.11 blast+/2.14.1 seqkit/2.5.1
 
 cd $SLURM_SUBMIT_DIR
 if [ "$(basename $PWD)" = "scripts" ]; then

@@ -3,7 +3,7 @@
 #SBATCH --mem-per-cpu=2000M
 #SBATCH --time=0-00:10
 
-module load gcc cuda
+module load gcc/12.3 cuda/12.2
 
 export Dim=5760
 
