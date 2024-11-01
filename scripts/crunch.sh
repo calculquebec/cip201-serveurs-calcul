@@ -20,7 +20,7 @@ if [ "$1" = '--cpu' ]; then
     exit
   fi
 
-  module load gcc/12.3 python/3.11 &> /dev/null
+  module load StdEnv/2023 gcc/12.3 python/3.11
 
   virtualenv --no-download $SLURM_TMPDIR/venv_numpy
   source $SLURM_TMPDIR/venv_numpy/bin/activate
@@ -31,7 +31,7 @@ if [ "$1" = '--cpu' ]; then
   echo "C'est parti!"
 
 elif  [ "$1" = '--gpu' ]; then
-  module load gcc/12.3 cuda/12.2 python/3.11 &> /dev/null
+  module load StdEnv/2023 gcc/12.3 cuda/12.2 python/3.11
 
   virtualenv --no-download $SLURM_TMPDIR/venv_cupy
   source $SLURM_TMPDIR/venv_cupy/bin/activate

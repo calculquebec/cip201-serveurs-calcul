@@ -2,7 +2,7 @@
 #SBATCH --mem-per-cpu=2000M
 #SBATCH --time=0-00:10
 
-module load gcc/12.3 python/3.11
+module load StdEnv/2023 gcc/12.3 python/3.11
 
 virtualenv --no-download $SLURM_TMPDIR/venv_numpy
 source $SLURM_TMPDIR/venv_numpy/bin/activate

@@ -3,7 +3,7 @@
 #SBATCH
 #SBATCH --time=0-00:20
 
-module load gcc/12.3 &> /dev/null
+module load StdEnv/2023 gcc/12.3
 
 cd $SLURM_TMPDIR
 cp $HOME/cq-formation-benchmark5D/solutions/b5D.omp ./

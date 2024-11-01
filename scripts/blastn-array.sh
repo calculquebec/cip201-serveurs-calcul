@@ -10,7 +10,7 @@ if [ "$(basename $PWD)" = "scripts" ]; then
 fi
 cd donnees
 
-module load gcc/12.3 blast+/2.14.1 seqkit/2.5.1
+module load StdEnv/2023 gcc/12.3 blast+/2.14.1 seqkit/2.5.1
 
 INCONNUS=(M N O P Q R)
 INC_X="${INCONNUS[$SLURM_ARRAY_TASK_ID]}"

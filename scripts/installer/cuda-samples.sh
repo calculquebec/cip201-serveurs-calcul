@@ -21,6 +21,6 @@ fi
 
 cd ${DOSSIER}
 
-module load gcc/12.3 cuda/12.2
+module load StdEnv/2023 gcc/12.3 cuda/12.2
 export PROJECTS=Samples/matrixMul/Makefile
 make

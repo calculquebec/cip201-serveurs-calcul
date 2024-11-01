@@ -7,5 +7,5 @@ if [ ! -d cq-formation-benchmark5D ]; then
 fi
 cd cq-formation-benchmark5D/solutions
 
-module load gcc/12.3
+module load StdEnv/2023 gcc/12.3
 make

@@ -9,7 +9,7 @@ if [ "$(basename $PWD)" = "scripts" ]; then
 fi
 cd donnees
 
-module load gcc/12.3 blast+/2.14.1 seqkit/2.5.1
+module load StdEnv/2023 gcc/12.3 blast+/2.14.1 seqkit/2.5.1
 
 mkdir -p res_prll
 
