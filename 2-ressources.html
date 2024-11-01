@@ -424,7 +424,7 @@ processeurs réservés pour la tâche</p></li>
 <span class="c1">#SBATCH --mem-per-cpu=1000M</span>
 <span class="c1">#SBATCH --time=0-00:10</span>
 
-<span class="n">module</span> <span class="n">load</span> <span class="n">gcc</span><span class="o">/</span><span class="mf">12.3</span> <span class="o">&amp;&gt;</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">null</span>
+<span class="n">module</span> <span class="n">load</span> <span class="n">StdEnv</span><span class="o">/</span><span class="mi">2023</span> <span class="n">gcc</span><span class="o">/</span><span class="mf">12.3</span> <span class="n">openmpi</span><span class="o">/</span><span class="mf">4.1.5</span>
 
 <span class="n">mpirun</span> <span class="n">printenv</span> <span class="n">HOSTNAME</span> <span class="n">OMPI_COMM_WORLD_RANK</span> <span class="n">OMPI_COMM_WORLD_SIZE</span>
 </pre></div>
