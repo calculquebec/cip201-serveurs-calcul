@@ -416,17 +416,19 @@ options en entête seront lues par la commande de soumission de tâche
 processeurs réservés pour la tâche</p></li>
 </ul>
 <p>Par exemple : <a class="reference external" href="https://github.com/calculquebec/cip201-serveurs-calcul/blob/main/scripts/mpi-allo.sh"><code class="docutils literal notranslate"><span class="pre">scripts/mpi-allo.sh</span></code></a></p>
-<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>scripts/mpi-allo.sh
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>scripts/mpi-pi/pi-job.sh
 </pre></div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
-<span class="c1">#SBATCH --ntasks=10</span>
-<span class="c1">#SBATCH --mem-per-cpu=1000M</span>
-<span class="c1">#SBATCH --time=0-00:10</span>
+
+<span class="c1">#SBATCH --job-name=pi</span>
+<span class="c1">#SBATCH --ntasks=4</span>
+<span class="c1">#SBATCH --mem-per-cpu=1G</span>
+<span class="c1">#SBATCH --time=00:05:00</span>
 
 <span class="n">module</span> <span class="n">load</span> <span class="n">StdEnv</span><span class="o">/</span><span class="mi">2023</span> <span class="n">gcc</span><span class="o">/</span><span class="mf">12.3</span> <span class="n">openmpi</span><span class="o">/</span><span class="mf">4.1.5</span>
 
-<span class="n">mpirun</span> <span class="n">printenv</span> <span class="n">HOSTNAME</span> <span class="n">OMPI_COMM_WORLD_RANK</span> <span class="n">OMPI_COMM_WORLD_SIZE</span>
+<span class="n">srun</span> <span class="o">./</span><span class="n">pi</span> <span class="mi">10000000000</span>
 </pre></div>
 </div>
 <p>Notre documentation à cet effet débute à la page :
