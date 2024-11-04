@@ -7,4 +7,4 @@
 
 module load StdEnv/2023 gcc/12.3
 
-srun ./fibo 50
+srun ./fibonacci 50
